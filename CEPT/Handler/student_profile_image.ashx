@@ -1,0 +1,117 @@
+﻿<%@ WebHandler Language="C#" Class="student_profile_image" %>
+
+using System;
+using System.Web;
+
+public class student_profile_image : IHttpHandler, System.Web.SessionState.IReadOnlySessionState
+{
+
+    int mFileSize = 0;
+    string msg = "";
+    String fileNames = string.Empty;
+    public void ProcessRequest(HttpContext context)
+    {
+        try
+        {
+            string user_id = HttpContext.Current.Session["UserId"].ToString();
+
+            //For Uploading New User Profile Photo
+            string Serverpath = System.Configuration.ConfigurationManager.AppSettings["StudentPersonalPhotoPath"];
+
+            string instructor_name = context.Request.Form["name"].ToString();
+
+            if (context.Request.Files.Count > 0)
+            {
+                var postedFile = context.Request.Files[0];
+                string filesize = System.Configuration.ConfigurationManager.AppSettings["UserCPOPProfilePhotoMaxSize"];
+                mFileSize = postedFile.ContentLength;
+                //string user_id = HttpContext.Current.Session["UserId"].ToString();
+
+                if (mFileSize <= Convert.ToInt32(filesize))
+                {
+                    System.Drawing.Image img = System.Drawing.Image.FromStream(postedFile.InputStream);
+
+                    if (img.Width == 272 && img.Height == 272)
+                    {
+                        //Get Server Folder to upload file        
+                        string Savepath = context.Server.MapPath(Serverpath);
+                        string file;
+                        string finalFileName;
+
+                        //For IE to get file name
+                        if (HttpContext.Current.Request.Browser.Browser.ToUpper() == "IE")
+                        {
+                            string[] files = postedFile.FileName.Split(new char[] { '\\' });
+                            file = files[files.Length - 1];
+                        }
+                        //For Other Browser to get file name
+                        else
+                        {
+                            file = postedFile.FileName;
+                        }
+
+                        //finalFileName = user_id + "_" + file;
+                        finalFileName = "profile_" + user_id + ".jpg";
+
+                        finalFileName = finalFileName.Replace("'", "");
+
+                        string fileDirectory = Savepath + "\\" + finalFileName;
+                        postedFile.SaveAs(fileDirectory);
+
+                        fileNames += finalFileName + ",";
+                        WebService web = new WebService();
+                        string message = web.Update_student_image(finalFileName, user_id);
+                        if (message == "Save Data")
+                        {
+
+                        }
+                        else
+                        {
+                            msg = "{";
+                            msg += string.Format("error:'{0}',\n", "Image Size should be 272px*272px.");
+                            msg += "}";
+                        }
+                        //context.Response.ContentType = "text/html"; 
+                        //context.Response.Write(message);
+                    }
+                    else
+                    {
+                        msg = "{";
+                        msg += string.Format("error:'{0}',\n", "Image Size should be 272px*272px.");
+                        msg += "}";
+                    }
+                }
+                else
+                {
+                    msg = "{";
+                    msg += string.Format("error:'{0}',\n", "File Size Exeeds Limit.");
+                    msg += "}";
+                }
+            }
+
+            if (fileNames != string.Empty)
+            {
+                //Set response message
+                msg = "{";
+                msg += string.Format("error:'{0}',\n", string.Empty);
+                msg += string.Format("upfile:'{0}'\n", fileNames.Substring(0, fileNames.Length - 1));
+                msg += "}";
+            }
+
+            context.Response.Write(msg);
+        }
+        catch (Exception ex)
+        {
+            context.Response.Write("error: " + ex.Message);
+        }
+    }
+
+    public bool IsReusable
+    {
+        get
+        {
+            return false;
+        }
+    }
+
+}

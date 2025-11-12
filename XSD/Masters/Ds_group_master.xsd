@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="Ds_group_master" targetNamespace="http://tempuri.org/Ds_group_master.xsd" xmlns:mstns="http://tempuri.org/Ds_group_master.xsd" xmlns="http://tempuri.org/Ds_group_master.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="CA_SYSTEMConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="CA_SYSTEMConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.XSD.Properties.Settings.GlobalReference.Default.CA_SYSTEMConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="Ds_group_master" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="Ds_group_master" msprop:Generator_UserDSName="Ds_group_master">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="group_mst" msprop:Generator_TableClassName="group_mstDataTable" msprop:Generator_TableVarName="tablegroup_mst" msprop:Generator_TablePropName="group_mst" msprop:Generator_RowDeletingName="group_mstRowDeleting" msprop:Generator_UserTableName="group_mst" msprop:Generator_RowChangingName="group_mstRowChanging" msprop:Generator_RowEvHandlerName="group_mstRowChangeEventHandler" msprop:Generator_RowDeletedName="group_mstRowDeleted" msprop:Generator_RowEvArgName="group_mstRowChangeEvent" msprop:Generator_RowChangedName="group_mstRowChanged" msprop:Generator_RowClassName="group_mstRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="group_id" msprop:Generator_ColumnVarNameInTable="columngroup_id" msprop:Generator_ColumnPropNameInRow="group_id" msprop:Generator_ColumnPropNameInTable="group_idColumn" msprop:Generator_UserColumnName="group_id">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="group_desc" msprop:Generator_ColumnVarNameInTable="columngroup_desc" msprop:Generator_ColumnPropNameInRow="group_desc" msprop:Generator_ColumnPropNameInTable="group_descColumn" msprop:Generator_UserColumnName="group_desc">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="25" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="start_date" msprop:Generator_ColumnVarNameInTable="columnstart_date" msprop:Generator_ColumnPropNameInRow="start_date" msprop:Generator_ColumnPropNameInTable="start_dateColumn" msprop:Generator_UserColumnName="start_date" type="xs:dateTime" />
+              <xs:element name="end_date" msprop:Generator_ColumnVarNameInTable="columnend_date" msprop:Generator_ColumnPropNameInRow="end_date" msprop:Generator_ColumnPropNameInTable="end_dateColumn" msprop:Generator_UserColumnName="end_date" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="client_type" msprop:Generator_ColumnVarNameInTable="columnclient_type" msprop:Generator_ColumnPropNameInRow="client_type" msprop:Generator_ColumnPropNameInTable="client_typeColumn" msprop:Generator_UserColumnName="client_type" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="cancel_flag" msprop:Generator_ColumnVarNameInTable="columncancel_flag" msprop:Generator_ColumnPropNameInRow="cancel_flag" msprop:Generator_ColumnPropNameInTable="cancel_flagColumn" msprop:Generator_UserColumnName="cancel_flag">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="created_by" msprop:Generator_ColumnVarNameInTable="columncreated_by" msprop:Generator_ColumnPropNameInRow="created_by" msprop:Generator_ColumnPropNameInTable="created_byColumn" msprop:Generator_UserColumnName="created_by" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="15" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="created_date" msprop:Generator_ColumnVarNameInTable="columncreated_date" msprop:Generator_ColumnPropNameInRow="created_date" msprop:Generator_ColumnPropNameInTable="created_dateColumn" msprop:Generator_UserColumnName="created_date" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="created_host" msprop:Generator_ColumnVarNameInTable="columncreated_host" msprop:Generator_ColumnPropNameInRow="created_host" msprop:Generator_ColumnPropNameInTable="created_hostColumn" msprop:Generator_UserColumnName="created_host">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="15" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="last_modified_by" msprop:Generator_ColumnVarNameInTable="columnlast_modified_by" msprop:Generator_ColumnPropNameInRow="last_modified_by" msprop:Generator_ColumnPropNameInTable="last_modified_byColumn" msprop:Generator_UserColumnName="last_modified_by" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="15" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="last_modified_date" msprop:Generator_ColumnVarNameInTable="columnlast_modified_date" msprop:Generator_ColumnPropNameInRow="last_modified_date" msprop:Generator_ColumnPropNameInTable="last_modified_dateColumn" msprop:Generator_UserColumnName="last_modified_date" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="last_modified_host" msprop:Generator_ColumnVarNameInTable="columnlast_modified_host" msprop:Generator_ColumnPropNameInRow="last_modified_host" msprop:Generator_ColumnPropNameInTable="last_modified_hostColumn" msprop:Generator_UserColumnName="last_modified_host" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="15" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:group_mst" />
+      <xs:field xpath="mstns:group_id" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

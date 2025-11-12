@@ -1,0 +1,29 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+
+public partial class Admin_Master_Add_manually_allocation : System.Web.UI.Page
+{
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        if (Session["user_type"].ToString() != "A" || Session["user_type"].ToString() == "A1")
+        {
+
+
+            if (Session["user_type"].ToString() == "S")
+            {
+                Response.Redirect("~/Student/Dashboard.aspx?autho=false");
+            }
+            else if (Session["user_type"].ToString() == "I")
+            {
+                Response.Redirect("~/IT/IT_dashboard.aspx?autho=false");
+            }
+
+
+
+        }
+    }
+}

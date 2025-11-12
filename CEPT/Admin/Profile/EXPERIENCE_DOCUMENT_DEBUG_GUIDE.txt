@@ -1,0 +1,318 @@
+═══════════════════════════════════════════════════════════════════════════
+           EXPERIENCE DOCUMENT SAVE - DEBUGGING GUIDE
+═══════════════════════════════════════════════════════════════════════════
+
+🔍 PROBLEM: Document name not saving to database
+
+This guide will help you debug and fix the issue.
+
+═══════════════════════════════════════════════════════════════════════════
+📋 STEP 1: CHECK BROWSER CONSOLE (MOST IMPORTANT!)
+═══════════════════════════════════════════════════════════════════════════
+
+1. Open your browser (Chrome/Edge/Firefox)
+2. Press F12 to open Developer Tools
+3. Click on the "Console" tab
+4. Clear the console (click the 🚫 icon)
+5. Now perform the following actions:
+
+ACTION A - UPLOAD A FILE:
+──────────────────────────────────────────────────────────────────────────
+1. Select a file (PDF/DOC/image)
+2. Look for these console messages:
+
+   === Uploading File to Server ===
+   File name: experience_certificate.pdf
+   File size: 245632
+   Document type: ExperienceDocuments
+   Upload response received: {"fileName":"exp_20241015_123456.pdf","error":""}
+   Response type: object
+   Parsed result: {fileName: "exp_20241015_123456.pdf", error: ""}
+   ✓ Upload successful! File name: exp_20241015_123456.pdf
+
+EXPECTED OUTPUT:
+✓ Upload successful! File name: [some file name]
+
+POSSIBLE ISSUES:
+✗ If you see "✗ Upload failed:" - Check UserUploadFile.ashx handler
+✗ If you see "✗ File upload AJAX error:" - Check file path or permissions
+✗ If response is empty - Handler is not returning data correctly
+
+
+ACTION B - ADD EXPERIENCE RECORD:
+──────────────────────────────────────────────────────────────────────────
+1. Fill in all required fields
+2. Click "Add Experience"
+3. Look for these console messages:
+
+   Adding experience record with document: exp_20241015_123456.pdf
+   Experience Data: {
+       organization_name: "ABC Company",
+       designation: "Software Engineer",
+       experience_type: "Industry",
+       ...
+       experienced_document_ref: "exp_20241015_123456.pdf",
+       id: 1697384723456
+   }
+
+EXPECTED OUTPUT:
+✓ experienced_document_ref should have a value (not null)
+
+POSSIBLE ISSUES:
+✗ If experienced_document_ref is null - File upload failed or wasn't completed
+✗ If experienced_document_ref is "Upload failed" - Check upload handler
+
+
+ACTION C - SAVE TO DATABASE:
+──────────────────────────────────────────────────────────────────────────
+1. Click "Save All" button
+2. Look for these console messages:
+
+   === Saving Experience Records to Database ===
+   Number of records: 1
+   Experience Records Data: [{...}]
+   Record 0 document: exp_20241015_123456.pdf
+   JSON Data being sent: {"formDataJson":"[{\"organization_name\":\"ABC\"...\"experienced_document_ref\":\"exp_20241015_123456.pdf\"...}]"}
+
+EXPECTED OUTPUT:
+✓ Record X document should show the file name
+✓ JSON Data should include "experienced_document_ref":"filename.pdf"
+
+POSSIBLE ISSUES:
+✗ If document is null - File wasn't properly added to the record
+✗ If JSON doesn't include experienced_document_ref - Data structure issue
+
+
+═══════════════════════════════════════════════════════════════════════════
+🔧 STEP 2: CHECK WEB SERVICE (BACKEND)
+═══════════════════════════════════════════════════════════════════════════
+
+The frontend is sending the document name correctly if you see it in the console.
+Now check the backend:
+
+FILE: WebService.asmx.cs or WebService.asmx
+METHOD: SaveExperienceDetails
+
+CHECK THESE:
+──────────────────────────────────────────────────────────────────────────
+1. Does the method receive the 'experienced_document_ref' field?
+   
+   Example C# code:
+   ```csharp
+   public class ExperienceDetail
+   {
+       public string organization_name { get; set; }
+       public string designation { get; set; }
+       public string experience_type { get; set; }
+       public string start_date { get; set; }
+       public string end_date { get; set; }
+       public string mode_of_experience { get; set; }
+       public string total_hours_in_week { get; set; }
+       public string total_year_months_counts { get; set; }
+       public string experienced_document_ref { get; set; }  // ← CHECK THIS!
+       public long id { get; set; }
+   }
+   ```
+
+2. Is the field being saved to the database?
+   
+   Check SQL INSERT/UPDATE statement includes this field:
+   ```sql
+   INSERT INTO ExperienceDetails (
+       organization_name,
+       designation,
+       ...
+       experienced_document_ref  -- ← MUST BE HERE!
+   ) VALUES (...)
+   ```
+
+3. Does the database column exist?
+   
+   TABLE: ExperienceDetails (or similar)
+   COLUMN: experienced_document_ref (VARCHAR/NVARCHAR)
+
+
+═══════════════════════════════════════════════════════════════════════════
+🔍 STEP 3: COMMON ISSUES & FIXES
+═══════════════════════════════════════════════════════════════════════════
+
+ISSUE 1: File uploads but document is null when adding record
+──────────────────────────────────────────────────────────────────────────
+CAUSE: Upload completes but currentUploadedFile variable not set
+FIX: Check these console logs:
+     - "✓ Upload successful! File name: [filename]"
+     - "Adding experience record with document: [filename]"
+     
+     If first shows filename but second is null:
+     → File upload callback not setting currentUploadedFile
+     → Check uploadFileToServer function callback
+
+
+ISSUE 2: Document shows in table but not saved to database
+──────────────────────────────────────────────────────────────────────────
+CAUSE: Frontend has data but backend doesn't save it
+FIX: 
+1. Check console: "Record 0 document: [filename]"
+2. If filename shows in console but not in database:
+   → Backend model missing 'experienced_document_ref' property
+   → SQL query missing 'experienced_document_ref' column
+   → Database table missing column
+
+
+ISSUE 3: Upload shows "Upload failed"
+──────────────────────────────────────────────────────────────────────────
+CAUSE: UserUploadFile.ashx handler error
+FIX:
+1. Check handler path: ../../Handler/UserUploadFile.ashx
+2. Check handler accepts 'file' and 'documentType' parameters
+3. Check folder 'ExperienceDocuments' exists and has write permissions
+4. Check handler returns correct JSON:
+   {"fileName":"uploaded_file_name.pdf","error":""}
+
+
+ISSUE 4: File name has wrong path in database
+──────────────────────────────────────────────────────────────────────────
+CAUSE: Handler returns full path instead of just filename
+FIX: Handler should return only the filename, not full path
+     
+     WRONG: "C:\Uploads\ExperienceDocuments\file.pdf"
+     RIGHT: "file.pdf"
+     
+     OR if using subfolders:
+     RIGHT: "ExperienceDocuments/file.pdf"
+
+
+═══════════════════════════════════════════════════════════════════════════
+✅ STEP 4: VERIFICATION CHECKLIST
+═══════════════════════════════════════════════════════════════════════════
+
+Frontend (ExperienceDetails.aspx):
+☐ Upload shows "✓ Upload successful! File name: [filename]"
+☐ Add record shows "Adding experience record with document: [filename]"
+☐ Save shows "Record 0 document: [filename]" (not null)
+☐ JSON data includes "experienced_document_ref":"[filename]"
+
+Backend (WebService.asmx):
+☐ Model class has 'experienced_document_ref' property
+☐ SaveExperienceDetails receives the field
+☐ SQL INSERT/UPDATE includes the column
+☐ No errors in backend logs
+
+Database:
+☐ Table has 'experienced_document_ref' column
+☐ Column type is VARCHAR/NVARCHAR (enough length)
+☐ Column allows NULL or has default value
+
+File Handler:
+☐ UserUploadFile.ashx exists at ../../Handler/
+☐ Handler accepts 'file' parameter
+☐ Handler accepts 'documentType' parameter
+☐ Handler creates/uses 'ExperienceDocuments' folder
+☐ Handler returns JSON: {"fileName":"...","error":""}
+☐ Folder has write permissions
+
+
+═══════════════════════════════════════════════════════════════════════════
+🐛 STEP 5: DEBUGGING WORKFLOW
+═══════════════════════════════════════════════════════════════════════════
+
+1. OPEN BROWSER CONSOLE (F12)
+   ↓
+2. UPLOAD A FILE
+   ↓
+   Check: Did you see "✓ Upload successful!"?
+   
+   YES → Go to step 3
+   NO  → Fix UserUploadFile.ashx handler
+   ↓
+3. ADD EXPERIENCE RECORD
+   ↓
+   Check: Does "Adding experience record with document" show filename?
+   
+   YES → Go to step 4
+   NO  → File upload didn't complete or callback failed
+   ↓
+4. CLICK "SAVE ALL"
+   ↓
+   Check: Does "Record 0 document" show filename?
+   
+   YES → Go to step 5
+   NO  → experienced_document_ref is null in experienceRecords array
+   ↓
+5. CHECK DATABASE
+   ↓
+   Check: Is filename in the database table?
+   
+   YES → ✓ WORKING! No issue.
+   NO  → Backend not saving the field (check WebService and SQL)
+
+
+═══════════════════════════════════════════════════════════════════════════
+📊 SAMPLE CONSOLE OUTPUT (WORKING)
+═══════════════════════════════════════════════════════════════════════════
+
+=== Uploading File to Server ===
+File name: experience_letter.pdf
+File size: 145623
+Document type: ExperienceDocuments
+Upload response received: {"fileName":"exp_20241015_143022_experience_letter.pdf","error":""}
+Response type: object
+Parsed result: {fileName: "exp_20241015_143022_experience_letter.pdf", error: ""}
+✓ Upload successful! File name: exp_20241015_143022_experience_letter.pdf
+
+Adding experience record with document: exp_20241015_143022_experience_letter.pdf
+Experience Data: {
+    organization_name: "Tech Corp",
+    designation: "Senior Developer",
+    experience_type: "Industry",
+    start_date: "2020-01-15",
+    end_date: "2023-05-30",
+    mode_of_experience: "Full Time",
+    total_hours_in_week: "40",
+    total_year_months_counts: "40",
+    experienced_document_ref: "exp_20241015_143022_experience_letter.pdf",
+    id: 1697384882345
+}
+
+=== Saving Experience Records to Database ===
+Number of records: 1
+Experience Records Data: [...]
+Record 0 document: exp_20241015_143022_experience_letter.pdf
+JSON Data being sent: {"formDataJson":"[{...\"experienced_document_ref\":\"exp_20241015_143022_experience_letter.pdf\"...}]"}
+
+
+═══════════════════════════════════════════════════════════════════════════
+🔨 QUICK FIX CHECKLIST
+═══════════════════════════════════════════════════════════════════════════
+
+If document name is not saving to database, try these in order:
+
+1. ☐ Clear browser cache and reload page
+2. ☐ Open F12 console and check for JavaScript errors
+3. ☐ Upload a file and check console for upload success message
+4. ☐ Add record and check console for document name in data
+5. ☐ Save and check console for document in JSON being sent
+6. ☐ Check WebService.asmx model has experienced_document_ref field
+7. ☐ Check database table has experienced_document_ref column
+8. ☐ Check SQL query includes experienced_document_ref in INSERT/UPDATE
+9. ☐ Check UserUploadFile.ashx returns correct response format
+
+
+═══════════════════════════════════════════════════════════════════════════
+📞 NEED HELP?
+═══════════════════════════════════════════════════════════════════════════
+
+1. Open browser console (F12)
+2. Perform the upload and save actions
+3. Copy ALL console messages
+4. Check what step fails:
+   - File upload? → Fix UserUploadFile.ashx
+   - Adding record? → Fix frontend JavaScript
+   - Saving to DB? → Fix backend WebService/SQL
+5. Share console messages for specific help
+
+
+═══════════════════════════════════════════════════════════════════════════
+                            END OF DEBUG GUIDE
+═══════════════════════════════════════════════════════════════════════════
+

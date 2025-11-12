@@ -1,0 +1,500 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DSC_Vertical_Studio_Selection_dtl" targetNamespace="http://tempuri.org/DSC_Vertical_Studio_Selection_dtl.xsd" xmlns:mstns="http://tempuri.org/DSC_Vertical_Studio_Selection_dtl.xsd" xmlns="http://tempuri.org/DSC_Vertical_Studio_Selection_dtl.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="3" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="CEPT_REG_LATEST1_COPYConnectionString" IsAppSettingsProperty="true" Modifier="Assembly" Name="CEPT_REG_LATEST1_COPYConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.XSD.Properties.Settings.GlobalReference.Default.CEPT_REG_LATEST1_COPYConnectionString" Provider="System.Data.SqlClient" />
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="CEPT_Registration_24122019ConnectionString" IsAppSettingsProperty="true" Modifier="Assembly" Name="CEPT_Registration_24122019ConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.XSD.Properties.Settings.GlobalReference.Default.CEPT_Registration_24122019ConnectionString" Provider="System.Data.SqlClient" />
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="REG20200104ConnectionString" IsAppSettingsProperty="true" Modifier="Assembly" Name="REG20200104ConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.XSD.Properties.Settings.GlobalReference.Default.REG20200104ConnectionString" Provider="System.Data.SqlClient" />
+          <Connection AppSettingsPropertyName="BKUP_CEPT_REGISTRATION20220214ConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="BKUP_CEPT_REGISTRATION20220214ConnectionString ()" ParameterPrefix="@" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="vertical_studio_selection_dtlTableAdapter" GeneratorDataComponentClassName="vertical_studio_selection_dtlTableAdapter" Name="vertical_studio_selection_dtl" UserDataComponentName="vertical_studio_selection_dtlTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="REG20200104ConnectionString (Settings)" DbObjectName="REG20200104.dbo.vertical_studio_selection_dtl" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>DELETE FROM [vertical_studio_selection_dtl] WHERE (([user_id] = @Original_user_id) AND ([course_code] = @Original_course_code) AND ((@IsNull_parent_course = 1 AND [parent_course] IS NULL) OR ([parent_course] = @Original_parent_course)) AND ((@IsNull_priority = 1 AND [priority] IS NULL) OR ([priority] = @Original_priority)) AND ((@IsNull_status = 1 AND [status] IS NULL) OR ([status] = @Original_status)) AND ((@IsNull_remarks = 1 AND [remarks] IS NULL) OR ([remarks] = @Original_remarks)) AND ((@IsNull_cancel_flag = 1 AND [cancel_flag] IS NULL) OR ([cancel_flag] = @Original_cancel_flag)) AND ((@IsNull_created_by = 1 AND [created_by] IS NULL) OR ([created_by] = @Original_created_by)) AND ((@IsNull_created_date = 1 AND [created_date] IS NULL) OR ([created_date] = @Original_created_date)) AND ((@IsNull_created_host = 1 AND [created_host] IS NULL) OR ([created_host] = @Original_created_host)) AND ((@IsNull_last_modified_by = 1 AND [last_modified_by] IS NULL) OR ([last_modified_by] = @Original_last_modified_by)) AND ((@IsNull_last_modified_date = 1 AND [last_modified_date] IS NULL) OR ([last_modified_date] = @Original_last_modified_date)) AND ((@IsNull_last_modified_host = 1 AND [last_modified_host] IS NULL) OR ([last_modified_host] = @Original_last_modified_host)) AND ([semester_type] = @Original_semester_type) AND ([year_semester] = @Original_year_semester) AND ((@IsNull_random_number = 1 AND [random_number] IS NULL) OR ([random_number] = @Original_random_number)) AND ((@IsNull_shortlist_student_status = 1 AND [shortlist_student_status] IS NULL) OR ([shortlist_student_status] = @Original_shortlist_student_status)))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_user_id" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="user_id" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_course_code" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="course_code" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_parent_course" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="parent_course" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_parent_course" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="parent_course" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_priority" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="priority" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_priority" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="priority" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_status" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="status" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiStringFixedLength" Direction="Input" ParameterName="@Original_status" Precision="0" ProviderType="Char" Scale="0" Size="0" SourceColumn="status" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_remarks" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="remarks" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_remarks" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="remarks" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_cancel_flag" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="cancel_flag" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiStringFixedLength" Direction="Input" ParameterName="@Original_cancel_flag" Precision="0" ProviderType="Char" Scale="0" Size="0" SourceColumn="cancel_flag" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_created_by" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="created_by" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_created_by" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="created_by" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_created_date" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="created_date" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime2" Direction="Input" ParameterName="@Original_created_date" Precision="0" ProviderType="DateTime2" Scale="0" Size="0" SourceColumn="created_date" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_created_host" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="created_host" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_created_host" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="created_host" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_last_modified_by" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="last_modified_by" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_last_modified_by" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="last_modified_by" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_last_modified_date" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="last_modified_date" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime2" Direction="Input" ParameterName="@Original_last_modified_date" Precision="0" ProviderType="DateTime2" Scale="0" Size="0" SourceColumn="last_modified_date" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_last_modified_host" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="last_modified_host" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_last_modified_host" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="last_modified_host" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiStringFixedLength" Direction="Input" ParameterName="@Original_semester_type" Precision="0" ProviderType="Char" Scale="0" Size="0" SourceColumn="semester_type" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_year_semester" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="year_semester" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_random_number" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="random_number" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_random_number" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="random_number" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_shortlist_student_status" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="shortlist_student_status" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiStringFixedLength" Direction="Input" ParameterName="@Original_shortlist_student_status" Precision="0" ProviderType="Char" Scale="0" Size="0" SourceColumn="shortlist_student_status" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>INSERT INTO [vertical_studio_selection_dtl] ([user_id], [course_code], [parent_course], [priority], [status], [remarks], [cancel_flag], [created_by], [created_date], [created_host], [last_modified_by], [last_modified_date], [last_modified_host], [semester_type], [year_semester], [random_number], [shortlist_student_status]) VALUES (@user_id, @course_code, @parent_course, @priority, @status, @remarks, @cancel_flag, @created_by, @created_date, @created_host, @last_modified_by, @last_modified_date, @last_modified_host, @semester_type, @year_semester, @random_number, @shortlist_student_status);
+SELECT user_id, course_code, parent_course, priority, status, remarks, cancel_flag, created_by, created_date, created_host, last_modified_by, last_modified_date, last_modified_host, semester_type, year_semester, random_number, shortlist_student_status FROM vertical_studio_selection_dtl WHERE (course_code = @course_code) AND (semester_type = @semester_type) AND (user_id = @user_id) AND (year_semester = @year_semester)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@user_id" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="user_id" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@course_code" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="course_code" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@parent_course" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="parent_course" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@priority" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="priority" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiStringFixedLength" Direction="Input" ParameterName="@status" Precision="0" ProviderType="Char" Scale="0" Size="0" SourceColumn="status" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@remarks" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="remarks" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiStringFixedLength" Direction="Input" ParameterName="@cancel_flag" Precision="0" ProviderType="Char" Scale="0" Size="0" SourceColumn="cancel_flag" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@created_by" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="created_by" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime2" Direction="Input" ParameterName="@created_date" Precision="0" ProviderType="DateTime2" Scale="0" Size="0" SourceColumn="created_date" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@created_host" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="created_host" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@last_modified_by" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="last_modified_by" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime2" Direction="Input" ParameterName="@last_modified_date" Precision="0" ProviderType="DateTime2" Scale="0" Size="0" SourceColumn="last_modified_date" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@last_modified_host" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="last_modified_host" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiStringFixedLength" Direction="Input" ParameterName="@semester_type" Precision="0" ProviderType="Char" Scale="0" Size="0" SourceColumn="semester_type" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@year_semester" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="year_semester" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@random_number" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="random_number" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiStringFixedLength" Direction="Input" ParameterName="@shortlist_student_status" Precision="0" ProviderType="Char" Scale="0" Size="0" SourceColumn="shortlist_student_status" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT user_id, course_code, parent_course, priority, status, remarks, cancel_flag, created_by, created_date, created_host, last_modified_by, last_modified_date, last_modified_host, semester_type, year_semester, random_number, shortlist_student_status FROM vertical_studio_selection_dtl</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>UPDATE [vertical_studio_selection_dtl] SET [user_id] = @user_id, [course_code] = @course_code, [parent_course] = @parent_course, [priority] = @priority, [status] = @status, [remarks] = @remarks, [cancel_flag] = @cancel_flag, [created_by] = @created_by, [created_date] = @created_date, [created_host] = @created_host, [last_modified_by] = @last_modified_by, [last_modified_date] = @last_modified_date, [last_modified_host] = @last_modified_host, [semester_type] = @semester_type, [year_semester] = @year_semester, [random_number] = @random_number, [shortlist_student_status] = @shortlist_student_status WHERE (([user_id] = @Original_user_id) AND ([course_code] = @Original_course_code) AND ((@IsNull_parent_course = 1 AND [parent_course] IS NULL) OR ([parent_course] = @Original_parent_course)) AND ((@IsNull_priority = 1 AND [priority] IS NULL) OR ([priority] = @Original_priority)) AND ((@IsNull_status = 1 AND [status] IS NULL) OR ([status] = @Original_status)) AND ((@IsNull_remarks = 1 AND [remarks] IS NULL) OR ([remarks] = @Original_remarks)) AND ((@IsNull_cancel_flag = 1 AND [cancel_flag] IS NULL) OR ([cancel_flag] = @Original_cancel_flag)) AND ((@IsNull_created_by = 1 AND [created_by] IS NULL) OR ([created_by] = @Original_created_by)) AND ((@IsNull_created_date = 1 AND [created_date] IS NULL) OR ([created_date] = @Original_created_date)) AND ((@IsNull_created_host = 1 AND [created_host] IS NULL) OR ([created_host] = @Original_created_host)) AND ((@IsNull_last_modified_by = 1 AND [last_modified_by] IS NULL) OR ([last_modified_by] = @Original_last_modified_by)) AND ((@IsNull_last_modified_date = 1 AND [last_modified_date] IS NULL) OR ([last_modified_date] = @Original_last_modified_date)) AND ((@IsNull_last_modified_host = 1 AND [last_modified_host] IS NULL) OR ([last_modified_host] = @Original_last_modified_host)) AND ([semester_type] = @Original_semester_type) AND ([year_semester] = @Original_year_semester) AND ((@IsNull_random_number = 1 AND [random_number] IS NULL) OR ([random_number] = @Original_random_number)) AND ((@IsNull_shortlist_student_status = 1 AND [shortlist_student_status] IS NULL) OR ([shortlist_student_status] = @Original_shortlist_student_status)));
+SELECT user_id, course_code, parent_course, priority, status, remarks, cancel_flag, created_by, created_date, created_host, last_modified_by, last_modified_date, last_modified_host, semester_type, year_semester, random_number, shortlist_student_status FROM vertical_studio_selection_dtl WHERE (course_code = @course_code) AND (semester_type = @semester_type) AND (user_id = @user_id) AND (year_semester = @year_semester)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@user_id" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="user_id" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@course_code" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="course_code" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@parent_course" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="parent_course" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@priority" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="priority" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiStringFixedLength" Direction="Input" ParameterName="@status" Precision="0" ProviderType="Char" Scale="0" Size="0" SourceColumn="status" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@remarks" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="remarks" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiStringFixedLength" Direction="Input" ParameterName="@cancel_flag" Precision="0" ProviderType="Char" Scale="0" Size="0" SourceColumn="cancel_flag" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@created_by" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="created_by" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime2" Direction="Input" ParameterName="@created_date" Precision="0" ProviderType="DateTime2" Scale="0" Size="0" SourceColumn="created_date" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@created_host" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="created_host" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@last_modified_by" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="last_modified_by" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime2" Direction="Input" ParameterName="@last_modified_date" Precision="0" ProviderType="DateTime2" Scale="0" Size="0" SourceColumn="last_modified_date" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@last_modified_host" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="last_modified_host" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiStringFixedLength" Direction="Input" ParameterName="@semester_type" Precision="0" ProviderType="Char" Scale="0" Size="0" SourceColumn="semester_type" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@year_semester" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="year_semester" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@random_number" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="random_number" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiStringFixedLength" Direction="Input" ParameterName="@shortlist_student_status" Precision="0" ProviderType="Char" Scale="0" Size="0" SourceColumn="shortlist_student_status" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_user_id" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="user_id" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_course_code" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="course_code" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_parent_course" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="parent_course" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_parent_course" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="parent_course" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_priority" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="priority" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_priority" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="priority" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_status" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="status" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiStringFixedLength" Direction="Input" ParameterName="@Original_status" Precision="0" ProviderType="Char" Scale="0" Size="0" SourceColumn="status" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_remarks" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="remarks" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_remarks" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="remarks" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_cancel_flag" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="cancel_flag" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiStringFixedLength" Direction="Input" ParameterName="@Original_cancel_flag" Precision="0" ProviderType="Char" Scale="0" Size="0" SourceColumn="cancel_flag" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_created_by" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="created_by" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_created_by" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="created_by" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_created_date" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="created_date" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime2" Direction="Input" ParameterName="@Original_created_date" Precision="0" ProviderType="DateTime2" Scale="0" Size="0" SourceColumn="created_date" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_created_host" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="created_host" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_created_host" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="created_host" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_last_modified_by" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="last_modified_by" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_last_modified_by" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="last_modified_by" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_last_modified_date" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="last_modified_date" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime2" Direction="Input" ParameterName="@Original_last_modified_date" Precision="0" ProviderType="DateTime2" Scale="0" Size="0" SourceColumn="last_modified_date" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_last_modified_host" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="last_modified_host" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_last_modified_host" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="last_modified_host" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiStringFixedLength" Direction="Input" ParameterName="@Original_semester_type" Precision="0" ProviderType="Char" Scale="0" Size="0" SourceColumn="semester_type" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_year_semester" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="year_semester" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_random_number" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="random_number" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_random_number" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="random_number" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_shortlist_student_status" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="shortlist_student_status" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiStringFixedLength" Direction="Input" ParameterName="@Original_shortlist_student_status" Precision="0" ProviderType="Char" Scale="0" Size="0" SourceColumn="shortlist_student_status" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="user_id" DataSetColumn="user_id" />
+              <Mapping SourceColumn="course_code" DataSetColumn="course_code" />
+              <Mapping SourceColumn="parent_course" DataSetColumn="parent_course" />
+              <Mapping SourceColumn="priority" DataSetColumn="priority" />
+              <Mapping SourceColumn="status" DataSetColumn="status" />
+              <Mapping SourceColumn="remarks" DataSetColumn="remarks" />
+              <Mapping SourceColumn="cancel_flag" DataSetColumn="cancel_flag" />
+              <Mapping SourceColumn="created_by" DataSetColumn="created_by" />
+              <Mapping SourceColumn="created_date" DataSetColumn="created_date" />
+              <Mapping SourceColumn="created_host" DataSetColumn="created_host" />
+              <Mapping SourceColumn="last_modified_by" DataSetColumn="last_modified_by" />
+              <Mapping SourceColumn="last_modified_date" DataSetColumn="last_modified_date" />
+              <Mapping SourceColumn="last_modified_host" DataSetColumn="last_modified_host" />
+              <Mapping SourceColumn="semester_type" DataSetColumn="semester_type" />
+              <Mapping SourceColumn="year_semester" DataSetColumn="year_semester" />
+              <Mapping SourceColumn="random_number" DataSetColumn="random_number" />
+              <Mapping SourceColumn="shortlist_student_status" DataSetColumn="shortlist_student_status" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="studio_wise_instructor_dtlTableAdapter" GeneratorDataComponentClassName="studio_wise_instructor_dtlTableAdapter" Name="studio_wise_instructor_dtl" UserDataComponentName="studio_wise_instructor_dtlTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="BKUP_CEPT_REGISTRATION20220214ConnectionString ()" DbObjectName="BKUP_CEPT_REGISTRATION20220214.dbo.studio_wise_instructor_dtl" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>DELETE FROM [studio_wise_instructor_dtl] WHERE (([studio_code] = @Original_studio_code) AND ([instructor_code] = @Original_instructor_code) AND ((@IsNull_approved = 1 AND [approved] IS NULL) OR ([approved] = @Original_approved)) AND ((@IsNull_tutor_type = 1 AND [tutor_type] IS NULL) OR ([tutor_type] = @Original_tutor_type)) AND ([semester_type] = @Original_semester_type) AND ([year_semester] = @Original_year_semester) AND ((@IsNull_cancel_flag = 1 AND [cancel_flag] IS NULL) OR ([cancel_flag] = @Original_cancel_flag)) AND ((@IsNull_created_by = 1 AND [created_by] IS NULL) OR ([created_by] = @Original_created_by)) AND ((@IsNull_created_date = 1 AND [created_date] IS NULL) OR ([created_date] = @Original_created_date)) AND ((@IsNull_created_host = 1 AND [created_host] IS NULL) OR ([created_host] = @Original_created_host)) AND ((@IsNull_last_modified_by = 1 AND [last_modified_by] IS NULL) OR ([last_modified_by] = @Original_last_modified_by)) AND ((@IsNull_last_modified_date = 1 AND [last_modified_date] IS NULL) OR ([last_modified_date] = @Original_last_modified_date)) AND ((@IsNull_last_modified_host = 1 AND [last_modified_host] IS NULL) OR ([last_modified_host] = @Original_last_modified_host)))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_studio_code" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="studio_code" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_instructor_code" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="instructor_code" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_approved" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="approved" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiStringFixedLength" Direction="Input" ParameterName="@Original_approved" Precision="0" ProviderType="Char" Scale="0" Size="0" SourceColumn="approved" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_tutor_type" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="tutor_type" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiStringFixedLength" Direction="Input" ParameterName="@Original_tutor_type" Precision="0" ProviderType="Char" Scale="0" Size="0" SourceColumn="tutor_type" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_semester_type" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="semester_type" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_year_semester" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="year_semester" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_cancel_flag" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="cancel_flag" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiStringFixedLength" Direction="Input" ParameterName="@Original_cancel_flag" Precision="0" ProviderType="Char" Scale="0" Size="0" SourceColumn="cancel_flag" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_created_by" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="created_by" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_created_by" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="created_by" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_created_date" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="created_date" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime2" Direction="Input" ParameterName="@Original_created_date" Precision="0" ProviderType="DateTime2" Scale="0" Size="0" SourceColumn="created_date" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_created_host" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="created_host" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_created_host" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="created_host" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_last_modified_by" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="last_modified_by" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_last_modified_by" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="last_modified_by" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_last_modified_date" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="last_modified_date" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime2" Direction="Input" ParameterName="@Original_last_modified_date" Precision="0" ProviderType="DateTime2" Scale="0" Size="0" SourceColumn="last_modified_date" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_last_modified_host" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="last_modified_host" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_last_modified_host" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="last_modified_host" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>INSERT INTO [studio_wise_instructor_dtl] ([studio_code], [instructor_code], [approved], [tutor_type], [semester_type], [year_semester], [cancel_flag], [created_by], [created_date], [created_host], [last_modified_by], [last_modified_date], [last_modified_host]) VALUES (@studio_code, @instructor_code, @approved, @tutor_type, @semester_type, @year_semester, @cancel_flag, @created_by, @created_date, @created_host, @last_modified_by, @last_modified_date, @last_modified_host);
+SELECT studio_code, instructor_code, approved, tutor_type, semester_type, year_semester, cancel_flag, created_by, created_date, created_host, last_modified_by, last_modified_date, last_modified_host FROM studio_wise_instructor_dtl WHERE (instructor_code = @instructor_code) AND (semester_type = @semester_type) AND (studio_code = @studio_code) AND (year_semester = @year_semester)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@studio_code" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="studio_code" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@instructor_code" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="instructor_code" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiStringFixedLength" Direction="Input" ParameterName="@approved" Precision="0" ProviderType="Char" Scale="0" Size="0" SourceColumn="approved" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiStringFixedLength" Direction="Input" ParameterName="@tutor_type" Precision="0" ProviderType="Char" Scale="0" Size="0" SourceColumn="tutor_type" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@semester_type" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="semester_type" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@year_semester" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="year_semester" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiStringFixedLength" Direction="Input" ParameterName="@cancel_flag" Precision="0" ProviderType="Char" Scale="0" Size="0" SourceColumn="cancel_flag" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@created_by" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="created_by" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime2" Direction="Input" ParameterName="@created_date" Precision="0" ProviderType="DateTime2" Scale="0" Size="0" SourceColumn="created_date" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@created_host" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="created_host" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@last_modified_by" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="last_modified_by" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime2" Direction="Input" ParameterName="@last_modified_date" Precision="0" ProviderType="DateTime2" Scale="0" Size="0" SourceColumn="last_modified_date" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@last_modified_host" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="last_modified_host" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>select * from studio_wise_instructor_dtl</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>UPDATE [studio_wise_instructor_dtl] SET [studio_code] = @studio_code, [instructor_code] = @instructor_code, [approved] = @approved, [tutor_type] = @tutor_type, [semester_type] = @semester_type, [year_semester] = @year_semester, [cancel_flag] = @cancel_flag, [created_by] = @created_by, [created_date] = @created_date, [created_host] = @created_host, [last_modified_by] = @last_modified_by, [last_modified_date] = @last_modified_date, [last_modified_host] = @last_modified_host WHERE (([studio_code] = @Original_studio_code) AND ([instructor_code] = @Original_instructor_code) AND ((@IsNull_approved = 1 AND [approved] IS NULL) OR ([approved] = @Original_approved)) AND ((@IsNull_tutor_type = 1 AND [tutor_type] IS NULL) OR ([tutor_type] = @Original_tutor_type)) AND ([semester_type] = @Original_semester_type) AND ([year_semester] = @Original_year_semester) AND ((@IsNull_cancel_flag = 1 AND [cancel_flag] IS NULL) OR ([cancel_flag] = @Original_cancel_flag)) AND ((@IsNull_created_by = 1 AND [created_by] IS NULL) OR ([created_by] = @Original_created_by)) AND ((@IsNull_created_date = 1 AND [created_date] IS NULL) OR ([created_date] = @Original_created_date)) AND ((@IsNull_created_host = 1 AND [created_host] IS NULL) OR ([created_host] = @Original_created_host)) AND ((@IsNull_last_modified_by = 1 AND [last_modified_by] IS NULL) OR ([last_modified_by] = @Original_last_modified_by)) AND ((@IsNull_last_modified_date = 1 AND [last_modified_date] IS NULL) OR ([last_modified_date] = @Original_last_modified_date)) AND ((@IsNull_last_modified_host = 1 AND [last_modified_host] IS NULL) OR ([last_modified_host] = @Original_last_modified_host)));
+SELECT studio_code, instructor_code, approved, tutor_type, semester_type, year_semester, cancel_flag, created_by, created_date, created_host, last_modified_by, last_modified_date, last_modified_host FROM studio_wise_instructor_dtl WHERE (instructor_code = @instructor_code) AND (semester_type = @semester_type) AND (studio_code = @studio_code) AND (year_semester = @year_semester)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@studio_code" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="studio_code" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@instructor_code" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="instructor_code" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiStringFixedLength" Direction="Input" ParameterName="@approved" Precision="0" ProviderType="Char" Scale="0" Size="0" SourceColumn="approved" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiStringFixedLength" Direction="Input" ParameterName="@tutor_type" Precision="0" ProviderType="Char" Scale="0" Size="0" SourceColumn="tutor_type" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@semester_type" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="semester_type" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@year_semester" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="year_semester" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiStringFixedLength" Direction="Input" ParameterName="@cancel_flag" Precision="0" ProviderType="Char" Scale="0" Size="0" SourceColumn="cancel_flag" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@created_by" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="created_by" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime2" Direction="Input" ParameterName="@created_date" Precision="0" ProviderType="DateTime2" Scale="0" Size="0" SourceColumn="created_date" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@created_host" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="created_host" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@last_modified_by" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="last_modified_by" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime2" Direction="Input" ParameterName="@last_modified_date" Precision="0" ProviderType="DateTime2" Scale="0" Size="0" SourceColumn="last_modified_date" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@last_modified_host" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="last_modified_host" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_studio_code" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="studio_code" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_instructor_code" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="instructor_code" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_approved" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="approved" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiStringFixedLength" Direction="Input" ParameterName="@Original_approved" Precision="0" ProviderType="Char" Scale="0" Size="0" SourceColumn="approved" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_tutor_type" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="tutor_type" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiStringFixedLength" Direction="Input" ParameterName="@Original_tutor_type" Precision="0" ProviderType="Char" Scale="0" Size="0" SourceColumn="tutor_type" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_semester_type" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="semester_type" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_year_semester" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="year_semester" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_cancel_flag" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="cancel_flag" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiStringFixedLength" Direction="Input" ParameterName="@Original_cancel_flag" Precision="0" ProviderType="Char" Scale="0" Size="0" SourceColumn="cancel_flag" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_created_by" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="created_by" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_created_by" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="created_by" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_created_date" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="created_date" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime2" Direction="Input" ParameterName="@Original_created_date" Precision="0" ProviderType="DateTime2" Scale="0" Size="0" SourceColumn="created_date" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_created_host" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="created_host" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_created_host" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="created_host" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_last_modified_by" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="last_modified_by" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_last_modified_by" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="last_modified_by" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_last_modified_date" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="last_modified_date" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime2" Direction="Input" ParameterName="@Original_last_modified_date" Precision="0" ProviderType="DateTime2" Scale="0" Size="0" SourceColumn="last_modified_date" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_last_modified_host" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="last_modified_host" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_last_modified_host" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="last_modified_host" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="studio_code" DataSetColumn="studio_code" />
+              <Mapping SourceColumn="instructor_code" DataSetColumn="instructor_code" />
+              <Mapping SourceColumn="approved" DataSetColumn="approved" />
+              <Mapping SourceColumn="tutor_type" DataSetColumn="tutor_type" />
+              <Mapping SourceColumn="semester_type" DataSetColumn="semester_type" />
+              <Mapping SourceColumn="year_semester" DataSetColumn="year_semester" />
+              <Mapping SourceColumn="cancel_flag" DataSetColumn="cancel_flag" />
+              <Mapping SourceColumn="created_by" DataSetColumn="created_by" />
+              <Mapping SourceColumn="created_date" DataSetColumn="created_date" />
+              <Mapping SourceColumn="created_host" DataSetColumn="created_host" />
+              <Mapping SourceColumn="last_modified_by" DataSetColumn="last_modified_by" />
+              <Mapping SourceColumn="last_modified_date" DataSetColumn="last_modified_date" />
+              <Mapping SourceColumn="last_modified_host" DataSetColumn="last_modified_host" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DSC_Vertical_Studio_Selection_dtl" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DSC_Vertical_Studio_Selection_dtl" msprop:Generator_UserDSName="DSC_Vertical_Studio_Selection_dtl">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="vertical_studio_selection_dtl" msprop:Generator_TableClassName="vertical_studio_selection_dtlDataTable" msprop:Generator_TableVarName="tablevertical_studio_selection_dtl" msprop:Generator_RowChangedName="vertical_studio_selection_dtlRowChanged" msprop:Generator_TablePropName="vertical_studio_selection_dtl" msprop:Generator_RowDeletingName="vertical_studio_selection_dtlRowDeleting" msprop:Generator_RowChangingName="vertical_studio_selection_dtlRowChanging" msprop:Generator_RowEvHandlerName="vertical_studio_selection_dtlRowChangeEventHandler" msprop:Generator_RowDeletedName="vertical_studio_selection_dtlRowDeleted" msprop:Generator_RowClassName="vertical_studio_selection_dtlRow" msprop:Generator_UserTableName="vertical_studio_selection_dtl" msprop:Generator_RowEvArgName="vertical_studio_selection_dtlRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="user_id" msprop:Generator_ColumnVarNameInTable="columnuser_id" msprop:Generator_ColumnPropNameInRow="user_id" msprop:Generator_ColumnPropNameInTable="user_idColumn" msprop:Generator_UserColumnName="user_id">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="course_code" msprop:Generator_ColumnVarNameInTable="columncourse_code" msprop:Generator_ColumnPropNameInRow="course_code" msprop:Generator_ColumnPropNameInTable="course_codeColumn" msprop:Generator_UserColumnName="course_code">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="parent_course" msprop:Generator_ColumnVarNameInTable="columnparent_course" msprop:Generator_ColumnPropNameInRow="parent_course" msprop:Generator_ColumnPropNameInTable="parent_courseColumn" msprop:Generator_UserColumnName="parent_course" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="priority" msprop:Generator_ColumnVarNameInTable="columnpriority" msprop:Generator_ColumnPropNameInRow="priority" msprop:Generator_ColumnPropNameInTable="priorityColumn" msprop:Generator_UserColumnName="priority" type="xs:int" minOccurs="0" />
+              <xs:element name="status" msprop:Generator_ColumnVarNameInTable="columnstatus" msprop:Generator_ColumnPropNameInRow="status" msprop:Generator_ColumnPropNameInTable="statusColumn" msprop:Generator_UserColumnName="status" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="remarks" msprop:Generator_ColumnVarNameInTable="columnremarks" msprop:Generator_ColumnPropNameInRow="remarks" msprop:Generator_ColumnPropNameInTable="remarksColumn" msprop:Generator_UserColumnName="remarks" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="200" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="cancel_flag" msprop:Generator_ColumnVarNameInTable="columncancel_flag" msprop:Generator_ColumnPropNameInRow="cancel_flag" msprop:Generator_ColumnPropNameInTable="cancel_flagColumn" msprop:Generator_UserColumnName="cancel_flag" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="created_by" msprop:Generator_ColumnVarNameInTable="columncreated_by" msprop:Generator_ColumnPropNameInRow="created_by" msprop:Generator_ColumnPropNameInTable="created_byColumn" msprop:Generator_UserColumnName="created_by" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="created_date" msprop:Generator_ColumnVarNameInTable="columncreated_date" msprop:Generator_ColumnPropNameInRow="created_date" msprop:Generator_ColumnPropNameInTable="created_dateColumn" msprop:Generator_UserColumnName="created_date" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="created_host" msprop:Generator_ColumnVarNameInTable="columncreated_host" msprop:Generator_ColumnPropNameInRow="created_host" msprop:Generator_ColumnPropNameInTable="created_hostColumn" msprop:Generator_UserColumnName="created_host" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="last_modified_by" msprop:Generator_ColumnVarNameInTable="columnlast_modified_by" msprop:Generator_ColumnPropNameInRow="last_modified_by" msprop:Generator_ColumnPropNameInTable="last_modified_byColumn" msprop:Generator_UserColumnName="last_modified_by" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="last_modified_date" msprop:Generator_ColumnVarNameInTable="columnlast_modified_date" msprop:Generator_ColumnPropNameInRow="last_modified_date" msprop:Generator_ColumnPropNameInTable="last_modified_dateColumn" msprop:Generator_UserColumnName="last_modified_date" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="last_modified_host" msprop:Generator_ColumnVarNameInTable="columnlast_modified_host" msprop:Generator_ColumnPropNameInRow="last_modified_host" msprop:Generator_ColumnPropNameInTable="last_modified_hostColumn" msprop:Generator_UserColumnName="last_modified_host" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="semester_type" msprop:Generator_ColumnVarNameInTable="columnsemester_type" msprop:Generator_ColumnPropNameInRow="semester_type" msprop:Generator_ColumnPropNameInTable="semester_typeColumn" msprop:Generator_UserColumnName="semester_type">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="year_semester" msprop:Generator_ColumnVarNameInTable="columnyear_semester" msprop:Generator_ColumnPropNameInRow="year_semester" msprop:Generator_ColumnPropNameInTable="year_semesterColumn" msprop:Generator_UserColumnName="year_semester">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="random_number" msprop:Generator_ColumnVarNameInTable="columnrandom_number" msprop:Generator_ColumnPropNameInRow="random_number" msprop:Generator_ColumnPropNameInTable="random_numberColumn" msprop:Generator_UserColumnName="random_number" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="shortlist_student_status" msprop:Generator_ColumnVarNameInTable="columnshortlist_student_status" msprop:Generator_ColumnPropNameInRow="shortlist_student_status" msprop:Generator_ColumnPropNameInTable="shortlist_student_statusColumn" msprop:Generator_UserColumnName="shortlist_student_status" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="studio_wise_instructor_dtl" msprop:Generator_TableClassName="studio_wise_instructor_dtlDataTable" msprop:Generator_TableVarName="tablestudio_wise_instructor_dtl" msprop:Generator_TablePropName="studio_wise_instructor_dtl" msprop:Generator_RowDeletingName="studio_wise_instructor_dtlRowDeleting" msprop:Generator_RowChangingName="studio_wise_instructor_dtlRowChanging" msprop:Generator_RowEvHandlerName="studio_wise_instructor_dtlRowChangeEventHandler" msprop:Generator_RowDeletedName="studio_wise_instructor_dtlRowDeleted" msprop:Generator_UserTableName="studio_wise_instructor_dtl" msprop:Generator_RowChangedName="studio_wise_instructor_dtlRowChanged" msprop:Generator_RowEvArgName="studio_wise_instructor_dtlRowChangeEvent" msprop:Generator_RowClassName="studio_wise_instructor_dtlRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="studio_code" msprop:Generator_ColumnVarNameInTable="columnstudio_code" msprop:Generator_ColumnPropNameInRow="studio_code" msprop:Generator_ColumnPropNameInTable="studio_codeColumn" msprop:Generator_UserColumnName="studio_code">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="instructor_code" msprop:Generator_ColumnVarNameInTable="columninstructor_code" msprop:Generator_ColumnPropNameInRow="instructor_code" msprop:Generator_ColumnPropNameInTable="instructor_codeColumn" msprop:Generator_UserColumnName="instructor_code">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="approved" msprop:Generator_ColumnVarNameInTable="columnapproved" msprop:Generator_ColumnPropNameInRow="approved" msprop:Generator_ColumnPropNameInTable="approvedColumn" msprop:Generator_UserColumnName="approved" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="tutor_type" msprop:Generator_ColumnVarNameInTable="columntutor_type" msprop:Generator_ColumnPropNameInRow="tutor_type" msprop:Generator_ColumnPropNameInTable="tutor_typeColumn" msprop:Generator_UserColumnName="tutor_type" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="semester_type" msprop:Generator_ColumnVarNameInTable="columnsemester_type" msprop:Generator_ColumnPropNameInRow="semester_type" msprop:Generator_ColumnPropNameInTable="semester_typeColumn" msprop:Generator_UserColumnName="semester_type">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="year_semester" msprop:Generator_ColumnVarNameInTable="columnyear_semester" msprop:Generator_ColumnPropNameInRow="year_semester" msprop:Generator_ColumnPropNameInTable="year_semesterColumn" msprop:Generator_UserColumnName="year_semester">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="cancel_flag" msprop:Generator_ColumnVarNameInTable="columncancel_flag" msprop:Generator_ColumnPropNameInRow="cancel_flag" msprop:Generator_ColumnPropNameInTable="cancel_flagColumn" msprop:Generator_UserColumnName="cancel_flag" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="created_by" msprop:Generator_ColumnVarNameInTable="columncreated_by" msprop:Generator_ColumnPropNameInRow="created_by" msprop:Generator_ColumnPropNameInTable="created_byColumn" msprop:Generator_UserColumnName="created_by" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="created_date" msprop:Generator_ColumnVarNameInTable="columncreated_date" msprop:Generator_ColumnPropNameInRow="created_date" msprop:Generator_ColumnPropNameInTable="created_dateColumn" msprop:Generator_UserColumnName="created_date" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="created_host" msprop:Generator_ColumnVarNameInTable="columncreated_host" msprop:Generator_ColumnPropNameInRow="created_host" msprop:Generator_ColumnPropNameInTable="created_hostColumn" msprop:Generator_UserColumnName="created_host" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="last_modified_by" msprop:Generator_ColumnVarNameInTable="columnlast_modified_by" msprop:Generator_ColumnPropNameInRow="last_modified_by" msprop:Generator_ColumnPropNameInTable="last_modified_byColumn" msprop:Generator_UserColumnName="last_modified_by" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="last_modified_date" msprop:Generator_ColumnVarNameInTable="columnlast_modified_date" msprop:Generator_ColumnPropNameInRow="last_modified_date" msprop:Generator_ColumnPropNameInTable="last_modified_dateColumn" msprop:Generator_UserColumnName="last_modified_date" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="last_modified_host" msprop:Generator_ColumnVarNameInTable="columnlast_modified_host" msprop:Generator_ColumnPropNameInRow="last_modified_host" msprop:Generator_ColumnPropNameInTable="last_modified_hostColumn" msprop:Generator_UserColumnName="last_modified_host" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:vertical_studio_selection_dtl" />
+      <xs:field xpath="mstns:user_id" />
+      <xs:field xpath="mstns:course_code" />
+      <xs:field xpath="mstns:semester_type" />
+      <xs:field xpath="mstns:year_semester" />
+    </xs:unique>
+    <xs:unique name="studio_wise_instructor_dtl_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:studio_wise_instructor_dtl" />
+      <xs:field xpath="mstns:studio_code" />
+      <xs:field xpath="mstns:instructor_code" />
+      <xs:field xpath="mstns:semester_type" />
+      <xs:field xpath="mstns:year_semester" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

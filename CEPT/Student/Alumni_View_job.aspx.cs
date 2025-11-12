@@ -1,0 +1,20 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+
+public partial class Student_Alumni_View_job : System.Web.UI.Page
+{
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        if (Session["UserId"] != null && Session["user_type"] != null)
+        {
+            if (Session["user_type"].ToString() != "S")
+            {
+                Response.Redirect("~/Student/Dashboard.aspx");
+            }
+        }
+    }
+}

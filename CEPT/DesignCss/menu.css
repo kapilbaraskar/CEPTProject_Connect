@@ -1,0 +1,628 @@
+﻿/**
+ *********************************************
+ * Prototype of styles for horizontal CSS-menu
+ * @data 30.06.2009
+ *********************************************
+ * (X)HTML-scheme:
+ *  <div id="menu">
+ *      <ul class="menu">
+ *          <li><a href="#" class="parent"><span>level 1</span></a>
+ *              <div><ul>
+ *                  <li><a href="#" class="parent"><span>level 2</span></a>
+ *                      <div><ul><li><a href="#"><span>level 3</span></a></li></ul></div>
+ *                  </li>
+ *              </ul></div>
+ *          </li>
+ *          <li class="last"><a href="#"><span>level 1</span></a></li>
+ *      </ul>
+ *  </div>
+ *********************************************
+ */
+ 
+li a span#login1{ display:none !important;}
+@media only screen and (max-width: 999px) {
+	#wrapper {border:none !important;}
+}
+@media only screen and (max-width: 830px) {
+footer .fleft{ margin:20px auto 20px; float:none; width:auto; display:table;}
+footer .social-media-icon{ margin:-40px auto 0; float:none; width:auto; display:table; top:-15px;}
+}
+
+@media only screen and (max-width: 800px) {
+	li a span#login1{ display:none !important;}
+	 div#menu1{margin-top:5px !important;}
+	 div#menu ul {width:58%;}
+	 
+	 ul.all-staff li{margin-left:9%;}
+	 div#menu1 span {padding-left: 14px !important;}
+	 div#menu1 ul ul a span { padding-left:0px !important;}
+
+}
+
+@media only screen and (max-width: 768px) {
+	div#menu1 li span {font-size:12px;}
+	div#menu1 li + li + li + li + li span {padding-left: 5px;}
+	div#menu1 li + li + li + li + li a {padding-right: 5px;}
+	div#menu1 li + li + li + li + li div { margin-left:20px !important;}
+	
+	
+ul.all-staff li{margin-left:8%;}
+
+
+
+
+}
+
+@media only screen and (max-width: 767px) {
+#menu { width:auto; position:absolute; right:8%; z-index:9999; margin-top:28px !important;}
+#menu .menu{ display:none; position:absolute; width:auto; padding:5px 15px 5px 10px !important; right:38px; top:-6px; }
+#menu .nav-icon{ position:absolute; right:0px; margin-top:-7px;}
+#menu .nav-icon a{ height:28px; width:38px; background:url(../images/top-right-menu-icon.png) no-repeat center center !important; }
+.search{ margin:0px 19% 0 0; float:right; position:relative; top:25px;}
+div#menu ul {  display:table; float:left; }
+div#menu li { float:none !important; display:table;}
+div#menu ul.menu>li:hover>a span { color:#fff !important;}
+div#menu ul.menu>li a span { color:#fff !important;}
+div#menu li img{ display:none;}
+
+#menu:hover .menu{ display:block !important;}
+.login{ display:none !important;}
+li a span#login{ display:none !important;}
+li a span#login1{ display:block !important;}
+
+div#menu li.login {}
+div#menu li div {position: absolute; z-index:9999; padding:10px 2% 10px 1%; left:-118px !important; bottom:0px; top:auto !important; width: 140px !important; background:none !important; }
+div#menu li div a{ display:block; background:none !important;  width:87%; margin:0px 0 0 -10px; text-align:left; padding:0 10px; color:#fff;}
+div#menu li:hover div{ display:block !important;}
+
+
+div#menu1 {margin-top: 0px !important;margin-right:3% !important;}
+
+div#menu1:hover ul{ display:block;}
+div#menu1 ul{ display:none; background:#748238; padding-bottom:10px !important; clear:right;}
+div#menu1 ul li{float:none; margin:0px; padding:0px; width:200px; background:#999;}
+div#menu1 ul li a{color:#fff; width:94%; width:100px !important \9;}
+div#menu1 img{cursor:pointer; display:block !important; cursor:pointer; float:right;}
+div#menu1 span {color: #fff !important; text-align: left !important; padding-left: 15px !important; min-width:106px !important;}
+
+div#menu1 li + li + li + li + li div { margin-left:0 !important;}
+div#menu1 li div {top:0px !important; position: absolute; left: -135px !important; width: 135px; background:#fff;}
+div#menu1 ul li:hover div{ display:block;}
+
+div#menu1 ul ul a {padding-left: 0px !important; margin-left:0px !important;}
+
+
+}
+
+
+@media only screen and (max-width: 600px) {
+	/*div#menu1 li span {font-size:11px;}*/
+div#menu ul {min-width:72% !important;}
+div#menu li {margin: 0 0 0 1.4%;}
+div#menu img { float:left; margin:3px 0 0 2%;}
+
+.prog-deta{width:9.0047%; margin-left:2.7234%; }
+.prog-deta ul li{display:table; width:100%;}
+.prog-deta h5{ font-size:11px !important;}
+.prog-deta h5 strong{font-size:12px !important;}
+
+ ul.all-staff li{margin-left:10.7992%;}
+
+
+
+.tab-menu{ display:block;}
+.tab-menu ul{ list-style-type:none;}
+.tab-menu ul li{}
+footer a{padding:0 0px !important;}
+ul.all-staff li{margin-left:13.5%;}
+}
+div#menu1 img{display:none;}
+
+/*.nav1{ float:right; margin-right:3%; margin-top:12px; position:relative; z-index:99;}
+.nav1 ul{ list-style-type:none;}
+.nav1 ul li{ float:left; margin:0 0 0 6px;}
+.nav1 ul li img{margin-top:1px;}
+.nav1 ul li a{ font-size:11px; color:#404143; text-decoration:none; padding-bottom:7px;}
+.nav1 ul li a:hover{ background:url(../images/selected-img-l.png) no-repeat center bottom; color:#748238;}*/
+
+
+/* menu::base */
+
+div#menu li div{ display:none !important;}
+div#menu {
+    height: 23px;
+    padding-left: 0px;
+    width:auto; top:0px;
+	margin-top:12px; margin-right:3%;
+	float:right;
+	width:auto;
+}
+
+div#menu ul {width:auto;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+div#menu ul.menu{
+    padding-right: 0px;
+}
+div#menu li img{ margin-top:2px;}
+div#menu li {
+    margin: 0 0 0 6px;
+    padding: 0 0 0 0;
+    float: left;
+}
+div#menu ul ul li {z-index: 9;}
+div#menu li div {
+    list-style: none;
+    float: left;
+    position: absolute;
+    z-index: 11;
+    top: 52px;
+    left: 0;
+    visibility: hidden;
+    width: 180px;
+	margin: 0px 0 0 -4px;
+    padding: 0;
+}
+div#menu ul ul {
+	z-index: 12;
+	padding: 0px 4px 10px 4px;
+	margin: 10px 0 0 0;    
+}
+div#menu li:hover>div {
+    visibility: visible;
+}
+
+div#menu a {
+    position: relative;
+    z-index: 10;
+    height: 23px;
+    display: block;
+    float: left; 
+    line-height: 23px;
+    text-decoration: none;
+    margin-top: 1px;
+    white-space: nowrap;
+    width: auto;
+    padding-right:5px;
+    text-align:center;
+	outline:none;
+	text-transform:lowercase;
+}
+div#menu span {
+    margin-top: 0px;
+    padding-left: ;
+    padding-right: 0px;
+    color: #404143;
+	font-family: 'OpenSansRegular';
+    font-size: 12px ;
+    background: none;
+    line-height: 14px;	
+    display: block;
+    cursor: pointer;
+    background-repeat: no-repeat;
+    background-position: 95% 0;
+    text-align: center;
+}
+
+/* menu::level1 */
+div#menu a {
+    padding: 0 0px 0 0;
+    line-height: 23px;
+    height: 23px;
+    margin-right: 0px;
+    _margin-right: 1px;
+    background: none;
+}
+div#menu a:hover {
+    background:  url(../images/select-img-7.png) repeat-x right 10px;
+}
+div#menu a:hover span {
+    background: url(../images/selected-left-sub.png) no-repeat 0 -3px;
+	/*background:none;*/
+}
+div#menu li.current a span{font-family: 'OpenSansSemiBold'; color:#000 !important;}
+div#menu li.current a,
+div#menu ul.menu>li:hover>a {
+    background: url(../images/select-img-7.png)  repeat-x right 16px;
+}
+div#menu li.current a span,
+div#menu ul.menu>li:hover>a span {
+    /*background: url(../images/selected-left-sub.png) no-repeat 0 -3px;*/
+	background:none;
+}
+
+div#menu ul.menu>li:hover>a span {
+	  color: #748238;
+}
+div#menu li { }
+div#menu li.last { background: none; }
+
+/* menu::level2 */
+div#menu ul ul li {
+    background: none;
+    padding: 0;
+}
+div#menu ul ul a {
+    padding: 0px;
+    height: auto;
+    float: none;
+    display: block;
+    line-height: 23px;
+    font-size: 13px;
+    color: #fff;
+    z-index: -1;
+    padding-left: 5px;
+    white-space: normal;
+    margin: 0 8px;
+}
+    
+div#menu ul ul a span {
+	  padding: 0 5px;
+    line-height: 23px;
+    font-size: 13px;
+}
+div#menu li.current ul a,
+div#menu li.current ul a span {
+    background:none;
+}
+div#menu ul ul a:hover {
+ background:none;
+ background-color: #3c3c3c;
+}
+div#menu ul ul a:hover span {
+	background:none;
+	color: #748238;
+}
+div#menu ul ul a.parent {
+  background: url(../images/submenu-pointer.png) no-repeat right bottom;
+  _background-image: url(../images/submenu-pointer-hover.gif);
+}
+div#menu ul ul a.parent span {
+  background:none; 
+}
+div#menu ul ul a.parent:hover {
+  background: url(../images/submenu-pointer.png) no-repeat right bottom;
+  _background: url(../images/submenu-pointer-hover.gif) no-repeat right bottom;
+  background-color: #3c3c3c;
+}
+div#menu ul ul a.parent:hover span {
+  background:none; 
+}
+div#menu ul ul span {
+	
+    margin-top: 0;
+    text-align: left;
+}
+div#menu ul ul li.last { background: none; }
+div#menu ul ul li {
+    width: 100%;
+}
+
+/* menu::level3 */
+div#menu ul ul div {
+    width: 180px;
+    padding: 0;
+    margin: -62px 0 0 165px !important;
+}
+div#menu ul ul ul {
+    padding: 10px 4px 0 4px;	
+}
+div#menu ul ul div li {
+    position:relative;
+    top:-10px;
+}
+
+/* lava lamp */
+div#menu li.back {
+    background:none;
+	/*background: url(../images/selected-left-sub.png) no-repeat 0 0;*/
+    width:5px;
+    height:23px;
+    z-index:8;
+    position:absolute;
+    padding: 0;
+    margin: 0px 0 0 1px;
+}
+
+div#menu li.back .left {
+    padding:0;
+    width:auto;
+    background: url(../images/select-img-7.png) repeat-x right 18px;
+    height: 23px;
+    margin: 0 2px 0 0px;
+    float: none;
+    position: relative;
+    top: 0;
+    left: 0;
+    visibility: visible;
+}
+
+
+/* menu::base */
+div#menu1{
+    height: 33px;
+    padding-left: 0px;
+	margin:9px 1.6% 0 0;
+	float:left;
+	clear:right;
+	*min-width:76%;
+}
+
+div#menu1 ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+	float:left;
+}
+div#menu1 ul.menu {padding-right:0px;}
+
+div#menu1 li {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    display: block;
+    float: left;
+    z-index: 9;
+    width: auto;
+}
+div#menu1 ul ul li {
+    z-index: 20;
+}
+div#menu1 li div {
+    list-style: none;
+    float: left;
+    position: absolute;
+    z-index:20;
+    top: 33px;
+    left: 0;
+    visibility: hidden;
+    width: 100%;
+	margin: 0px 0 0 -0px;
+    padding: 0; 
+    background:#fff;
+}
+
+div#menu1 li + li + li + li + li div { margin-left:32px;}
+div#menu1 ul ul {
+	z-index: 12;
+    padding: 0px;
+    background:#fff;
+    margin: 10px 0 0 0;
+	width: 100%;
+	box-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
+}
+div#menu1 li:hover>div {
+    visibility: visible;
+}
+
+div#menu1 a {
+    position: relative;
+    z-index: 20;
+    height: 33px;
+    display: block;
+    float: left;
+    line-height: 50px;
+    text-decoration: none;
+    margin-top: 1px;
+    white-space: nowrap;
+    width: auto;
+    padding-right:5px;
+    text-align:center;
+	outline:none;
+}
+div#menu1 span {
+    margin-top:3px;
+    padding-left: 15px;
+    color: #717070;
+      font: normal normal normal 16px/1.4em arial,'ｍｓ ｐゴシック','ms pgothic','돋움',dotum,helvetica,sans-serif;
+	
+    font-size:17px;
+    background: none;
+    line-height: 33px;	
+    display: block;
+    cursor: pointer;
+    background-repeat: no-repeat;
+    background-position: 95% 0;
+    text-align: center;
+	min-width:106px;
+}
+
+/* menu::level1 */
+div#menu1 a {
+    padding: 0 10px 0 0;
+    line-height: 50px;
+    height: 33px;
+    margin-right: 4px;
+    _margin-right: 1px;
+    background: none;
+ 
+}
+div#menu1 li.current a,
+div#menu1 ul.menu>li:hover>a {
+    background: url(../images/selected-img-7.png)  no-repeat center 0;
+}
+div#menu1 li.current a span{ color:#000; font-family: 'OpenSansBold';}
+
+div#menu1 ul.menu>li:hover>a span {
+    background: url(../images/selected-left-sub.png) no-repeat 0 -3px;
+	background:none;
+}
+
+div#menu1 ul.menu>li:hover>a span {
+	  color: #000;
+}
+div#menu1 li {  }
+div#menu1 li.last { background: none; }
+
+/* menu::level2 */
+
+div#menu1 ul ul li {
+    background: none;
+    padding: 0;
+	margin: 0 0 10px; 
+}
+div#menu1 ul ul a {
+    padding: 0px;
+    height: auto;
+    float: none;
+    display: block;
+    line-height: 15px;
+    font-size: 13px;
+    color: #fff;
+    z-index: -1;
+    padding-left: 5px;
+    white-space: normal;
+    margin: 0 8px;
+    text-transform: none;
+}
+    
+div#menu1 ul ul a span {
+	padding: 0 0px;
+    line-height: 15px;
+    font-size: 16px;
+	color:#000; font-weight:normal;
+
+}
+div#menu1 li.current ul a,
+div#menu1 li.current ul a span{background:none; color:#fff;}
+div#menu1 ul ul a:hover {
+ background:none;
+ /*background-color: #3c3c3c;*/
+}
+div#menu1 ul ul a:hover span {
+	background:none;
+	color: #717070;
+}
+div#menu1 ul ul a.parent {
+  /*background: url(../images/submenu-pointer.png) no-repeat right bottom;
+  _background-image: url(../images/submenu-pointer-hover.gif);*/
+}
+div#menu1 ul ul a.parent span {
+  /*background:none; */
+}
+div#menu1 ul ul a.parent:hover {
+  /*background: url(../images/submenu-pointer.png) no-repeat right bottom;
+  _background: url(../images/submenu-pointer-hover.gif) no-repeat right bottom;
+  background-color: #3c3c3c;*/
+}
+div#menu1 ul ul a.parent:hover span {
+  background:none; 
+}
+div#menu1 ul ul span {
+	
+    margin-top: 0;
+    text-align: left;
+}
+div#menu1 ul ul li.last { background: none; }
+div#menu1 ul ul li {
+    width: 100%;
+    padding-top: 5px;
+}
+
+/* menu::level3 */
+div#menu1 ul ul div {
+    width: 180px;
+    padding: 0;
+    margin: -62px 0 0 165px !important;
+}
+div#menu1 ul ul ul {
+    padding: 10px 4px 0 4px;	
+}
+div#menu1 ul ul div li {
+    position:relative;
+    top:-10px;
+}
+
+/* lava lamp */
+div#menu1 li.back {
+	background:none;
+    width: 5px;
+    height: 33px;
+    z-index: 8;
+    position: absolute;
+    padding: 0;
+    margin: 0px 0 0 0;
+}
+
+div#menu1 li.back .left {
+    padding:0;
+    width:auto;
+    background: url(../images/selected-img-7.png) no-repeat center 0;
+    height: 33px;
+    margin: 0 ;
+    float: none;
+    position: relative;
+    top: 0;
+    left: 0;
+    visibility: visible;
+}
+
+.li_border
+{
+	border-top : 1px solid
+}
+	
+	 .font_8
+                    {
+                        font: normal normal normal 14px/1.4em Arial, 'ｍｓ ｐゴシック' , 'ms pgothic' , '돋움' ,dotum,helvetica,sans-serif;
+                        color: #4A4A4A;
+                    }
+                     .font_2
+                    {
+                        font: normal normal normal 24px/1.4em 'Open Sans' ,sans-serif;
+                        color: #717070;
+                    }
+                     .s5link
+                    {
+                        border-radius: 0;
+                        position: absolute;
+                        top: 0;
+                        right: 0;
+                        bottom: 0;
+                        left: 0;
+                        background-color: rgba(255, 255, 255, 1);
+                        transition: border-color 0.4s ease 0s, background-color 0.4s ease 0s;
+                        border: solid rgba(255, 255, 255, 1) 2px;
+                        cursor: pointer !important;
+                    }
+                    .s5label
+                    {
+                        font: normal normal normal 14px/1.4em 'open sans' ,sans-serif;
+                        transition: color 0.4s ease 0s;
+                        color: #000000;
+                        display: inline-block;
+                        margin: -webkit-calc(-1 * 2px) 2px 0;
+                        margin: calc(-1 * 2px) 2px 0;
+                        position: relative;
+                        white-space: nowrap;
+                    }
+                    .s5:active[data-state~="mobile"] .s5link, .s5:hover[data-state~="desktop"] .s5link
+                    {
+                        background-color: rgba(255, 255, 255, 1);
+                        border-color: rgba(255, 255, 255, 1);
+                        transition: border-color 0.4s ease 0s, background-color 0.4s ease 0s;
+                    }
+                    .s5:active[data-state~="mobile"] .s5label, .s5:hover[data-state~="desktop"] .s5label
+                    {
+                        color: #000000;
+                        transition: color 0.4s ease 0s;
+                    }
+ .s6
+                    {
+                        border-left: 1px solid rgba(74, 74, 74, 1);
+                        margin-left: -0.5px;
+                   
+                        min-width: 0 !important;
+                    }
+                    .s12bg {border:0px solid rgba(113, 112, 112, 1);background-color:rgba(255, 255, 255, 1);  border-radius:0;  box-shadow:0 1px 4px rgba(0, 0, 0, 0.6);;}
+.s12inlineContent,.s12bg {position:absolute;top:0;right:0;bottom:0;left:0;}
+
+                       .s13
+                    {
+                        border-bottom: 1px solid rgba(67, 122, 45, 1);
+                        height: 0 !important;
+                        min-height: 0 !important;
+                    }
+              

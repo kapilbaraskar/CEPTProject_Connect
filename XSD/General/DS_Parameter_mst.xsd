@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DS_Parameter_mst" targetNamespace="http://tempuri.org/DS_Parameter_mst.xsd" xmlns:mstns="http://tempuri.org/DS_Parameter_mst.xsd" xmlns="http://tempuri.org/DS_Parameter_mst.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="CA_SYSTEMConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="CA_SYSTEMConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.XSD.Properties.Settings.GlobalReference.Default.CA_SYSTEMConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DS_Parameter_mst" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DS_Parameter_mst" msprop:Generator_UserDSName="DS_Parameter_mst">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="DT_ParameterMaster" msprop:Generator_TableClassName="DT_ParameterMasterDataTable" msprop:Generator_TableVarName="tableDT_ParameterMaster" msprop:Generator_TablePropName="DT_ParameterMaster" msprop:Generator_RowDeletingName="DT_ParameterMasterRowDeleting" msprop:Generator_UserTableName="DT_ParameterMaster" msprop:Generator_RowChangingName="DT_ParameterMasterRowChanging" msprop:Generator_RowEvHandlerName="DT_ParameterMasterRowChangeEventHandler" msprop:Generator_RowDeletedName="DT_ParameterMasterRowDeleted" msprop:Generator_RowEvArgName="DT_ParameterMasterRowChangeEvent" msprop:Generator_RowChangedName="DT_ParameterMasterRowChanged" msprop:Generator_RowClassName="DT_ParameterMasterRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="parameter" msprop:Generator_ColumnVarNameInTable="columnparameter" msprop:Generator_ColumnPropNameInRow="parameter" msprop:Generator_ColumnPropNameInTable="parameterColumn" msprop:Generator_UserColumnName="parameter">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="code" msprop:Generator_ColumnVarNameInTable="columncode" msprop:Generator_ColumnPropNameInRow="code" msprop:Generator_ColumnPropNameInTable="codeColumn" msprop:Generator_UserColumnName="code">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="description" msprop:Generator_ColumnVarNameInTable="columndescription" msprop:Generator_ColumnPropNameInRow="description" msprop:Generator_ColumnPropNameInTable="descriptionColumn" msprop:Generator_UserColumnName="description">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="DT_ParameterMaster1" msprop:Generator_TableClassName="DT_ParameterMaster1DataTable" msprop:Generator_TableVarName="tableDT_ParameterMaster1" msprop:Generator_TablePropName="DT_ParameterMaster1" msprop:Generator_RowDeletingName="DT_ParameterMaster1RowDeleting" msprop:Generator_UserTableName="DT_ParameterMaster1" msprop:Generator_RowChangingName="DT_ParameterMaster1RowChanging" msprop:Generator_RowEvHandlerName="DT_ParameterMaster1RowChangeEventHandler" msprop:Generator_RowDeletedName="DT_ParameterMaster1RowDeleted" msprop:Generator_RowEvArgName="DT_ParameterMaster1RowChangeEvent" msprop:Generator_RowChangedName="DT_ParameterMaster1RowChanged" msprop:Generator_RowClassName="DT_ParameterMaster1Row">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="param_key" msprop:Generator_ColumnVarNameInTable="columnparam_key" msprop:Generator_ColumnPropNameInRow="param_key" msprop:Generator_ColumnPropNameInTable="param_keyColumn" msprop:Generator_UserColumnName="param_key">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="param_value" msprop:Generator_ColumnVarNameInTable="columnparam_value" msprop:Generator_ColumnPropNameInRow="param_value" msprop:Generator_ColumnPropNameInTable="param_valueColumn" msprop:Generator_UserColumnName="param_value">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:DT_ParameterMaster" />
+      <xs:field xpath="mstns:parameter" />
+      <xs:field xpath="mstns:code" />
+      <xs:field xpath="mstns:description" />
+    </xs:unique>
+    <xs:unique name="DT_ParameterMaster1_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:DT_ParameterMaster1" />
+      <xs:field xpath="mstns:param_key" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

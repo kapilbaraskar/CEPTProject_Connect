@@ -1,0 +1,51 @@
+﻿<html>
+<head>
+    <link href="../../DesignCss/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="../../DesignJS/jquery.min.js"></script>
+    <script>
+        function subst() {
+            var vars = {};
+            var x = document.location.search.substring(1).split('&');
+            for (var i in x) { var z = x[i].split('=', 2); vars[z[0]] = unescape(z[1]); }
+            var x = ['frompage', 'topage', 'page', 'webpage', 'section', 'subsection', 'subsubsection'];
+            for (var i in x) {
+                var y = document.getElementsByClassName(x[i]);
+                for (var j = 0; j < y.length; ++j) y[j].textContent = vars[x[i]];
+            }
+        }
+    </script>
+</head>
+<body style="border:0; margin-left:45px;margin-bottom:10px;padding-bottom: 50px;" onload="subst()">
+    <div id="div_grade_range">
+        <table style="font-size: 11px;float: right;margin-right: 25px;">
+            <tbody>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td style="padding-left: 10px;">KASTURBHAI LALBHAI</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td style="padding-left: 10px;">CAMPUS, UNIVERSITY RD</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td style="padding-left: 10px;">NAVRANGPURA</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td style="padding-left: 10px;"><b>T:+917926302470</b></td>
+                    <td style="padding-left: 10px;">AHMEDABAD 380009</td>
+                </tr>
+                <tr>
+                    <td>WWW.CEPT.AC.IN</td>
+                    <td style="padding-left: 10px;"><b>F:+917926302075</b></td>
+                    <td style="padding-left: 10px;">GUJARAT, INDIA</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

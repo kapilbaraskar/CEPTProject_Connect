@@ -1,0 +1,9 @@
+﻿    .dt-buttons
+        {
+        float:right;     
+        }
+    .dataTables_filter label input
+    {
+      margin-left:8px;
+
+    }

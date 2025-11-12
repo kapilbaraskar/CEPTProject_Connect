@@ -1,0 +1,694 @@
+﻿<%@ Page Title="Feedback Form - CEPT" Language="C#" MasterPageFile="~/MasterPageDesign.master"
+    AutoEventWireup="true" CodeFile="Student_Feedback_form.aspx.cs" Inherits="Student_Student_Feedback_form" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
+    <script src="../Js/feedbackform.js?t=08112022" type="text/javascript"></script><%--05122018--%><%--21102019--%><%--03052020--%><%--30102020--%>
+
+    <style type="text/css">
+        .row_selected tr
+        {
+            background-color: Red;
+        }
+        .table_header
+        {
+            background-image: none !important;
+            background-color: #2283c5 !important;
+            color: #FFF !important;
+            text-shadow: 0 -1px 0 rgba(0,0,0,0.25) !important;
+            font-size: 16px;
+        }
+        .table_td_width
+        {
+            width: 57px;
+        }
+        .cls_stud_engage_option input
+        {
+            margin-left:25px;
+            vertical-align:bottom;
+        }
+        .cls_txt_course_comment,.cls_txt_course_comment_online_learning
+        {
+            width:95%;
+        }
+        .studio_online_learning 
+        {
+            display:block;
+        }
+    </style>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            //if ('<%= Session["UserId"] %>' == 'PP0004515' || '<%= Session["UserId"] %>' == 'PT201515' || '<%= Session["UserId"] %>' == 'PT300215') {
+            //    $('#div_save_submit').css('display','block');
+            //}
+
+            //$('#div_save_submit').css('display', 'none');
+        });
+    </script>
+</asp:Content>
+
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
+    <div style="width: 25%; float: left; display: none">
+        <div style="margin-left: 25px" class="col-xs-12">
+            <p>
+                <input type="hidden" id="course_code" />
+                <input type="hidden" id="course_type" />
+                <h5>Select Your Course</h5>
+            </p>
+        </div>
+
+        <div id="datalist_saved" style="display: none;">
+            <table cellpadding="0" cellspacing="0" border="0" id="datatable_saved" class="display table table-striped table-bordered table-hover" width="100%">
+                <thead>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div id="divlecture" class="row-fluid" style="font-family: Calibri; font-size: 16px;display: none">
+        <div class="tab-content" style="width: 98%; float: right">
+            <div class="page-header position-relative">
+                <h1 align="center">Student Feedback Form</h1>
+                <h1 align="center"><span style="display: none; font-size: 22px" class="lblclass"></span></h1>
+                <h1 align="center"><span style="font-size: 22px" id="course_type_name"></span></h1>
+            </div>
+            
+            <%--<div class="widget-header widget-header-flat">
+                <h4 class="smaller">
+                    <i class=""></i> CEPT Student Feedback Form - LECTURE Course
+                </h4>
+            </div>--%>
+
+            <p>
+                Thank you for taking the time to complete the student feedback form. At CEPT University,
+                student feedback is a very important resource for assessing and improving the quality
+                of teaching and learning.
+            </p>
+            
+            <p>Please provide reasoned opinions to the following questions.</p>
+            
+            <p>Please give suggestions to improve the course, if any.</p>
+            
+            <p>
+                The summary of responses will be shared with the course instructors after the final
+                grades are published.
+            </p>
+            
+            <p>Your identity will be kept confidential.</p>
+
+            <p>Your feedback is very valuable.</p>
+
+            <br />
+            
+            <%--<p><b>Please select the appropriate box</b></p><br />--%>
+            
+            <p><b>1. Feedback : Course</b></p>
+
+            <div id="divcourse">
+                <table id="course_lecture" border="1" cellspacing="0" cellpadding="0" class="display table table-striped table-bordered table-hover">
+                    <thead>
+                        <tr class="table_header">
+                            <td style='padding-top: 20px;' align='center' rowspan="2">
+                                <b>Sr No. </b>
+                            </td>
+                            <td rowspan="2" style="padding-top: 20px; width: 650px;" align="center" valign="middle">
+                                <b>Your answers to questions below will be useful for assessing the value of this course.</b>
+                                <br />
+                                <b>Instructor evaluation is given separately.</b>
+                            </td>
+                            <td valign="top" colspan="3" style="text-align: center;">
+                                <p><b>Unsatisfactory</b></p>
+                            </td>
+                            <td valign="top" colspan="3" style="text-align: center;">
+                                <p><b>Average</b></p>
+                            </td>
+                            <td valign="top" colspan="2" style="text-align: center;">
+                                <p><b>Good</b></p>
+                            </td>
+                            <td valign="top" style="text-align: center; ">
+                                <p><b>Very Good</b></p>
+                            </td>
+                            <td valign="top" style="text-align: center;">
+                                <p><b>Excellent</b></p>
+                            </td>
+                            <%--<td valign="top"><p><b>Not Applicable</b></p></td>--%>
+                        </tr>
+                        <tr class="table_header">
+                            <td style="text-align: center;">1</td>
+                            <td style="text-align: center;">2</td>
+                            <td style="text-align: center;">3</td>
+                            <td style="text-align: center;">4</td>
+                            <td style="text-align: center;">5</td>
+                            <td style="text-align: center;">6</td>
+                            <td style="text-align: center;">7</td>
+                            <td style="text-align: center;">8</td>
+                            <td style="text-align: center;">9</td>
+                            <td style="text-align: center;">10</td>
+                            <%--<td></td>--%>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <%--<tr>
+                            <td>
+                                The objectives for this course were clearly outlined and communicated
+                            </td>
+                            <td>
+                                <center>
+                                    <input type="radio" name="1.5" class="chkstronglyagree" /></center>
+                            </td>
+                            <td>
+                                <center>
+                                    <input type="radio" name="1.5" class="chkagree" /></center>
+                            </td>
+                            <td>
+                                <center>
+                                    <input type="radio" name="1.5" class="chkneitherAgree" /></center>
+                            </td>
+                            <td>
+                                <center>
+                                    <input type="radio" name="1.5" class="chkdisagree" /></center>
+                            </td>
+                            <td>
+                                <center>
+                                    <input type="radio" name="1.5" class="chkstronglydisagree" /></center>
+                            </td>
+                            <td valign="top">
+                                <%--<center> <input type="radio" name="1.1" class="chknonapplicable" /></center>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                The course met my expectations (based on the course objective)
+                            </td>
+                            <td>
+                                <center>
+                                    <input type="radio" name="1.1" class="chkstronglyagree" /></center>
+                            </td>
+                            <td>
+                                <center>
+                                    <input type="radio" name="1.1" class="chkagree" /></center>
+                            </td>
+                            <td>
+                                <center>
+                                    <input type="radio" name="1.1" class="chkneitherAgree" /></center>
+                            </td>
+                            <td>
+                                <center>
+                                    <input type="radio" name="1.1" class="chkdisagree" /></center>
+                            </td>
+                            <td>
+                                <center>
+                                    <input type="radio" name="1.1" class="chkstronglydisagree" /></center>
+                            </td>
+                            <td valign="top">
+                                <%--<center> <input type="radio" name="1.1" class="chknonapplicable" /></center>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                The course materials including lecture notes and/or readings were useful
+                            </td>
+                            <td>
+                                <center>
+                                    <input type="radio" name="1.2" class="chkstronglyagree" /></center>
+                            </td>
+                            <td valign="top">
+                                <center>
+                                    <input type="radio" name="1.2" class="chkagree" /></center>
+                            </td>
+                            <td valign="top">
+                                <center>
+                                    <input type="radio" name="1.2" class="chkneitherAgree" /></center>
+                            </td>
+                            <td valign="top">
+                                <center>
+                                    <input type="radio" name="1.2" class="chkdisagree" /></center>
+                            </td>
+                            <td valign="top">
+                                <center>
+                                    <input type="radio" name="1.2" class="chkstronglydisagree" /></center>
+                            </td>
+                            <td valign="top">
+                                <%-- <center> <input type="radio" name="1.2" class="chknonapplicable" /></center>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                The assignments helped improve my understanding of the topic or subject area
+                            </td>
+                            <td>
+                                <center>
+                                    <input type="radio" name="1.3" class="chkstronglyagree" /></center>
+                            </td>
+                            <td valign="top">
+                                <center>
+                                    <input type="radio" name="1.3" class="chkagree" /></center>
+                            </td>
+                            <td valign="top">
+                                <center>
+                                    <input type="radio" name="1.3" class="chkneitherAgree" /></center>
+                            </td>
+                            <td valign="top">
+                                <center>
+                                    <input type="radio" name="1.3" class="chkdisagree" /></center>
+                            </td>
+                            <td valign="top">
+                                <center>
+                                    <input type="radio" name="1.3" class="chkstronglydisagree" /></center>
+                            </td>
+                            <td valign="top">
+                                <center>
+                                    <input type="radio" name="1.3" class="chknonapplicable" /></center>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                I had to put in significant effort for the course
+                            </td>
+                            <td>
+                                <center>
+                                    <input type="radio" name="1.6" class="chkstronglyagree" /></center>
+                            </td>
+                            <td>
+                                <center>
+                                    <input type="radio" name="1.6" class="chkagree" /></center>
+                            </td>
+                            <td>
+                                <center>
+                                    <input type="radio" name="1.6" class="chkneitherAgree" /></center>
+                            </td>
+                            <td>
+                                <center>
+                                    <input type="radio" name="1.6" class="chkdisagree" /></center>
+                            </td>
+                            <td>
+                                <center>
+                                    <input type="radio" name="1.6" class="chkstronglydisagree" /></center>
+                            </td>
+                            <td valign="top">
+                                <center>
+                                    <input type="radio" name="1.1" class="chknonapplicable" /></center>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Overall the course sessions were logically presented
+                            </td>
+                            <td>
+                                <center>
+                                    <input type="radio" name="1.4" class="chkstronglyagree" /></center>
+                            </td>
+                            <td valign="top">
+                                <center>
+                                    <input type="radio" name="1.4" class="chkagree" /></center>
+                            </td>
+                            <td valign="top">
+                                <center>
+                                    <input type="radio" name="1.4" class="chkneitherAgree" /></center>
+                            </td>
+                            <td valign="top">
+                                <center>
+                                    <input type="radio" name="1.4" class="chkdisagree" /></center>
+                            </td>
+                            <td valign="top">
+                                <center>
+                                    <input type="radio" name="1.4" class="chkstronglydisagree" /></center>
+                            </td>
+                            <td valign="top">
+                                <%-- <center> <input type="radio" name="1.4" class="chknonapplicable" /></center>
+                            </td>
+                        </tr>--%>
+                    </tbody>
+                </table>
+            </div>
+
+            <br />
+            
+            <p><b>Please share any other comments about the course :</b></p>
+            
+            <table cellpadding="0" cellspacing="0" style="width: 100%">
+                <tbody>
+                    <tr>
+                        <td>
+                            <div class="control-group">
+                                <div>
+                                    <textarea id="txt_course_instruction" style="width: 99%; height: 110px" rows="3"
+                                        cols="50" name="address"></textarea>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <br />
+
+            <p class="instructor_feedback_lable"><b>2. Feedback : Instructor </b></p>
+            <div id="div_lecture">
+                <%--<table border="1" cellspacing="0" cellpadding="0" class="data-table table table-bordered table-striped">
+                    <tbody>
+                        <tr>
+                            <td valign="top">
+                            </td>
+                            <td valign="top">
+                                <p>
+                                    <b>Strongly Agree</b></p>
+                            </td>
+                            <td valign="top">
+                                <p>
+                                    <b>Agree</b></p>
+                            </td>
+                            <td valign="top">
+                                <p>
+                                    <b>Neither Agree nor Disagree</b></p>
+                            </td>
+                            <td valign="top">
+                                <p>
+                                    <b>Disagree</b></p>
+                            </td>
+                            <td valign="top">
+                                <p>
+                                    <b>Strongly Disagree</b></p>
+                            </td>
+                            <td valign="top">
+                                <p>
+                                    <b>Not Applicable</b></p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td valign="top">
+                                <p>
+                                    2.1 The sessions were held as scheduled</p>
+                            </td>
+                           <td>
+                           <center> <input type="radio" name="2.1" class="chkstronglyagree" /></center>
+                            </td>
+                            <td valign="top">
+                              <center> <input type="radio" name="2.1" class="chkagree" /></center>
+                            </td>
+                            <td valign="top">
+                            <center> <input type="radio" name="2.1" class="chkneitherAgree" /></center>
+                            </td>
+                            <td valign="top">
+                            <center> <input type="radio" name="2.1" class="chkdisagree" /></center>
+                            </td>
+                            <td valign="top">
+                            <center> <input type="radio" name="2.1" class="chkstronglydisagree" /></center>
+                            </td>
+                            <td valign="top">
+                             <center> <input type="radio" name="2.1" class="chknonapplicable" /></center>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td valign="top">
+                                <p>
+                                    2.2 The course was taught well and key concepts were clearly communicated</p>
+                            </td>
+                             <td>
+                           <center> <input type="radio" name="2.3" class="chkstronglyagree" /></center>
+                            </td>
+                            <td valign="top">
+                              <center> <input type="radio" name="2.3" class="chkagree" /></center>
+                            </td>
+                            <td valign="top">
+                            <center> <input type="radio" name="2.3" class="chkneitherAgree" /></center>
+                            </td>
+                            <td valign="top">
+                            <center> <input type="radio" name="2.3" class="chkdisagree" /></center>
+                            </td>
+                            <td valign="top">
+                            <center> <input type="radio" name="2.3" class="chkstronglydisagree" /></center>
+                            </td>
+                            <td valign="top">
+                             <center> <input type="radio" name="2.3" class="chknonapplicable" /></center>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>
+                                    2.3 Conceptual and critical thinking was encouraged</p>
+                            </td>
+                            <td>
+                           <center> <input type="radio" name="2.4" class="chkstronglyagree" /></center>
+                            </td>
+                            <td valign="top">
+                              <center> <input type="radio" name="2.4" class="chkagree" /></center>
+                            </td>
+                            <td valign="top">
+                            <center> <input type="radio" name="2.4" class="chkneitherAgree" /></center>
+                            </td>
+                            <td valign="top">
+                            <center> <input type="radio" name="2.4" class="chkdisagree" /></center>
+                            </td>
+                            <td valign="top">
+                            <center> <input type="radio" name="2.4" class="chkstronglydisagree" /></center>
+                            </td>
+                            <td valign="top">
+                             <center> <input type="radio" name="2.4" class="chknonapplicable" /></center>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td valign="top">
+                                <p>
+                                    2.4 The instructor made the subject interesting</p>
+                            </td>
+                            <td>
+                           <center> <input type="radio" name="2.5" class="chkstronglyagree" /></center>
+                            </td>
+                            <td valign="top">
+                              <center> <input type="radio" name="2.5" class="chkagree" /></center>
+                            </td>
+                            <td valign="top">
+                            <center> <input type="radio" name="2.5" class="chkneitherAgree" /></center>
+                            </td>
+                            <td valign="top">
+                            <center> <input type="radio" name="2.5" class="chkdisagree" /></center>
+                            </td>
+                            <td valign="top">
+                            <center> <input type="radio" name="2.5" class="chkstronglydisagree" /></center>
+                            </td>
+                            <td valign="top">
+                             <center> <input type="radio" name="2.5" class="chknonapplicable" /></center>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td valign="top">
+                                <p>
+                                    2.5 Questions raised in class were effectively addressed</p>
+                            </td>
+                           <td>
+                           <center> <input type="radio" name="2.6" class="chkstronglyagree" /></center>
+                            </td>
+                            <td valign="top">
+                              <center> <input type="radio" name="2.6" class="chkagree" /></center>
+                            </td>
+                            <td valign="top">
+                            <center> <input type="radio" name="2.6" class="chkneitherAgree" /></center>
+                            </td>
+                            <td valign="top">
+                            <center> <input type="radio" name="2.6" class="chkdisagree" /></center>
+                            </td>
+                            <td valign="top">
+                            <center> <input type="radio" name="2.6" class="chkstronglydisagree" /></center>
+                            </td>
+                            <td valign="top">
+                             <center> <input type="radio" name="2.6" class="chknonapplicable" /></center>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>--%>
+            </div>
+            
+            <div style="height: 10px; background-color: #e4e6e9;"></div>
+
+            <%-- <h1><hr /></h1>--%>
+            <%-- <div>
+                (a) Have you been Taught/Supported by the AA? &nbsp;
+                <input type="radio" name="taught_supporte_AA" value="Y">Yes
+                <input type="radio" name="taught_supporte_AA" checked value="N">No
+                <br />
+                <br />
+                <div id="div_tick_TS_yes" style="display:none;">
+                &nbsp; &nbsp; &nbsp; Please Tick the relevant
+                <input type="radio" name="taught_supporte_yes" value="T">Taught
+                <input type="radio" name="taught_supporte_yes" value="S">Supported
+                </div>
+            </div>--%>
+            
+            <br />
+            
+            <div id="div_AA_instructor_selection" style="display: none;">
+                <br />
+                <p class="instructor_feedback_lable"><b>3. Feedback : Academic Associate </b></p>
+            </div>
+
+            <div id="div_AA_instructor" style="display: none;"></div>
+            
+            <br/>
+            
+            <div id="div_TA_instructor_selection" style="display: none;">
+                <br />
+                <p class="instructor_feedback_lable"><b>4. Feedback : Teaching Associate</b></p>
+            </div>
+
+            <div id="div_TA_instructor" style="display: none;"></div>
+            
+            <div id="div_student_engagement_title" style="display: none;">
+                <br />
+                <p class="instructor_feedback_lable"><b>5. Feedback : Student Engagement</b></p>
+            </div>
+
+            <div id="" style="display: none;">
+                <table id="tbl_student_engagement" class="table table-bordered table-striped"></table>
+            </div>
+            <div id="online_learning_section_e_d" style="display:block;">
+
+            <p class="studio_online_learning"><b>Feedback : Online Learning</b></p>
+
+            <div id="divonlinecourse" class="studio_online_learning">
+                <table id="online_learning" border="1" cellspacing="0" cellpadding="0" class="display table table-striped table-bordered table-hover">
+                    <thead>
+                        <tr class="table_header">
+                            <td style='padding-top: 20px;' align='center' rowspan="2">
+                                <b>Sr No. </b>
+                            </td>
+                            <td rowspan="2" style="padding-top: 20px; width: 650px;" align="center" valign="middle">
+                                <b>Your answers to questions below will be useful for assessing the Online teaching activity and improving it.</b>
+                                <%--<br />
+                                <b>Instructor evaluation is given separately.</b>--%>
+                            </td>
+                            <td valign="top" colspan="3" style="text-align: center;">
+                                <p><b>Unsatisfactory</b></p>
+                            </td>
+                            <td valign="top" colspan="3" style="text-align: center;">
+                                <p><b>Average</b></p>
+                            </td>
+                            <td valign="top" colspan="2" style="text-align: center;">
+                                <p><b>Good</b></p>
+                            </td>
+                            <td valign="top" style="text-align: center; ">
+                                <p><b>Very Good</b></p>
+                            </td>
+                            <td valign="top" style="text-align: center;">
+                                <p><b>Excellent</b></p>
+                            </td>
+                            <%--<td valign="top"><p><b>Not Applicable</b></p></td>--%>
+                        </tr>
+                        <tr class="table_header">
+                            <td style="text-align: center;">1</td>
+                            <td style="text-align: center;">2</td>
+                            <td style="text-align: center;">3</td>
+                            <td style="text-align: center;">4</td>
+                            <td style="text-align: center;">5</td>
+                            <td style="text-align: center;">6</td>
+                            <td style="text-align: center;">7</td>
+                            <td style="text-align: center;">8</td>
+                            <td style="text-align: center;">9</td>
+                            <td style="text-align: center;">10</td>
+                            <%--<td></td>--%>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+
+            <br />
+            
+            <p><b>Please share your suggestions for improving the online learning experience :</b></p>
+            
+            <table cellpadding="0" cellspacing="0" style="width: 100%">
+                <tbody>
+                    <tr>
+                        <td>
+                            <div class="control-group">
+                                <div>
+                                    <textarea id="txt_course_instruction_online_learning" style="width: 99%; height: 110px" rows="3"
+                                        cols="50" name="address"></textarea>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+          
+            </div>
+
+            <%--<p>
+                <br />
+                <b><%--3 What aspects of this course or the delivery/teaching method did you like best? </b></p>
+            <table cellpadding="0" cellspacing="0">
+                <tbody>
+                    <tr>
+                        <td>
+                            <table cellpadding="0" cellspacing="0" width="100%">
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <div class="control-group">
+                                                <div>
+                                                    <textarea id="txt_lecture_aspect" style="width: 230%; height: 110px" rows="3" cols="50"
+                                                        name="address"></textarea>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <br />
+            <p>
+                <b>4 Please provide suggestions (if any) on how the course and/or delivery method can
+                    be improved, with regard to the above points where you have disagreed.</b></p>
+            <table cellpadding="0" cellspacing="0">
+                <tbody>
+                    <tr>
+                        <td>
+                            <table cellpadding="0" cellspacing="0" width="100%">
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <div class="control-group">
+                                                <div>
+                                                    <textarea id="txt_lecture_suggestion" style="width: 230%; height: 150px" rows="3"
+                                                        cols="50" name="address"></textarea>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>--%>
+
+            <div id="div_save_submit" style="display: block;" class="row-fluid">
+                <div style="margin-top: 5px">
+                    <table align="center" border="0" cellpadding="10" cellspacing="0">
+                        <tr>
+                            <td>
+                                <button type="button" id="btn_save" style="display: block; line-height: inherit;
+                                    width: 110px; height: 36px;" class="btn btn-lg btn-primary">
+                                    <i class="icon-save bigger-160"></i>Save
+                                </button>
+                            </td>
+                            <td>
+                                <button id="btn_lecture" style="display: block; line-height: inherit; width: 110px;
+                                    height: 36px;" class="btn btn-lg btn-primary">
+                                    <i class="icon-save bigger-160"></i>SUBMIT
+                                </button>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</asp:Content>

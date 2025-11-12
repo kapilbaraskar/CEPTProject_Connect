@@ -1,0 +1,2 @@
+Fees Type Before payment  save  successfully for user_id :adminDatetime :6/16/2015 4:37:01 PM
+Fees Type saved before payment user_id:adminsemester:6/16/2015 4:37:01 PMmessageData Saved Successfully

@@ -1,0 +1,1748 @@
+BEGIN:VCALENDAR
+PRODID:-//Google Inc//Google Calendar 70.9054//EN
+VERSION:2.0
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:tushar.bose@cept.ac.in
+X-WR-TIMEZONE:Asia/Calcutta
+BEGIN:VTIMEZONE
+TZID:Asia/Calcutta
+X-LIC-LOCATION:Asia/Calcutta
+BEGIN:STANDARD
+TZOFFSETFROM:+0530
+TZOFFSETTO:+0530
+TZNAME:IST
+DTSTART:19700101T000000
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+DTSTART:20160421T090000Z
+DTEND:20160421T100000Z
+DTSTAMP:20160428T131812Z
+UID:r15ct1g8c0v3ltvk8r3fubjs24@google.com
+CREATED:20160415T071701Z
+DESCRIPTION:
+LAST-MODIFIED:20160415T071701Z
+LOCATION:
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Review Meeting
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20160419T090000Z
+DTEND:20160419T100000Z
+DTSTAMP:20160428T131812Z
+UID:ee19dd41hlpsims964q1t0jqlo@google.com
+CREATED:20160415T071619Z
+DESCRIPTION:
+LAST-MODIFIED:20160415T071632Z
+LOCATION:
+SEQUENCE:1
+STATUS:CONFIRMED
+SUMMARY:Review Meeting
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20160419T070000Z
+DTEND:20160419T080000Z
+DTSTAMP:20160428T131812Z
+UID:v87n3t70niibo8hkv2uc2ja368@google.com
+CREATED:20160415T071336Z
+DESCRIPTION:
+LAST-MODIFIED:20160415T071425Z
+LOCATION:
+SEQUENCE:1
+STATUS:CONFIRMED
+SUMMARY:Budget
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20160412T090000Z
+DTEND:20160412T100000Z
+DTSTAMP:20160428T131812Z
+ORGANIZER;CN=bhargavadhvaryu@gmail.com:mailto:bhargavadhvaryu@gmail.com
+UID:7gv6p1u48vdqif2oh95jv607jo@google.com
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;CN=tu
+ shar.bose@cept.ac.in;X-NUM-GUESTS=0:mailto:tushar.bose@cept.ac.in
+CREATED:20160411T112153Z
+DESCRIPTION:
+LAST-MODIFIED:20160411T112153Z
+LOCATION:
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Tushar Bose - Course catelog
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20160224T103000Z
+DTEND:20160224T113000Z
+DTSTAMP:20160428T131812Z
+ORGANIZER;CN=jharna.guleria@cept.ac.in:mailto:jharna.guleria@cept.ac.in
+UID:gaatci9912osaa45obatj0bllo@google.com
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;CN=tu
+ shar.bose@cept.ac.in;X-NUM-GUESTS=0:mailto:tushar.bose@cept.ac.in
+CREATED:20160224T053044Z
+DESCRIPTION:
+LAST-MODIFIED:20160224T054114Z
+LOCATION:Meeting Room\, USO Office 
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:VF Portal Meeting
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20160113T033000Z
+DTEND:20160113T113000Z
+DTSTAMP:20160428T131812Z
+ORGANIZER;CN=Events:mailto:cept.ac.in_cu2q4f7dpghaggll4k18s63puc@group.cale
+ ndar.google.com
+UID:gvb6i6fas3ao52mn37bvgmna70@google.com
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;CN=tu
+ shar.bose@cept.ac.in;X-NUM-GUESTS=0:mailto:tushar.bose@cept.ac.in
+CREATED:20160101T102657Z
+DESCRIPTION:
+LAST-MODIFIED:20160114T044818Z
+LOCATION:Auditorium
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Seminar_Landscape  Perspectives
+TRANSP:OPAQUE
+ATTACH;FILENAME=Seminar_Landscape  Perspectives.jpg:https://drive.google.co
+ m/a/cept.ac.in/file/d/0B1LlNybZk1tLYmRremxpalQtb0E/view?usp=drive_web
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20160115T103000Z
+DTEND:20160115T123000Z
+DTSTAMP:20160428T131812Z
+ORGANIZER;CN=Events:mailto:cept.ac.in_cu2q4f7dpghaggll4k18s63puc@group.cale
+ ndar.google.com
+UID:vaf4jfm09e9on09njv4f820d70@google.com
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;CN=tu
+ shar.bose@cept.ac.in;X-NUM-GUESTS=0:mailto:tushar.bose@cept.ac.in
+CREATED:20160107T062349Z
+DESCRIPTION:You are invited to attend the lecture by Christophe Jaffrelot o
+ n The Gujarat Model Revisited on 15 January\, 2016 (Friday)\, organised und
+ er the CEPT AU Lecture Series.\n\nLecture by:           CHRISTOPHE JAFFRELO
+ T\n\nTitle:                     The Gujarat Model Revisited\n\nVenue:      
+             Auditorium at CEPT University\n\n     Kasturbhai Lalbhai Campus
+ \, Navrangpura\, Ahmedabad 380009\n\nDr. Christophe Jaffrelot is senior res
+ earch fellow at CERI-Sciences Po/CNRS\, Professor of Indian Politics and So
+ ciology at the King’s India Institute (London) and Global Scholar at Prince
+ ton University. He has been visiting professor at Columbia University\, Yal
+ e and SAIS (Johns Hopkins). He works at The Carnegie Endowment for Internat
+ ional Peace as a Non Resident Scholar.\n\nAmong his publications are The Hi
+ ndu nationalist movement and Indian politics\, 1925 to 1990s\, New Delhi\, 
+ Penguin\, 1999\, India’s Silent Revolution. The Rise of the Lower Castes in
+  North India\, New Delhi\, Permanent Black\, 2003\, Dr. Ambedkar and Untouc
+ hability. Analysing and Fighting Caste\, New Delhi\, Permanent Black 2005 a
+ nd The Pakistan Paradox. Instability and Resilience\, London/Hurst\, New Yo
+ rk/OUP and New Delhi\, Random House\, 2015. He has also co-edited with Laur
+ ent Gayer\, Muslims in Indian cities. Trajectories of marginalization\, New
+  Delhi\, HarperCollins\, 2012.\n\nLectures under the CEPT AU Lecture Series
+  are free and open for all.\n\nPlease find attached the poster for the same
+ .\n\nWe look forward for your presence in the lecture.
+LAST-MODIFIED:20160111T052612Z
+LOCATION:Auditorium at CEPT University
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:CEPT- AU Lecture Series: Christophe Jaffrelot on The Gujarat Model 
+ Revisited 
+TRANSP:OPAQUE
+ATTACH;FILENAME=Christophe Jaffrelot vf (1).pdf:https://drive.google.com/a/
+ cept.ac.in/file/d/0B1LlNybZk1tLVFFiMG5VWmgxaVk/view?usp=drive_web
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20160108T130000Z
+DTEND:20160108T150000Z
+DTSTAMP:20160428T131812Z
+ORGANIZER;CN=Events:mailto:cept.ac.in_cu2q4f7dpghaggll4k18s63puc@group.cale
+ ndar.google.com
+UID:n6farkebfeiisv50fvfu1ddmn0@google.com
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;CN=tu
+ shar.bose@cept.ac.in;X-NUM-GUESTS=0:mailto:tushar.bose@cept.ac.in
+CREATED:20160107T060553Z
+DESCRIPTION:A photograph always gives us a sense of reality\, but we all kn
+ ow it's just that moment\, it may be hiding or not expressing the truth rig
+ htfully. Let's try giving more life to the images by reinterpreting them or
+  emphasising those emotions with this technique. People who enjoy doodling 
+ on photographs will get a new tool in their arsenal. Just bring in a photog
+ raph printed on a cartridge paper. \n\nPlease do register for the event at 
+ bitly.com/FabFridayCEPT\nMaximum 20 entries allowed.\nOpen to all. Free adm
+ ission
+LAST-MODIFIED:20160107T060902Z
+LOCATION:FabLab CEPT\, Ahmedabad
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:FabFriday_Picture Embroidery
+TRANSP:OPAQUE
+ATTACH;FILENAME=FabFriday_Picture-Embriodery.png:https://drive.google.com/a
+ /cept.ac.in/file/d/0B1LlNybZk1tLejcxLVFOQUI2Y1E/view?usp=drive_web
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20160106T100000Z
+DTEND:20160106T110000Z
+DTSTAMP:20160428T131812Z
+ORGANIZER;CN=jharna.guleria@cept.ac.in:mailto:jharna.guleria@cept.ac.in
+UID:kmg8shbi2t16on8j9nqcokk50g@google.com
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;CN=tu
+ shar.bose@cept.ac.in;X-NUM-GUESTS=0:mailto:tushar.bose@cept.ac.in
+CREATED:20160106T053015Z
+DESCRIPTION:
+LAST-MODIFIED:20160106T053016Z
+LOCATION:FP 213
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:VF Portal Meeting
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20151229T090000Z
+DTEND:20151229T100000Z
+DTSTAMP:20160428T131812Z
+ORGANIZER;CN=chirayu.bhatt@cept.ac.in:mailto:chirayu.bhatt@cept.ac.in
+UID:40eh9k6c9mjahao0033ctcmujk@google.com
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;CN=tu
+ shar.bose@cept.ac.in;X-NUM-GUESTS=0:mailto:tushar.bose@cept.ac.in
+CREATED:20151228T112022Z
+DESCRIPTION:
+LAST-MODIFIED:20151229T055159Z
+LOCATION:FP 213
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:VFM Portal
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20151223T100000Z
+DTEND:20151223T110000Z
+DTSTAMP:20160428T131812Z
+ORGANIZER;CN=rajesh.patel@cept.ac.in:mailto:rajesh.patel@cept.ac.in
+UID:040000008200E00074C5B7101A82E00800000000902510C1843AD101000000000000000
+ 01000000060D43849B47D05458B393080299292A9
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;CN=tu
+ shar.bose@cept.ac.in;X-NUM-GUESTS=0:mailto:tushar.bose@cept.ac.in
+CREATED:20151219T120921Z
+DESCRIPTION:Respected all\,\n\nAs per your request regarding developing an 
+ web based application for the students to submit their project related data
+  when they are on the site during their 17 weeks project work. For that\, I
+  had discussed your requirement and arrange meeting with one of our existin
+ g vendor who had developed our admissions and registration application.\n\n
+ I have arrange meeting on 23rd December\, 2015 between 3:30 PM to 4:30 PM\,
+  I will confirm the meeting location latest by Monday.\n\nSo\, I would requ
+ est you to please take note of this and add this meeting in your calendar.\
+ n\nIf you have any query or change\, please feel free to contact me.\n\nTha
+ nks & Regards\,\nRajesh Patel | Manager (Information Technology Services)\n
+ CEPT University\, Kasturbhai Lalbhai Campus\, \nUniversity Road\, Ahmedabad
+  - 380009\, India\nTele.: +91-79-26302470 Ext. No. : 137\nFax : +91-79-2630
+ 2075 | Mobile: +919601275158\nWebsite: www.cept.ac.in <http://www.cept.ac.i
+ n/>
+LAST-MODIFIED:20151224T111810Z
+LOCATION:
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Developing Project Submission Web Application for FT
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20151223T100000Z
+DTEND:20151223T110000Z
+DTSTAMP:20160428T131812Z
+ORGANIZER;CN=bhargav.tewar@cept.ac.in:mailto:bhargav.tewar@cept.ac.in
+UID:616gh57du650h00kl141jmhh94@google.com
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;CN=tu
+ shar.bose@cept.ac.in;X-NUM-GUESTS=0:mailto:tushar.bose@cept.ac.in
+CREATED:20151219T132735Z
+DESCRIPTION:Respected all\\\,\\n\\nAs per your request regarding developing
+  an web based application for the students to submit their project related 
+ data when they are on the site during their 17 weeks project work. For that
+ \\\, I had discussed your requirement and arrange meeting with one of our e
+ xisting vendor who had developed our admissions and registration applicatio
+ n.\\n\\nI have arrange meeting on 23rd December\\\, 2015 between 3:30 PM to
+  4:30 PM\\\, I will confirm the meeting location latest by Monday.\\n\\nSo\
+ \\, I would request you to please take note of this and add this meeting in
+  your calendar.\\n\\nIf you have any query or change\\\, please feel free t
+ o contact me.\\n\\nThanks & Regards\\\,\\nRajesh Patel | Manager (Informati
+ on Technology Services)\\nCEPT University\\\, Kasturbhai Lalbhai Campus\\\,
+  \\nUniversity Road\\\, Ahmedabad - 380009\\\, India\\nTele.: +91-79-263024
+ 70 Ext. No. : 137\\nFax : +91-79-26302075 | Mobile: +919601275158\\nWebsite
+ : www.cept.ac.in <http://www.cept.ac.in/> \\n\\n
+LAST-MODIFIED:20151224T111804Z
+LOCATION:
+SEQUENCE:1
+STATUS:TENTATIVE
+SUMMARY:Developing Project Submission Web Application for FT
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20151125T060000Z
+DTEND:20151125T070000Z
+DTSTAMP:20160428T131812Z
+ORGANIZER;CN=amal81@gmail.com:mailto:amal81@gmail.com
+UID:6p7rfiedrr4lt8vuav6b5bl8q0@google.com
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;CN=tu
+ shar.bose@cept.ac.in;X-NUM-GUESTS=0:mailto:tushar.bose@cept.ac.in
+CREATED:20151124T154852Z
+DESCRIPTION:Admission Committee 2016 \nMeeting No: 002  \nDate : 25th Novem
+ ber 2016\nTime: 11:30 AM to 1 PM\nVenue: New Meeting Room ( FP 326)\n\n\nDe
+ ar All\n\nWe will meet tomorrow to discuss and finalize the online applicat
+ ion form.\n\nTushar\, please bring soft copy of the form and online version
+ \n\nAnuben\, Please make sure that projector and laptop is available for th
+ e same.\n\n\nThanks and Regards\,\n\nSubhrangsu\n\n\n\n\n\nDisclaimer : The
+  information transmitted with this email is intended only for the person or
+  entity to which it is addressed and may contain confidential and/or privil
+ eged material. Any review\, re-transmission\, dissemination or other use of
+  this information by persons or entities other than the intended recipient 
+ is prohibited. If you received this ...
+LAST-MODIFIED:20151124T154852Z
+LOCATION:
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Meeting for Application Form at 11:30 AM on 25th November
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20150916T090000Z
+DTEND:20150916T100000Z
+DTSTAMP:20160428T131812Z
+ORGANIZER;CN=chirayu.bhatt@cept.ac.in:mailto:chirayu.bhatt@cept.ac.in
+UID:ddfuc3l8014m7l2drj3egcekkk@google.com
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=ACCEPTED;CN=tushar
+ .bose@cept.ac.in;X-NUM-GUESTS=0:mailto:tushar.bose@cept.ac.in
+CREATED:20150911T140403Z
+DESCRIPTION:Due to time conflicts\, we will need to do this meeting in two 
+ parts - one next week\, where we will recap earlier conversation and articu
+ late our expectations for the new website. Second part will be a follow up 
+ discussion with timelines and costs\, in the week of 28th Sept. I hope that
+  is convenient to all. \n\nDear All\,\n\nWe need to meet to plan out the de
+ sign and implementation two new websites. \n1. Admissions Website\n2. Summe
+ r Winter School Website\n\nWe have already had one discussion on this earli
+ er but now we need to dust off the previous conversation and get started to
+  work on this straight away. \n\nDear Amit\, \n\nCan we have an offline cha
+ t to recap our earlier conversation. It would be great if you could bring s
+ ome thoughts on timeline and cost when we meet on 23rd. We can have a chat 
+ tomorrow (12th) or anytime next week (14-18). \n\nBest\,\nChirayu\n
+LAST-MODIFIED:20150916T082118Z
+LOCATION:FP213 - meeting room across Bimalbhai' office
+SEQUENCE:1
+STATUS:CONFIRMED
+SUMMARY:New Websites - CEPT Admissions & SWS - pt 1
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20150910T093000Z
+DTEND:20150910T103000Z
+DTSTAMP:20160428T131812Z
+ORGANIZER;CN=chirayu.bhatt@cept.ac.in:mailto:chirayu.bhatt@cept.ac.in
+UID:3gss3jd99hg77mg07t7k97955g@google.com
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=ACCEPTED;CN=tushar
+ .bose@cept.ac.in;X-NUM-GUESTS=0:mailto:tushar.bose@cept.ac.in
+CREATED:20150905T055240Z
+DESCRIPTION:
+LAST-MODIFIED:20150910T092152Z
+LOCATION:FP 326  Meeting Room\, First Floor\, Admin Building
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Aarin Presentation - HR Module
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20150910T060000Z
+DTEND:20150910T070000Z
+DTSTAMP:20160428T131812Z
+UID:dp1vlkf3d42120bc2p4sfh0fis@google.com
+CREATED:20150909T065732Z
+DESCRIPTION:
+LAST-MODIFIED:20150909T065732Z
+LOCATION:
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:test
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20150902T090000Z
+DTEND:20150902T100000Z
+DTSTAMP:20160428T131812Z
+ORGANIZER;CN=chirayu.bhatt@cept.ac.in:mailto:chirayu.bhatt@cept.ac.in
+UID:2obs26jsgh7v2m6tgo7lhfppq8@google.com
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;CN=tu
+ shar.bose@cept.ac.in;X-NUM-GUESTS=0:mailto:tushar.bose@cept.ac.in
+CREATED:20150827T103505Z
+DESCRIPTION:Sachin had indicated that he would like to share some thoughts 
+ on the "common database" that is included as part of software mission. Requ
+ est everyone to share their availability for this meeting. \n\nThanks\,\nCh
+ irayu
+LAST-MODIFIED:20150828T150431Z
+LOCATION:
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Academic Software Meeting
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;TZID=Asia/Calcutta:20150817T103000
+DTEND;TZID=Asia/Calcutta:20150817T133000
+RRULE:FREQ=WEEKLY;COUNT=40;BYDAY=MO,WE,FR
+DTSTAMP:20160428T131812Z
+UID:lf1l55toupeijv72gesfcbihek@google.com
+CREATED:20150812T092536Z
+DESCRIPTION:
+LAST-MODIFIED:20150812T092657Z
+LOCATION:
+SEQUENCE:1
+STATUS:CONFIRMED
+SUMMARY:Studio
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;TZID=Asia/Calcutta:20150818T083000
+DTEND;TZID=Asia/Calcutta:20150818T103000
+RRULE:FREQ=WEEKLY;COUNT=13;BYDAY=TU
+DTSTAMP:20160428T131812Z
+UID:mld9qobnho4vgq5peolfu86e10@google.com
+CREATED:20150812T092447Z
+DESCRIPTION:
+LAST-MODIFIED:20150812T092529Z
+LOCATION:
+SEQUENCE:1
+STATUS:CONFIRMED
+SUMMARY:EIA
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;TZID=Asia/Calcutta:20150821T083000
+DTEND;TZID=Asia/Calcutta:20150821T103000
+RRULE:FREQ=WEEKLY;COUNT=13;BYDAY=FR
+DTSTAMP:20160428T131812Z
+UID:9ifpgqub2s8731948knu3aalc4@google.com
+CREATED:20150812T091322Z
+DESCRIPTION:
+LAST-MODIFIED:20150812T092437Z
+LOCATION:
+SEQUENCE:1
+STATUS:CONFIRMED
+SUMMARY:Environment Modeling
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;TZID=Asia/Calcutta:20150819T083000
+DTEND;TZID=Asia/Calcutta:20150819T103000
+RRULE:FREQ=WEEKLY;COUNT=13;BYDAY=WE
+DTSTAMP:20160428T131812Z
+UID:3gftf2plr6sa4v0lnoe8ksle6g@google.com
+CREATED:20150812T091211Z
+DESCRIPTION:
+LAST-MODIFIED:20150812T091257Z
+LOCATION:
+SEQUENCE:1
+STATUS:CONFIRMED
+SUMMARY:UIS
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20150625T060000Z
+DTEND:20150625T070000Z
+DTSTAMP:20160428T131812Z
+ORGANIZER;CN=Meeting Room - FP 213:mailto:cept.ac.in_er42cvneg0b0p5hbkb0cpr
+ e03k@group.calendar.google.com
+UID:qi1b7c7cr3tbhotcvsghhnp8k8@google.com
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;CN=tu
+ shar.bose@cept.ac.in;X-NUM-GUESTS=0:mailto:tushar.bose@cept.ac.in
+CREATED:20150624T075417Z
+DESCRIPTION:VFM Appointment - proposed software implementation meeting
+LAST-MODIFIED:20150624T075646Z
+LOCATION:
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:VFM Appointment - proposed software implementation meeting
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20150407T051500Z
+DTEND:20150407T064500Z
+DTSTAMP:20160428T131812Z
+ORGANIZER;CN=chirayu.bhatt@cept.ac.in:mailto:chirayu.bhatt@cept.ac.in
+UID:040000008200E00074C5B7101A82E00800000000A8CD04906975844F9E7BC4A4B1FC0CE
+ 810000000A24B5483E09DAD429A05AF2316EA4014
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;CN=tu
+ shar.bose@cept.ac.in;X-NUM-GUESTS=0:mailto:tushar.bose@cept.ac.in
+CLASS:PUBLIC
+CREATED:20150318T131106Z
+DESCRIPTION:
+LAST-MODIFIED:20150416T192718Z
+LOCATION:Auditorium
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Faculty Open House - Course Catalog & Grading
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;TZID=Asia/Calcutta:20150318T173000
+DTEND;TZID=Asia/Calcutta:20150318T183000
+DTSTAMP:20160428T131812Z
+ORGANIZER;CN=chirayu.bhatt@cept.ac.in:mailto:chirayu.bhatt@cept.ac.in
+UID:89635D38-1698-40F5-A73F-C05CC25CBBDE
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;CN=tu
+ shar.bose@cept.ac.in;X-NUM-GUESTS=0:mailto:tushar.bose@cept.ac.in
+RECURRENCE-ID;TZID=Asia/Calcutta:20150318T143000
+CLASS:PUBLIC
+CREATED:20140819T042356Z
+DESCRIPTION:Does 5.30 pm on Wednesday work?. \nBest\, Chirayu.
+LAST-MODIFIED:20150416T192713Z
+LOCATION:
+SEQUENCE:9
+STATUS:CONFIRMED
+SUMMARY:Academic Software Committee
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;TZID=Asia/Calcutta:20150211T143000
+DTEND;TZID=Asia/Calcutta:20150211T150000
+DTSTAMP:20160428T131812Z
+ORGANIZER;CN=chirayu.bhatt@cept.ac.in:mailto:chirayu.bhatt@cept.ac.in
+UID:89635D38-1698-40F5-A73F-C05CC25CBBDE
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;CN=tu
+ shar.bose@cept.ac.in;X-NUM-GUESTS=0:mailto:tushar.bose@cept.ac.in
+RECURRENCE-ID;TZID=Asia/Calcutta:20150211T143000
+CLASS:PUBLIC
+CREATED:20140819T042356Z
+DESCRIPTION:Can we meet briefly for 10-15 mins today at our regular schedul
+ ed time to check on status and next steps.\n\nBest\,\nChirayu
+LAST-MODIFIED:20150416T192713Z
+LOCATION:
+SEQUENCE:7
+STATUS:CONFIRMED
+SUMMARY:Academic Software Committee
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;TZID=Asia/Calcutta:20150107T140000
+DTEND;TZID=Asia/Calcutta:20150107T150000
+DTSTAMP:20160428T131812Z
+ORGANIZER;CN=chirayu.bhatt@cept.ac.in:mailto:chirayu.bhatt@cept.ac.in
+UID:89635D38-1698-40F5-A73F-C05CC25CBBDE
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;CN=tu
+ shar.bose@cept.ac.in;X-NUM-GUESTS=0:mailto:tushar.bose@cept.ac.in
+RECURRENCE-ID;TZID=Asia/Calcutta:20150107T143000
+CLASS:PUBLIC
+CREATED:20140819T042356Z
+DESCRIPTION:
+LAST-MODIFIED:20150416T192713Z
+LOCATION:
+SEQUENCE:8
+STATUS:CONFIRMED
+SUMMARY:Academic Software Committee
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20141015T090000Z
+DTEND:20141015T100000Z
+DTSTAMP:20160428T131812Z
+ORGANIZER;CN=chirayu.bhatt@cept.ac.in:mailto:chirayu.bhatt@cept.ac.in
+UID:89635D38-1698-40F5-A73F-C05CC25CBBDE
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;CN=tu
+ shar.bose@cept.ac.in;X-NUM-GUESTS=0:mailto:tushar.bose@cept.ac.in
+RECURRENCE-ID:20141015T090000Z
+CREATED:20140819T042356Z
+DESCRIPTION:Tushar\, We need to meet and touch base at this meeting to see 
+ how we are doing. \n\nAll\, Please plan on attending if possible. \n\nBest\
+ ,\nChirayu
+LAST-MODIFIED:20150416T192713Z
+LOCATION:meeting room FP 213
+SEQUENCE:7
+STATUS:CONFIRMED
+SUMMARY:Academic Software Committee
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20141231T090000Z
+DTEND:20141231T100000Z
+DTSTAMP:20160428T131812Z
+ORGANIZER;CN=chirayu.bhatt@cept.ac.in:mailto:chirayu.bhatt@cept.ac.in
+UID:89635D38-1698-40F5-A73F-C05CC25CBBDE
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;CN=tu
+ shar.bose@cept.ac.in;X-NUM-GUESTS=0:mailto:tushar.bose@cept.ac.in
+RECURRENCE-ID:20141231T090000Z
+CLASS:PUBLIC
+CREATED:20140819T042356Z
+DESCRIPTION:Discuss email migration issues.
+LAST-MODIFIED:20150416T192712Z
+LOCATION:
+SEQUENCE:8
+STATUS:CONFIRMED
+SUMMARY:Academic Software Committee
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;TZID=Asia/Calcutta:20140820T143000
+DTEND;TZID=Asia/Calcutta:20140820T153000
+EXDATE;TZID=Asia/Calcutta:20141022T143000
+EXDATE;TZID=Asia/Calcutta:20150114T143000
+RRULE:FREQ=WEEKLY;COUNT=46;INTERVAL=1;BYDAY=WE
+EXDATE;TZID=Asia/Calcutta:20150701T143000
+DTSTAMP:20160428T131812Z
+ORGANIZER;CN=chirayu.bhatt@cept.ac.in:mailto:chirayu.bhatt@cept.ac.in
+UID:89635D38-1698-40F5-A73F-C05CC25CBBDE
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;CN=tu
+ shar.bose@cept.ac.in;X-NUM-GUESTS=0:mailto:tushar.bose@cept.ac.in
+CLASS:PUBLIC
+CREATED:20140819T042356Z
+DESCRIPTION:
+LAST-MODIFIED:20150416T192712Z
+LOCATION:
+SEQUENCE:7
+STATUS:CONFIRMED
+SUMMARY:Academic Software Committee
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20150320T090000Z
+DTEND:20150320T100000Z
+DTSTAMP:20160428T131812Z
+ORGANIZER;CN=bhargavadhvaryu@gmail.com:mailto:bhargavadhvaryu@gmail.com
+UID:g28iilhortah2r9v2v8kkjnr34@google.com
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;CN=tu
+ shar.bose@cept.ac.in;X-NUM-GUESTS=0:mailto:tushar.bose@cept.ac.in
+CREATED:20150318T081735Z
+DESCRIPTION:
+LAST-MODIFIED:20150319T113944Z
+LOCATION:
+SEQUENCE:2
+STATUS:CONFIRMED
+SUMMARY:MIED dissertations
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20150427
+DTEND;VALUE=DATE:20150501
+DTSTAMP:20160428T131812Z
+UID:i1bbhb3u127phu183m2243i3bc@google.com
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=ACCEPTED;CN=tushar
+ .bose@cept.ac.in;X-NUM-GUESTS=0:mailto:tushar.bose@cept.ac.in
+CREATED:20150313T083509Z
+DESCRIPTION:Final Jury
+LAST-MODIFIED:20150313T083537Z
+LOCATION:
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Final Jury
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20150327T090000Z
+DTEND:20150330T120000Z
+DTSTAMP:20160428T131812Z
+UID:cn2hjl10q343rvdaq81l4f6dhs@google.com
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=ACCEPTED;CN=tushar
+ .bose@cept.ac.in;X-NUM-GUESTS=0:mailto:tushar.bose@cept.ac.in
+CREATED:20150313T083317Z
+DESCRIPTION:
+LAST-MODIFIED:20150313T083437Z
+LOCATION:
+SEQUENCE:1
+STATUS:CONFIRMED
+SUMMARY:Draft Review
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20150313T090000Z
+DTEND:20150313T120000Z
+DTSTAMP:20160428T131812Z
+ORGANIZER;CN=bhargavadhvaryu@gmail.com:mailto:bhargavadhvaryu@gmail.com
+UID:85g9hrkkj571jg5iq6ldphqc90@google.com
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;CN=tu
+ shar.bose@cept.ac.in;X-NUM-GUESTS=0:mailto:tushar.bose@cept.ac.in
+CREATED:20150311T084248Z
+DESCRIPTION:
+LAST-MODIFIED:20150311T084249Z
+LOCATION:
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:MIED dissertation reviews [2]
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20150217T070000Z
+DTEND:20150217T080000Z
+DTSTAMP:20160428T131812Z
+ORGANIZER;CN=bhargavadhvaryu@gmail.com:mailto:bhargavadhvaryu@gmail.com
+UID:uapu5v1gtslt9k0bgmm7kqo2gs@google.com
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=ACCEPTED;CN=tushar
+ .bose@cept.ac.in;X-NUM-GUESTS=0:mailto:tushar.bose@cept.ac.in
+CREATED:20150211T151107Z
+DESCRIPTION:
+LAST-MODIFIED:20150304T151717Z
+LOCATION:
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:NDP 
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20150219T090000Z
+DTEND:20150219T100000Z
+DTSTAMP:20160428T131812Z
+UID:r5ap1f6hq974gb26s8hcrmbc6o@google.com
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=ACCEPTED;CN=tushar
+ .bose@cept.ac.in;X-NUM-GUESTS=0:mailto:tushar.bose@cept.ac.in
+CREATED:20150216T091221Z
+DESCRIPTION:
+LAST-MODIFIED:20150216T094547Z
+LOCATION:Chirayubhai's Cabin
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Meeting on Aarin Contract Proposal
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20150216T090000Z
+DTEND:20150216T103000Z
+DTSTAMP:20160428T131812Z
+ORGANIZER;CN=bhargavadhvaryu@gmail.com:mailto:bhargavadhvaryu@gmail.com
+UID:19tqq5vlo91qfe7gc5pgqbi2ic@google.com
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=ACCEPTED;CN=tushar
+ .bose@cept.ac.in;X-NUM-GUESTS=0:mailto:tushar.bose@cept.ac.in
+CREATED:20150213T115829Z
+DESCRIPTION:
+LAST-MODIFIED:20150213T125529Z
+LOCATION:
+SEQUENCE:2
+STATUS:CONFIRMED
+SUMMARY:Dissertation reviews [2]
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20150212T060000Z
+DTEND:20150212T070000Z
+DTSTAMP:20160428T131812Z
+ORGANIZER;CN=CEPT Meetings Calender:mailto:cept.ac.in_ndrhldj3j1ikddnt7p5nf
+ prqik@group.calendar.google.com
+UID:58ple9p1dqc5h98redmojc6r3k@google.com
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;CN=tu
+ shar.bose@cept.ac.in;X-NUM-GUESTS=0:mailto:tushar.bose@cept.ac.in
+CREATED:20150212T041105Z
+DESCRIPTION:SBST Conference Room 
+LAST-MODIFIED:20150212T051750Z
+LOCATION:
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Admission Meeting
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20150202T083000Z
+DTEND:20150202T090000Z
+DTSTAMP:20160428T131812Z
+UID:v3munl1u0pc836t8akgd2lod00@google.com
+CREATED:20150130T105337Z
+DESCRIPTION:
+LAST-MODIFIED:20150130T105337Z
+LOCATION:
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Meeting to discuss changes in Admission Form
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20150121T063000Z
+DTEND:20150121T080000Z
+DTSTAMP:20160428T131812Z
+ORGANIZER;CN=amit.tripathy@efficloud.com:mailto:amit.tripathy@efficloud.com
+UID:040000008200E00074C5B7101A82E0080000000040BAC7FCE434D001000000000000000
+ 010000000ED784F5A77C43941ABB0557DF3DFB635
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=ACCEPTED;CN=tushar
+ .bose@cept.ac.in;X-NUM-GUESTS=0:mailto:tushar.bose@cept.ac.in
+CREATED:20150120T134209Z
+DESCRIPTION:Dear All\,\n\nPlease find below the meeting details for tomorro
+ w’s online demo.\n\n•       Please join my meeting from your computer\, tab
+ let or smartphone.\n\n      https://global.gotomeeting.com/join/578536389\n
+       You can either (Option-1) hear through Laptop speakers or (Option -2)
+  connect through below phone numbers fom your speaker enabled landline.\n\n
+        Conference id : 1676523\n   Meeting id 6418\n\n•       Mumbai: (+91)
+  22 39804444\n•       Bangalore: (+91) 80 67224444\n•       Delhi :(+91) 11
+  66194444\n•       Chennai :(+91) 44 66894444\n•       Hyderabad (+91) 40 6
+ 6244444\n•       Kolkata (+91) 33 66324444\n\n      Regards\,\n      Amit\n
+ \n
+LAST-MODIFIED:20150121T063142Z
+LOCATION:Online
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Demo on Learning Management Platform
+TRANSP:OPAQUE
+X-MICROSOFT-CDO-ALLDAYEVENT:FALSE
+X-MICROSOFT-CDO-APPT-SEQUENCE:0
+X-MICROSOFT-CDO-BUSYSTATUS:TENTATIVE
+X-MICROSOFT-CDO-IMPORTANCE:1
+X-MICROSOFT-CDO-INSTTYPE:0
+X-MICROSOFT-CDO-INTENDEDSTATUS:BUSY
+X-MICROSOFT-CDO-OWNERAPPTID:1947473887
+X-MICROSOFT-DISALLOW-COUNTER:FALSE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20150106T100000Z
+DTEND:20150106T103000Z
+DTSTAMP:20160428T131812Z
+ORGANIZER;CN=bhargavadhvaryu@gmail.com:mailto:bhargavadhvaryu@gmail.com
+UID:j7uimaqegn5vst36tkkl8icqjs@google.com
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;CN=tu
+ shar.bose@cept.ac.in;X-NUM-GUESTS=0:mailto:tushar.bose@cept.ac.in
+CREATED:20150106T051040Z
+DESCRIPTION:
+LAST-MODIFIED:20150106T101828Z
+LOCATION:
+SEQUENCE:2
+STATUS:CONFIRMED
+SUMMARY:MIED capstone project with Tushar
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20141030T061500Z
+DTEND:20141030T071500Z
+DTSTAMP:20160428T131812Z
+ORGANIZER;CN=bhargavadhvaryu@gmail.com:mailto:bhargavadhvaryu@gmail.com
+UID:8vjl4iqs8j25uk0rmlh9c024to@google.com
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=ACCEPTED;CN=tushar
+ .bose@cept.ac.in;X-NUM-GUESTS=0:mailto:tushar.bose@cept.ac.in
+CREATED:20141030T043325Z
+DESCRIPTION:
+LAST-MODIFIED:20141030T060415Z
+LOCATION:
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Meeting - Ganesh\, Tushar
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20141028T100000Z
+DTEND:20141028T110000Z
+DTSTAMP:20160428T131812Z
+ORGANIZER;CN=amitpatel.amit@gmail.com:mailto:amitpatel.amit@gmail.com
+UID:edcc6kveq35p0vhefgg40j6818@google.com
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=ACCEPTED;CN=tushar
+ .bose@cept.ac.in;X-NUM-GUESTS=0:mailto:tushar.bose@cept.ac.in
+CREATED:20141028T035926Z
+DESCRIPTION:
+LAST-MODIFIED:20141028T095023Z
+LOCATION:
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Slum Lab Paper with Tusharbhai
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20141007T060000Z
+DTEND:20141007T070000Z
+DTSTAMP:20160428T131812Z
+UID:3rteiqsh203vbjjhkrlrhe4qqo@google.com
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=ACCEPTED;CN=tushar
+ .bose@cept.ac.in;X-NUM-GUESTS=0:mailto:tushar.bose@cept.ac.in
+CREATED:20141006T122852Z
+DESCRIPTION:
+LAST-MODIFIED:20141006T122923Z
+LOCATION:Prof. Srivathsan's Cabin
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Registration Meeting
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20140926T100000Z
+DTEND:20140926T110000Z
+DTSTAMP:20160428T131812Z
+ORGANIZER;CN=bhargavadhvaryu@gmail.com:mailto:bhargavadhvaryu@gmail.com
+UID:9tpu9ch8bltceqin7eh1r3hjl4@google.com
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=ACCEPTED;CN=tushar
+ .bose@cept.ac.in;X-NUM-GUESTS=0:mailto:tushar.bose@cept.ac.in
+CREATED:20140919T094949Z
+DESCRIPTION:
+LAST-MODIFIED:20140926T075103Z
+LOCATION:
+SEQUENCE:2
+STATUS:CONFIRMED
+SUMMARY:NPD - Online admissions form
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20140922T060000Z
+DTEND:20140922T080000Z
+DTSTAMP:20160428T131812Z
+ORGANIZER;CN=bhargavadhvaryu@gmail.com:mailto:bhargavadhvaryu@gmail.com
+UID:pari26aeelfhc3nu84cfmguk70@google.com
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;CN=tu
+ shar.bose@cept.ac.in;X-NUM-GUESTS=0:mailto:tushar.bose@cept.ac.in
+CREATED:20140919T145942Z
+DESCRIPTION:
+LAST-MODIFIED:20140919T145942Z
+LOCATION:
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:MIED 1st year studio jury
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20140918T090000Z
+DTEND:20140918T093000Z
+DTSTAMP:20160428T131812Z
+ORGANIZER;CN=bhargavadhvaryu@gmail.com:mailto:bhargavadhvaryu@gmail.com
+UID:uv1oa5d8e0dm2t7llk88gg1fa4@google.com
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=ACCEPTED;CN=tushar
+ .bose@cept.ac.in;X-NUM-GUESTS=0:mailto:tushar.bose@cept.ac.in
+CREATED:20140912T081833Z
+DESCRIPTION:
+LAST-MODIFIED:20140912T091007Z
+LOCATION:
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Tushar - Registration algorithm
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20140904T090000Z
+DTEND:20140904T103000Z
+DTSTAMP:20160428T131812Z
+ORGANIZER;CN=joshirutul@cept.ac.in:mailto:joshirutul@cept.ac.in
+UID:pc5h1ac8eunfc8270s84f4gluo@google.com
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=ACCEPTED;CN=tushar
+ .bose@cept.ac.in;X-NUM-GUESTS=0:mailto:tushar.bose@cept.ac.in
+CREATED:20140903T064839Z
+DESCRIPTION:
+LAST-MODIFIED:20140903T083631Z
+LOCATION:Dr Shrivathsan's cabin
+SEQUENCE:1
+STATUS:CONFIRMED
+SUMMARY:Registration data review
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;TZID=Asia/Calcutta:20140806T143000
+DTEND;TZID=Asia/Calcutta:20140806T150000
+RRULE:FREQ=WEEKLY;COUNT=26;BYDAY=WE
+DTSTAMP:20160428T131812Z
+ORGANIZER;CN=finance@cept.ac.in:mailto:finance@cept.ac.in
+UID:040000008200E00074C5B7101A82E0080000000010B4F12E61B1CF01000000000000000
+ 01000000030249227CBA94340B3D79B96AB36A373
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=ACCEPTED;CN=tushar
+ .bose@cept.ac.in;X-NUM-GUESTS=0:mailto:tushar.bose@cept.ac.in
+CREATED:20140806T050800Z
+DESCRIPTION:Please block your diary for the IT committee meeting every Wedn
+ esday between 14:30 to 15:00\n\nA note to Anu to Book the Admin Meeting Roo
+ m \n
+LAST-MODIFIED:20140806T080355Z
+LOCATION:Tentatively Admin Meeting Room
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:IT Committee Meeting
+TRANSP:OPAQUE
+X-ALT-DESC;FMTTYPE=text/html:<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//E
+ N">\n<HTML>\n<HEAD>\n<META NAME="Generator" CONTENT="MS Exchange Server ver
+ sion 14.02.5004.000">\n<TITLE></TITLE>\n</HEAD>\n<BODY>\n<!-- Converted fro
+ m text/rtf format -->\n\n<P DIR=LTR><SPAN LANG="en-us"><FONT FACE="Calibri"
+ >Please block your diary for the IT committee meeting every Wednesday betwe
+ en 14:30 to 15:00</FONT></SPAN></P>\n\n<P DIR=LTR><SPAN LANG="en-us"><FONT 
+ FACE="Calibri">A note to Anu to Book the Admin Meeting Room</FONT></SPAN><S
+ PAN LANG="en-us"> </SPAN></P>\n\n</BODY>\n</HTML>
+X-MICROSOFT-CDO-BUSYSTATUS:TENTATIVE
+X-MICROSOFT-CDO-IMPORTANCE:1
+X-MICROSOFT-CDO-INTENDEDSTATUS:BUSY
+X-MICROSOFT-DISALLOW-COUNTER:FALSE
+X-MS-OLK-AUTOSTARTCHECK:FALSE
+X-MS-OLK-CONFTYPE:0
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20130206T053000Z
+DTEND:20130206T063000Z
+DTSTAMP:20160428T131812Z
+UID:nligtinm6gr3isgrqtmj8j7ju0@google.com
+CREATED:20130205T070735Z
+DESCRIPTION:
+LAST-MODIFIED:20140525T232406Z
+LOCATION:??
+SEQUENCE:1
+STATUS:CONFIRMED
+SUMMARY:Coca cola Interview
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20130328T093000Z
+DTEND:20130328T103000Z
+DTSTAMP:20160428T131812Z
+UID:cuqtrakoheldv4kjugd5p5gh78@google.com
+CREATED:20130326T123711Z
+DESCRIPTION:
+LAST-MODIFIED:20140525T232406Z
+LOCATION:
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Placement Meeting
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20140514T080000Z
+DTEND:20140514T100000Z
+DTSTAMP:20160428T131812Z
+UID:t12akm3bbs9668svcvujmka764@google.com
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=ACCEPTED;CN=tushar
+ .bose@cept.ac.in;X-NUM-GUESTS=0:mailto:tushar.bose@cept.ac.in
+CREATED:20140428T082455Z
+DESCRIPTION:
+LAST-MODIFIED:20140429T092911Z
+LOCATION:City Gallery\, 3/F\, 3 Edinburgh Place\, Central
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Meeting with HK Urban Planning Department
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20140516T020000Z
+DTEND:20140516T030000Z
+DTSTAMP:20160428T131812Z
+UID:rjtf1bfma5d5ll0r21e98tc38k@google.com
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=ACCEPTED;CN=tushar
+ .bose@cept.ac.in;X-NUM-GUESTS=0:mailto:tushar.bose@cept.ac.in
+CREATED:20140428T082620Z
+DESCRIPTION:
+LAST-MODIFIED:20140429T092901Z
+LOCATION:Urban Renewal Exploration Centre\, 6/F\, Low Block\, Grand Millenn
+ ium Plaza\, 181 Queen’s Road Central\, Hong Kong
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:HK Urban Renewal
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20140411T060000Z
+DTEND:20140411T063000Z
+DTSTAMP:20160428T131812Z
+ORGANIZER;CN=bhargavadhvaryu@gmail.com:mailto:bhargavadhvaryu@gmail.com
+UID:takor4amrn8s03gv9h09p1rjic@google.com
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;CN=tu
+ shar.bose@cept.ac.in;X-NUM-GUESTS=0:mailto:tushar.bose@cept.ac.in
+CREATED:20140410T135313Z
+DESCRIPTION:
+LAST-MODIFIED:20140411T044710Z
+LOCATION:
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Anuj Malhotra
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20140411T090000Z
+DTEND:20140411T093000Z
+DTSTAMP:20160428T131812Z
+ORGANIZER;CN=bhargavadhvaryu@gmail.com:mailto:bhargavadhvaryu@gmail.com
+UID:vqgbd42kgk5m34hvtim2nj3n24@google.com
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;CN=tu
+ shar.bose@cept.ac.in;X-NUM-GUESTS=0:mailto:tushar.bose@cept.ac.in
+CREATED:20140410T140114Z
+DESCRIPTION:
+LAST-MODIFIED:20140410T140115Z
+LOCATION:
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:CAS - Sureshbhai
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20140411T063000Z
+DTEND:20140411T070000Z
+DTSTAMP:20160428T131812Z
+ORGANIZER;CN=bhargavadhvaryu@gmail.com:mailto:bhargavadhvaryu@gmail.com
+UID:vlkf7s17c1q031pm70ibnp8r4o@google.com
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;CN=tu
+ shar.bose@cept.ac.in;X-NUM-GUESTS=0:mailto:tushar.bose@cept.ac.in
+CREATED:20140410T135612Z
+DESCRIPTION:
+LAST-MODIFIED:20140410T135612Z
+LOCATION:
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Nitya Shah
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20140407T090000Z
+DTEND:20140407T103000Z
+DTSTAMP:20160428T131812Z
+ORGANIZER;CN=bhargavadhvaryu@gmail.com:mailto:bhargavadhvaryu@gmail.com
+UID:8cb26itqt49ee4iqnk1nfmpu4c@google.com
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;CN=tu
+ shar.bose@cept.ac.in;X-NUM-GUESTS=0:mailto:tushar.bose@cept.ac.in
+CREATED:20140406T042642Z
+DESCRIPTION:
+LAST-MODIFIED:20140406T042642Z
+LOCATION:
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:MIEM prefinal diss jury-4
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20140404T090000Z
+DTEND:20140404T120000Z
+DTSTAMP:20160428T131812Z
+ORGANIZER;CN=bhargavadhvaryu@gmail.com:mailto:bhargavadhvaryu@gmail.com
+UID:kp1le8fg1t5okt5cefn06eh7lo@google.com
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;CN=tu
+ shar.bose@cept.ac.in;X-NUM-GUESTS=0:mailto:tushar.bose@cept.ac.in
+CREATED:20140403T091824Z
+DESCRIPTION:
+LAST-MODIFIED:20140403T091824Z
+LOCATION:
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:MIEM prefinal diss jury-3
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20140404T043000Z
+DTEND:20140404T073000Z
+DTSTAMP:20160428T131812Z
+ORGANIZER;CN=bhargavadhvaryu@gmail.com:mailto:bhargavadhvaryu@gmail.com
+UID:qghcjuf6918m65g2cgrkdnugqc@google.com
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;CN=tu
+ shar.bose@cept.ac.in;X-NUM-GUESTS=0:mailto:tushar.bose@cept.ac.in
+CREATED:20140327T105051Z
+DESCRIPTION:
+LAST-MODIFIED:20140403T091736Z
+LOCATION:
+SEQUENCE:1
+STATUS:CONFIRMED
+SUMMARY:MIEM prefinal diss jury-2
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20140403T050000Z
+DTEND:20140403T080000Z
+DTSTAMP:20160428T131812Z
+ORGANIZER;CN=bhargavadhvaryu@gmail.com:mailto:bhargavadhvaryu@gmail.com
+UID:pac4v2ofpo9dusduq45h7tpgnk@google.com
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;CN=tu
+ shar.bose@cept.ac.in;X-NUM-GUESTS=0:mailto:tushar.bose@cept.ac.in
+CREATED:20140313T121510Z
+DESCRIPTION:
+LAST-MODIFIED:20140403T040552Z
+LOCATION:
+SEQUENCE:1
+STATUS:CONFIRMED
+SUMMARY:MIEM prefinal diss jury-1
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20140318T050000Z
+DTEND:20140318T063000Z
+DTSTAMP:20160428T131812Z
+ORGANIZER;CN=CEPT Meetings Calender:mailto:cept.ac.in_ndrhldj3j1ikddnt7p5nf
+ prqik@group.calendar.google.com
+UID:eg4m60i1a15dnms9oetqrl9l2k@google.com
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=ACCEPTED;CN=tushar
+ .bose@cept.ac.in;X-NUM-GUESTS=0:mailto:tushar.bose@cept.ac.in
+CREATED:20140306T064035Z
+DESCRIPTION:
+LAST-MODIFIED:20140318T162851Z
+LOCATION:Auditorium
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:EC & PC Meeting
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20140312T110000Z
+DTEND:20140312T113000Z
+DTSTAMP:20160428T131812Z
+ORGANIZER;CN=bhargavadhvaryu@gmail.com:mailto:bhargavadhvaryu@gmail.com
+UID:gcpefpve7a3jnfpi69bl473ocs@google.com
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=ACCEPTED;CN=tushar
+ .bose@cept.ac.in;X-NUM-GUESTS=0:mailto:tushar.bose@cept.ac.in
+CREATED:20140311T103945Z
+DESCRIPTION:
+LAST-MODIFIED:20140311T104710Z
+LOCATION:
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:HK logistics
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20140304T050000Z
+DTEND:20140304T070000Z
+DTSTAMP:20160428T131812Z
+ORGANIZER;CN=CEPT Meetings Calender:mailto:cept.ac.in_ndrhldj3j1ikddnt7p5nf
+ prqik@group.calendar.google.com
+UID:s7lubjgsh6bcu7o1df72v1l024@google.com
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=ACCEPTED;CN=tushar
+ .bose@cept.ac.in;X-NUM-GUESTS=0:mailto:tushar.bose@cept.ac.in
+CREATED:20140220T074149Z
+DESCRIPTION:
+LAST-MODIFIED:20140304T042955Z
+LOCATION:Auditorium
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:EC & PC Meeting
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20140305T110000Z
+DTEND:20140305T120000Z
+DTSTAMP:20160428T131812Z
+ORGANIZER;CN=bhargavadhvaryu@gmail.com:mailto:bhargavadhvaryu@gmail.com
+UID:4qq3ft5habu839j6cjbqmr9evg@google.com
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;CN=tu
+ shar.bose@cept.ac.in;X-NUM-GUESTS=0:mailto:tushar.bose@cept.ac.in
+CREATED:20140228T080336Z
+DESCRIPTION:
+LAST-MODIFIED:20140228T080337Z
+LOCATION:
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:MIEM diss viva (2)
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20140228T053000Z
+DTEND:20140228T080000Z
+DTSTAMP:20160428T131812Z
+ORGANIZER;CN=bhargavadhvaryu@gmail.com:mailto:bhargavadhvaryu@gmail.com
+UID:9483eeir005e4bmsrdd5gnm85k@google.com
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=ACCEPTED;CN=tushar
+ .bose@cept.ac.in;X-NUM-GUESTS=0:mailto:tushar.bose@cept.ac.in
+CREATED:20140225T093410Z
+DESCRIPTION:
+LAST-MODIFIED:20140228T080255Z
+LOCATION:
+SEQUENCE:1
+STATUS:CONFIRMED
+SUMMARY:MIEM diss viva (1)
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20140211T050000Z
+DTEND:20140211T070000Z
+DTSTAMP:20160428T131812Z
+ORGANIZER;CN=CEPT Meetings Calender:mailto:cept.ac.in_ndrhldj3j1ikddnt7p5nf
+ prqik@group.calendar.google.com
+UID:r9ei66gql2std0h4u6oj8fihrc@google.com
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;CN=tu
+ shar.bose@cept.ac.in;X-NUM-GUESTS=0:mailto:tushar.bose@cept.ac.in
+CREATED:20140128T112502Z
+DESCRIPTION:Agenda enclosed 
+LAST-MODIFIED:20140211T040922Z
+LOCATION:Auditorium
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:EC & PC Meeting 
+TRANSP:OPAQUE
+ATTACH;FILENAME=AGENDA-ECPC.pdf:https://docs.google.com/a/cept.ac.in/file/d
+ /0B1LlNybZk1tLLVNCNDNtOTZDLW8/edit?usp=drive_web
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20140128T050000Z
+DTEND:20140128T080000Z
+DTSTAMP:20160428T131812Z
+ORGANIZER;CN=CEPT Meetings Calender:mailto:cept.ac.in_ndrhldj3j1ikddnt7p5nf
+ prqik@group.calendar.google.com
+UID:777kpa6mccmjg0tfff2lcjugjc@google.com
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=ACCEPTED;CN=tushar
+ .bose@cept.ac.in;X-NUM-GUESTS=0:mailto:tushar.bose@cept.ac.in
+CREATED:20140121T111642Z
+DESCRIPTION:Agenda \n\n1.To inform the members about constitution of a comm
+ ittee to review finances and project management of all projects under CRDC/
+ CRDF and to resolve on actions to be taken. \n2.To inform the members about
+  constitution of a committee to review the B. Plan program. \n3.To discuss 
+ how the academic calendar can be modified to ensure greater focus on academ
+ ic activities during monsoon & spring semesters.\n4.To inform members about
+  recent developments regarding AICTE and to review CEPT University’s stand 
+ on the matter of seeking AICTE approval for its programs. \n5.To review act
+ ivities and initiatives of the Outreach Services. – Outreach Team\n6.To rev
+ iew activities and initiatives of the Workshop team. – Jay Thakker & Sakthi
+ vel Ramaswamy \n7.To review the feedback on Winter School. – Meghal Arya & 
+ Manjiri Akalkotkar.\n8.To review the report on Students Feedback initiated 
+ last semester. – Anu Sutaria & University Staff Office. \n9.Any other matte
+ r with the permission of Chair.
+LAST-MODIFIED:20140128T033250Z
+LOCATION:
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:EC PC Meeting 
+TRANSP:OPAQUE
+ATTACH;FILENAME=AGENDA-ECPC.pdf:https://docs.google.com/a/cept.ac.in/file/d
+ /0B1LlNybZk1tLcE52N1ZUMlVwYms/edit?usp=drive_web
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20140102T100000Z
+DTEND:20140102T110000Z
+DTSTAMP:20160428T131812Z
+ORGANIZER;CN=chirayu.bhatt@cept.ac.in:mailto:chirayu.bhatt@cept.ac.in
+UID:u0ctnavlsso76sgjv0rea92n04@google.com
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=ACCEPTED;CN=tushar
+ .bose@cept.ac.in;X-NUM-GUESTS=0:mailto:tushar.bose@cept.ac.in
+CREATED:20140101T082938Z
+DESCRIPTION:Meeting to review Registration Data for Current Semester
+LAST-MODIFIED:20140101T103453Z
+LOCATION:President's Office
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Review Registration Data
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20130913T090000Z
+DTEND:20130913T120000Z
+DTSTAMP:20160428T131812Z
+ORGANIZER;CN=bhargavadhvaryu@gmail.com:mailto:bhargavadhvaryu@gmail.com
+UID:n3ban3b945bl72s605sn6fm7fg@google.com
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;CN=tu
+ shar.bose@cept.ac.in;X-NUM-GUESTS=0:mailto:tushar.bose@cept.ac.in
+CREATED:20130902T113011Z
+DESCRIPTION:
+LAST-MODIFIED:20130903T112243Z
+LOCATION:
+SEQUENCE:1
+STATUS:CONFIRMED
+SUMMARY:Dissertation jury
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20130627T083000Z
+DTEND:20130627T092000Z
+DTSTAMP:20160428T131812Z
+ORGANIZER;CN=rajanrawal@gmail.com:mailto:rajanrawal@gmail.com
+UID:t99euqkhtn3lmj5e9vppdd8skc@google.com
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=ACCEPTED;CN=tushar
+ .bose@cept.ac.in;X-NUM-GUESTS=0:mailto:tushar.bose@cept.ac.in
+CREATED:20130626T113612Z
+DESCRIPTION:To discuss current status of course cataloug and time table
+LAST-MODIFIED:20130627T081536Z
+LOCATION:MIAD Studio - 2nd Floor SID Building
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:CEPT Uni - PG Coordinators meeting
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20130328T053000Z
+DTEND:20130328T063000Z
+DTSTAMP:20160428T131812Z
+UID:s1kn8fv2o0uen9f2e7sa7rc3pc@google.com
+CREATED:20130326T123600Z
+DESCRIPTION:
+LAST-MODIFIED:20130326T123646Z
+LOCATION:Sapre Sir's Cabin
+SEQUENCE:1
+STATUS:CONFIRMED
+SUMMARY:FoT Meeting
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20130206T100000Z
+DTEND:20130206T120000Z
+DTSTAMP:20160428T131812Z
+UID:00o47ooripim56t741g3op5mts@google.com
+CREATED:20130205T070852Z
+DESCRIPTION:
+LAST-MODIFIED:20130205T070852Z
+LOCATION:
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Meeting Regarding MIEM
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;TZID=Asia/Calcutta:20130111T110000
+DTEND;TZID=Asia/Calcutta:20130111T130000
+RRULE:FREQ=WEEKLY;UNTIL=20130412T053000Z;BYDAY=FR
+DTSTAMP:20160428T131812Z
+UID:rnq5reqpof0miau5lnbak3c0n8@google.com
+CREATED:20121231T123519Z
+DESCRIPTION:Lecture of EIA
+LAST-MODIFIED:20130205T070710Z
+LOCATION:Climate Change
+SEQUENCE:2
+STATUS:CONFIRMED
+SUMMARY:EIA Lecture- CC
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20130201T053000Z
+DTEND:20130201T063000Z
+DTSTAMP:20160428T131812Z
+ORGANIZER;CN=bhargavadhvaryu@gmail.com:mailto:bhargavadhvaryu@gmail.com
+UID:2nt2fe514spt5mjbqvmrq1mqes@google.com
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=ACCEPTED;CN=tushar
+ .bose@cept.ac.in;X-NUM-GUESTS=0:mailto:tushar.bose@cept.ac.in
+CREATED:20130129T120110Z
+DESCRIPTION:
+LAST-MODIFIED:20130129T125902Z
+LOCATION:
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Tushar
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20130104T050000Z
+DTEND:20130104T080000Z
+DTSTAMP:20160428T131812Z
+UID:ie8fb0rpccof2jkje0p060sg40@google.com
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=ACCEPTED;CN=tushar
+ .bose@cept.ac.in;X-NUM-GUESTS=0:mailto:tushar.bose@cept.ac.in
+CREATED:20130103T084916Z
+DESCRIPTION:Proposal Review
+LAST-MODIFIED:20130103T085301Z
+LOCATION:MIEM 
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Dissertation 2013 Proposal Review
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20130102
+DTEND;VALUE=DATE:20130103
+DTSTAMP:20160428T131812Z
+UID:henmlvqdsj78stdcgfdvj6f7j8@google.com
+CREATED:20121226T074125Z
+DESCRIPTION:Registration by TP
+LAST-MODIFIED:20121226T074125Z
+LOCATION:MIEM CLass
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Registration
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20130211
+DTEND;VALUE=DATE:20130216
+DTSTAMP:20160428T131812Z
+UID:9iknjdsnl3tkisg3u8vj310dkg@google.com
+CREATED:20121222T094946Z
+DESCRIPTION:Contracts Management Modular Course
+LAST-MODIFIED:20121222T095124Z
+LOCATION:MIEM Ist and IInd Year
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Contracts Management
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20110421T043000Z
+DTEND:20110421T083000Z
+DTSTAMP:20160428T131812Z
+ORGANIZER;CN=tusharbose2002@gmail.com:mailto:tusharbose2002@gmail.com
+UID:abqn00niifddjlu4dhso8nrqfo@google.com
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;CN=tu
+ shar.bose@cept.ac.in;X-NUM-GUESTS=0:mailto:tushar.bose@cept.ac.in
+CREATED:20110418T142717Z
+DESCRIPTION:By Dr. Indu Rao
+LAST-MODIFIED:20121211T051151Z
+LOCATION:CEPT MIEM
+SEQUENCE:1
+STATUS:CONFIRMED
+SUMMARY:PP Lecture
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20120726
+DTEND;VALUE=DATE:20120727
+DTSTAMP:20160428T131812Z
+UID:6qpas1d7rhf9ljbubjai21c9k0@google.com
+CREATED:20120716T062523Z
+DESCRIPTION:
+LAST-MODIFIED:20120716T062523Z
+LOCATION:Gujarat Cities
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Workshop on Infrastructure in Gujarat Cities
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20120323T053000Z
+DTEND:20120323T100000Z
+DTSTAMP:20160428T131812Z
+UID:e8h6o5o07d55t96lenf0eqhfuo@google.com
+CREATED:20120321T104524Z
+DESCRIPTION:
+LAST-MODIFIED:20120321T104524Z
+LOCATION:
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Coca Cola Visit
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20120326
+DTEND;VALUE=DATE:20120327
+DTSTAMP:20160428T131812Z
+UID:hpfmrc3kbav9litav3rg78lj4c@google.com
+CREATED:20120320T072847Z
+DESCRIPTION:
+LAST-MODIFIED:20120320T072847Z
+LOCATION:
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:GEMI
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20120326
+DTEND;VALUE=DATE:20120328
+DTSTAMP:20160428T131812Z
+UID:ng0mvs3shrqlmuk03os40onhvk@google.com
+CREATED:20120320T060721Z
+DESCRIPTION:
+LAST-MODIFIED:20120320T060721Z
+LOCATION:
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:EIA Review
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20120326T090000Z
+DTEND:20120327T120000Z
+DTSTAMP:20160428T131812Z
+UID:bsv76ne535jvhfi0ol2248d27c@google.com
+CREATED:20120319T090651Z
+DESCRIPTION:
+LAST-MODIFIED:20120319T090651Z
+LOCATION:
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Seminar Final Review
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20120322T090000Z
+DTEND:20120323T120000Z
+DTSTAMP:20160428T131812Z
+UID:ve9v6ijchoud6bpc2ilocv86qo@google.com
+CREATED:20120319T090519Z
+DESCRIPTION:
+LAST-MODIFIED:20120319T090555Z
+LOCATION:
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Seminar Draft Review
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20120330T090000Z
+DTEND:20120331T120000Z
+DTSTAMP:20160428T131812Z
+UID:kuhfppf6m3r3lvp4iql77e5u9o@google.com
+CREATED:20120319T090435Z
+DESCRIPTION:
+LAST-MODIFIED:20120319T090435Z
+LOCATION:
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Thesis Analysis Review
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20120324T053000Z
+DTEND:20120324T080000Z
+DTSTAMP:20160428T131812Z
+UID:sqpbf0546qpt0l4r116s783km4@google.com
+CREATED:20120319T061655Z
+DESCRIPTION:
+LAST-MODIFIED:20120319T061727Z
+LOCATION:
+SEQUENCE:1
+STATUS:CONFIRMED
+SUMMARY:MoES Presentation
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20120323T043000Z
+DTEND:20120323T053000Z
+DTSTAMP:20160428T131812Z
+UID:d9dfr5cjd07rdphggpatf0kuhg@google.com
+CREATED:20120316T054517Z
+DESCRIPTION:
+LAST-MODIFIED:20120316T054517Z
+LOCATION:
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Railway Budget Discussion
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20120317T043000Z
+DTEND:20120317T100000Z
+DTSTAMP:20160428T131812Z
+UID:ns87jkcc88d4soo0908q8eipi4@google.com
+CREATED:20120315T130228Z
+DESCRIPTION:
+LAST-MODIFIED:20120315T130228Z
+LOCATION:
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Anchor Meeting
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20120316T100000Z
+DTEND:20120316T110000Z
+DTSTAMP:20160428T131812Z
+UID:vnpn3vc1jltfsqfqljc5vfsejk@google.com
+CREATED:20120315T093002Z
+DESCRIPTION:
+LAST-MODIFIED:20120315T093002Z
+LOCATION:
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Placement Meeting
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20111007T040000Z
+DTEND:20111007T060000Z
+DTSTAMP:20160428T131812Z
+UID:b14hqfecmpba2oo8105oegec34@google.com
+CREATED:20111001T063642Z
+DESCRIPTION:
+LAST-MODIFIED:20111001T063642Z
+LOCATION:
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Environment Modelling
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20111004T033000Z
+DTEND:20111004T053000Z
+DTSTAMP:20160428T131812Z
+UID:4p4tdv8kommusufsc3sj4agoio@google.com
+CREATED:20111001T063349Z
+DESCRIPTION:Water Networks....\nHardy cross
+LAST-MODIFIED:20111001T063430Z
+LOCATION:SBST
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:SBST- Network
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;TZID=Asia/Calcutta:20111008T113000
+DTEND;TZID=Asia/Calcutta:20111008T133000
+RRULE:FREQ=WEEKLY;COUNT=4;BYDAY=SA
+DTSTAMP:20160428T131812Z
+UID:7oabvlthsu4g71bb4m4c56pjk4@google.com
+CREATED:20110928T101215Z
+DESCRIPTION:Solid Waste
+LAST-MODIFIED:20110928T101215Z
+LOCATION:SBST
+SEQUENCE:1
+STATUS:CONFIRMED
+SUMMARY:SD
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20110929T101500Z
+DTEND:20110929T104500Z
+DTSTAMP:20160428T131812Z
+UID:gfjibnso6hg48pail4t2qa72gg@google.com
+CREATED:20110928T100419Z
+DESCRIPTION:
+LAST-MODIFIED:20110928T100420Z
+LOCATION:NBO
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:ADB meeting
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20110816T045000Z
+DTEND:20110816T055000Z
+DTSTAMP:20160428T131812Z
+UID:693l92o6dsjjjjmpoh9c9hpnr0@google.com
+CREATED:20110816T040350Z
+DESCRIPTION:
+LAST-MODIFIED:20110816T040455Z
+LOCATION:
+SEQUENCE:1
+STATUS:CONFIRMED
+SUMMARY:Call NEela Munshi
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20110412
+DTEND;VALUE=DATE:20110413
+DTSTAMP:20160428T131812Z
+UID:ns97fditp24srl0g218asvq2p4@google.com
+CREATED:20110406T090608Z
+DESCRIPTION:Anchor Institute
+LAST-MODIFIED:20110425T003147Z
+LOCATION:CEPT
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Training of Trainers- Tushar
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20110402
+DTEND;VALUE=DATE:20110403
+DTSTAMP:20160428T131812Z
+UID:op4k30dj9nql83arb5ha9ce2o4@google.com
+CREATED:20110401T112817Z
+DESCRIPTION:
+LAST-MODIFIED:20110401T112817Z
+LOCATION:
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20110328
+DTEND;VALUE=DATE:20110329
+DTSTAMP:20160428T131812Z
+UID:j2kq69frjugibjk575umg45ui8@google.com
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=ACCEPTED;CN=tushar
+ .bose@cept.ac.in;X-NUM-GUESTS=0:mailto:tushar.bose@cept.ac.in
+CREATED:20110315T124602Z
+DESCRIPTION:World Bank Meeting
+LAST-MODIFIED:20110329T033012Z
+LOCATION:CEPT
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20110309
+DTEND;VALUE=DATE:20110310
+DTSTAMP:20160428T131812Z
+ORGANIZER;CN=tusharbose2002@gmail.com:mailto:tusharbose2002@gmail.com
+UID:1sq0b9821grtq6jp3k3o2cih3o@google.com
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;CN=tu
+ shar.bose@cept.ac.in;X-NUM-GUESTS=0:mailto:tushar.bose@cept.ac.in
+CREATED:20110316T104751Z
+DESCRIPTION:WBI
+LAST-MODIFIED:20110327T034348Z
+LOCATION:CEPT Conference
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:WBI meeting
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;TZID=Asia/Calcutta:20110104T193000
+DTEND;TZID=Asia/Calcutta:20110104T213000
+RRULE:FREQ=WEEKLY;UNTIL=20110414T140000Z;BYDAY=TU,TH
+DTSTAMP:20160428T131812Z
+ORGANIZER;CN=harini@cept.ac.in:mailto:harini@cept.ac.in
+UID:7vvmrlkie754h1dmgae0up53mo@google.com
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=ACCEPTED;CN=tushar
+ .bose@cept.ac.in;X-NUM-GUESTS=0:mailto:tushar.bose@cept.ac.in
+CREATED:20110101T110039Z
+DESCRIPTION:
+LAST-MODIFIED:20110131T011153Z
+LOCATION:
+SEQUENCE:1
+STATUS:CONFIRMED
+SUMMARY:Operations Management
+TRANSP:TRANSPARENT
+END:VEVENT
+END:VCALENDAR

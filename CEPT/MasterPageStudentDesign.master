@@ -1,0 +1,809 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPageStudentDesign.master.cs" Inherits="MasterPageStudentDesign" %>
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+    <title>DashBoard</title>
+    <link rel="stylesheet" href="style.css" />
+    <link href="DesignCss/bootstrap.min.css" rel="stylesheet" />
+    <link href="DesignCss/bootstrap-responsive.min.css" rel="stylesheet" />
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <link href="DesignCss/fullcalendar.css" rel="stylesheet" type="text/css" />
+    <link href="DesignCss/chosen.css" rel="stylesheet" type="text/css" />
+    <link href="DesignCss/css.css" rel="stylesheet" />
+    <link href="DesignCss/ace.min.css" rel="stylesheet" />
+    <link href="DesignCss/ace-responsive.min.css" rel="stylesheet" />
+    <link href="DesignCss/ace-skins.min.css" rel="stylesheet" />
+    <link href="DesignCss/jquery-ui.css" rel="stylesheet" type="text/css" />
+    <link href="Style/dataTables.bootstrap.css" rel="stylesheet" type="text/css" />
+    <link href="media/css/TableTools.css" rel="stylesheet" type="text/css" />
+
+  </head>
+  <style>
+ 
+body {
+  background-color: #e7f2fd;
+  transition: all 0.5s ease;
+}
+body.dark {
+  background-color: #333;
+}
+body.dark {
+  --white-color: #333;
+  --blue-color: #fff;
+  --grey-color: #f2f2f2;
+  --grey-color-light: #aaa;
+}
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  left: 0;
+  background-color: var(--white-color);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 30px;
+  z-index: 1000;
+  box-shadow: 0 0 2px var(--grey-color-light);
+}
+.logo_item {
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
+  font-size: 22px;
+  font-weight: 500;
+  color: var(--blue-color);
+}
+.navbar img {
+  width: 35px;
+  height: 35px;
+  /* border-radius: 50%; */
+}
+
+.navbar_content {
+  display: flex;
+  align-items: center;
+  column-gap: 25px;
+}
+.navbar_content i {
+  cursor: pointer;
+  font-size: 20px;
+  color: var(--grey-color);
+}
+.navlink{
+  font-size:15px;
+  white-space: normal;   
+      overflow-wrap: break-word; 
+      word-wrap: break-word; 
+}
+.sidebar {
+  background-color: var(--white-color);
+  width: 260px;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  padding: 80px 20px;
+  z-index: 100;
+  overflow-y: scroll;
+  box-shadow: 0 0 1px var(--grey-color-light);
+  transition: all 0.5s ease;
+}
+.sidebar.close {
+  padding: 60px 0;
+  width: 80px;
+}
+.sidebar::-webkit-scrollbar {
+  display: none;
+}
+.menu_content {
+  position: relative;
+}
+.menu_title {
+  margin: 15px 0;
+  padding: 0 20px;
+  font-size: 20px;
+  font-weight: bold;
+}
+.sidebar.close .menu_title {
+  padding: 6px 30px;
+}
+.menu_title::before {
+  color: var(--grey-color);
+  white-space: nowrap;
+}
+.menu_dahsboard::before {
+  content: "Dashboard";
+}
+
+.sidebar.close .menu_title::before {
+  content: "";
+  position: absolute;
+  height: 2px;
+  width: 18px;
+  border-radius: 12px;
+  background: var(--grey-color-light);
+}
+.menu_items {
+  padding: 0;
+  list-style: none;
+}
+.navlink_icon {
+  position: relative;
+  font-size: 16px;
+  min-width: 50px;
+  line-height: 40px;
+  display: inline-block;
+  text-align: center;
+  border-radius: 6px;
+}
+.navlink_icon::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: calc(100% + 100px);
+  left: -20px;
+}
+.navlink_icon:hover {
+  background: var(--blue-color);
+}
+.sidebar .nav_link {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  border-radius: 8px;
+  text-decoration:none;
+  color: var(--grey-color);
+  white-space: nowrap;
+}
+.sidebar.close .navlink {
+  display: none;
+}
+.nav_link:hover {
+  color: var(--white-color);
+  background: var(--blue-color);
+  
+}
+.sidebar.close .nav_link:hover {
+  background: var(--white-color);
+}
+.submenu_item{
+  cursor:pointer;
+}
+.submenu{
+  display:none;
+}
+.submenu_item .arrow-left {
+  position: absolute;
+  right: 10px;
+  display: inline-block;
+  margin-right: auto;
+}
+.sidebar.close .submenu {
+  display: none;
+}
+.nav_link.sublink {
+  display: block;
+  white-space: normal; 
+  word-wrap: break-word; 
+  overflow-wrap: break-word;
+  width: 100%;
+  line-height: 1.3; 
+  font-size: 15px;
+}
+
+.show_submenu ~ .submenu {
+  display: block;
+}
+.show_submenu .arrow-left {
+  transform: rotate(90deg);
+}
+.submenu .sublink {
+   /* padding: 6px 1px 6px 50px; */
+    padding: 6px 0px 6px 28px; 
+
+}
+.bottom_content {
+  position: fixed;
+  bottom: 60px;
+  left: 0;
+  width: 260px;
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+.bottom {
+  position: absolute;  
+  display: flex;
+  align-items: center;
+  left: 0;
+  justify-content : space-around;
+  padding: 18px 0;
+  text-align: center;
+  width: 100%;
+  color: var(--grey-color);
+  border-top: 1px solid var(--grey-color-light);
+  background-color: var(--white-color);
+}
+.bottom i {
+  font-size: 18px;
+}
+.bottom span {
+  font-size: 18px;
+}
+.sidebar.close .bottom_content {
+  width: 50px;
+  left: 15px;
+}
+.sidebar.close .bottom span {
+  display: none;
+}
+.sidebar.hoverable .collapse_sidebar {
+  display: none;
+}
+#sidebarOpen {
+  display: none;
+}
+@media screen and (max-width: 768px) {
+  #sidebarOpen {
+    font-size: 25px;
+    display: block;
+    margin-right: 10px;
+    cursor: pointer;
+    color: var(--grey-color);
+  }
+  .sidebar.close {
+    left: -100%;
+  }
+  .search_bar {
+    display: none;
+  }
+  .sidebar.close .bottom_content {
+    left: -100%;
+  }
+}
+
+.main-content {
+  margin-left: 260px;
+  padding: 20px;
+  display: grid;
+  grid-template-rows: auto;
+  gap: 20px;
+  transition: margin-left 0.3s ease;
+}
+
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+table th, table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+
+
+canvas {
+  width: 100%;
+  height: 250px;
+}
+
+ @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Open Sans";
+      }
+      :root {
+        --white-color: #fff;
+        --blue-color: #4070f4;
+        --grey-color: #413f3f;
+        --grey-color-light: #aaa;
+      }
+      body {
+        background-color: #e7f2fd;
+        transition: all 0.5s ease;
+        padding-top: 80px; 
+      }
+      body.dark {
+        background-color: #333;
+      }
+      .navbar {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        left: 0;
+        background-color: var(--white-color);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 15px 30px;
+        z-index: 1000;
+        box-shadow: 0 0 2px var(--grey-color-light);
+      }
+      .navbar img {
+        width: 35px;
+        height: 35px;
+        /* border-radius: 50%; */
+      }
+      .sidebar {
+        background-color: var(--white-color);
+        width: 260px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100%;
+        padding: 80px 20px; 
+        z-index: 100;
+        overflow-y: auto;
+        box-shadow: 0 0 1px var(--grey-color-light);
+        transition: all 0.5s ease;
+      }
+      .sidebar.close {
+        width: 80px;
+      }
+      .main-content {
+        margin-left: 260px; 
+        height:100%;
+        padding: 20px;
+        transition: margin-left 0.3s ease;
+      }
+      .sidebar.close + .main-content {
+        margin-left: 80px;
+      }
+      .section {
+        flex-wrap: wrap;
+        gap: 20px;
+      }
+      .section-content {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 20px;
+      }
+      @media screen and (max-width: 768px) {
+        .main-content {
+          margin-left: 80px;
+        }
+        .section-content {
+          grid-template-columns: 1fr;
+        }
+      }
+       .bottom{
+        font-size: 15px;
+       }
+
+       .logout-link {
+    text-decoration: none; 
+    color: inherit; 
+    display: inline-block;
+  }
+
+  .navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background: #fff;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.navbar_content {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.profile {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropbtn {
+  display: flex;
+  align-items: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.dropbtn i {
+  margin-left: 5px;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  right: 0;
+  background-color: white;
+  min-width: 200px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  z-index: 1000;
+  padding: 10px;
+}
+
+.dropdown-content a {
+  display: block;
+  padding: 10px;
+  text-decoration: none;
+  color: black;
+}
+
+.dropdown-content a:hover {
+  color: var(--white-color);
+  background: var(--blue-color);
+}
+
+.dropdown-content .divider {
+  height: 1px;
+  background-color: #ddd;
+  margin: 5px 0;
+}
+.show {
+  display: block;
+}
+
+.year_dropdown {
+    margin-left: 10px;
+}
+
+#yearSelect {
+    padding: 3px;
+    font-size: 15px;
+    border-radius: 5px;
+    color: var(--grey-color);
+    margin-left:400%;
+}
+
+
+
+
+
+  </style>
+
+     <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+
+  
+  <body>
+    <nav class="navbar">
+      <div class="logo_item">
+          <i class="bx bx-menu" id="sidebarOpen"></i>
+          <img src="D:\CEPTAdmission_22112024\CEPT\Images\Capture.png" 
+               alt="" style="height:50px;width:100px;">
+          CEPT University
+      </div>
+  
+    
+      
+      <div class="year_dropdown">
+        <select id="yearSelect">
+            <option value="" selected disabled>Select Year</option>
+            <script>
+                const currentYear = new Date().getFullYear();
+                for (let i = currentYear; i >= currentYear - 10; i--) {
+                    document.write(`<option value="${i}-${i + 1}">${i}-${i + 1}</option>`);
+                }
+            </script>
+        </select>
+    </div>
+    
+      <div class="navbar_content">
+          <i class="bi bi-grid"></i>
+         <!-- <i class='bx bx-sun' id="darkLight"></i> -->
+          <i class='bx bx-bell'></i>
+  
+          <div class="dropdown">
+              <button class="dropbtn" id="dropdownBtn">
+                  <img src="https://freight.cargo.site/w/4000/q/75/i/f013cc75417a1b6b8b784c1801c7dbbfd8b486f6d32b4e44c86555e1a039ade7/Main-logo-1.jpg" 
+                       alt="User Profile" class="profile" />
+                  <i class="bx bx-caret-down"></i>
+              </button>
+              <div class="dropdown-content" id="dropdownMenu">
+                  <span id="user_info"><small>Welcome,</small> <asp:Label ID="lblusername" runat="server" Text=""></asp:Label></span>
+                  <a href="<%= Page.ResolveClientUrl("~/change_password.aspx") %>">
+                      <span class="navlink_icon_1"><i class="bx bx-user"></i></span> Change Password
+                  </a>
+                  <div class="divider"></div>
+                  <a href="<%= Page.ResolveClientUrl("~/Login.aspx?logout=2") %>">
+                      <span class="navlink_icon_1"><i class="bx bx-log-out"></i></span> Log Out
+                  </a>
+              </div>
+          </div>
+      </div>
+  </nav>
+  
+  <!-- sidebar -->
+    <nav class="sidebar">
+      <div class="menu_content">
+        <ul class="menu_items">
+          <div class="menu_title menu_dahsboard"></div>
+          <li class="item">
+            <a href="#" class="nav_link">
+              <span class="navlink_icon">
+                <i class="bx bx-right-indent"></i>
+              </span>
+              <span class="navlink">DashBoard</span>
+            </a>
+          </li>
+
+          <li class="item">
+            <div href="#" class="nav_link submenu_item">
+              <span class="navlink_icon">
+                <i class="bx bxs-microphone"></i>
+              </span>
+              <span class="navlink">Announcement</span>
+              <i class="bx bx-chevron-right arrow-left"></i>
+            </div>
+            <ul class="menu_items submenu">
+             <a href="<%= Page.ResolveClientUrl("~/Student/Student_announcement.aspx") %>" class="nav_link sublink"><i class="bx bx-file-blank"></i> Announcement Detail</a>
+            </ul>
+          </li>
+          <li class="item">
+            <div href="#" class="nav_link submenu_item">
+              <span class="navlink_icon">
+                <i class="bx bx-file-blank"></i>
+              </span>
+              <span class="navlink">Campus Entry</span>
+              <i class="bx bx-chevron-right arrow-left"></i>
+            </div>
+            <ul class="menu_items submenu">
+               <a href="<%= Page.ResolveClientUrl("~/Student/student_consent_form.aspx") %>" class="nav_link sublink"><i class="bx bx-file-blank"></i> Parental Consent Form</a>
+              <a href="<%= Page.ResolveClientUrl("~/Student/student_vaccination_dtl.aspx") %>" class="nav_link sublink"><i class="bx bx-file-blank"></i> Covid Vaccine Certificate</a>
+            </ul>
+          </li>
+        </ul>
+        <ul class="menu_items">
+          <li class="item">
+            <div href="#" class="nav_link submenu_item">
+              <span class="navlink_icon">
+                <i class="bx bx-folder-plus"></i>
+              </span>
+              <span class="navlink">Mandatory Submission</span>
+              <i class="bx bx-chevron-right arrow-left"></i>
+            </div>
+            <ul class="menu_items submenu">
+             <a href="<%= Page.ResolveClientUrl("~/Student/student_medical_fintness_certificate.aspx") %>" class="nav_link sublink"><i class="bx bx-file-blank"></i> Medical Fitness Certificate</a>
+              <a href="<%= Page.ResolveClientUrl("~/Student/student_antiragging_certificate.aspx") %>" class="nav_link sublink"><i class="bx bx-file-blank"></i> Anti Ragging Certificate</a>
+              <a href="<%= Page.ResolveClientUrl("~/Student/student_birth_leaving_certificate.aspx") %>" class="nav_link sublink"><i class="bx bx-file-blank"></i> Proof Of DOB</a>
+            </ul>
+          </li>
+          
+          <li class="item">
+            <div href="#" class="nav_link submenu_item">
+              <span class="navlink_icon">
+                <i class="bx bx-folder"></i>
+              </span>
+              <span class="navlink">Other Submission</span>
+              <i class="bx bx-chevron-right arrow-left"></i>
+            </div>
+            <ul class="menu_items submenu">
+             <a href="<%= Page.ResolveClientUrl("~/Student/Student_Personal_dtl.aspx") %>" class="nav_link sublink"><i class="bx bx-file-blank"></i> Upload Profile Photo</a>
+            </ul>
+          </li>
+
+          <li class="item">
+            <div href="#" class="nav_link submenu_item">
+              <span class="navlink_icon">
+                <i class="bx bx-user-plus"></i>
+              </span>
+              <span class="navlink">Student Menu</span>
+              <i class="bx bx-chevron-right arrow-left"></i>
+            </div>
+            <ul class="menu_items submenu">
+              <a href="<%= Page.ResolveClientUrl("~/Student/Calender.aspx") %>" class="nav_link sublink"><i class="bx bx-file-blank"></i> Time Table</a>
+              <a href="<%= Page.ResolveClientUrl("~/Student/sws_credit_choice.aspx") %>" class="nav_link sublink"><i class="bx bx-file-blank"></i> SW Elective Registration</a>
+              <a href="<%= Page.ResolveClientUrl("~/Student/sws_mandatory_course_dtl.aspx") %>" class="nav_link sublink"><i class="bx bx-file-blank"></i> SW Mandatory Registration</a>
+              <a href="<%= Page.ResolveClientUrl("~/Student/student_marksheet.aspx") %>" class="nav_link sublink"><i class="bx bx-file-blank"></i> Student Grade Report</a>
+              <a href="<%= Page.ResolveClientUrl("~/Student/change_after_course_allocation_new.aspx") %>" class="nav_link sublink"><i class="bx bx-file-blank"></i> Drop Courses</a>
+              <a href="<%= Page.ResolveClientUrl("~/Student/change_gpa_nongpa_after_allocation.aspx") %>" class="nav_link sublink"><i class="bx bx-file-blank"></i> Change GPA / Non-GPA</a>
+              <a href="<%= Page.ResolveClientUrl("~/Student/ProposalProject.aspx") %>" class="nav_link sublink"><i class="bx bx-file-blank"></i> Project Proposal</a>
+              <a href="<%= Page.ResolveClientUrl("~/Student/Refund_form_appliction.aspx") %>" class="nav_link sublink"><i class="bx bx-file-blank"></i> Refund Application</a>
+              <a href="<%= Page.ResolveClientUrl("~/Student/level3_choice_reg.aspx") %>" class="nav_link sublink"><i class="bx bx-file-blank"></i> L3 Choice Registration</a>
+              <a href="<%= Page.ResolveClientUrl("~/Student/vertical_studio_preferences.aspx") %>" class="nav_link sublink"><i class="bx bx-file-blank"></i> Studio Unit Preferences</a>
+              <a href="<%= Page.ResolveClientUrl("~/Student/Thesis.aspx") %>" class="nav_link sublink"><i class="bx bx-file-blank"></i> Thesis</a>
+              <a href="<%= Page.ResolveClientUrl("~/Student/student_wise_drp_dtl.aspx") %>" class="nav_link sublink"><i class="bx bx-file-blank"></i> DRP Details</a>
+              <a href="<%= Page.ResolveClientUrl("~/Student/Student_Clearance_Form.aspx") %>" class="nav_link sublink"><i class="bx bx-file-blank"></i> Student Clearance Form</a>
+              <a href="<%= Page.ResolveClientUrl("~/Student/Clearance_Status.aspx") %>" class="nav_link sublink"><i class="bx bx-file-blank"></i> Clearance Status</a>
+              <a href="<%= Page.ResolveClientUrl("~/Student/Bonafide_Certificate.aspx") %>" class="nav_link sublink"><i class="bx bx-file-blank"></i> Bonafide Certificate</a>
+            </ul>
+          </li>
+
+          <li class="item">
+            <div href="#" class="nav_link submenu_item">
+              <span class="navlink_icon">
+                <i class="bx bxs-bell-plus"></i>
+              </span>
+              <span class="navlink">Feedback</span>
+              <i class="bx bx-chevron-right arrow-left"></i>
+            </div>
+            <ul class="menu_items submenu">
+              <a href="<%= Page.ResolveClientUrl("~/Admin/Report/feedback_receipt_report.aspx")%>" class="nav_link sublink"><i class="bx bx-file-blank"></i> Feedback Receipt Report</a>
+              <a href="<%= Page.ResolveClientUrl("~/Admin/Report/feedback_student_report.aspx")%>" class="nav_link sublink"><i class="bx bx-file-blank"></i> Feedback Student Report</a>
+              <a href="<%= Page.ResolveClientUrl("~/Admin/Report/course_wise_feedback.aspx")%>" class="nav_link sublink"><i class="bx bx-file-blank"></i> Course wise Feedback</a>
+              <a href="<%= Page.ResolveClientUrl("~/Admin/Report/course_instructor_wise_feedback.aspx")%>" class="nav_link sublink"><i class="bx bx-file-blank"></i> Course instructor Feedback</a>
+              <a href="<%= Page.ResolveClientUrl("~/Admin/Report/Feedback_report.aspx")%>" class="nav_link sublink"><i class="bx bx-file-blank"></i> Feedback Report</a>
+              <a href="<%= Page.ResolveClientUrl("~/Admin/Report/feedback_faculty_member_report.aspx")%>" class="nav_link sublink"><i class="bx bx-file-blank"></i> Feedback Faculty Member Report</a>
+              <a href="<%= Page.ResolveClientUrl("~/Admin/Report/feedback_instructor_report.aspx")%>" class="nav_link sublink"><i class="bx bx-file-blank"></i> Instructor Report</a>
+              <a href="<%= Page.ResolveClientUrl("~/Admin/Report/feedback_course_report.aspx")%>" class="nav_link sublink"><i class="bx bx-file-blank"></i> Course Report</a>
+            </ul>
+          </li>
+
+          <li class="item">
+            <div href="#" class="nav_link submenu_item">
+              <span class="navlink_icon">
+                <i class="bx bx-receipt"></i>
+              </span>
+              <span class="navlink">Fees Menu</span>
+              <i class="bx bx-chevron-right arrow-left"></i>
+            </div>
+            <ul class="menu_items submenu">
+            <a href="<%= Page.ResolveClientUrl("~/Student/Fees_payment.aspx") %>" class="nav_link sublink"><i class="bx bx-file-blank"></i> Fees Payment</a>
+              <a href="<%= Page.ResolveClientUrl("~/Student/Fees_Status.aspx") %>" class="nav_link sublink"><i class="bx bx-file-blank"></i> Fees Status</a>
+              <a href="<%= Page.ResolveClientUrl("~/Student/frm_upload_installment_payslip.aspx") %>" class="nav_link sublink"><i class="bx bx-file-blank"></i> Upload Manual Payslip</a>
+              <a href="<%= Page.ResolveClientUrl("~/Student/Fees_receipt.aspx") %>" class="nav_link sublink"><i class="bx bx-file-blank"></i> Fees Receipt</a>
+              <a href="<%= Page.ResolveClientUrl("~/Student/hostel_fees_payment.aspx") %>" class="nav_link sublink"><i class="bx bx-file-blank"></i> Hostel Fees Payment</a>
+            </ul>
+          </li>
+
+          <li class="item">
+            <div href="#" class="nav_link submenu_item">
+              <span class="navlink_icon">
+                <i class="bx bxs-info-circle"></i>
+              </span>
+              <span class="navlink">Policies</span>
+              <i class="bx bx-chevron-right arrow-left"></i>
+            </div>
+            <ul class="menu_items submenu">
+              <a href="../Content/Student-Handbook-UG-PG.pdf" class="nav_link sublink"><i class="bx bx-file-blank"></i> Student Handbook</a>
+              <a href="../Content/Studio-Grading-Process.pdf" class="nav_link sublink"><i class="bx bx-file-blank"></i> Studio Grading Policy</a>
+              <a href="../Content/Level_2_studio_registration_process.pdf" class="nav_link sublink"><i class="bx bx-file-blank"></i> Level 2 Studio</a>
+              <a href="../Content/COVID‐19_Guideline_Monsoon_2021.pdf" class="nav_link sublink"><i class="bx bx-file-blank"></i> COVID‐19 Guideline</a>
+              <a href="../Content/credit_migration_table.pdf" class="nav_link sublink"><i class="bx bx-file-blank"></i> Credit Migration Table</a>
+             <a href="<%= Page.ResolveClientUrl("~/Student/Studio_Group_Allocation.aspx") %>" class="nav_link sublink"><i class="bx bx-file-blank"></i> Studio Allocation Group Wise</a>
+            </ul>
+          </li>
+
+          <li class="item">
+            <div href="#" class="nav_link submenu_item">
+              <span class="navlink_icon">
+                <i class="bx bx-user"></i>
+              </span>
+              <span class="navlink">Personal Details</span>
+              <i class="bx bx-chevron-right arrow-left"></i>
+            </div>
+            <ul class="menu_items submenu">
+              <a href="../Student/Student_Personal_dtl.aspx" class="nav_link sublink"><i class="bx bx-file-blank"></i> Student Details</a>
+              <a href="https://docs.google.com/forms/d/11FKiedKcTzPzTRnthkuHF_IhW_MXr_HAxem0BA3XfSg/viewform?edit_requested=true" class="nav_link sublink"><i class="bx bx-file-blank"></i> Smart Card</a>
+              <a href="../Student/Blood_Group.aspx" class="nav_link sublink"><i class="bx bx-file-blank"></i> Add Blood Group</a>
+            </ul>
+          </li> 
+          
+          <li class="item">
+            <div href="#" class="nav_link submenu_item">
+              <span class="navlink_icon">
+                <i class="bx bxs-user"></i>
+              </span>
+              <span class="navlink">Profile</span>
+              <i class="bx bx-chevron-right arrow-left"></i>
+            </div>
+            <ul class="menu_items submenu">
+               <a href="<%= Page.ResolveClientUrl("~/change_password.aspx") %>" class="nav_link sublink"><i class="bx bx-file-blank"></i> Change Password</a>
+              <a href="<%= Page.ResolveClientUrl("~/Login.aspx?logout=2") %>" class="nav_link sublink"><i class="bx bx-file-blank"></i> LogOut</a>
+              
+            </ul>
+          </li> 
+
+        </ul>
+
+        <%--<div class="bottom_content">
+          <div class="bottom expand_sidebar">
+            <span> Expand</span>
+            <i class='bx bx-expand-horizontal'></i>
+          </div>
+          <div class="bottom collapse_sidebar">
+            <span> Collapse</span>
+            <i class='bx bx-collapse-horizontal'></i>
+          </a>
+          </div>
+        </div>--%>
+      </div>
+    </nav>
+ 
+
+    
+
+  </body>
+     <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+<script>
+    const body = document.querySelector("body");
+    const sidebar = document.querySelector(".sidebar");
+    const submenuItems = document.querySelectorAll(".submenu_item");
+    const sidebarOpen = document.querySelector("#sidebarOpen");
+    const sidebarExpand = document.querySelector(".expand_sidebar");
+
+    const sidebarClose = document.querySelector(".collapse_sidebar"); // This might be null if removed
+
+    // Toggle sidebar open/close
+    sidebarOpen.addEventListener("click", () => sidebar.classList.toggle("close"));
+
+    // Only add event listeners if collapse_sidebar exists
+    if (sidebarClose) {
+        sidebarClose.addEventListener("click", () => {
+            sidebar.classList.add("close", "hoverable");
+        });
+    }
+
+    if (sidebarExpand) {
+        sidebarExpand.addEventListener("click", () => {
+            sidebar.classList.remove("close", "hoverable");
+        });
+    }
+
+    // Sidebar hover effects
+    sidebar.addEventListener("mouseenter", () => {
+        if (sidebar.classList.contains("hoverable")) {
+            sidebar.classList.remove("close");
+        }
+    });
+    sidebar.addEventListener("mouseleave", () => {
+        if (sidebar.classList.contains("hoverable")) {
+            sidebar.classList.add("close");
+        }
+    });
+
+    // Dropdown Menu Toggle
+    const dropdownBtn = document.getElementById("dropdownBtn");
+    if (dropdownBtn) {
+        dropdownBtn.addEventListener("click", function (event) {
+            event.stopPropagation();
+            document.getElementById("dropdownMenu").classList.toggle("show");
+        });
+    }
+
+    // Handle submenu clicks
+    submenuItems.forEach((item, index) => {
+        item.addEventListener("click", () => {
+            item.classList.toggle("show_submenu");
+            submenuItems.forEach((item2, index2) => {
+                if (index !== index2) {
+                    item2.classList.remove("show_submenu");
+                }
+            });
+        });
+    });
+
+    // Responsive sidebar behavior
+    if (window.innerWidth < 768) {
+        sidebar.classList.add("close");
+    } else {
+        sidebar.classList.remove("close");
+    }
+
+    // Sidebar margin adjustment
+    document.getElementById("sidebarOpen").addEventListener("click", () => {
+        const content = document.querySelector(".main-content");
+        content.style.marginLeft = sidebar.classList.contains("close") ? "80px" : "260px";
+    });
+
+</script>
+ 
+ 
+</html>
+

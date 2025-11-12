@@ -1,0 +1,47 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+
+
+public partial class Admin_Report_student_course_allocated_report : System.Web.UI.Page
+{
+    protected void Page_Load(object sender, EventArgs e)
+    {
+  //      ViewState["user_name"] = "Kamlesh nada";
+
+        // byte[] dec = Convert.FromBase64String("/wEPDwUKMTY1NDU2MTA1Mg8WAh4JdXNlcl9uYW1lBQxLYW1sZXNoIG5hZGEWAmYPZBYCAgEPZBYGAgcPFgIeCWlubmVyaHRtbAX/ITx1bD48bGkgcnVuYXQ9J3NlcnZlcicgaWQ9TWVudTEgc3R5bGU9J2JvcmRlci1sZWZ0OiAwOyB3aWR0aDoxNCU7IG1hcmdpbi1sZWZ0OjExJTsnIGlkPSJNZW51MSIgY2xhc3M9J2hhcy1zdWInPjxhIGhyZWY9JyMnPjxzcGFuPkNvdXJzZXM8L3NwYW4+PC9hPjx1bD48bGkgcnVuYXQ9J3NlcnZlcicgaWQ9J01lbnU4NSc+PGEgaHJlZj0nLi4vTWFzdGVyL2ZybV9hZGRfQUEuYXNweCc+PHNwYW4+QWRkIENvdXJzZSBBQTxzcGFuPjwvYT48L2xpPjxsaSBydW5hdD0nc2VydmVyJyBpZD0nTWVudTknPjxhIGhyZWY9Jy4uL01hc3Rlci9mcm1jb3Vyc2VtYXN0ZXJfYWRkLmFzcHgnPjxzcGFuPkFkZCBOZXcgQ291cnNlPHNwYW4+PC9hPjwvbGk+PGxpIHJ1bmF0PSdzZXJ2ZXInIGlkPSdNZW51Nic+PGEgaHJlZj0nLi4vTWFzdGVyL0FkbWluX2Rhc2hib2FyZC5hc3B4Jz48c3Bhbj5Db3Vyc2UgSW5mb3JtYXRpb248c3Bhbj48L2E+PC9saT48bGkgcnVuYXQ9J3NlcnZlcicgaWQ9J01lbnU4Jz48YSBocmVmPScuLi9NYXN0ZXIvZnJtY291cnNlbWFzdGVyLmFzcHgnPjxzcGFuPkVkaXQgQ291cnNlPHNwYW4+PC9hPjwvbGk+PGxpIHJ1bmF0PSdzZXJ2ZXInIGlkPSdNZW51Nyc+PGEgaHJlZj0nLi4vTWFzdGVyL2ZybV9pbnN0cnVjdG9yX21zdC5hc3B4Jz48c3Bhbj5JbnN0cnVjdG9yIE1hc3RlcjxzcGFuPjwvYT48L2xpPjxsaSBydW5hdD0nc2VydmVyJyBpZD0nTWVudTEwJz48YSBocmVmPScuLi9NYXN0ZXIvdXNlcl91cGxvYWQuYXNweCc+PHNwYW4+VXBsb2FkIE1hc3RlcjxzcGFuPjwvYT48L2xpPjwvdWw+PC9saT48bGkgcnVuYXQ9J3NlcnZlcicgaWQ9TWVudTIgc3R5bGU9J3dpZHRoIDoxNSU7JyBpZD0iTWVudTIiIGNsYXNzPSdoYXMtc3ViJz48YSBocmVmPScjJz48c3Bhbj5HcmFkaW5nPC9zcGFuPjwvYT48dWw+PGxpIHJ1bmF0PSdzZXJ2ZXInIGlkPSdNZW51MTInPjxhIGhyZWY9Jy4uL01hc3Rlci9Db3Vyc2Vfd2lzZV9hdmdfbWFya3MuYXNweCc+PHNwYW4+Q291cnNlIFdpc2UgR3JhZGUgUmFuZ2U8c3Bhbj48L2E+PC9saT48bGkgcnVuYXQ9J3NlcnZlcicgaWQ9J01lbnUxNCc+PGEgaHJlZj0nR3JhZGVSZXBvcnQuYXNweCc+PHNwYW4+R3JhZGUgUmVwb3J0PHNwYW4+PC9hPjwvbGk+PGxpIHJ1bmF0PSdzZXJ2ZXInIGlkPSdNZW51NzMnPjxhIGhyZWY9J0dyYWRlUmVwb3J0X0ZpbmFsLmFzcHgnPjxzcGFuPkdyYWRlIFJlcG9ydCBGaW5hbDxzcGFuPjwvYT48L2xpPjxsaSBydW5hdD0nc2VydmVyJyBpZD0nTWVudTExJz48YSBocmVmPScuLi9NYXN0ZXIvQ291cnNlX3dpc2VfZW50ZXJlZF9tYXJrcy5hc3B4Jz48c3Bhbj5NYXJrcyBFbnRyeTxzcGFuPjwvYT48L2xpPjxsaSBydW5hdD0nc2VydmVyJyBpZD0nTWVudTEzJz48YSBocmVmPScuLi9NYXN0ZXIvU3R1ZGVudF93aXNlX2dyYWRlLmFzcHgnPjxzcGFuPlN0dWRlbnQgV2lzZSBHcmFkZTxzcGFuPjwvYT48L2xpPjxsaSBydW5hdD0nc2VydmVyJyBpZD0nTWVudTkyJz48YSBocmVmPSdHcmFkZVRyYW5zY3JpcHQuYXNweCc+PHNwYW4+VHJhbnNjcmlwdDxzcGFuPjwvYT48L2xpPjwvdWw+PC9saT48bGkgcnVuYXQ9J3NlcnZlcicgaWQ9TWVudTQgc3R5bGU9J3dpZHRoIDoxNSU7IGJvcmRlci10b3A6IDVweCBzb2xpZCAjNUI5QkQ1OycgaWQ9Ik1lbnU0IiBjbGFzcz0naGFzLXN1Yic+PGEgaHJlZj0nIyc+PHNwYW4gc3R5bGU9JyAgZm9udC13ZWlnaHQ6IGJvbGQ7IGNvbG9yOiBibGFjazsnPlJlcG9ydHM8L3NwYW4+PC9hPjx1bD48bGkgcnVuYXQ9J3NlcnZlcicgaWQ9J01lbnUxNyc+PGEgaHJlZj0nc3R1ZGVudF9jb3Vyc2VfYWxsb2NhdGVkX3JlcG9ydC5hc3B4Jz48c3Bhbj5Db3Vyc2UgQWxsb2NhdGlvbiBSZXBvcnQ8c3Bhbj48L2E+PC9saT48bGkgcnVuYXQ9J3NlcnZlcicgaWQ9J01lbnUxNSc+PGEgaHJlZj0nZnJtX2NvdXJzZV9jYXRhbG9nLmFzcHgnPjxzcGFuPkNvdXJzZSBDYXRhbG9nPHNwYW4+PC9hPjwvbGk+PGxpIHJ1bmF0PSdzZXJ2ZXInIGlkPSdNZW51MTgnPjxhIGhyZWY9Jy4uL01hc3Rlci9UaW1ldGFibGUuYXNweCc+PHNwYW4+Q291cnNlIFRpbWUgVGFibGU8c3Bhbj48L2E+PC9saT48bGkgcnVuYXQ9J3NlcnZlcicgaWQ9J01lbnU3NCc+PGEgaHJlZj0nLi4vUmVwb3J0L0NvdXJzZV93aXNlX3Jlc3VsdF9yZXBvcnQuYXNweCc+PHNwYW4+Q291cnNlIFdpc2UgUmVzdWx0IFJlcG9ydDxzcGFuPjwvYT48L2xpPjxsaSBydW5hdD0nc2VydmVyJyBpZD0nTWVudTk4Jz48YSBocmVmPSdDb3Vyc2Vfd2lzZV9zdHVkZW50X0dyYWRlX3N0YXR1cy5hc3B4Jz48c3Bhbj5Db3Vyc2UgV2lzZSBTdHVkZW50IEdyYWRlIFN0YXR1czxzcGFuPjwvYT48L2xpPjxsaSBydW5hdD0nc2VydmVyJyBpZD0nTWVudTE2Jz48YSBocmVmPSdGYWN1bHR5X3JlcG9ydC5hc3B4Jz48c3Bhbj5GYWN1bHR5IFJlcG9ydDxzcGFuPjwvYT48L2xpPjxsaSBydW5hdD0nc2VydmVyJyBpZD0nTWVudTEwNyc+PGEgaHJlZj0nc2VtZXN0ZXJfd2lzZV9zdHVkZW50X3JlcG9ydC5hc3B4Jz48c3Bhbj5TZW1lc3RlciBXaXNlIFN0dWRlbnQgUmVwb3J0PHNwYW4+PC9hPjwvbGk+PGxpIHJ1bmF0PSdzZXJ2ZXInIGlkPSdNZW51NTcnPjxhIGhyZWY9J1N0dWRlbnRfZmVlc19yZXBvcnRfd2l0aF9jcmVkaXRfY2hvaWNlLmFzcHgnPjxzcGFuPlN0dWRlbnQgZmVlcyBjcmVkaXQgY2hvaWNlPHNwYW4+PC9hPjwvbGk+PGxpIHJ1bmF0PSdzZXJ2ZXInIGlkPSdNZW51NDknPjxhIGhyZWY9Jy4uL01hc3Rlci91c2VyX21hc3Rlcl9yZXBvcnQuYXNweCc+PHNwYW4+U3R1ZGVudCBSZXBvcnQ8c3Bhbj48L2E+PC9saT48bGkgcnVuYXQ9J3NlcnZlcicgaWQ9J01lbnUxMDUnPjxhIGhyZWY9J1N0dWRlbnRfU2VtZXN0ZXJHUEFfY29tcGFyaXNvbi5hc3B4Jz48c3Bhbj5TdHVkZW50IFNlbWVzdGVyIEdQQSBDb21wYXJpc29uPHNwYW4+PC9hPjwvbGk+PGxpIHJ1bmF0PSdzZXJ2ZXInIGlkPSdNZW51ODQnPjxhIGhyZWY9Jy4uL1JlcG9ydC9TdHVkZW50X3dpc2VfY291cnNlX0dQX3JhdGlvLmFzcHgnPjxzcGFuPlN0dWRlbnQgV2lzZSBDb3Vyc2UgR1A8c3Bhbj48L2E+PC9saT48L3VsPjwvbGk+PGxpIHJ1bmF0PSdzZXJ2ZXInIGlkPU1lbnU1IHN0eWxlPSd3aWR0aCA6MTUlOycgaWQ9Ik1lbnU1IiBjbGFzcz0naGFzLXN1Yic+PGEgaHJlZj0nIyc+PHNwYW4+VHJhbnNhY3Rpb248L3NwYW4+PC9hPjx1bD48bGkgcnVuYXQ9J3NlcnZlcicgaWQ9J01lbnUyMSc+PGEgaHJlZj0nLi4vTWFzdGVyL0FkZF9tYW51YWxseV9hbGxvY2F0aW9uLmFzcHgnPjxzcGFuPkFkZCBNYW51YWxseSBjb3Vyc2U8c3Bhbj48L2E+PC9saT48bGkgcnVuYXQ9J3NlcnZlcicgaWQ9J01lbnU4Nic+PGEgaHJlZj0nZnJtX3VwbG9hZF9tYW51YWxseV9wYXlzbGlwX3JlcG9ydC5hc3B4Jz48c3Bhbj5BcHByb3ZlIE1hbnVhbGx5IFBheXNsaXA8c3Bhbj48L2E+PC9saT48bGkgcnVuYXQ9J3NlcnZlcicgaWQ9J01lbnUyMCc+PGEgaHJlZj0nLi4vTWFzdGVyL0dlbmVyYXRlX29ubGluZV9hcHBsaWNhdGlvbi5hc3B4Jz48c3Bhbj5HZW5lcmF0ZSBPbmxpbmUgVHJhbnNhY3Rpb248c3Bhbj48L2E+PC9saT48bGkgcnVuYXQ9J3NlcnZlcicgaWQ9J01lbnUyMyc+PGEgaHJlZj0nLi4vTWFzdGVyL2ZybV9wcmludF9wYXlzbGlwX3N0dWRlbnRfd2lzZS5hc3B4Jz48c3Bhbj5HZW5lcmF0ZSBQYXlzbGlwIFN0dWRlbnQgV2lzZTxzcGFuPjwvYT48L2xpPjxsaSBydW5hdD0nc2VydmVyJyBpZD0nTWVudTIyJz48YSBocmVmPScuLi9NYXN0ZXIvUHJpbnRfcGF5X3NsaXBfYnlfYWRtaW4uYXNweCc+PHNwYW4+UHJpbnQgUGF5c2xpcDxzcGFuPjwvYT48L2xpPjxsaSBydW5hdD0nc2VydmVyJyBpZD0nTWVudTE5Jz48YSBocmVmPScuLi9NYXN0ZXIvc3R1ZGVudF9mZWVzX3N0YXR1cy5hc3B4Jz48c3Bhbj5TdHVkZW50IEZlZXMgRW50cnk8c3Bhbj48L2E+PC9saT48bGkgcnVuYXQ9J3NlcnZlcicgaWQ9J01lbnU1Nic+PGEgaHJlZj0nLi4vTWFzdGVyL1VzZXJfTW9kaWZpY2F0aW9uLmFzcHgnPjxzcGFuPlN0dWRlbnQgTW9kaWZpY2F0aW9uPHNwYW4+PC9hPjwvbGk+PC91bD48L2xpPjxsaSBydW5hdD0nc2VydmVyJyBzdHlsZT0nd2lkdGg6IDEzJTsgJyAgY2xhc3M9J2hhcy1zdWInPjxhIGhyZWY9Jy4uL01hc3Rlci9NeUNhbGVuZGFyLmFzcHgnPjxzcGFuPk15IGNhbGVuZGFyPC9zcGFuPjwvYT48L2xpPiAgPGxpIHJ1bmF0PSdzZXJ2ZXInIHN0eWxlPSd3aWR0aDogMTclOyAnICBjbGFzcz0naGFzLXN1Yic+PGEgaHJlZj0nLi4vTWFzdGVyL2ZybV9wZXJzb25hbF9kZXRhaWxzLmFzcHgnPjxzcGFuIHN0eWxlPSdmbG9hdDpyaWdodDsnPlBlcnNvbmFsIGRldGFpbHM8L3NwYW4+PC9hPjwvbGk+PC91bD5kAggPFgIfAQUKdWdwZ29mZmljZWQCCQ8WAh8BBX08YSBocmVmPScuLi9NYXN0ZXIvSG9tZS5hc3B4Jz48c3Bhbj5Ib21lPHNwYW4+PC9hPiAvIDxhPjxzcGFuPlJlcG9ydHM8c3Bhbj48L2E+IC8gPGE+PHNwYW4+Q291cnNlIEFsbG9jYXRpb24gUmVwb3J0PHNwYW4+PC9hPmRklZ6BNZ0nHgtwNFW30LrQZPYABHp9/PoQWG9C3SZkp6Q=");
+        //string aa = System.Text.Encoding.UTF8.GetString(dec);
+
+   //    Response.Cookies["name"].Domain = "Kamlesh";
+
+
+      //  Session.RemoveAt(0);
+
+     //   string name = Session["UserName"].ToString();
+
+        if (!IsPostBack)
+        {
+            if (Session["user_type"].ToString() != "A" && Session["user_type"].ToString() != "A1")
+            {
+
+                
+                if (Session["user_type"].ToString() == "S")
+                {
+                    Response.Redirect("~/Student/Dashboard.aspx?autho=false");
+                }
+                else if (Session["user_type"].ToString() == "I")
+                {
+                    Response.Redirect("~/IT/IT_dashboard.aspx?autho=false");
+                }
+                else if (Session["user_type"].ToString() == "A1")
+                {
+                    Response.Redirect("~/Admin/Master/admin_dashboard.aspx?autho=false");
+                }
+
+            }
+        }
+    }
+}

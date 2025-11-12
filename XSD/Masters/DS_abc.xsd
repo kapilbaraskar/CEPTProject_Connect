@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DS_WO_mapping" targetNamespace="http://tempuri.org/DS_WO_mapping.xsd" xmlns:mstns="http://tempuri.org/DS_WO_mapping.xsd" xmlns="http://tempuri.org/DS_WO_mapping.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="CASDESIGNConnectionString2" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="CASDESIGNConnectionString2 (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.XSD.Properties.Settings.GlobalReference.Default.CASDESIGNConnectionString2" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DS_WO_mapping" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DS_WO_mapping" msprop:Generator_UserDSName="DS_WO_mapping">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="wo_mapping" msprop:Generator_TableClassName="wo_mappingDataTable" msprop:Generator_TableVarName="tablewo_mapping" msprop:Generator_TablePropName="wo_mapping" msprop:Generator_RowDeletingName="wo_mappingRowDeleting" msprop:Generator_UserTableName="wo_mapping" msprop:Generator_RowChangingName="wo_mappingRowChanging" msprop:Generator_RowEvHandlerName="wo_mappingRowChangeEventHandler" msprop:Generator_RowDeletedName="wo_mappingRowDeleted" msprop:Generator_RowEvArgName="wo_mappingRowChangeEvent" msprop:Generator_RowChangedName="wo_mappingRowChanged" msprop:Generator_RowClassName="wo_mappingRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="document_number" msprop:Generator_ColumnVarNameInTable="columndocument_number" msprop:Generator_ColumnPropNameInRow="document_number" msprop:Generator_ColumnPropNameInTable="document_numberColumn" msprop:Generator_UserColumnName="document_number">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="wo_number" msprop:Generator_ColumnVarNameInTable="columnwo_number" msprop:Generator_ColumnPropNameInRow="wo_number" msprop:Generator_ColumnPropNameInTable="wo_numberColumn" msprop:Generator_UserColumnName="wo_number">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="FIM_Code" msprop:Generator_ColumnVarNameInTable="columnFIM_Code" msprop:Generator_ColumnPropNameInRow="FIM_Code" msprop:Generator_ColumnPropNameInTable="FIM_CodeColumn" msprop:Generator_UserColumnName="FIM_Code">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="FIM_Sub_Code" msprop:Generator_ColumnVarNameInTable="columnFIM_Sub_Code" msprop:Generator_ColumnPropNameInRow="FIM_Sub_Code" msprop:Generator_ColumnPropNameInTable="FIM_Sub_CodeColumn" msprop:Generator_UserColumnName="FIM_Sub_Code" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="cancel_flag" msprop:Generator_ColumnVarNameInTable="columncancel_flag" msprop:Generator_ColumnPropNameInRow="cancel_flag" msprop:Generator_ColumnPropNameInTable="cancel_flagColumn" msprop:Generator_UserColumnName="cancel_flag" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="created_by" msprop:Generator_ColumnVarNameInTable="columncreated_by" msprop:Generator_ColumnPropNameInRow="created_by" msprop:Generator_ColumnPropNameInTable="created_byColumn" msprop:Generator_UserColumnName="created_by" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="created_date" msprop:Generator_ColumnVarNameInTable="columncreated_date" msprop:Generator_ColumnPropNameInRow="created_date" msprop:Generator_ColumnPropNameInTable="created_dateColumn" msprop:Generator_UserColumnName="created_date" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="created_host" msprop:Generator_ColumnVarNameInTable="columncreated_host" msprop:Generator_ColumnPropNameInRow="created_host" msprop:Generator_ColumnPropNameInTable="created_hostColumn" msprop:Generator_UserColumnName="created_host" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="15" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="last_modified_by" msprop:Generator_ColumnVarNameInTable="columnlast_modified_by" msprop:Generator_ColumnPropNameInRow="last_modified_by" msprop:Generator_ColumnPropNameInTable="last_modified_byColumn" msprop:Generator_UserColumnName="last_modified_by" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="last_modified_date" msprop:Generator_ColumnVarNameInTable="columnlast_modified_date" msprop:Generator_ColumnPropNameInRow="last_modified_date" msprop:Generator_ColumnPropNameInTable="last_modified_dateColumn" msprop:Generator_UserColumnName="last_modified_date" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="last_modified_host" msprop:Generator_ColumnVarNameInTable="columnlast_modified_host" msprop:Generator_ColumnPropNameInRow="last_modified_host" msprop:Generator_ColumnPropNameInTable="last_modified_hostColumn" msprop:Generator_UserColumnName="last_modified_host" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="15" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:wo_mapping" />
+      <xs:field xpath="mstns:document_number" />
+      <xs:field xpath="mstns:wo_number" />
+      <xs:field xpath="mstns:FIM_Code" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

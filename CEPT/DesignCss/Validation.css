@@ -1,0 +1,44 @@
+﻿.field-validation-error {
+    /*width: 600px;*/
+    /*min-height: 40px;*/ /*min height of DIV should be set to at least 2x the width of the arrow*/
+    /*background: rgb(253, 253, 173);*/
+    color: rgb(248, 22, 22);
+    /*padding: 4px;
+        position: relative;
+        word-wrap: break-word;
+        -moz-border-radius: 5px;*/ /*add some nice CSS3 round corners*/
+    /*-webkit-border-radius: 5px;
+        border-radius: 5px;
+        margin-bottom: 2em;*/
+    /*margin-left: 75%;*/
+    /*border: 1px solid rgb(248, 22, 22);
+        font-weight: bold;
+        top:-69px;
+        font-size:11px;
+        float:right;
+        margin-right:10px;
+        width:auto;
+        min-width:230px;*/
+}
+
+/*.field-validation-error:after {*/ /*arrow added to downarrowdiv DIV*/
+/*content: '';
+            display: block;
+            position: absolute;
+            top: 100%;*/ /*should be set to 100% */
+/*left: 20px;
+            width: 0;
+            height: 0;
+            border-color: rgb(248, 22, 22) transparent transparent transparent;*/ /*black transparent transparent transparent; border color should be same as div div background color*/
+/*border-style: solid;
+            border-width: 10px;
+            background-color: rgb(253, 253, 173) transparent transparent transparent;
+        }*/
+label.error {
+    color: #b94a48 !important;
+    border: none !important;
+}
+
+.error {
+    border: 1px solid #b94a48 !important;
+}

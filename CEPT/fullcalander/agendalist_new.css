@@ -1,0 +1,111 @@
+    .fc-body {
+      background-color: #E0E0E0;
+      font-family: Arial, sans-serif;
+    }
+    .fc-list-container {
+      border: 1px solid #CCC;
+      margin: 20px;
+      padding: 20px;
+      background-color: #FFF;
+    }
+    .fc-agendaList {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      border: 1px solid #E0E0E0;
+      border-bottom: none;
+    }
+    .fc-agendaList-dayHeader {
+      background-color: #F0F0F0;
+      /*border-bottom: 1px solid #E0E0E0;*/
+      margin: 1px;
+      padding: 5px;
+      overflow: hidden;
+    }
+    .fc-agendaList-day,
+    .fc-agendaList-date {
+      font-size: 12px;
+      line-height: 8px;
+      display: block;
+    }
+    .fc-agendaList-day {
+      font-weight: bold;
+      color: #404040;
+      float: left;
+    }
+    .fc-agendaList-date {
+      /*color: #707070;*/
+      float: right;
+    }
+    .fc-agendaList-item {
+      border-bottom: 1px solid #E0E0E0;
+    }
+    .fc-agendaList-event {
+      display: block;
+     
+      padding: 2px;
+      margin: 1px;
+    }
+    /* Event Link */
+    a.fc-agendaList-event {
+      text-decoration: none;
+      border-color: #5284C1;
+    }
+    a.fc-agendaList-event:hover {
+      background-color: #F8F8F8;
+    }
+    a.fc-agendaList-event .fc-event-title {
+      color: #4B66A7;
+      text-decoration: underline;
+    }
+
+    .fc-agendaList .fc-event-time {
+      display: inline-block;
+      vertical-align: top;
+      width: 12%;
+      margin-right: 8px;
+    }
+    .fc-event-start-time,
+    .fc-event-end-time {
+      display: block;
+    }
+    .fc-event-start-time,
+    .fc-event-all-day {
+      font-size: 14px;
+      line-height: 20px;
+      color: #404040;
+    }
+    .fc-event-end-time {
+      font-size: 12px;
+      line-height: 16px;
+      color: #A0A0A0;
+    }
+    .fc-agendaList-eventDetails {
+      display: inline-block;
+      vertical-align: top;
+    }
+    .fc-eventlist-title {
+      /*font-weight: bold;*/
+      font-size: 12px;
+      line-height: 20px;
+      color: #404040;
+    }
+    .fc-eventlist-desc {
+      font-size: 12px;
+      line-height: 16px;
+      color: #707070;
+    }
+    
+    
+.timeline {
+
+    position: absolute;
+    left: 59px;
+    border: none;
+    border-top: 1px solid red; 
+    width: 100%;
+    margin: 0;
+   padding: 0;
+    z-index: 999; 
+
+} 

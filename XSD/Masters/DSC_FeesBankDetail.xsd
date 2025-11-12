@@ -1,0 +1,449 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DSC_FeesBankDetail" targetNamespace="http://tempuri.org/DSC_FeesBankDetail.xsd" xmlns:mstns="http://tempuri.org/DSC_FeesBankDetail.xsd" xmlns="http://tempuri.org/DSC_FeesBankDetail.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="5" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="CEPT_REG_TESTConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="CEPT_REG_TESTConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.XSD.Properties.Settings.GlobalReference.Default.CEPT_REG_TESTConnectionString" Provider="System.Data.SqlClient" />
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="Mayur_CEPT_Registartion" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="Mayur_CEPT_Registartion (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.XSD.Properties.Settings.GlobalReference.Default.Mayur_CEPT_Registartion" Provider="System.Data.SqlClient" />
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="CEPT_RegistrationConnectionString2" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="CEPT_RegistrationConnectionString2 (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.XSD.Properties.Settings.GlobalReference.Default.CEPT_RegistrationConnectionString2" Provider="System.Data.SqlClient" />
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="CEPT_Registration_Latest_Win10" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="CEPT_Registration_Latest_Win10 (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.XSD.Properties.Settings.GlobalReference.Default.CEPT_Registration_Latest_Win10" Provider="System.Data.SqlClient" />
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="CEPT_Registration_02012020ConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="CEPT_Registration_02012020ConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.XSD.Properties.Settings.GlobalReference.Default.CEPT_Registration_02012020ConnectionString" Provider="System.Data.SqlClient" />
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="BKUP_CEPT_REGISTRATION20230619ConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="BKUP_CEPT_REGISTRATION20230619ConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.XSD.Properties.Settings.GlobalReference.Default.BKUP_CEPT_REGISTRATION20230619ConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="fees_bank_dtlTableAdapter" GeneratorDataComponentClassName="fees_bank_dtlTableAdapter" Name="fees_bank_dtl" UserDataComponentName="fees_bank_dtlTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="BKUP_CEPT_REGISTRATION20230619ConnectionString (Settings)" DbObjectName="BKUP_CEPT_REGISTRATION20230619.dbo.fees_bank_dtl" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>DELETE FROM [fees_bank_dtl] WHERE (([doc_no] = @Original_doc_no) AND ([dept_code] = @Original_dept_code) AND ([prog_code] = @Original_prog_code) AND ((@IsNull_account_name = 1 AND [account_name] IS NULL) OR ([account_name] = @Original_account_name)) AND ([bank_code] = @Original_bank_code) AND ((@IsNull_bank_code1 = 1 AND [bank_code1] IS NULL) OR ([bank_code1] = @Original_bank_code1)) AND ((@IsNull_deposit_bank_code = 1 AND [deposit_bank_code] IS NULL) OR ([deposit_bank_code] = @Original_deposit_bank_code)) AND ((@IsNull_year = 1 AND [year] IS NULL) OR ([year] = @Original_year)) AND ((@IsNull_year_code = 1 AND [year_code] IS NULL) OR ([year_code] = @Original_year_code)) AND ((@IsNull_gender = 1 AND [gender] IS NULL) OR ([gender] = @Original_gender)) AND ((@IsNull_semester_code = 1 AND [semester_code] IS NULL) OR ([semester_code] = @Original_semester_code)) AND ((@IsNull_semester_type = 1 AND [semester_type] IS NULL) OR ([semester_type] = @Original_semester_type)) AND ((@IsNull_year_semester = 1 AND [year_semester] IS NULL) OR ([year_semester] = @Original_year_semester)) AND ((@IsNull_deposit = 1 AND [deposit] IS NULL) OR ([deposit] = @Original_deposit)) AND ((@IsNull_fees1 = 1 AND [fees1] IS NULL) OR ([fees1] = @Original_fees1)) AND ((@IsNull_fees = 1 AND [fees] IS NULL) OR ([fees] = @Original_fees)) AND ((@IsNull_cancel_flag = 1 AND [cancel_flag] IS NULL) OR ([cancel_flag] = @Original_cancel_flag)) AND ((@IsNull_installment1 = 1 AND [installment1] IS NULL) OR ([installment1] = @Original_installment1)) AND ((@IsNull_installment2 = 1 AND [installment2] IS NULL) OR ([installment2] = @Original_installment2)) AND ((@IsNull_installment3 = 1 AND [installment3] IS NULL) OR ([installment3] = @Original_installment3)) AND ((@IsNull_installment4 = 1 AND [installment4] IS NULL) OR ([installment4] = @Original_installment4)) AND ((@IsNull_installment5 = 1 AND [installment5] IS NULL) OR ([installment5] = @Original_installment5)) AND ((@IsNull_fine = 1 AND [fine] IS NULL) OR ([fine] = @Original_fine)) AND ((@IsNull_start_date = 1 AND [start_date] IS NULL) OR ([start_date] = @Original_start_date)) AND ((@IsNull_end_date = 1 AND [end_date] IS NULL) OR ([end_date] = @Original_end_date)) AND ((@IsNull_end_date2 = 1 AND [end_date2] IS NULL) OR ([end_date2] = @Original_end_date2)) AND ((@IsNull_end_date3 = 1 AND [end_date3] IS NULL) OR ([end_date3] = @Original_end_date3)) AND ((@IsNull_fine2 = 1 AND [fine2] IS NULL) OR ([fine2] = @Original_fine2)) AND ((@IsNull_nationality = 1 AND [nationality] IS NULL) OR ([nationality] = @Original_nationality)))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_doc_no" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="doc_no" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_dept_code" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="dept_code" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_prog_code" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="prog_code" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_account_name" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="account_name" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_account_name" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="account_name" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_bank_code" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="bank_code" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_bank_code1" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="bank_code1" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_bank_code1" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="bank_code1" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_deposit_bank_code" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="deposit_bank_code" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_deposit_bank_code" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="deposit_bank_code" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_year" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="year" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_year" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="year" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_year_code" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="year_code" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_year_code" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="year_code" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_gender" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="gender" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiStringFixedLength" Direction="Input" ParameterName="@Original_gender" Precision="0" ProviderType="Char" Scale="0" Size="0" SourceColumn="gender" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_semester_code" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="semester_code" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_semester_code" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="semester_code" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_semester_type" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="semester_type" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_semester_type" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="semester_type" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_year_semester" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="year_semester" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_year_semester" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="year_semester" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_deposit" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="deposit" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_deposit" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="deposit" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_fees1" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="fees1" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_fees1" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="fees1" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_fees" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="fees" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_fees" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="fees" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_cancel_flag" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="cancel_flag" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiStringFixedLength" Direction="Input" ParameterName="@Original_cancel_flag" Precision="0" ProviderType="Char" Scale="0" Size="0" SourceColumn="cancel_flag" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_installment1" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="installment1" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_installment1" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="installment1" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_installment2" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="installment2" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_installment2" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="installment2" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_installment3" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="installment3" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_installment3" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="installment3" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_installment4" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="installment4" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_installment4" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="installment4" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_installment5" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="installment5" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_installment5" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="installment5" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_fine" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="fine" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_fine" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="fine" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_start_date" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="start_date" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Original_start_date" Precision="0" ProviderType="SmallDateTime" Scale="0" Size="0" SourceColumn="start_date" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_end_date" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="end_date" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Original_end_date" Precision="0" ProviderType="SmallDateTime" Scale="0" Size="0" SourceColumn="end_date" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_end_date2" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="end_date2" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Original_end_date2" Precision="0" ProviderType="SmallDateTime" Scale="0" Size="0" SourceColumn="end_date2" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_end_date3" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="end_date3" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Original_end_date3" Precision="0" ProviderType="SmallDateTime" Scale="0" Size="0" SourceColumn="end_date3" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_fine2" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="fine2" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_fine2" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="fine2" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_nationality" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="nationality" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiStringFixedLength" Direction="Input" ParameterName="@Original_nationality" Precision="0" ProviderType="Char" Scale="0" Size="0" SourceColumn="nationality" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>INSERT INTO [fees_bank_dtl] ([doc_no], [dept_code], [prog_code], [account_name], [bank_code], [bank_code1], [deposit_bank_code], [year], [year_code], [gender], [semester_code], [semester_type], [year_semester], [deposit], [fees1], [fees], [cancel_flag], [installment1], [installment2], [installment3], [installment4], [installment5], [fine], [start_date], [end_date], [end_date2], [end_date3], [fine2], [nationality]) VALUES (@doc_no, @dept_code, @prog_code, @account_name, @bank_code, @bank_code1, @deposit_bank_code, @year, @year_code, @gender, @semester_code, @semester_type, @year_semester, @deposit, @fees1, @fees, @cancel_flag, @installment1, @installment2, @installment3, @installment4, @installment5, @fine, @start_date, @end_date, @end_date2, @end_date3, @fine2, @nationality);
+SELECT doc_no, dept_code, prog_code, account_name, bank_code, bank_code1, deposit_bank_code, year, year_code, gender, semester_code, semester_type, year_semester, deposit, fees1, fees, cancel_flag, installment1, installment2, installment3, installment4, installment5, fine, start_date, end_date, end_date2, end_date3, fine2, nationality FROM fees_bank_dtl WHERE (doc_no = @doc_no)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@doc_no" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="doc_no" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@dept_code" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="dept_code" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@prog_code" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="prog_code" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@account_name" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="account_name" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@bank_code" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="bank_code" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@bank_code1" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="bank_code1" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@deposit_bank_code" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="deposit_bank_code" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@year" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="year" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@year_code" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="year_code" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiStringFixedLength" Direction="Input" ParameterName="@gender" Precision="0" ProviderType="Char" Scale="0" Size="0" SourceColumn="gender" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@semester_code" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="semester_code" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@semester_type" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="semester_type" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@year_semester" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="year_semester" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@deposit" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="deposit" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@fees1" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="fees1" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@fees" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="fees" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiStringFixedLength" Direction="Input" ParameterName="@cancel_flag" Precision="0" ProviderType="Char" Scale="0" Size="0" SourceColumn="cancel_flag" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@installment1" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="installment1" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@installment2" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="installment2" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@installment3" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="installment3" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@installment4" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="installment4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@installment5" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="installment5" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@fine" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="fine" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@start_date" Precision="0" ProviderType="SmallDateTime" Scale="0" Size="0" SourceColumn="start_date" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@end_date" Precision="0" ProviderType="SmallDateTime" Scale="0" Size="0" SourceColumn="end_date" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@end_date2" Precision="0" ProviderType="SmallDateTime" Scale="0" Size="0" SourceColumn="end_date2" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@end_date3" Precision="0" ProviderType="SmallDateTime" Scale="0" Size="0" SourceColumn="end_date3" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@fine2" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="fine2" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiStringFixedLength" Direction="Input" ParameterName="@nationality" Precision="0" ProviderType="Char" Scale="0" Size="0" SourceColumn="nationality" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        fees_bank_dtl.*
+FROM            fees_bank_dtl</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>UPDATE [fees_bank_dtl] SET [doc_no] = @doc_no, [dept_code] = @dept_code, [prog_code] = @prog_code, [account_name] = @account_name, [bank_code] = @bank_code, [bank_code1] = @bank_code1, [deposit_bank_code] = @deposit_bank_code, [year] = @year, [year_code] = @year_code, [gender] = @gender, [semester_code] = @semester_code, [semester_type] = @semester_type, [year_semester] = @year_semester, [deposit] = @deposit, [fees1] = @fees1, [fees] = @fees, [cancel_flag] = @cancel_flag, [installment1] = @installment1, [installment2] = @installment2, [installment3] = @installment3, [installment4] = @installment4, [installment5] = @installment5, [fine] = @fine, [start_date] = @start_date, [end_date] = @end_date, [end_date2] = @end_date2, [end_date3] = @end_date3, [fine2] = @fine2, [nationality] = @nationality WHERE (([doc_no] = @Original_doc_no) AND ([dept_code] = @Original_dept_code) AND ([prog_code] = @Original_prog_code) AND ((@IsNull_account_name = 1 AND [account_name] IS NULL) OR ([account_name] = @Original_account_name)) AND ([bank_code] = @Original_bank_code) AND ((@IsNull_bank_code1 = 1 AND [bank_code1] IS NULL) OR ([bank_code1] = @Original_bank_code1)) AND ((@IsNull_deposit_bank_code = 1 AND [deposit_bank_code] IS NULL) OR ([deposit_bank_code] = @Original_deposit_bank_code)) AND ((@IsNull_year = 1 AND [year] IS NULL) OR ([year] = @Original_year)) AND ((@IsNull_year_code = 1 AND [year_code] IS NULL) OR ([year_code] = @Original_year_code)) AND ((@IsNull_gender = 1 AND [gender] IS NULL) OR ([gender] = @Original_gender)) AND ((@IsNull_semester_code = 1 AND [semester_code] IS NULL) OR ([semester_code] = @Original_semester_code)) AND ((@IsNull_semester_type = 1 AND [semester_type] IS NULL) OR ([semester_type] = @Original_semester_type)) AND ((@IsNull_year_semester = 1 AND [year_semester] IS NULL) OR ([year_semester] = @Original_year_semester)) AND ((@IsNull_deposit = 1 AND [deposit] IS NULL) OR ([deposit] = @Original_deposit)) AND ((@IsNull_fees1 = 1 AND [fees1] IS NULL) OR ([fees1] = @Original_fees1)) AND ((@IsNull_fees = 1 AND [fees] IS NULL) OR ([fees] = @Original_fees)) AND ((@IsNull_cancel_flag = 1 AND [cancel_flag] IS NULL) OR ([cancel_flag] = @Original_cancel_flag)) AND ((@IsNull_installment1 = 1 AND [installment1] IS NULL) OR ([installment1] = @Original_installment1)) AND ((@IsNull_installment2 = 1 AND [installment2] IS NULL) OR ([installment2] = @Original_installment2)) AND ((@IsNull_installment3 = 1 AND [installment3] IS NULL) OR ([installment3] = @Original_installment3)) AND ((@IsNull_installment4 = 1 AND [installment4] IS NULL) OR ([installment4] = @Original_installment4)) AND ((@IsNull_installment5 = 1 AND [installment5] IS NULL) OR ([installment5] = @Original_installment5)) AND ((@IsNull_fine = 1 AND [fine] IS NULL) OR ([fine] = @Original_fine)) AND ((@IsNull_start_date = 1 AND [start_date] IS NULL) OR ([start_date] = @Original_start_date)) AND ((@IsNull_end_date = 1 AND [end_date] IS NULL) OR ([end_date] = @Original_end_date)) AND ((@IsNull_end_date2 = 1 AND [end_date2] IS NULL) OR ([end_date2] = @Original_end_date2)) AND ((@IsNull_end_date3 = 1 AND [end_date3] IS NULL) OR ([end_date3] = @Original_end_date3)) AND ((@IsNull_fine2 = 1 AND [fine2] IS NULL) OR ([fine2] = @Original_fine2)) AND ((@IsNull_nationality = 1 AND [nationality] IS NULL) OR ([nationality] = @Original_nationality)));
+SELECT doc_no, dept_code, prog_code, account_name, bank_code, bank_code1, deposit_bank_code, year, year_code, gender, semester_code, semester_type, year_semester, deposit, fees1, fees, cancel_flag, installment1, installment2, installment3, installment4, installment5, fine, start_date, end_date, end_date2, end_date3, fine2, nationality FROM fees_bank_dtl WHERE (doc_no = @doc_no)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@doc_no" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="doc_no" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@dept_code" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="dept_code" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@prog_code" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="prog_code" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@account_name" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="account_name" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@bank_code" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="bank_code" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@bank_code1" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="bank_code1" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@deposit_bank_code" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="deposit_bank_code" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@year" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="year" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@year_code" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="year_code" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiStringFixedLength" Direction="Input" ParameterName="@gender" Precision="0" ProviderType="Char" Scale="0" Size="0" SourceColumn="gender" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@semester_code" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="semester_code" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@semester_type" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="semester_type" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@year_semester" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="year_semester" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@deposit" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="deposit" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@fees1" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="fees1" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@fees" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="fees" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiStringFixedLength" Direction="Input" ParameterName="@cancel_flag" Precision="0" ProviderType="Char" Scale="0" Size="0" SourceColumn="cancel_flag" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@installment1" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="installment1" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@installment2" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="installment2" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@installment3" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="installment3" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@installment4" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="installment4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@installment5" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="installment5" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@fine" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="fine" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@start_date" Precision="0" ProviderType="SmallDateTime" Scale="0" Size="0" SourceColumn="start_date" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@end_date" Precision="0" ProviderType="SmallDateTime" Scale="0" Size="0" SourceColumn="end_date" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@end_date2" Precision="0" ProviderType="SmallDateTime" Scale="0" Size="0" SourceColumn="end_date2" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@end_date3" Precision="0" ProviderType="SmallDateTime" Scale="0" Size="0" SourceColumn="end_date3" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@fine2" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="fine2" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiStringFixedLength" Direction="Input" ParameterName="@nationality" Precision="0" ProviderType="Char" Scale="0" Size="0" SourceColumn="nationality" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_doc_no" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="doc_no" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_dept_code" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="dept_code" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_prog_code" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="prog_code" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_account_name" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="account_name" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_account_name" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="account_name" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_bank_code" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="bank_code" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_bank_code1" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="bank_code1" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_bank_code1" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="bank_code1" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_deposit_bank_code" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="deposit_bank_code" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_deposit_bank_code" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="deposit_bank_code" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_year" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="year" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_year" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="year" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_year_code" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="year_code" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_year_code" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="year_code" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_gender" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="gender" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiStringFixedLength" Direction="Input" ParameterName="@Original_gender" Precision="0" ProviderType="Char" Scale="0" Size="0" SourceColumn="gender" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_semester_code" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="semester_code" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_semester_code" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="semester_code" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_semester_type" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="semester_type" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_semester_type" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="semester_type" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_year_semester" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="year_semester" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_year_semester" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="year_semester" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_deposit" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="deposit" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_deposit" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="deposit" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_fees1" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="fees1" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_fees1" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="fees1" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_fees" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="fees" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_fees" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="fees" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_cancel_flag" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="cancel_flag" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiStringFixedLength" Direction="Input" ParameterName="@Original_cancel_flag" Precision="0" ProviderType="Char" Scale="0" Size="0" SourceColumn="cancel_flag" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_installment1" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="installment1" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_installment1" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="installment1" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_installment2" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="installment2" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_installment2" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="installment2" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_installment3" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="installment3" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_installment3" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="installment3" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_installment4" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="installment4" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_installment4" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="installment4" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_installment5" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="installment5" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_installment5" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="installment5" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_fine" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="fine" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_fine" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="fine" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_start_date" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="start_date" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Original_start_date" Precision="0" ProviderType="SmallDateTime" Scale="0" Size="0" SourceColumn="start_date" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_end_date" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="end_date" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Original_end_date" Precision="0" ProviderType="SmallDateTime" Scale="0" Size="0" SourceColumn="end_date" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_end_date2" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="end_date2" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Original_end_date2" Precision="0" ProviderType="SmallDateTime" Scale="0" Size="0" SourceColumn="end_date2" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_end_date3" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="end_date3" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Original_end_date3" Precision="0" ProviderType="SmallDateTime" Scale="0" Size="0" SourceColumn="end_date3" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_fine2" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="fine2" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_fine2" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="fine2" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_nationality" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="nationality" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiStringFixedLength" Direction="Input" ParameterName="@Original_nationality" Precision="0" ProviderType="Char" Scale="0" Size="0" SourceColumn="nationality" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="doc_no" DataSetColumn="doc_no" />
+              <Mapping SourceColumn="dept_code" DataSetColumn="dept_code" />
+              <Mapping SourceColumn="prog_code" DataSetColumn="prog_code" />
+              <Mapping SourceColumn="account_name" DataSetColumn="account_name" />
+              <Mapping SourceColumn="bank_code" DataSetColumn="bank_code" />
+              <Mapping SourceColumn="bank_code1" DataSetColumn="bank_code1" />
+              <Mapping SourceColumn="deposit_bank_code" DataSetColumn="deposit_bank_code" />
+              <Mapping SourceColumn="year" DataSetColumn="year" />
+              <Mapping SourceColumn="year_code" DataSetColumn="year_code" />
+              <Mapping SourceColumn="gender" DataSetColumn="gender" />
+              <Mapping SourceColumn="semester_code" DataSetColumn="semester_code" />
+              <Mapping SourceColumn="semester_type" DataSetColumn="semester_type" />
+              <Mapping SourceColumn="year_semester" DataSetColumn="year_semester" />
+              <Mapping SourceColumn="deposit" DataSetColumn="deposit" />
+              <Mapping SourceColumn="fees1" DataSetColumn="fees1" />
+              <Mapping SourceColumn="fees" DataSetColumn="fees" />
+              <Mapping SourceColumn="cancel_flag" DataSetColumn="cancel_flag" />
+              <Mapping SourceColumn="installment1" DataSetColumn="installment1" />
+              <Mapping SourceColumn="installment2" DataSetColumn="installment2" />
+              <Mapping SourceColumn="installment3" DataSetColumn="installment3" />
+              <Mapping SourceColumn="installment4" DataSetColumn="installment4" />
+              <Mapping SourceColumn="installment5" DataSetColumn="installment5" />
+              <Mapping SourceColumn="fine" DataSetColumn="fine" />
+              <Mapping SourceColumn="start_date" DataSetColumn="start_date" />
+              <Mapping SourceColumn="end_date" DataSetColumn="end_date" />
+              <Mapping SourceColumn="end_date2" DataSetColumn="end_date2" />
+              <Mapping SourceColumn="end_date3" DataSetColumn="end_date3" />
+              <Mapping SourceColumn="fine2" DataSetColumn="fine2" />
+              <Mapping SourceColumn="nationality" DataSetColumn="nationality" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DSC_FeesBankDetail" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DSC_FeesBankDetail" msprop:Generator_UserDSName="DSC_FeesBankDetail">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="fees_bank_dtl" msprop:Generator_TableClassName="fees_bank_dtlDataTable" msprop:Generator_TableVarName="tablefees_bank_dtl" msprop:Generator_TablePropName="fees_bank_dtl" msprop:Generator_RowDeletingName="fees_bank_dtlRowDeleting" msprop:Generator_RowChangingName="fees_bank_dtlRowChanging" msprop:Generator_RowEvHandlerName="fees_bank_dtlRowChangeEventHandler" msprop:Generator_RowDeletedName="fees_bank_dtlRowDeleted" msprop:Generator_UserTableName="fees_bank_dtl" msprop:Generator_RowChangedName="fees_bank_dtlRowChanged" msprop:Generator_RowEvArgName="fees_bank_dtlRowChangeEvent" msprop:Generator_RowClassName="fees_bank_dtlRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="doc_no" msprop:Generator_ColumnVarNameInTable="columndoc_no" msprop:Generator_ColumnPropNameInRow="doc_no" msprop:Generator_ColumnPropNameInTable="doc_noColumn" msprop:Generator_UserColumnName="doc_no">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="dept_code" msprop:Generator_ColumnVarNameInTable="columndept_code" msprop:Generator_ColumnPropNameInRow="dept_code" msprop:Generator_ColumnPropNameInTable="dept_codeColumn" msprop:Generator_UserColumnName="dept_code">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="prog_code" msprop:Generator_ColumnVarNameInTable="columnprog_code" msprop:Generator_ColumnPropNameInRow="prog_code" msprop:Generator_ColumnPropNameInTable="prog_codeColumn" msprop:Generator_UserColumnName="prog_code">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="account_name" msprop:Generator_ColumnVarNameInTable="columnaccount_name" msprop:Generator_ColumnPropNameInRow="account_name" msprop:Generator_ColumnPropNameInTable="account_nameColumn" msprop:Generator_UserColumnName="account_name" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="bank_code" msprop:Generator_ColumnVarNameInTable="columnbank_code" msprop:Generator_ColumnPropNameInRow="bank_code" msprop:Generator_ColumnPropNameInTable="bank_codeColumn" msprop:Generator_UserColumnName="bank_code">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="bank_code1" msprop:Generator_ColumnVarNameInTable="columnbank_code1" msprop:Generator_ColumnPropNameInRow="bank_code1" msprop:Generator_ColumnPropNameInTable="bank_code1Column" msprop:Generator_UserColumnName="bank_code1" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="15" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="deposit_bank_code" msprop:Generator_ColumnVarNameInTable="columndeposit_bank_code" msprop:Generator_ColumnPropNameInRow="deposit_bank_code" msprop:Generator_ColumnPropNameInTable="deposit_bank_codeColumn" msprop:Generator_UserColumnName="deposit_bank_code" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="15" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="year" msprop:Generator_ColumnVarNameInTable="columnyear" msprop:Generator_ColumnPropNameInRow="year" msprop:Generator_ColumnPropNameInTable="yearColumn" msprop:Generator_UserColumnName="year" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="year_code" msprop:Generator_ColumnVarNameInTable="columnyear_code" msprop:Generator_ColumnPropNameInRow="year_code" msprop:Generator_ColumnPropNameInTable="year_codeColumn" msprop:Generator_UserColumnName="year_code" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="gender" msprop:Generator_ColumnVarNameInTable="columngender" msprop:Generator_ColumnPropNameInRow="gender" msprop:Generator_ColumnPropNameInTable="genderColumn" msprop:Generator_UserColumnName="gender" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="semester_code" msprop:Generator_ColumnVarNameInTable="columnsemester_code" msprop:Generator_ColumnPropNameInRow="semester_code" msprop:Generator_ColumnPropNameInTable="semester_codeColumn" msprop:Generator_UserColumnName="semester_code" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="semester_type" msprop:Generator_ColumnVarNameInTable="columnsemester_type" msprop:Generator_ColumnPropNameInRow="semester_type" msprop:Generator_ColumnPropNameInTable="semester_typeColumn" msprop:Generator_UserColumnName="semester_type" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="year_semester" msprop:Generator_ColumnVarNameInTable="columnyear_semester" msprop:Generator_ColumnPropNameInRow="year_semester" msprop:Generator_ColumnPropNameInTable="year_semesterColumn" msprop:Generator_UserColumnName="year_semester" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="deposit" msprop:Generator_ColumnVarNameInTable="columndeposit" msprop:Generator_ColumnPropNameInRow="deposit" msprop:Generator_ColumnPropNameInTable="depositColumn" msprop:Generator_UserColumnName="deposit" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="fees1" msprop:Generator_ColumnVarNameInTable="columnfees1" msprop:Generator_ColumnPropNameInRow="fees1" msprop:Generator_ColumnPropNameInTable="fees1Column" msprop:Generator_UserColumnName="fees1" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="fees" msprop:Generator_ColumnVarNameInTable="columnfees" msprop:Generator_ColumnPropNameInRow="fees" msprop:Generator_ColumnPropNameInTable="feesColumn" msprop:Generator_UserColumnName="fees" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="cancel_flag" msprop:Generator_ColumnVarNameInTable="columncancel_flag" msprop:Generator_ColumnPropNameInRow="cancel_flag" msprop:Generator_ColumnPropNameInTable="cancel_flagColumn" msprop:Generator_UserColumnName="cancel_flag" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="installment1" msprop:Generator_ColumnVarNameInTable="columninstallment1" msprop:Generator_ColumnPropNameInRow="installment1" msprop:Generator_ColumnPropNameInTable="installment1Column" msprop:Generator_UserColumnName="installment1" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="installment2" msprop:Generator_ColumnVarNameInTable="columninstallment2" msprop:Generator_ColumnPropNameInRow="installment2" msprop:Generator_ColumnPropNameInTable="installment2Column" msprop:Generator_UserColumnName="installment2" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="installment3" msprop:Generator_ColumnVarNameInTable="columninstallment3" msprop:Generator_ColumnPropNameInRow="installment3" msprop:Generator_ColumnPropNameInTable="installment3Column" msprop:Generator_UserColumnName="installment3" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="installment4" msprop:Generator_ColumnVarNameInTable="columninstallment4" msprop:Generator_ColumnPropNameInRow="installment4" msprop:Generator_ColumnPropNameInTable="installment4Column" msprop:Generator_UserColumnName="installment4" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="installment5" msprop:Generator_ColumnVarNameInTable="columninstallment5" msprop:Generator_ColumnPropNameInRow="installment5" msprop:Generator_ColumnPropNameInTable="installment5Column" msprop:Generator_UserColumnName="installment5" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="fine" msprop:Generator_ColumnVarNameInTable="columnfine" msprop:Generator_ColumnPropNameInRow="fine" msprop:Generator_ColumnPropNameInTable="fineColumn" msprop:Generator_UserColumnName="fine" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="start_date" msprop:Generator_ColumnVarNameInTable="columnstart_date" msprop:Generator_ColumnPropNameInRow="start_date" msprop:Generator_ColumnPropNameInTable="start_dateColumn" msprop:Generator_UserColumnName="start_date" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="end_date" msprop:Generator_ColumnVarNameInTable="columnend_date" msprop:Generator_ColumnPropNameInRow="end_date" msprop:Generator_ColumnPropNameInTable="end_dateColumn" msprop:Generator_UserColumnName="end_date" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="end_date2" msprop:Generator_ColumnVarNameInTable="columnend_date2" msprop:Generator_ColumnPropNameInRow="end_date2" msprop:Generator_ColumnPropNameInTable="end_date2Column" msprop:Generator_UserColumnName="end_date2" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="end_date3" msprop:Generator_ColumnVarNameInTable="columnend_date3" msprop:Generator_ColumnPropNameInRow="end_date3" msprop:Generator_ColumnPropNameInTable="end_date3Column" msprop:Generator_UserColumnName="end_date3" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="fine2" msprop:Generator_ColumnVarNameInTable="columnfine2" msprop:Generator_ColumnPropNameInRow="fine2" msprop:Generator_ColumnPropNameInTable="fine2Column" msprop:Generator_UserColumnName="fine2" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="nationality" msprop:Generator_ColumnVarNameInTable="columnnationality" msprop:Generator_ColumnPropNameInRow="nationality" msprop:Generator_ColumnPropNameInTable="nationalityColumn" msprop:Generator_UserColumnName="nationality" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="15" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:fees_bank_dtl" />
+      <xs:field xpath="mstns:doc_no" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,19 @@
+state_id,city_id,pincode,date,item_code,name,rate /kg 
+Maharashtra ,Pune ,411001,9/6/2025,110,Broiler,250
+Andhra Pradesh ,Amravati,444601,9/6/2025,110,Broiler,110
+Arunanchal Pradesh,Itanager ,791113,9/6/2025,110,Broiler,110
+Assam ,Dispur ,781005,9/6/2025,110,Broiler,100
+Bihar ,Patna,800001,9/6/2025,110,Broiler,105
+Chattisgarah ,Raipur ,490042,9/6/2025,110,Broiler,120
+Goa ,Panji ,403001,9/6/2025,110,Broiler,100
+Gujrat ,Gandhinager ,382001,9/6/2025,110,Broiler,100
+Haryana ,Chandigarh ,160001,9/6/2025,110,Broiler,220
+Himachal Pradesh ,Shimla ,171001,9/6/2025,110,Broiler,120
+Jharkhand ,Ranchi ,834001,9/6/2025,110,Broiler,130
+Karnataka ,Bengluru ,530068,9/6/2025,110,Broiler,127
+Kerala ,Thiruvananthapuram,605036,9/6/2025,110,Broiler,240
+Madhya Pradesh ,Bhopal,462001,9/6/2025,110,Broiler,120
+Maharashtra , Mumbai ,400001,9/6/2025,110,Broiler,180
+Manipur ,Imphal ,795001,9/6/2025,110,Broiler,180
+Meghalaya ,Shillong ,793001,9/6/2025,110,Broiler,120
+Mizoram,Aizwal,796001,9/6/2025,110,Broiler,130

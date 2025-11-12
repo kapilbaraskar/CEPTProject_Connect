@@ -1,0 +1,253 @@
+═══════════════════════════════════════════════════════════════════════════
+              UPLOADED DOCUMENTS DEBUGGING GUIDE
+═══════════════════════════════════════════════════════════════════════════
+
+This guide helps you troubleshoot why uploaded documents are not showing in
+PersonalDetailsView.aspx.
+
+═══════════════════════════════════════════════════════════════════════════
+STEP 1: CHECK BROWSER CONSOLE
+═══════════════════════════════════════════════════════════════════════════
+
+1. Open PersonalDetailsView.aspx in your browser
+2. Press F12 to open Developer Tools
+3. Go to the "Console" tab
+4. Look for these messages:
+
+   Expected Messages:
+   ✓ "Loading uploaded documents..."
+   ✓ "Uploaded documents response: [object Object]"
+   ✓ "Final uploaded documents data: [Array]"
+   ✓ "Documents count: X"
+   ✓ "displayUploadedDocuments called with data: [Array]"
+
+═══════════════════════════════════════════════════════════════════════════
+STEP 2: IDENTIFY THE ISSUE
+═══════════════════════════════════════════════════════════════════════════
+
+ERROR SCENARIO 1: Web Service Not Found (404)
+──────────────────────────────────────────────
+Console shows:
+  ✗ "Failed to load uploaded documents"
+  ✗ "XHR status: 404"
+  ✗ "Web service not found (404)"
+
+SOLUTION:
+  → Check if WebService.asmx exists at: CEPT_REG/WebService.asmx
+  → Verify GetDocumentIdentityDetails method exists in WebService.asmx
+  → Correct web service path if needed
+
+
+ERROR SCENARIO 2: Server Error (500)
+─────────────────────────────────────
+Console shows:
+  ✗ "XHR status: 500"
+  ✗ "Server error (500)"
+
+SOLUTION:
+  → Check WebService.asmx code for errors
+  → Verify database connection
+  → Check GetDocumentIdentityDetails method implementation
+  → Look at server error logs
+
+
+ERROR SCENARIO 3: Data Structure Mismatch
+──────────────────────────────────────────
+Console shows:
+  ✓ Response received
+  ✗ "No documents found or result is not an array"
+
+SOLUTION:
+  → Look at console message: "Uploaded documents response:"
+  → Check the data structure returned by web service
+  → The function expects an array of documents
+  → Verify the response format
+
+
+ERROR SCENARIO 4: Empty Result
+───────────────────────────────
+Console shows:
+  ✓ "Documents count: 0"
+  ⚠ "No documents uploaded yet."
+
+SOLUTION:
+  → This is NORMAL if no documents have been uploaded
+  → Upload documents via UploadDocument.aspx first
+  → Refresh PersonalDetailsView.aspx to see them
+
+═══════════════════════════════════════════════════════════════════════════
+STEP 3: VERIFY WEB SERVICE
+═══════════════════════════════════════════════════════════════════════════
+
+Check WebService.asmx has this method:
+────────────────────────────────────────
+
+[WebMethod]
+public string GetDocumentIdentityDetails()
+{
+    // Your implementation here
+    // Should return JSON array of documents
+}
+
+Expected Return Format (JSON):
+───────────────────────────────
+
+[
+  {
+    "document_type": "CV",
+    "document_name": "CV",
+    "identity_type": "PAN",
+    "identity_name": "PAN",
+    "identity_number": "ABCDE1234F",
+    "file_name": "resume.pdf",
+    "document_ref": "resume.pdf",
+    "uploaded_date": "2024-05-15",
+    "created_date": "2024-05-15"
+  },
+  {
+    "document_type": "Certificate",
+    "file_name": "degree.pdf",
+    "uploaded_date": "2024-03-20"
+  }
+]
+
+═══════════════════════════════════════════════════════════════════════════
+STEP 4: TEST WEB SERVICE DIRECTLY
+═══════════════════════════════════════════════════════════════════════════
+
+1. Navigate to: http://yoursite/WebService.asmx
+2. Find GetDocumentIdentityDetails in the list
+3. Click on it
+4. Click "Invoke" button
+5. Check the XML/JSON response
+
+Expected Response:
+──────────────────
+<?xml version="1.0" encoding="utf-8"?>
+<string xmlns="http://tempuri.org/">[{"document_type":"CV",...}]</string>
+
+If you see an error here, the problem is in the web service, not the frontend.
+
+═══════════════════════════════════════════════════════════════════════════
+STEP 5: CONSOLE LOGGING DETAILS
+═══════════════════════════════════════════════════════════════════════════
+
+The enhanced function now logs:
+───────────────────────────────
+
+Loading Phase:
+  • "Loading uploaded documents..."
+  • Raw response from server
+  • Result after unwrapping .d property
+  • Result after JSON parsing
+  • Result after checking for .data or .documents property
+  • Final data and count
+
+Display Phase:
+  • displayUploadedDocuments called
+  • Each document being processed
+  • Document type and identity type for each
+  • Whether added to general or identity documents
+  • Final counts for both categories
+
+═══════════════════════════════════════════════════════════════════════════
+STEP 6: COMMON SOLUTIONS
+═══════════════════════════════════════════════════════════════════════════
+
+SOLUTION 1: Fix Web Service Path
+─────────────────────────────────
+If GetDocumentIdentityDetails doesn't exist, try alternative method names:
+  • GetDocumentDetails
+  • GetUploadedDocuments
+  • GetAllDocuments
+
+Update line 1011 in PersonalDetailsView.aspx:
+  url: '../../WebService.asmx/GetDocumentDetails',  // Try this
+
+
+SOLUTION 2: Handle Different Data Structure
+────────────────────────────────────────────
+If the response has a different structure, the code already handles:
+  • response.d (ASP.NET standard)
+  • String that needs parsing
+  • result.data (nested data)
+  • result.documents (nested documents)
+
+
+SOLUTION 3: Upload Test Documents
+──────────────────────────────────
+1. Go to UploadDocument.aspx
+2. Upload at least one general document (CV, Certificate, etc.)
+3. Upload at least one identity document (PAN, Aadhar, etc.)
+4. Save the documents
+5. Return to PersonalDetailsView.aspx
+6. Click "Refresh All Data" button
+
+
+SOLUTION 4: Check Database
+──────────────────────────
+Run this SQL query to verify data exists:
+
+SELECT * FROM DocumentDetails  -- or your table name
+WHERE user_id = 'current_user_id'
+
+If no rows returned → No documents uploaded yet
+
+═══════════════════════════════════════════════════════════════════════════
+STEP 7: VERIFY FUNCTION IS BEING CALLED
+═══════════════════════════════════════════════════════════════════════════
+
+Check loadAllProfileData() includes (line 994):
+  loadUploadedDocuments();
+
+Check this function is called on page load (around line 828):
+  $(document).ready(function() {
+      loadYearOptions();
+      loadAllProfileData();  // This should call loadUploadedDocuments
+  });
+
+═══════════════════════════════════════════════════════════════════════════
+STEP 8: QUICK FIX - SHOW ALL DATA
+═══════════════════════════════════════════════════════════════════════════
+
+Temporarily modify line 1041-1045 to show what data was received:
+
+  if (result && Array.isArray(result) && result.length > 0) {
+      displayUploadedDocuments(result);
+  } else {
+      // TEMPORARY: Show what we got
+      $('#uploadedDocumentsContent').html('<div class="alert alert-info">Response: ' + 
+          JSON.stringify(result) + '</div>');
+  }
+
+This will show you exactly what the web service returned.
+
+═══════════════════════════════════════════════════════════════════════════
+TROUBLESHOOTING CHECKLIST
+═══════════════════════════════════════════════════════════════════════════
+
+[ ] Browser console is open (F12)
+[ ] Console shows "Loading uploaded documents..." message
+[ ] No 404 or 500 errors in console
+[ ] Web service GetDocumentIdentityDetails exists
+[ ] Web service returns valid JSON array
+[ ] At least one document uploaded via UploadDocument.aspx
+[ ] Database has document records for current user
+[ ] Page refreshed after uploading documents
+[ ] No JavaScript errors in console
+
+═══════════════════════════════════════════════════════════════════════════
+CONTACT SUPPORT
+═══════════════════════════════════════════════════════════════════════════
+
+If none of the above solutions work, provide these details:
+
+1. All console log messages (copy entire console output)
+2. Web service response (from browser network tab)
+3. Screenshot of the section showing the error/warning message
+4. Confirmation that documents exist in database
+
+═══════════════════════════════════════════════════════════════════════════
+END OF DEBUGGING GUIDE
+═══════════════════════════════════════════════════════════════════════════
+

@@ -1,0 +1,361 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DS_UserFeesReminder" targetNamespace="http://tempuri.org/DS_UserFeesReminder.xsd" xmlns:mstns="http://tempuri.org/DS_UserFeesReminder.xsd" xmlns="http://tempuri.org/DS_UserFeesReminder.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="CEPT_RegistrationConnectionString2" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="CEPT_RegistrationConnectionString2 (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.XSD.Properties.Settings.GlobalReference.Default.CEPT_RegistrationConnectionString2" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="user_fees_reminder_dtlTableAdapter" GeneratorDataComponentClassName="user_fees_reminder_dtlTableAdapter" Name="user_fees_reminder_dtl" UserDataComponentName="user_fees_reminder_dtlTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="CEPT_RegistrationConnectionString2 (Settings)" DbObjectName="CEPT_Registration.dbo.user_fees_reminder_dtl" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>DELETE FROM [user_fees_reminder_dtl] WHERE (([user_id] = @Original_user_id) AND ((@IsNull_fees_type = 1 AND [fees_type] IS NULL) OR ([fees_type] = @Original_fees_type)) AND ((@IsNull_installment_status = 1 AND [installment_status] IS NULL) OR ([installment_status] = @Original_installment_status)) AND ((@IsNull_no_of_installment = 1 AND [no_of_installment] IS NULL) OR ([no_of_installment] = @Original_no_of_installment)) AND ((@IsNull_fees_amount = 1 AND [fees_amount] IS NULL) OR ([fees_amount] = @Original_fees_amount)) AND ((@IsNull_installment1 = 1 AND [installment1] IS NULL) OR ([installment1] = @Original_installment1)) AND ((@IsNull_installment2 = 1 AND [installment2] IS NULL) OR ([installment2] = @Original_installment2)) AND ((@IsNull_installment3 = 1 AND [installment3] IS NULL) OR ([installment3] = @Original_installment3)) AND ((@IsNull_installment4 = 1 AND [installment4] IS NULL) OR ([installment4] = @Original_installment4)) AND ((@IsNull_installment5 = 1 AND [installment5] IS NULL) OR ([installment5] = @Original_installment5)) AND ((@IsNull_is_installment1_paid = 1 AND [is_installment1_paid] IS NULL) OR ([is_installment1_paid] = @Original_is_installment1_paid)) AND ((@IsNull_is_installment2_paid = 1 AND [is_installment2_paid] IS NULL) OR ([is_installment2_paid] = @Original_is_installment2_paid)) AND ((@IsNull_is_installment3_paid = 1 AND [is_installment3_paid] IS NULL) OR ([is_installment3_paid] = @Original_is_installment3_paid)) AND ((@IsNull_is_installment4_paid = 1 AND [is_installment4_paid] IS NULL) OR ([is_installment4_paid] = @Original_is_installment4_paid)) AND ((@IsNull_is_installment5_paid = 1 AND [is_installment5_paid] IS NULL) OR ([is_installment5_paid] = @Original_is_installment5_paid)) AND ([installment_no_mail] = @Original_installment_no_mail) AND ((@IsNull_cancel_flag = 1 AND [cancel_flag] IS NULL) OR ([cancel_flag] = @Original_cancel_flag)) AND ([semester_type] = @Original_semester_type) AND ([year_semester] = @Original_year_semester) AND ((@IsNull_created_by = 1 AND [created_by] IS NULL) OR ([created_by] = @Original_created_by)) AND ((@IsNull_created_date = 1 AND [created_date] IS NULL) OR ([created_date] = @Original_created_date)) AND ((@IsNull_created_host = 1 AND [created_host] IS NULL) OR ([created_host] = @Original_created_host)) AND ((@IsNull_last_modified_by = 1 AND [last_modified_by] IS NULL) OR ([last_modified_by] = @Original_last_modified_by)) AND ((@IsNull_last_midified_date = 1 AND [last_midified_date] IS NULL) OR ([last_midified_date] = @Original_last_midified_date)) AND ((@IsNull_last_modified_host = 1 AND [last_modified_host] IS NULL) OR ([last_modified_host] = @Original_last_modified_host)))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_user_id" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="user_id" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_fees_type" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="fees_type" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiStringFixedLength" Direction="Input" ParameterName="@Original_fees_type" Precision="0" ProviderType="Char" Scale="0" Size="0" SourceColumn="fees_type" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_installment_status" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="installment_status" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_installment_status" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="installment_status" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_no_of_installment" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="no_of_installment" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_no_of_installment" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="no_of_installment" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_fees_amount" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="fees_amount" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@Original_fees_amount" Precision="18" ProviderType="Decimal" Scale="0" Size="0" SourceColumn="fees_amount" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_installment1" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="installment1" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@Original_installment1" Precision="18" ProviderType="Decimal" Scale="0" Size="0" SourceColumn="installment1" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_installment2" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="installment2" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@Original_installment2" Precision="18" ProviderType="Decimal" Scale="0" Size="0" SourceColumn="installment2" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_installment3" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="installment3" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@Original_installment3" Precision="18" ProviderType="Decimal" Scale="0" Size="0" SourceColumn="installment3" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_installment4" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="installment4" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@Original_installment4" Precision="18" ProviderType="Decimal" Scale="0" Size="0" SourceColumn="installment4" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_installment5" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="installment5" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@Original_installment5" Precision="18" ProviderType="Decimal" Scale="0" Size="0" SourceColumn="installment5" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_is_installment1_paid" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="is_installment1_paid" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiStringFixedLength" Direction="Input" ParameterName="@Original_is_installment1_paid" Precision="0" ProviderType="Char" Scale="0" Size="0" SourceColumn="is_installment1_paid" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_is_installment2_paid" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="is_installment2_paid" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiStringFixedLength" Direction="Input" ParameterName="@Original_is_installment2_paid" Precision="0" ProviderType="Char" Scale="0" Size="0" SourceColumn="is_installment2_paid" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_is_installment3_paid" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="is_installment3_paid" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiStringFixedLength" Direction="Input" ParameterName="@Original_is_installment3_paid" Precision="0" ProviderType="Char" Scale="0" Size="0" SourceColumn="is_installment3_paid" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_is_installment4_paid" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="is_installment4_paid" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiStringFixedLength" Direction="Input" ParameterName="@Original_is_installment4_paid" Precision="0" ProviderType="Char" Scale="0" Size="0" SourceColumn="is_installment4_paid" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_is_installment5_paid" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="is_installment5_paid" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiStringFixedLength" Direction="Input" ParameterName="@Original_is_installment5_paid" Precision="0" ProviderType="Char" Scale="0" Size="0" SourceColumn="is_installment5_paid" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiStringFixedLength" Direction="Input" ParameterName="@Original_installment_no_mail" Precision="0" ProviderType="Char" Scale="0" Size="0" SourceColumn="installment_no_mail" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_cancel_flag" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="cancel_flag" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiStringFixedLength" Direction="Input" ParameterName="@Original_cancel_flag" Precision="0" ProviderType="Char" Scale="0" Size="0" SourceColumn="cancel_flag" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_semester_type" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="semester_type" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_year_semester" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="year_semester" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_created_by" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="created_by" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_created_by" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="created_by" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_created_date" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="created_date" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Original_created_date" Precision="0" ProviderType="SmallDateTime" Scale="0" Size="0" SourceColumn="created_date" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_created_host" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="created_host" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_created_host" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="created_host" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_last_modified_by" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="last_modified_by" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_last_modified_by" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="last_modified_by" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_last_midified_date" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="last_midified_date" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Original_last_midified_date" Precision="0" ProviderType="SmallDateTime" Scale="0" Size="0" SourceColumn="last_midified_date" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_last_modified_host" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="last_modified_host" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_last_modified_host" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="last_modified_host" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>INSERT INTO [user_fees_reminder_dtl] ([user_id], [fees_type], [installment_status], [no_of_installment], [fees_amount], [installment1], [installment2], [installment3], [installment4], [installment5], [is_installment1_paid], [is_installment2_paid], [is_installment3_paid], [is_installment4_paid], [is_installment5_paid], [installment_no_mail], [cancel_flag], [semester_type], [year_semester], [created_by], [created_date], [created_host], [last_modified_by], [last_midified_date], [last_modified_host]) VALUES (@user_id, @fees_type, @installment_status, @no_of_installment, @fees_amount, @installment1, @installment2, @installment3, @installment4, @installment5, @is_installment1_paid, @is_installment2_paid, @is_installment3_paid, @is_installment4_paid, @is_installment5_paid, @installment_no_mail, @cancel_flag, @semester_type, @year_semester, @created_by, @created_date, @created_host, @last_modified_by, @last_midified_date, @last_modified_host);
+SELECT user_id, fees_type, installment_status, no_of_installment, fees_amount, installment1, installment2, installment3, installment4, installment5, is_installment1_paid, is_installment2_paid, is_installment3_paid, is_installment4_paid, is_installment5_paid, installment_no_mail, cancel_flag, semester_type, year_semester, created_by, created_date, created_host, last_modified_by, last_midified_date, last_modified_host FROM user_fees_reminder_dtl WHERE (installment_no_mail = @installment_no_mail) AND (semester_type = @semester_type) AND (user_id = @user_id) AND (year_semester = @year_semester)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@user_id" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="user_id" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiStringFixedLength" Direction="Input" ParameterName="@fees_type" Precision="0" ProviderType="Char" Scale="0" Size="0" SourceColumn="fees_type" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@installment_status" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="installment_status" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@no_of_installment" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="no_of_installment" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@fees_amount" Precision="18" ProviderType="Decimal" Scale="0" Size="0" SourceColumn="fees_amount" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@installment1" Precision="18" ProviderType="Decimal" Scale="0" Size="0" SourceColumn="installment1" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@installment2" Precision="18" ProviderType="Decimal" Scale="0" Size="0" SourceColumn="installment2" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@installment3" Precision="18" ProviderType="Decimal" Scale="0" Size="0" SourceColumn="installment3" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@installment4" Precision="18" ProviderType="Decimal" Scale="0" Size="0" SourceColumn="installment4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@installment5" Precision="18" ProviderType="Decimal" Scale="0" Size="0" SourceColumn="installment5" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiStringFixedLength" Direction="Input" ParameterName="@is_installment1_paid" Precision="0" ProviderType="Char" Scale="0" Size="0" SourceColumn="is_installment1_paid" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiStringFixedLength" Direction="Input" ParameterName="@is_installment2_paid" Precision="0" ProviderType="Char" Scale="0" Size="0" SourceColumn="is_installment2_paid" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiStringFixedLength" Direction="Input" ParameterName="@is_installment3_paid" Precision="0" ProviderType="Char" Scale="0" Size="0" SourceColumn="is_installment3_paid" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiStringFixedLength" Direction="Input" ParameterName="@is_installment4_paid" Precision="0" ProviderType="Char" Scale="0" Size="0" SourceColumn="is_installment4_paid" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiStringFixedLength" Direction="Input" ParameterName="@is_installment5_paid" Precision="0" ProviderType="Char" Scale="0" Size="0" SourceColumn="is_installment5_paid" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiStringFixedLength" Direction="Input" ParameterName="@installment_no_mail" Precision="0" ProviderType="Char" Scale="0" Size="0" SourceColumn="installment_no_mail" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiStringFixedLength" Direction="Input" ParameterName="@cancel_flag" Precision="0" ProviderType="Char" Scale="0" Size="0" SourceColumn="cancel_flag" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@semester_type" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="semester_type" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@year_semester" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="year_semester" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@created_by" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="created_by" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@created_date" Precision="0" ProviderType="SmallDateTime" Scale="0" Size="0" SourceColumn="created_date" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@created_host" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="created_host" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@last_modified_by" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="last_modified_by" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@last_midified_date" Precision="0" ProviderType="SmallDateTime" Scale="0" Size="0" SourceColumn="last_midified_date" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@last_modified_host" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="last_modified_host" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        user_fees_reminder_dtl.*
+FROM            user_fees_reminder_dtl</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>UPDATE [user_fees_reminder_dtl] SET [user_id] = @user_id, [fees_type] = @fees_type, [installment_status] = @installment_status, [no_of_installment] = @no_of_installment, [fees_amount] = @fees_amount, [installment1] = @installment1, [installment2] = @installment2, [installment3] = @installment3, [installment4] = @installment4, [installment5] = @installment5, [is_installment1_paid] = @is_installment1_paid, [is_installment2_paid] = @is_installment2_paid, [is_installment3_paid] = @is_installment3_paid, [is_installment4_paid] = @is_installment4_paid, [is_installment5_paid] = @is_installment5_paid, [installment_no_mail] = @installment_no_mail, [cancel_flag] = @cancel_flag, [semester_type] = @semester_type, [year_semester] = @year_semester, [created_by] = @created_by, [created_date] = @created_date, [created_host] = @created_host, [last_modified_by] = @last_modified_by, [last_midified_date] = @last_midified_date, [last_modified_host] = @last_modified_host WHERE (([user_id] = @Original_user_id) AND ((@IsNull_fees_type = 1 AND [fees_type] IS NULL) OR ([fees_type] = @Original_fees_type)) AND ((@IsNull_installment_status = 1 AND [installment_status] IS NULL) OR ([installment_status] = @Original_installment_status)) AND ((@IsNull_no_of_installment = 1 AND [no_of_installment] IS NULL) OR ([no_of_installment] = @Original_no_of_installment)) AND ((@IsNull_fees_amount = 1 AND [fees_amount] IS NULL) OR ([fees_amount] = @Original_fees_amount)) AND ((@IsNull_installment1 = 1 AND [installment1] IS NULL) OR ([installment1] = @Original_installment1)) AND ((@IsNull_installment2 = 1 AND [installment2] IS NULL) OR ([installment2] = @Original_installment2)) AND ((@IsNull_installment3 = 1 AND [installment3] IS NULL) OR ([installment3] = @Original_installment3)) AND ((@IsNull_installment4 = 1 AND [installment4] IS NULL) OR ([installment4] = @Original_installment4)) AND ((@IsNull_installment5 = 1 AND [installment5] IS NULL) OR ([installment5] = @Original_installment5)) AND ((@IsNull_is_installment1_paid = 1 AND [is_installment1_paid] IS NULL) OR ([is_installment1_paid] = @Original_is_installment1_paid)) AND ((@IsNull_is_installment2_paid = 1 AND [is_installment2_paid] IS NULL) OR ([is_installment2_paid] = @Original_is_installment2_paid)) AND ((@IsNull_is_installment3_paid = 1 AND [is_installment3_paid] IS NULL) OR ([is_installment3_paid] = @Original_is_installment3_paid)) AND ((@IsNull_is_installment4_paid = 1 AND [is_installment4_paid] IS NULL) OR ([is_installment4_paid] = @Original_is_installment4_paid)) AND ((@IsNull_is_installment5_paid = 1 AND [is_installment5_paid] IS NULL) OR ([is_installment5_paid] = @Original_is_installment5_paid)) AND ([installment_no_mail] = @Original_installment_no_mail) AND ((@IsNull_cancel_flag = 1 AND [cancel_flag] IS NULL) OR ([cancel_flag] = @Original_cancel_flag)) AND ([semester_type] = @Original_semester_type) AND ([year_semester] = @Original_year_semester) AND ((@IsNull_created_by = 1 AND [created_by] IS NULL) OR ([created_by] = @Original_created_by)) AND ((@IsNull_created_date = 1 AND [created_date] IS NULL) OR ([created_date] = @Original_created_date)) AND ((@IsNull_created_host = 1 AND [created_host] IS NULL) OR ([created_host] = @Original_created_host)) AND ((@IsNull_last_modified_by = 1 AND [last_modified_by] IS NULL) OR ([last_modified_by] = @Original_last_modified_by)) AND ((@IsNull_last_midified_date = 1 AND [last_midified_date] IS NULL) OR ([last_midified_date] = @Original_last_midified_date)) AND ((@IsNull_last_modified_host = 1 AND [last_modified_host] IS NULL) OR ([last_modified_host] = @Original_last_modified_host)));
+SELECT user_id, fees_type, installment_status, no_of_installment, fees_amount, installment1, installment2, installment3, installment4, installment5, is_installment1_paid, is_installment2_paid, is_installment3_paid, is_installment4_paid, is_installment5_paid, installment_no_mail, cancel_flag, semester_type, year_semester, created_by, created_date, created_host, last_modified_by, last_midified_date, last_modified_host FROM user_fees_reminder_dtl WHERE (installment_no_mail = @installment_no_mail) AND (semester_type = @semester_type) AND (user_id = @user_id) AND (year_semester = @year_semester)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@user_id" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="user_id" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiStringFixedLength" Direction="Input" ParameterName="@fees_type" Precision="0" ProviderType="Char" Scale="0" Size="0" SourceColumn="fees_type" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@installment_status" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="installment_status" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@no_of_installment" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="no_of_installment" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@fees_amount" Precision="18" ProviderType="Decimal" Scale="0" Size="0" SourceColumn="fees_amount" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@installment1" Precision="18" ProviderType="Decimal" Scale="0" Size="0" SourceColumn="installment1" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@installment2" Precision="18" ProviderType="Decimal" Scale="0" Size="0" SourceColumn="installment2" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@installment3" Precision="18" ProviderType="Decimal" Scale="0" Size="0" SourceColumn="installment3" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@installment4" Precision="18" ProviderType="Decimal" Scale="0" Size="0" SourceColumn="installment4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@installment5" Precision="18" ProviderType="Decimal" Scale="0" Size="0" SourceColumn="installment5" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiStringFixedLength" Direction="Input" ParameterName="@is_installment1_paid" Precision="0" ProviderType="Char" Scale="0" Size="0" SourceColumn="is_installment1_paid" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiStringFixedLength" Direction="Input" ParameterName="@is_installment2_paid" Precision="0" ProviderType="Char" Scale="0" Size="0" SourceColumn="is_installment2_paid" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiStringFixedLength" Direction="Input" ParameterName="@is_installment3_paid" Precision="0" ProviderType="Char" Scale="0" Size="0" SourceColumn="is_installment3_paid" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiStringFixedLength" Direction="Input" ParameterName="@is_installment4_paid" Precision="0" ProviderType="Char" Scale="0" Size="0" SourceColumn="is_installment4_paid" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiStringFixedLength" Direction="Input" ParameterName="@is_installment5_paid" Precision="0" ProviderType="Char" Scale="0" Size="0" SourceColumn="is_installment5_paid" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiStringFixedLength" Direction="Input" ParameterName="@installment_no_mail" Precision="0" ProviderType="Char" Scale="0" Size="0" SourceColumn="installment_no_mail" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiStringFixedLength" Direction="Input" ParameterName="@cancel_flag" Precision="0" ProviderType="Char" Scale="0" Size="0" SourceColumn="cancel_flag" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@semester_type" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="semester_type" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@year_semester" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="year_semester" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@created_by" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="created_by" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@created_date" Precision="0" ProviderType="SmallDateTime" Scale="0" Size="0" SourceColumn="created_date" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@created_host" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="created_host" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@last_modified_by" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="last_modified_by" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@last_midified_date" Precision="0" ProviderType="SmallDateTime" Scale="0" Size="0" SourceColumn="last_midified_date" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@last_modified_host" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="last_modified_host" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_user_id" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="user_id" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_fees_type" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="fees_type" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiStringFixedLength" Direction="Input" ParameterName="@Original_fees_type" Precision="0" ProviderType="Char" Scale="0" Size="0" SourceColumn="fees_type" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_installment_status" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="installment_status" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_installment_status" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="installment_status" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_no_of_installment" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="no_of_installment" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_no_of_installment" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="no_of_installment" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_fees_amount" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="fees_amount" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@Original_fees_amount" Precision="18" ProviderType="Decimal" Scale="0" Size="0" SourceColumn="fees_amount" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_installment1" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="installment1" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@Original_installment1" Precision="18" ProviderType="Decimal" Scale="0" Size="0" SourceColumn="installment1" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_installment2" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="installment2" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@Original_installment2" Precision="18" ProviderType="Decimal" Scale="0" Size="0" SourceColumn="installment2" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_installment3" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="installment3" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@Original_installment3" Precision="18" ProviderType="Decimal" Scale="0" Size="0" SourceColumn="installment3" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_installment4" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="installment4" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@Original_installment4" Precision="18" ProviderType="Decimal" Scale="0" Size="0" SourceColumn="installment4" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_installment5" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="installment5" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@Original_installment5" Precision="18" ProviderType="Decimal" Scale="0" Size="0" SourceColumn="installment5" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_is_installment1_paid" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="is_installment1_paid" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiStringFixedLength" Direction="Input" ParameterName="@Original_is_installment1_paid" Precision="0" ProviderType="Char" Scale="0" Size="0" SourceColumn="is_installment1_paid" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_is_installment2_paid" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="is_installment2_paid" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiStringFixedLength" Direction="Input" ParameterName="@Original_is_installment2_paid" Precision="0" ProviderType="Char" Scale="0" Size="0" SourceColumn="is_installment2_paid" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_is_installment3_paid" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="is_installment3_paid" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiStringFixedLength" Direction="Input" ParameterName="@Original_is_installment3_paid" Precision="0" ProviderType="Char" Scale="0" Size="0" SourceColumn="is_installment3_paid" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_is_installment4_paid" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="is_installment4_paid" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiStringFixedLength" Direction="Input" ParameterName="@Original_is_installment4_paid" Precision="0" ProviderType="Char" Scale="0" Size="0" SourceColumn="is_installment4_paid" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_is_installment5_paid" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="is_installment5_paid" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiStringFixedLength" Direction="Input" ParameterName="@Original_is_installment5_paid" Precision="0" ProviderType="Char" Scale="0" Size="0" SourceColumn="is_installment5_paid" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiStringFixedLength" Direction="Input" ParameterName="@Original_installment_no_mail" Precision="0" ProviderType="Char" Scale="0" Size="0" SourceColumn="installment_no_mail" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_cancel_flag" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="cancel_flag" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiStringFixedLength" Direction="Input" ParameterName="@Original_cancel_flag" Precision="0" ProviderType="Char" Scale="0" Size="0" SourceColumn="cancel_flag" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_semester_type" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="semester_type" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_year_semester" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="year_semester" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_created_by" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="created_by" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_created_by" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="created_by" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_created_date" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="created_date" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Original_created_date" Precision="0" ProviderType="SmallDateTime" Scale="0" Size="0" SourceColumn="created_date" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_created_host" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="created_host" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_created_host" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="created_host" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_last_modified_by" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="last_modified_by" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_last_modified_by" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="last_modified_by" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_last_midified_date" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="last_midified_date" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Original_last_midified_date" Precision="0" ProviderType="SmallDateTime" Scale="0" Size="0" SourceColumn="last_midified_date" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_last_modified_host" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="last_modified_host" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_last_modified_host" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="last_modified_host" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="user_id" DataSetColumn="user_id" />
+              <Mapping SourceColumn="fees_type" DataSetColumn="fees_type" />
+              <Mapping SourceColumn="installment_status" DataSetColumn="installment_status" />
+              <Mapping SourceColumn="no_of_installment" DataSetColumn="no_of_installment" />
+              <Mapping SourceColumn="fees_amount" DataSetColumn="fees_amount" />
+              <Mapping SourceColumn="installment1" DataSetColumn="installment1" />
+              <Mapping SourceColumn="installment2" DataSetColumn="installment2" />
+              <Mapping SourceColumn="installment3" DataSetColumn="installment3" />
+              <Mapping SourceColumn="installment4" DataSetColumn="installment4" />
+              <Mapping SourceColumn="installment5" DataSetColumn="installment5" />
+              <Mapping SourceColumn="is_installment1_paid" DataSetColumn="is_installment1_paid" />
+              <Mapping SourceColumn="is_installment2_paid" DataSetColumn="is_installment2_paid" />
+              <Mapping SourceColumn="is_installment3_paid" DataSetColumn="is_installment3_paid" />
+              <Mapping SourceColumn="is_installment4_paid" DataSetColumn="is_installment4_paid" />
+              <Mapping SourceColumn="is_installment5_paid" DataSetColumn="is_installment5_paid" />
+              <Mapping SourceColumn="installment_no_mail" DataSetColumn="installment_no_mail" />
+              <Mapping SourceColumn="cancel_flag" DataSetColumn="cancel_flag" />
+              <Mapping SourceColumn="semester_type" DataSetColumn="semester_type" />
+              <Mapping SourceColumn="year_semester" DataSetColumn="year_semester" />
+              <Mapping SourceColumn="created_by" DataSetColumn="created_by" />
+              <Mapping SourceColumn="created_date" DataSetColumn="created_date" />
+              <Mapping SourceColumn="created_host" DataSetColumn="created_host" />
+              <Mapping SourceColumn="last_modified_by" DataSetColumn="last_modified_by" />
+              <Mapping SourceColumn="last_midified_date" DataSetColumn="last_midified_date" />
+              <Mapping SourceColumn="last_modified_host" DataSetColumn="last_modified_host" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DS_UserFeesReminder" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DS_UserFeesReminder" msprop:Generator_UserDSName="DS_UserFeesReminder">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="user_fees_reminder_dtl" msprop:Generator_TableClassName="user_fees_reminder_dtlDataTable" msprop:Generator_TableVarName="tableuser_fees_reminder_dtl" msprop:Generator_TablePropName="user_fees_reminder_dtl" msprop:Generator_RowDeletingName="user_fees_reminder_dtlRowDeleting" msprop:Generator_RowChangingName="user_fees_reminder_dtlRowChanging" msprop:Generator_RowEvHandlerName="user_fees_reminder_dtlRowChangeEventHandler" msprop:Generator_RowDeletedName="user_fees_reminder_dtlRowDeleted" msprop:Generator_UserTableName="user_fees_reminder_dtl" msprop:Generator_RowChangedName="user_fees_reminder_dtlRowChanged" msprop:Generator_RowEvArgName="user_fees_reminder_dtlRowChangeEvent" msprop:Generator_RowClassName="user_fees_reminder_dtlRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="user_id" msprop:Generator_ColumnVarNameInTable="columnuser_id" msprop:Generator_ColumnPropNameInRow="user_id" msprop:Generator_ColumnPropNameInTable="user_idColumn" msprop:Generator_UserColumnName="user_id">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="fees_type" msprop:Generator_ColumnVarNameInTable="columnfees_type" msprop:Generator_ColumnPropNameInRow="fees_type" msprop:Generator_ColumnPropNameInTable="fees_typeColumn" msprop:Generator_UserColumnName="fees_type" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="installment_status" msprop:Generator_ColumnVarNameInTable="columninstallment_status" msprop:Generator_ColumnPropNameInRow="installment_status" msprop:Generator_ColumnPropNameInTable="installment_statusColumn" msprop:Generator_UserColumnName="installment_status" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="no_of_installment" msprop:Generator_ColumnVarNameInTable="columnno_of_installment" msprop:Generator_ColumnPropNameInRow="no_of_installment" msprop:Generator_ColumnPropNameInTable="no_of_installmentColumn" msprop:Generator_UserColumnName="no_of_installment" type="xs:int" minOccurs="0" />
+              <xs:element name="fees_amount" msprop:Generator_ColumnVarNameInTable="columnfees_amount" msprop:Generator_ColumnPropNameInRow="fees_amount" msprop:Generator_ColumnPropNameInTable="fees_amountColumn" msprop:Generator_UserColumnName="fees_amount" type="xs:decimal" minOccurs="0" />
+              <xs:element name="installment1" msprop:Generator_ColumnVarNameInTable="columninstallment1" msprop:Generator_ColumnPropNameInRow="installment1" msprop:Generator_ColumnPropNameInTable="installment1Column" msprop:Generator_UserColumnName="installment1" type="xs:decimal" minOccurs="0" />
+              <xs:element name="installment2" msprop:Generator_ColumnVarNameInTable="columninstallment2" msprop:Generator_ColumnPropNameInRow="installment2" msprop:Generator_ColumnPropNameInTable="installment2Column" msprop:Generator_UserColumnName="installment2" type="xs:decimal" minOccurs="0" />
+              <xs:element name="installment3" msprop:Generator_ColumnVarNameInTable="columninstallment3" msprop:Generator_ColumnPropNameInRow="installment3" msprop:Generator_ColumnPropNameInTable="installment3Column" msprop:Generator_UserColumnName="installment3" type="xs:decimal" minOccurs="0" />
+              <xs:element name="installment4" msprop:Generator_ColumnVarNameInTable="columninstallment4" msprop:Generator_ColumnPropNameInRow="installment4" msprop:Generator_ColumnPropNameInTable="installment4Column" msprop:Generator_UserColumnName="installment4" type="xs:decimal" minOccurs="0" />
+              <xs:element name="installment5" msprop:Generator_ColumnVarNameInTable="columninstallment5" msprop:Generator_ColumnPropNameInRow="installment5" msprop:Generator_ColumnPropNameInTable="installment5Column" msprop:Generator_UserColumnName="installment5" type="xs:decimal" minOccurs="0" />
+              <xs:element name="is_installment1_paid" msprop:Generator_ColumnVarNameInTable="columnis_installment1_paid" msprop:Generator_ColumnPropNameInRow="is_installment1_paid" msprop:Generator_ColumnPropNameInTable="is_installment1_paidColumn" msprop:Generator_UserColumnName="is_installment1_paid" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="is_installment2_paid" msprop:Generator_ColumnVarNameInTable="columnis_installment2_paid" msprop:Generator_ColumnPropNameInRow="is_installment2_paid" msprop:Generator_ColumnPropNameInTable="is_installment2_paidColumn" msprop:Generator_UserColumnName="is_installment2_paid" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="is_installment3_paid" msprop:Generator_ColumnVarNameInTable="columnis_installment3_paid" msprop:Generator_ColumnPropNameInRow="is_installment3_paid" msprop:Generator_ColumnPropNameInTable="is_installment3_paidColumn" msprop:Generator_UserColumnName="is_installment3_paid" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="is_installment4_paid" msprop:Generator_ColumnVarNameInTable="columnis_installment4_paid" msprop:Generator_ColumnPropNameInRow="is_installment4_paid" msprop:Generator_ColumnPropNameInTable="is_installment4_paidColumn" msprop:Generator_UserColumnName="is_installment4_paid" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="is_installment5_paid" msprop:Generator_ColumnVarNameInTable="columnis_installment5_paid" msprop:Generator_ColumnPropNameInRow="is_installment5_paid" msprop:Generator_ColumnPropNameInTable="is_installment5_paidColumn" msprop:Generator_UserColumnName="is_installment5_paid" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="installment_no_mail" msprop:Generator_ColumnVarNameInTable="columninstallment_no_mail" msprop:Generator_ColumnPropNameInRow="installment_no_mail" msprop:Generator_ColumnPropNameInTable="installment_no_mailColumn" msprop:Generator_UserColumnName="installment_no_mail">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="cancel_flag" msprop:Generator_ColumnVarNameInTable="columncancel_flag" msprop:Generator_ColumnPropNameInRow="cancel_flag" msprop:Generator_ColumnPropNameInTable="cancel_flagColumn" msprop:Generator_UserColumnName="cancel_flag" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="semester_type" msprop:Generator_ColumnVarNameInTable="columnsemester_type" msprop:Generator_ColumnPropNameInRow="semester_type" msprop:Generator_ColumnPropNameInTable="semester_typeColumn" msprop:Generator_UserColumnName="semester_type">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="year_semester" msprop:Generator_ColumnVarNameInTable="columnyear_semester" msprop:Generator_ColumnPropNameInRow="year_semester" msprop:Generator_ColumnPropNameInTable="year_semesterColumn" msprop:Generator_UserColumnName="year_semester">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="created_by" msprop:Generator_ColumnVarNameInTable="columncreated_by" msprop:Generator_ColumnPropNameInRow="created_by" msprop:Generator_ColumnPropNameInTable="created_byColumn" msprop:Generator_UserColumnName="created_by" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="created_date" msprop:Generator_ColumnVarNameInTable="columncreated_date" msprop:Generator_ColumnPropNameInRow="created_date" msprop:Generator_ColumnPropNameInTable="created_dateColumn" msprop:Generator_UserColumnName="created_date" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="created_host" msprop:Generator_ColumnVarNameInTable="columncreated_host" msprop:Generator_ColumnPropNameInRow="created_host" msprop:Generator_ColumnPropNameInTable="created_hostColumn" msprop:Generator_UserColumnName="created_host" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="last_modified_by" msprop:Generator_ColumnVarNameInTable="columnlast_modified_by" msprop:Generator_ColumnPropNameInRow="last_modified_by" msprop:Generator_ColumnPropNameInTable="last_modified_byColumn" msprop:Generator_UserColumnName="last_modified_by" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="last_midified_date" msprop:Generator_ColumnVarNameInTable="columnlast_midified_date" msprop:Generator_ColumnPropNameInRow="last_midified_date" msprop:Generator_ColumnPropNameInTable="last_midified_dateColumn" msprop:Generator_UserColumnName="last_midified_date" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="last_modified_host" msprop:Generator_ColumnVarNameInTable="columnlast_modified_host" msprop:Generator_ColumnPropNameInRow="last_modified_host" msprop:Generator_ColumnPropNameInTable="last_modified_hostColumn" msprop:Generator_UserColumnName="last_modified_host" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:user_fees_reminder_dtl" />
+      <xs:field xpath="mstns:user_id" />
+      <xs:field xpath="mstns:installment_no_mail" />
+      <xs:field xpath="mstns:semester_type" />
+      <xs:field xpath="mstns:year_semester" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

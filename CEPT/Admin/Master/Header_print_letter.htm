@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+<html >
+<head>
+    <title></title>
+
+    <script type="text/javascript">
+
+        function subst() {
+            var vars = {};
+            var x = document.location.search.substring(1).split('&');
+            for (var i in x) { var z = x[i].split('=', 2); vars[z[0]] = unescape(z[1]); }
+            var x = ['frompage', 'topage', 'page', 'webpage', 'section', 'subsection', 'subsubsection', 'CourseDesc'];
+            for (var i in x) {
+                var y = document.getElementsByClassName(x[i]);
+                for (var j = 0; j < y.length; ++j) y[j].textContent = vars[x[i]];
+            }
+        }
+    </script>
+</head>
+<body style="border: 0; " onload="subst()">
+    <div>
+        <div style="top: 20px; height: 120px; left: 1px;" title="" id="i22byht1">
+            <a style="width: 372px; height: 120px; cursor: pointer;float:right;" href="" id="i22byht1link">
+                <div id="i22byht1img" style="width: 372px; height: 120px; position: relative;">
+                    <img alt="" style="width: 372px; height: 120px; object-fit: cover;" src="../../image/ceptlogo_pdf.jpg" id="i22byht1imgimage" class="s4imgimage"></div>
+            </a>
+        </div>
+    </div>
+</body>
+</html>

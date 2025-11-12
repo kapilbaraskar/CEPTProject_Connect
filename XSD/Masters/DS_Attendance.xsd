@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DS_Attendance" targetNamespace="http://tempuri.org/DS_Attendance.xsd" xmlns:mstns="http://tempuri.org/DS_Attendance.xsd" xmlns="http://tempuri.org/DS_Attendance.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="CEPT_REG_LATEST1ConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="CEPT_REG_LATEST1ConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.XSD.Properties.Settings.GlobalReference.Default.CEPT_REG_LATEST1ConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DS_Attendance" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DS_Attendance" msprop:Generator_UserDSName="DS_Attendance">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="attendance_mst" msprop:Generator_TableClassName="attendance_mstDataTable" msprop:Generator_TableVarName="tableattendance_mst" msprop:Generator_TablePropName="attendance_mst" msprop:Generator_RowDeletingName="attendance_mstRowDeleting" msprop:Generator_RowChangingName="attendance_mstRowChanging" msprop:Generator_RowEvHandlerName="attendance_mstRowChangeEventHandler" msprop:Generator_RowDeletedName="attendance_mstRowDeleted" msprop:Generator_UserTableName="attendance_mst" msprop:Generator_RowChangedName="attendance_mstRowChanged" msprop:Generator_RowEvArgName="attendance_mstRowChangeEvent" msprop:Generator_RowClassName="attendance_mstRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="user_id" msprop:Generator_ColumnVarNameInTable="columnuser_id" msprop:Generator_ColumnPropNameInRow="user_id" msprop:Generator_ColumnPropNameInTable="user_idColumn" msprop:Generator_UserColumnName="user_id">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="date_of_attendance" msprop:Generator_ColumnVarNameInTable="columndate_of_attendance" msprop:Generator_ColumnPropNameInRow="date_of_attendance" msprop:Generator_ColumnPropNameInTable="date_of_attendanceColumn" msprop:Generator_UserColumnName="date_of_attendance" type="xs:dateTime" />
+              <xs:element name="entry_time" msprop:Generator_ColumnVarNameInTable="columnentry_time" msprop:Generator_ColumnPropNameInRow="entry_time" msprop:Generator_ColumnPropNameInTable="entry_timeColumn" msprop:Generator_UserColumnName="entry_time" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="entry_ip" msprop:Generator_ColumnVarNameInTable="columnentry_ip" msprop:Generator_ColumnPropNameInRow="entry_ip" msprop:Generator_ColumnPropNameInTable="entry_ipColumn" msprop:Generator_UserColumnName="entry_ip" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="entry_com_name" msprop:Generator_ColumnVarNameInTable="columnentry_com_name" msprop:Generator_ColumnPropNameInRow="entry_com_name" msprop:Generator_ColumnPropNameInTable="entry_com_nameColumn" msprop:Generator_UserColumnName="entry_com_name" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="exit_time" msprop:Generator_ColumnVarNameInTable="columnexit_time" msprop:Generator_ColumnPropNameInRow="exit_time" msprop:Generator_ColumnPropNameInTable="exit_timeColumn" msprop:Generator_UserColumnName="exit_time" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="exit_ip" msprop:Generator_ColumnVarNameInTable="columnexit_ip" msprop:Generator_ColumnPropNameInRow="exit_ip" msprop:Generator_ColumnPropNameInTable="exit_ipColumn" msprop:Generator_UserColumnName="exit_ip" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="exit_com_name" msprop:Generator_ColumnVarNameInTable="columnexit_com_name" msprop:Generator_ColumnPropNameInRow="exit_com_name" msprop:Generator_ColumnPropNameInTable="exit_com_nameColumn" msprop:Generator_UserColumnName="exit_com_name" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="cancel_flag" msprop:Generator_ColumnVarNameInTable="columncancel_flag" msprop:Generator_ColumnPropNameInRow="cancel_flag" msprop:Generator_ColumnPropNameInTable="cancel_flagColumn" msprop:Generator_UserColumnName="cancel_flag" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="created_by" msprop:Generator_ColumnVarNameInTable="columncreated_by" msprop:Generator_ColumnPropNameInRow="created_by" msprop:Generator_ColumnPropNameInTable="created_byColumn" msprop:Generator_UserColumnName="created_by" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="created_date" msprop:Generator_ColumnVarNameInTable="columncreated_date" msprop:Generator_ColumnPropNameInRow="created_date" msprop:Generator_ColumnPropNameInTable="created_dateColumn" msprop:Generator_UserColumnName="created_date" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="created_host" msprop:Generator_ColumnVarNameInTable="columncreated_host" msprop:Generator_ColumnPropNameInRow="created_host" msprop:Generator_ColumnPropNameInTable="created_hostColumn" msprop:Generator_UserColumnName="created_host" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="last_modified_by" msprop:Generator_ColumnVarNameInTable="columnlast_modified_by" msprop:Generator_ColumnPropNameInRow="last_modified_by" msprop:Generator_ColumnPropNameInTable="last_modified_byColumn" msprop:Generator_UserColumnName="last_modified_by" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="last_modified_date" msprop:Generator_ColumnVarNameInTable="columnlast_modified_date" msprop:Generator_ColumnPropNameInRow="last_modified_date" msprop:Generator_ColumnPropNameInTable="last_modified_dateColumn" msprop:Generator_UserColumnName="last_modified_date" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="last_modified_host" msprop:Generator_ColumnVarNameInTable="columnlast_modified_host" msprop:Generator_ColumnPropNameInRow="last_modified_host" msprop:Generator_ColumnPropNameInTable="last_modified_hostColumn" msprop:Generator_UserColumnName="last_modified_host" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:attendance_mst" />
+      <xs:field xpath="mstns:user_id" />
+      <xs:field xpath="mstns:date_of_attendance" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

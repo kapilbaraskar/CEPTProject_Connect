@@ -1,0 +1,1941 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="PersonalDetails.master.cs" Inherits="PersonalDetails" %>
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title><asp:ContentPlaceHolder ID="TitleContent" runat="server" /></title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- jQuery (optional but requested) -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <!-- Bootstrap JS (needs Popper included) -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"></script>
+  
+  <style>
+    :root { --sidebar-w: 260px; --rail-w: 64px; --border:#e2e2e2; --primary:#2f6feb; --bg:#fafafa; }
+    
+    /* Prevent HTML element from scrolling */
+    html {
+        overflow: hidden !important;
+        height: 100vh !important;
+    }
+    body{ 
+        background: var(--bg); 
+        margin: 0; 
+        padding: 0; 
+        overflow: hidden !important; /* Prevent body scrolling */
+        height: 100vh !important; /* Full viewport height */
+    }
+    
+    /* Layout */
+    .layout{ 
+        display:grid; 
+        grid-template-columns: var(--sidebar-w) 1fr; 
+        grid-template-rows: 70px 1fr; 
+        height: 100vh !important; /* Use full viewport height instead of min-height */
+        overflow: hidden !important; /* Prevent layout scrolling */
+    }
+    header{ 
+        grid-column:1 / -1; 
+        border-bottom:1px solid var(--border); 
+        background:#fff; 
+        z-index: 1000; 
+        overflow: hidden !important; /* Prevent header scrolling */
+    }
+    aside{ 
+        grid-row:2; 
+        border-right:1px solid var(--border); 
+        background:#f8fbff; 
+        position:relative; 
+        padding:60px 0 10px 0; 
+        transition: all .25s ease;
+        display: flex; 
+        flex-direction: column; 
+        height: calc(100vh - 70px) !important; /* Subtract header height */
+        overflow: hidden !important;
+    }
+    main{ 
+        grid-row:2; 
+        padding: 20px; 
+        overflow-y: auto !important; /* Allow vertical scrolling in main content */
+        overflow-x: hidden !important; /* Prevent horizontal scrolling */
+        height: calc(100vh - 70px) !important; /* Subtract header height */
+    }
+    
+    /* Content page scrolling - ensure content can scroll within main */
+    .content-page {
+        min-height: 100%;
+        overflow-y: visible; /* Allow content to determine scrolling */
+    }
+    
+    /* Handle nested main elements in content pages */
+    main main {
+        height: 100% !important;
+        overflow-y: auto !important;
+        overflow-x: hidden !important;
+        padding: 0 !important;
+    }
+    
+    /* Ensure form elements don't interfere with scrolling */
+    main form {
+        height: 100%;
+        overflow-y: auto;
+    }
+    
+    /* Ensure tab-content and form sections are scrollable */
+    .tab-content {
+        height: 100%;
+        overflow-y: auto !important;
+        overflow-x: hidden !important;
+    }
+    
+    .form-section {
+        height: auto;
+        overflow: visible;
+    }
+    
+    /* Content containers should be scrollable */
+    .content-container {
+        max-height: 100%;
+        overflow-y: auto;
+        padding: 10px;
+    }
+    
+    /* Toggle Button */
+    .btn-toggle{ 
+      position:absolute; top:15px; left:15px; 
+      display:inline-flex; align-items:center; justify-content:space-between;
+      background-color: #0b2a3a; border: none; color: white;
+      min-width: 200px; height: 40px; border-radius: 6px;
+      z-index: 1001; cursor: pointer;
+      padding: 0 12px;
+      transition: all 0.3s ease;
+    }
+    
+    .btn-toggle:hover {
+      background-color: #1a3a4a;
+      transform: translateY(-1px);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+    
+    .btn-toggle .candidate-name {
+      flex: 1;
+      font-size: 14px;
+      font-weight: 500;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      margin-right: 8px;
+    }
+    
+    .btn-toggle .icon{ 
+      display:none; 
+      width:18px; 
+      height:18px; 
+      flex-shrink: 0;
+    }
+    .btn-toggle[aria-expanded="true"] .icon-left{ display:block; } 
+    .btn-toggle[aria-expanded="false"] .icon-right{ display:block; }
+    
+    /* Collapsed state - show only icon */
+    .collapsed-rail .btn-toggle {
+      min-width: 40px;
+      width: 40px;
+      padding: 0;
+      justify-content: center;
+    }
+    
+    .collapsed-rail .btn-toggle .candidate-name {
+      display: none;
+    }
+    
+    /* Menu Container */
+    .menu-container {
+        flex: 1;
+        overflow-y: auto;
+        overflow-x: hidden;
+        padding: 0 10px;
+        scrollbar-width: thin;
+        scrollbar-color: #c1c1c1 transparent;
+        background: #fff;
+        border-radius: 12px;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 
+                    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        margin: 10px 5px;
+        border: 1px solid rgba(0, 0, 0, 0.05);
+        scroll-behavior: smooth;
+        scroll-padding: 20px;
+    }
+    
+    .menu-container::-webkit-scrollbar {
+        width: 6px;
+    }
+    
+    .menu-container::-webkit-scrollbar-track {
+        background: transparent;
+    }
+    
+    .menu-container::-webkit-scrollbar-thumb {
+        background-color: #c1c1c1;
+        border-radius: 3px;
+    }
+    
+    .menu-container::-webkit-scrollbar-thumb:hover {
+        background-color: #a8a8a8;
+    }
+
+    /* Menu */
+    .menu { 
+        display: flex; 
+        flex-direction: column; 
+        gap: 6px; 
+        padding: 15px 10px; 
+        margin: 0; 
+    }
+    
+    .menu .btn{ 
+        width: 100%; 
+        text-align: left; 
+        display: flex; 
+        align-items: center; 
+        gap: 12px; 
+        padding: 12px 16px; 
+        margin: 0;
+        border: 1px solid rgba(0, 0, 0, 0.08);
+        border-radius: 10px;
+        background: #fafafa;
+        color: #333;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        position: relative;
+    }
+    
+    .menu .btn:hover {
+        background: #e3f2fd;
+        border-color: #bbdefb;
+        color: #1976d2;
+        transform: translateX(3px) translateY(-1px);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15), 
+                    0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    
+    .menu svg{ 
+        width: 20px; 
+        height: 20px; 
+        flex-shrink: 0; 
+        opacity: 0.7;
+    }
+    
+    .menu .label{ 
+        flex: 1;
+        font-size: 14px;
+        font-weight: 500;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+    
+    .menu .btn.active{ 
+        background: linear-gradient(135deg, #e7f0ff 0%, #f0f7ff 100%); 
+        border-color: var(--primary); 
+        color: #0b2a8b; 
+        font-weight: 600;
+        box-shadow: 0 4px 12px rgba(47, 111, 235, 0.2), 
+                    0 2px 6px rgba(47, 111, 235, 0.1);
+        transform: translateX(2px);
+    }
+    
+    .menu .btn.active::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        width: 4px;
+        background: var(--primary);
+        border-radius: 0 2px 2px 0;
+    }
+    
+    /* Smooth scroll animation for active items */
+    .menu .btn.active {
+        animation: highlightActive 0.5s ease-in-out;
+    }
+    
+    @keyframes highlightActive {
+        0% {
+            transform: translateX(0);
+            box-shadow: 0 2px 4px rgba(47, 111, 235, 0.1);
+        }
+        50% {
+            transform: translateX(4px);
+            box-shadow: 0 6px 12px rgba(47, 111, 235, 0.3);
+        }
+        100% {
+            transform: translateX(2px);
+            box-shadow: 0 4px 12px rgba(47, 111, 235, 0.2), 
+                        0 2px 6px rgba(47, 111, 235, 0.1);
+        }
+    }
+    
+    /* Scroll highlight effect */
+    .menu .btn.scroll-highlight {
+        animation: scrollHighlight 1s ease-in-out;
+        background: linear-gradient(135deg, #e3f2fd 0%, #f0f7ff 100%) !important;
+        border-color: #2196f3 !important;
+        box-shadow: 0 6px 20px rgba(33, 150, 243, 0.4) !important;
+    }
+    
+    @keyframes scrollHighlight {
+        0% {
+            transform: scale(1);
+            box-shadow: 0 2px 4px rgba(47, 111, 235, 0.1);
+        }
+        25% {
+            transform: scale(1.02);
+            box-shadow: 0 8px 25px rgba(33, 150, 243, 0.5);
+        }
+        50% {
+            transform: scale(1.01);
+            box-shadow: 0 6px 20px rgba(33, 150, 243, 0.4);
+        }
+        75% {
+            transform: scale(1.02);
+            box-shadow: 0 8px 25px rgba(33, 150, 243, 0.5);
+        }
+        100% {
+            transform: scale(1);
+            box-shadow: 0 4px 12px rgba(47, 111, 235, 0.2);
+        }
+    }
+    
+    .menu .btn.active svg {
+        opacity: 1;
+    }
+    
+    /* Collapsed rail (desktop) */
+    .collapsed-rail{ grid-template-columns: var(--rail-w) 1fr; }
+    .collapsed-rail aside{ 
+        width: var(--rail-w); 
+        padding: 60px 6px 6px; 
+    }
+    .collapsed-rail .menu-container {
+        margin: 10px 3px;
+        padding: 0 5px;
+    }
+    .collapsed-rail .menu .label{ 
+        display: none; 
+    }
+    .collapsed-rail .menu .btn{ 
+        justify-content: center; 
+        padding: 12px 8px; 
+        gap: 0;
+        border-radius: 8px;
+    }
+    .collapsed-rail .menu .btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    }
+    .collapsed-rail .menu .btn.active {
+        transform: translateY(-1px);
+    }
+    .collapsed-rail .btn-toggle{ 
+        right: 12px; 
+    }
+    
+    /* Menu loading indicator */
+    .menu-loading {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+        color: #666;
+        font-size: 14px;
+        background: rgba(255, 255, 255, 0.9);
+        border-radius: 12px;
+        margin: 10px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+    
+    .menu-loading .spinner {
+        width: 20px;
+        height: 20px;
+        border: 2px solid #f3f3f3;
+        border-top: 2px solid var(--primary);
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+        margin-right: 10px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    
+    @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+    }
+    
+    /* Menu empty state */
+    .menu-empty {
+        text-align: center;
+        padding: 40px 20px;
+        color: #999;
+        font-size: 14px;
+        background: rgba(255, 255, 255, 0.9);
+        border-radius: 12px;
+        margin: 10px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+    
+    .menu-empty .icon {
+        width: 48px;
+        height: 48px;
+        margin: 0 auto 16px;
+        opacity: 0.5;
+        filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+    }
+    
+    /* Additional shadow effects */
+    .menu .btn:focus {
+        outline: none;
+        box-shadow: 0 0 0 3px rgba(47, 111, 235, 0.2), 
+                    0 4px 8px rgba(0, 0, 0, 0.15);
+    }
+    
+    /* Subtle animation for menu items */
+    .menu .btn {
+        animation: fadeInUp 0.3s ease-out;
+    }
+    
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(10px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    /* Header */
+    .header-logo{ height: 60px; padding: 5px 0; width: auto; display: block; }
+    .headerdetails { min-height: 70px; }
+    
+    /* Mobile Overlay */
+    .sidebar-overlay{
+      position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0,0,0,0.5); z-index: 1030; display: none;
+    }
+    .sidebar-closed .sidebar-overlay{ display: none; }
+    @media (max-width: 768px){
+      .sidebar-overlay{ display: block; }
+      .sidebar-closed .sidebar-overlay{ display: none; }
+    }
+    
+    /* Force mobile menu visibility - debugging */
+    @media (max-width: 768px){
+      aside {
+        background: red !important; /* Debug color */
+        border: 3px solid blue !important; /* Debug border */
+      }
+      .btn-toggle {
+        background: green !important; /* Debug color */
+        border: 3px solid yellow !important; /* Debug border */
+      }
+    }
+    
+    /* Tablet View (768px - 1024px) */
+    @media (max-width: 1024px) and (min-width: 769px){
+      .layout{ grid-template-columns: var(--rail-w) 1fr; }
+      aside{ width: var(--rail-w); padding:60px 6px 6px; }
+      .menu .label{ display:none; }
+      .menu .btn{ justify-content:center; padding: 12px 8px; }
+      .btn-toggle{ right: 12px; }
+    }
+    
+    /* Mobile View (768px and below) */
+    @media (max-width: 768px){
+      body {
+        overflow: hidden !important; /* Ensure body doesn't scroll on mobile */
+        height: 100vh !important;
+      }
+      
+      .layout{ 
+        display: block !important; /* Override grid for mobile */
+        position: relative;
+        height: 100vh !important; /* Maintain full height on mobile */
+        overflow: hidden !important; /* Prevent layout scrolling */
+      }
+      
+      /* Header adjustments for mobile */
+      .headerdetails { 
+        min-height: 60px; 
+        padding: 8px 15px; 
+        position: fixed; 
+        top: 0; 
+        left: 0; 
+        right: 0; 
+        z-index: 1000;
+        background: #fff;
+        border-bottom: 1px solid #e2e2e2;
+        overflow: hidden !important; /* Prevent header scrolling */
+      }
+      .header-logo{ height: 45px; }
+      
+      /* Sidebar becomes offcanvas - ALWAYS VISIBLE on mobile */
+      aside{
+        position: fixed !important; 
+        top: 60px !important; 
+        left: 0 !important; 
+        height: calc(100vh - 60px) !important; 
+        width: 260px !important;
+        transform: translateX(0) !important; /* Show by default on mobile */
+        transition: transform .3s ease; 
+        z-index: 1040 !important; 
+        box-shadow: 2px 0 15px rgba(0,0,0,.15), 
+                    0 0 30px rgba(0,0,0,.1); 
+        padding: 20px 15px !important;
+        background: #f8fbff !important;
+        overflow-y: auto !important;
+        display: block !important; /* Force display */
+        visibility: visible !important;
+        opacity: 1 !important;
+      }
+      
+      /* Enhanced mobile menu container */
+      .menu-container {
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15), 
+                    0 4px 10px rgba(0, 0, 0, 0.1);
+        margin: 15px 10px;
+        border-radius: 16px;
+        background: #fff;
+      }
+      
+      .menu .btn {
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
+        border-radius: 12px;
+      }
+      
+      .menu .btn:hover {
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+        transform: translateX(4px) translateY(-2px);
+      }
+      
+      .menu .btn.active {
+        box-shadow: 0 6px 20px rgba(47, 111, 235, 0.3);
+      }
+      
+      /* When sidebar is closed on mobile */
+      .sidebar-closed aside{ 
+        transform: translateX(-100%) !important; 
+      }
+      
+      /* Toggle button on mobile - make it more visible */
+      .btn-toggle{ 
+        position: fixed !important; 
+        top: 15px !important; 
+        left: 15px !important; 
+        right: auto !important; 
+        z-index: 1050 !important; 
+        background-color: #0b2a3a !important;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.3) !important;
+        border: 2px solid #fff !important;
+        display: flex !important; /* Force display */
+        visibility: visible !important;
+        opacity: 1 !important;
+        min-width: 180px !important;
+        max-width: calc(100vw - 100px) !important;
+      }
+      
+      .btn-toggle .candidate-name {
+        font-size: 13px !important;
+        max-width: 120px !important;
+      }
+      
+      /* Menu items on mobile */
+      .menu .btn{ 
+        margin-bottom: 8px !important; 
+        padding: 15px 20px !important;
+        font-size: 16px !important;
+        border-radius: 8px !important;
+        background: #fff !important;
+        border: 1px solid #e2e2e2 !important;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.1) !important;
+        display: block !important; /* Force display */
+        visibility: visible !important;
+        opacity: 1 !important;
+      }
+      
+      .menu .btn:hover{ 
+        background: #eef6ff !important; 
+        border-color: #2f6feb !important;
+        transform: translateY(-1px) !important;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.15) !important;
+      }
+      
+      .menu .btn.active{ 
+        background: #e7f0ff !important; 
+        border-color: var(--primary) !important; 
+        color: #0b2a8b !important;
+        box-shadow: 0 2px 8px rgba(47, 111, 235, 0.3) !important;
+      }
+      
+      .menu svg{ width: 20px !important; height: 20px !important; }
+      
+      /* Main content adjustments */
+      main{ 
+        margin-top: 60px !important; 
+        padding: 15px !important; 
+        margin-left: 0 !important;
+        width: 100% !important;
+        height: calc(100vh - 60px) !important; /* Full height minus header */
+        overflow-y: auto !important; /* Allow scrolling in main content */
+        overflow-x: hidden !important; /* Prevent horizontal scrolling */
+        position: fixed !important; /* Fixed positioning for mobile */
+        top: 60px !important; /* Position below header */
+        left: 0 !important;
+        right: 0 !important;
+        z-index: 1 !important; /* Below sidebar */
+      }
+    }
+    
+    /* Small Mobile (576px and below) */
+    @media (max-width: 576px){
+      .headerdetails { 
+        padding: 5px 10px; 
+        min-height: 55px; 
+        overflow: hidden !important; /* Prevent header scrolling */
+      }
+      .header-logo{ height: 35px; }
+      .btn-toggle{ 
+        width: 40px; height: 40px; top: 12px; left: 12px; 
+        background-color: #0b2a3a !important;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+        border: 2px solid #fff;
+      }
+      main{ 
+        padding: 10px; 
+        top: 55px !important; /* Adjust for smaller header */
+        height: calc(100vh - 55px) !important; /* Adjust height for smaller header */
+        overflow-y: auto !important; /* Ensure scrolling works */
+        overflow-x: hidden !important;
+      }
+      aside{ 
+        padding: 15px 10px; 
+        top: 55px; 
+        height: calc(100vh - 55px);
+        width: 280px; /* Slightly wider for small mobile */
+        overflow-y: auto !important; /* Allow sidebar scrolling */
+      }
+      .menu .btn{ 
+        padding: 12px 15px; 
+        font-size: 15px;
+        margin-bottom: 6px;
+      }
+      .menu svg{ width: 18px; height: 18px; }
+    }
+    
+    /* Extra Small Mobile (480px and below) */
+    @media (max-width: 480px){
+      .header-logo{ height: 30px; }
+      .headerdetails { 
+        padding: 3px 8px; 
+        min-height: 50px; 
+        overflow: hidden !important; /* Prevent header scrolling */
+      }
+      .btn-toggle{ 
+        width: 36px; height: 36px; top: 10px; left: 10px; 
+        background-color: #0b2a3a !important;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+        border: 2px solid #fff;
+      }
+      aside{ 
+        top: 50px; 
+        height: calc(100vh - 50px); 
+        padding: 12px 8px;
+        width: 260px; /* Full width on very small screens */
+        overflow-y: auto !important; /* Allow sidebar scrolling */
+      }
+      .menu .btn{ 
+        padding: 10px 12px; 
+        font-size: 14px;
+        margin-bottom: 5px;
+      }
+      .menu svg{ width: 16px; height: 16px; }
+      main{ 
+        padding: 8px; 
+        top: 50px !important; /* Adjust for smaller header */
+        height: calc(100vh - 50px) !important; /* Adjust height for smaller header */
+        overflow-y: auto !important; /* Ensure scrolling works */
+        overflow-x: hidden !important;
+      }
+    }
+    
+    /* Ultra Small Mobile (360px and below) */
+    @media (max-width: 360px){
+      .header-logo{ height: 28px; }
+      .headerdetails { 
+        padding: 2px 6px; 
+        min-height: 45px; 
+        overflow: hidden !important; /* Prevent header scrolling */
+      }
+      .btn-toggle{ 
+        width: 34px; height: 34px; top: 8px; left: 8px; 
+        background-color: #0b2a3a !important;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+        border: 1px solid #fff;
+      }
+      aside{ 
+        top: 45px; 
+        height: calc(100vh - 45px); 
+        padding: 10px 6px;
+        width: 100vw; /* Full viewport width on ultra small screens */
+        max-width: 300px;
+        overflow-y: auto !important; /* Allow sidebar scrolling */
+      }
+      .menu .btn{ 
+        padding: 8px 10px; 
+        font-size: 13px;
+        margin-bottom: 4px;
+      }
+      .menu svg{ width: 14px; height: 14px; }
+      main{ 
+        padding: 6px; 
+        top: 45px !important; /* Adjust for smaller header */
+        height: calc(100vh - 45px) !important; /* Adjust height for smaller header */
+        overflow-y: auto !important; /* Ensure scrolling works */
+        overflow-x: hidden !important;
+      }
+    }
+    
+    /* Landscape Mobile (max-height: 500px) */
+    @media (max-height: 500px) and (orientation: landscape){
+      .headerdetails { 
+        min-height: 45px; 
+        padding: 5px 15px; 
+        overflow: hidden !important; /* Prevent header scrolling */
+      }
+      .header-logo{ height: 35px; }
+      .btn-toggle{ 
+        width: 35px; height: 35px; top: 8px; left: 12px; 
+      }
+      aside{ 
+        top: 45px; 
+        height: calc(100vh - 45px); 
+        padding: 10px 15px;
+        overflow-y: auto !important; /* Allow sidebar scrolling */
+      }
+      .menu .btn{ 
+        padding: 8px 15px; 
+        font-size: 14px;
+        margin-bottom: 4px;
+      }
+      main{ 
+        padding: 10px; 
+        top: 45px !important; /* Adjust for smaller header */
+        height: calc(100vh - 45px) !important; /* Adjust height for smaller header */
+        overflow-y: auto !important; /* Ensure scrolling works */
+        overflow-x: hidden !important;
+      }
+    }
+    
+    /* High DPI Mobile Displays */
+    @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi){
+      .btn-toggle{ 
+        box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+      }
+      .menu .btn{ 
+        box-shadow: 0 0.5px 2px rgba(0,0,0,0.1);
+      }
+    }
+    
+    /* Touch Device Optimizations */
+    @media (hover: none) and (pointer: coarse){
+      .menu .btn{ 
+        min-height: 44px; /* Minimum touch target size */
+        padding: 12px 16px;
+      }
+      .btn-toggle{ 
+        min-width: 44px; min-height: 44px;
+      }
+    }
+    
+    /* Dark Mode Support */
+    @media (prefers-color-scheme: dark){
+      :root { --bg:#1a1a1a; --border:#333; }
+      body{ background: var(--bg); }
+      header{ background: #2d2d2d; border-color: var(--border); }
+      aside{ background: #2a2a2a; border-color: var(--border); }
+      .menu .btn{ 
+        background: #333; 
+        border-color: #444; 
+        color: #fff;
+      }
+      .menu .btn:hover{ background: #444; }
+      .menu .btn.active{ 
+        background: #1e3a8a; 
+        border-color: #3b82f6; 
+        color: #fff;
+      }
+    }
+    .btn-outline-primary{
+              color: white;
+            border-color: #0d6efd;
+            background-color: #0d6efd;
+         }
+          .btn-outline-primary:hover {
+            background-color: #0d6efd;
+            border-color: #0d6efd;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+  </style>
+    
+</head>
+<body>
+
+  <form runat="server">
+    <div class="layout maindiv" id="app">
+      <!-- Mobile Overlay -->
+      <div class="sidebar-overlay" id="sidebarOverlay"></div>
+      
+      <header class="d-flex align-items-center px-3 headerdetails">
+        <a href="~/Default.aspx" class="d-flex align-items-center text-decoration-none">
+          <img src="https://connect.cept.ac.in/image/Capture.png" alt="CEPT University" class="header-logo" />
+        </a>
+
+        <div class="ms-auto">
+     <asp:LinkButton ID="btnHome" runat="server" CssClass="btn btn-outline-primary btn-sm" PostBackUrl="~/Admin/Master/Home.aspx">Home</asp:LinkButton>
+     <asp:LoginStatus ID="LoginStatus1" runat="server" LogoutAction="Redirect"  LogoutPageUrl="~/Login.aspx?logout=2" CssClass="btn btn-outline-secondary btn-sm" LogoutText="Logout" />
+        </div>
+      </header>
+
+      <aside>
+        <button id="menuToggle" type="button" class="btn btn-dark btn-sm btn-toggle" aria-expanded="true" aria-controls="sideMenu" title="Toggle menu">
+          <span class="candidate-name" id="candidateName">Guest User</span>
+          <svg class="icon icon-left" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M15.41 7.41 14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>
+          <svg class="icon icon-right" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M3 6h18v2H3V6zm0 11h18v2H3v-2zm0-5.5h18v2H3v-2z"/></svg>
+        </button>
+
+        <div class="menu-container">
+          <div id="sideMenu" class="menu">
+            <!-- Menu items will be loaded dynamically via AJAX -->
+          </div>
+          
+          <div id="menuLoading" class="menu-loading">
+            <div class="spinner"></div>
+            <span>Loading menu...</span>
+          </div>
+          
+          <div id="menuEmpty" class="menu-empty" style="display: none;">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+              <path fill="currentColor" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+            </svg>
+            <div>No menu items available</div>
+          </div>
+        </div>
+      </aside>
+
+      <main>
+        <%--<asp:ContentPlaceHolder ID="MainContent" runat="server" />--%>
+          <asp:ContentPlaceHolder ID="HeadContent" runat="server">
+              
+          </asp:ContentPlaceHolder>
+      </main>
+    </div>
+      <asp:HiddenField ID="hdnuserid" runat="server" ClientIDMode="Static" />
+    <asp:HiddenField ID="hdnusertype" runat="server" ClientIDMode="Static" />
+    <asp:HiddenField ID="hdnuserprog" runat="server" ClientIDMode="Static" />
+    <asp:HiddenField ID="hdnusername" runat="server" ClientIDMode="Static" />
+  </form>
+
+  <script>
+      $(document).ready(function () {
+          // Check screen size
+          function isMobile() {
+              return window.matchMedia('(max-width: 768px)').matches;
+          }
+
+          function isTablet() {
+              return window.matchMedia('(max-width: 1024px) and (min-width: 769px)').matches;
+          }
+
+          // Menu configuration
+          const menuConfig = {
+              apiUrl: '../../WebService.asmx/GetMenuDetailsForUserWise', // Change this to your actual API endpoint
+              fallbackMenu: [
+                  {
+                      id: 'personal',
+                      title: 'Personal Details',
+                      url: '~/Admin/Master/PersonalDetails.aspx',
+                      icon: 'M12 12a5 5 0 1 0-5-5 5 5 0 0 0 5 5zm0 2c-4.42 0-8 2.24-8 5v1h16v-1c0-2.76-3.58-5-8-5z',
+                      active: true
+                  },
+                  {
+                      id: 'education',
+                      title: 'Education',
+                      url: '~/Admin/Master/EducationDetails.aspx',
+                      icon: 'M12 3 1 9l11 6 9-4.91V17h2V9L12 3z',
+                      active: false
+                  },
+                  {
+                      id: 'other',
+                      title: 'Other',
+                      url: '~/Admin/Master/Other.aspx',
+                      icon: 'M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm1 15h-2v-2h2zm0-4h-2V7h2z',
+                      active: false
+                  }
+              ]
+          };
+
+          // Load menu dynamically via AJAX
+          function loadMenu() {
+              $.ajax({
+
+                  type: "POST",
+                  contentType: "application/json; charset=utf-8",
+                  url: menuConfig.apiUrl,
+                  async: false,
+                  timeout: 5000,
+                  data: "{}",
+                  dataType: "json",
+
+
+                  success: function (response) {
+                      console.log('Menu loaded successfully:', response);
+
+                      // Convert response to array using helper function
+                      const menuItems = convertToArray(response);
+
+                      // Store menu data globally for navigation
+                      window.menuData = menuItems;
+                      if (menuItems == "PersonalDetailsView.aspx") {
+
+                      }
+                      else
+                      { renderMenu(menuItems);}
+                      
+                  },
+                  error: function (xhr, status, error) {
+                      console.warn('Failed to load menu from API, using fallback:', error);
+
+                      // Store fallback menu data globally for navigation
+                      window.menuData = menuConfig.fallbackMenu;
+
+                      renderMenu(menuConfig.fallbackMenu);
+                  }
+              });
+          }
+
+          // Render menu items
+          function renderMenu(menuItems) {
+              const $menu = $('#sideMenu');
+              const $loading = $('#menuLoading');
+              const $empty = $('#menuEmpty');
+
+              // Hide loading spinner
+              $loading.hide();
+
+              // Clear existing menu items
+              $menu.find('.menu-item').remove();
+
+              // Ensure menuItems is an array
+              if (!Array.isArray(menuItems)) {
+                  console.error('menuItems is not an array:', menuItems);
+                  $empty.show();
+                  return;
+              }
+
+              // Check if menu is empty
+              if (menuItems.length === 0) {
+                  $empty.show();
+                  return;
+              }
+
+              // Hide empty state
+              $empty.hide();
+
+              // Render each menu item
+              menuItems.forEach(function (item) {
+                  const $menuItem = createMenuItem(item);
+                  if ($menuItem == "PersonalDetailsView.aspx") {
+
+                  }
+                  else { $menu.append($menuItem);}
+                  
+              });
+
+              // Re-bind click events
+              bindMenuEvents();
+
+              // Mark active item
+              markActive();
+
+              // Auto-adjust text if needed
+              adjustMenuText();
+
+              // Auto-scroll to active item after menu is rendered
+              scrollToActiveOnLoad();
+          }
+
+          // Create individual menu item
+          function createMenuItem(item) {
+              // Get appropriate icon based on menu description or use default
+              const icon = getMenuIcon(item);
+
+              const $item = $(`
+                  <a href="${item.page_name || '#'}" class="btn menu-item" data-id="${item.menu_id}" title="${item.menu_description || ''}">
+                      <svg viewBox="0 0 24 24" aria-hidden="true">
+                          <path fill="currentColor" d="${icon}"/>
+                      </svg>
+                      <span class="label">${item.menu_description || 'Menu Item'}</span>
+                  </a>
+              `);
+
+              if (item.active) {
+                  $item.addClass('active');
+              }
+
+              return $item;
+          }
+
+          // Get appropriate icon based on menu description
+          //function getMenuIcon(item) {
+          //    const description = (item.menu_description || '').toLowerCase();
+          //    const windowName = (item.window_name || '').toLowerCase();
+
+          //    // If icon is already provided, use it
+          //    if (item.icon) {
+          //        return item.icon;
+          //    }
+
+          //    // Personal Details related
+          //    if (description.includes('personal') || description.includes('profile') || description.includes('details')) {
+          //        return "M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z";
+          //    }
+
+          //    // Contact related
+          //    if (description.includes('contact') || description.includes('phone') || description.includes('email')) {
+          //        return "M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z";
+          //    }
+
+          //    // Dashboard/Home
+          //    if (description.includes('dashboard') || description.includes('home') || description.includes('main')) {
+          //        return "M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z";
+          //    }
+
+          //    // Reports
+          //    if (description.includes('report') || description.includes('analytics') || description.includes('statistics')) {
+          //        return "M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z";
+          //    }
+
+          //    // Settings
+          //    if (description.includes('setting') || description.includes('config') || description.includes('preference')) {
+          //        return "M19.14,12.94c0.04-0.3,0.06-0.61,0.06-0.94c0-0.32-0.02-0.64-0.07-0.94l2.03-1.58c0.18-0.14,0.23-0.41,0.12-0.61 l-1.92-3.32c-0.12-0.22-0.37-0.29-0.59-0.22l-2.39,0.96c-0.5-0.38-1.03-0.7-1.62-0.94L14.4,2.81c-0.04-0.24-0.24-0.41-0.48-0.41 h-3.84c-0.24,0-0.43,0.17-0.47,0.41L9.25,5.35C8.66,5.59,8.12,5.92,7.63,6.29L5.24,5.33c-0.22-0.08-0.47,0-0.59,0.22L2.74,8.87 C2.62,9.08,2.66,9.34,2.86,9.48l2.03,1.58C4.84,11.36,4.8,11.69,4.8,12s0.02,0.64,0.07,0.94l-2.03,1.58 c-0.18,0.14-0.23,0.41-0.12,0.61l1.92,3.32c0.12,0.22,0.37,0.29,0.59,0.22l2.39-0.96c0.5,0.38,1.03,0.7,1.62,0.94l0.36,2.54 c0.05,0.24,0.24,0.41,0.48,0.41h3.84c0.24,0,0.44-0.17,0.47-0.41l0.36-2.54c0.59-0.24,1.13-0.56,1.62-0.94l2.39,0.96 c0.22,0.08,0.47,0,0.59-0.22l1.92-3.32c0.12-0.22,0.07-0.47-0.12-0.61L19.14,12.94z M12,15.6c-1.98,0-3.6-1.62-3.6-3.6 s1.62-3.6,3.6-3.6s3.6,1.62,3.6,3.6S13.98,15.6,12,15.6z";
+          //    }
+
+          //    // Users/Management
+          //    if (description.includes('user') || description.includes('member') || description.includes('staff') || description.includes('employee')) {
+          //        return "M16 4c0-1.11.89-2 2-2s2 .89 2 2-.89 2-2 2-2-.89-2-2zm4 18v-6h2.5l-2.54-7.63A1.5 1.5 0 0 0 18.54 8H16c-.8 0-1.54.37-2.01.99L12 11l-1.99-2.01A2.5 2.5 0 0 0 8 8H5.46c-.8 0-1.54.37-2.01.99L.95 16.37A1.5 1.5 0 0 0 2.5 18H5v4h2v-4h6v4h2z";
+          //    }
+
+          //    // Documents/Files
+          //    if (description.includes('document') || description.includes('file') || description.includes('form') || description.includes('application')) {
+          //        return "M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z";
+          //    }
+
+          //    // Search
+          //    if (description.includes('search') || description.includes('find') || description.includes('lookup')) {
+          //        return "M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z";
+          //    }
+
+          //    // Calendar/Date
+          //    if (description.includes('calendar') || description.includes('date') || description.includes('schedule') || description.includes('appointment')) {
+          //        return "M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11zM7 10h5v5H7z";
+          //    }
+
+          //    // Security/Login
+          //    if (description.includes('security') || description.includes('login') || description.includes('password') || description.includes('auth')) {
+          //        return "M18,8A6,6 0 0,1 12,14A6,6 0 0,1 6,8A6,6 0 0,1 12,2A6,6 0 0,1 18,8M12,4A4,4 0 0,0 8,8A4,4 0 0,0 12,12A4,4 0 0,0 16,8A4,4 0 0,0 12,4M12,6A2,2 0 0,1 14,8A2,2 0 0,1 12,10A2,2 0 0,1 10,8A2,2 0 0,1 12,6M12,13C14.67,13 20,14.33 20,17V20H4V17C4,14.33 9.33,13 12,13Z";
+          //    }
+
+          //    // Help/Support
+          //    if (description.includes('help') || description.includes('support') || description.includes('faq') || description.includes('assistance')) {
+          //        return "M11,18H13V16H11V18M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M12,20C7.59,20 4,16.41 4,12C4,7.59 7.59,4 12,4C16.41,4 20,7.59 20,12C20,16.41 16.41,20 12,20M12,6A4,4 0 0,0 8,10H10A2,2 0 0,1 12,8A2,2 0 0,1 14,10C14,12 11,11.75 11,15H13C13,12.75 16,12.5 16,10A4,4 0 0,0 12,6Z";
+          //    }
+
+          //    // Notification/Bell
+          //    if (description.includes('notification') || description.includes('alert') || description.includes('message') || description.includes('bell')) {
+          //        return "M12 22c1.1 0 2-.9 2-2h-4c0 1.1.89 2 2 2zm6-6v-5c0-3.07-1.64-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.63 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2z";
+          //    }
+
+          //    // Database/Storage
+          //    if (description.includes('database') || description.includes('storage') || description.includes('data') || description.includes('record')) {
+          //        return "M12,3C7.58,3 4,4.79 4,7C4,9.21 7.58,11 12,11C16.42,11 20,9.21 20,7C20,4.79 16.42,3 12,3M4,9V12C4,14.21 7.58,16 12,16C16.42,16 20,14.21 20,12V9C20,11.21 16.42,13 12,13C7.58,13 4,11.21 4,9M4,14V17C4,19.21 7.58,21 12,21C16.42,21 20,19.21 20,17V14C20,16.21 16.42,18 12,18C7.58,18 4,16.21 4,14Z";
+          //    }
+
+          //    // Finance/Money
+          //    if (description.includes('finance') || description.includes('money') || description.includes('payment') || description.includes('billing') || description.includes('invoice')) {
+          //        return "M11.8 10.9c-2.27-.59-3-1.2-3-2.15 0-1.09 1.01-1.85 2.7-1.85 1.78 0 2.44.85 2.5 2.1h2.21c-.07-1.72-1.12-3.3-3.21-3.81V3h-3v2.16c-1.94.42-3.5 1.68-3.5 3.61 0 2.31 1.91 3.46 4.7 4.13 2.5.6 3 1.48 3 2.41 0 .69-.49 1.79-2.7 1.79-2.06 0-2.87-.92-2.98-2.1h-2.2c.12 2.19 1.76 3.42 3.68 3.83V21h3v-2.15c1.95-.37 3.5-1.5 3.5-3.55 0-2.84-2.43-3.81-4.7-4.4z";
+          //    }
+
+          //    // Education/Training
+          //    if (description.includes('education') || description.includes('training') || description.includes('course') || description.includes('learning') || description.includes('student')) {
+          //        return "M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82zM12 3L1 9l11 6 9-4.91V17h2V9L12 3z";
+          //    }
+
+          //    // Health/Medical
+          //    if (description.includes('health') || description.includes('medical') || description.includes('doctor') || description.includes('hospital') || description.includes('patient')) {
+          //        return "M19 8h-2v3h-3v2h3v3h2v-3h3v-2h-3V8zM4 6H2v14c0 1.1.9 2 2 2h14v-2H4V6zm16-4H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-1 9H9V9h10v2z";
+          //    }
+
+          //    // Transportation/Vehicle
+          //    if (description.includes('transport') || description.includes('vehicle') || description.includes('car') || description.includes('bus') || description.includes('travel')) {
+          //        return "M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11c-.66 0-1.21.42-1.42 1.01L3 12v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-2.08-5.99zM6.5 16c-.83 0-1.5-.67-1.5-1.5S5.67 13 6.5 13s1.5.67 1.5 1.5S7.33 16 6.5 16zm11 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zM5 11l1.5-4.5h11L19 11H5z";
+          //    }
+
+          //    // Shopping/Cart
+          //    if (description.includes('shopping') || description.includes('cart') || description.includes('store') || description.includes('product') || description.includes('inventory')) {
+          //        return "M7 18c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12L8.1 13h7.45c.75 0 1.41-.41 1.75-1.03L21.7 4H5.21l-.94-2H1zm16 16c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z";
+          //    }
+
+          //    // Tools/Utilities
+          //    if (description.includes('tool') || description.includes('utility') || description.includes('maintenance') || description.includes('repair') || description.includes('service')) {
+          //        return "M22.7 19l-9.1-9.1c.9-2.3.4-5-1.5-6.9-2-2-5-2.4-7.4-1.3L9 6 6 9 1.6 4.7C.4 7.1.9 10.1 2.9 12.1c1.9 1.9 4.6 2.4 6.9 1.5l9.1 9.1c.4.4 1 .4 1.4 0l2.3-2.3c.5-.4.5-1.1.1-1.4z";
+          //    }
+
+          //    // Default icon (star)
+          //    return "M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z";
+          //}
+
+
+          function getMenuIcon(item) {
+              const description = (item.menu_description || '').toLowerCase();
+              const windowName = (item.window_name || '').toLowerCase();
+
+              // If icon is already provided, use it
+              if (item.icon) {
+                  return item.icon;
+              }
+
+              // Personal Details related
+              if (description.includes('personal')) {
+                  return "M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z";
+              }
+
+              // Contact related
+              if (description.includes('contact')) {
+                  return `M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1C10.39 21 3 13.61 3 4c0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.24.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z`;
+              }
+
+              if (description.includes('education')) {
+                  return `M12 3L1 9l11 6 9-4.91V17h2V9L12 3zm0 
+                  13.18L5.6 12.5 12 16l6.4 - 3.5L12 16.18z`;
+              }
+
+              if (description.includes('experience')) {
+                  return `M14 6V4c0-1.1-.9-2-2-2H10c-1.1
+                            0-2 .9-2 2v2H4c-1.1 0-2 .9-2
+                            2v12c0 1.1.9 2 2 2h16c1.1
+                            0 2-.9 2-2V8c0-1.1-.9-2-2-2h-4zm-4-2h4v2h-4V4zm10
+                            16H4V8h16v12z`;
+              }
+
+              if (description.includes('bank')) {
+                  return `M4 10v7h3v-7H4zm6 0v7h3v-7h-3zm6
+                          0v7h3v-7h-3zM3 21h18v-2H3v2zM12
+                          1L2 6v2h20V6L12 1z`;
+              }
+
+              if (description.includes('area')) {
+                  return `M22.7 19.3l-9.1-9.1c.9-2.3.4-5-1.5-6.9-2-2-5-2.4-7.4-1.1l3.6 3.6-2.1
+                          2.1-3.6-3.6C1.6 6.1 2 9.1 4 11.1c1.9 1.9 4.6 2.4
+                          6.9 1.5l9.1 9.1c.4.4 1 .4 1.4
+                          0l1.3-1.3c.4-.4.4-1 0-1.4z`;
+              }
+
+              if (description.includes('courses')) {
+                  return `M20 3H3c-1.1 0-2 .9-2
+                          2v12c0 1.1.9 2 2 2h6v2H7v2h10v-2h-2v-2h6c1.1
+                          0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0
+                          14H3V5h17v12z`;
+              }
+
+              if (description.includes('publication')) {
+                  return `M6 2c-1.1 0-2 .9-2
+                          2v16c0 1.1.9 2 2 2h12c1.1 0
+                          2-.9 2-2V8l-6-6H6zm7
+                          7V3.5L18.5 9H13zM8 14h8v2H8v-2zm0-4h5v2H8V10z`;
+              }
+
+              if (description.includes('conference')) {
+                  return `M12 14a3 3 0 0 0 3-3V5a3
+                          3 0 0 0-6 0v6a3 3 0 0 0 3 3zm5-3a5
+                          5 0 0 1-10 0H5a7 7 0 0 0
+                          14 0h-2zM11 18v3h2v-3h-2z`;
+              }
+
+              if (description.includes('other')) {
+                  return `M5 9h3v10H5V9zm5
+                          4h3v6h-3v-6zm5-6h3v12h-3V7z`;
+              }
+
+
+
+              if (description.includes('research')) {
+                  return `M15.5 14h-.79l-.28-.27A6.471
+                          6.471 0 0 0 16 9.5 6.5 6.5
+                          0 1 0 9.5 16c1.61 0 3.09-.59
+                          4.23-1.57l.27.28v.79l5
+                          4.99L20.49 19l-4.99-5zm-6
+                          0C8.01 14 6 11.99 6 9.5S8.01
+                          5 10.5 5 15 7.01 15 9.5
+                          12.99 14 10.5 14z`;
+
+              }
+
+
+
+              if (description.includes('award')) {
+                  return `M17 3V2H7v1H2v4a5 5 0 0 0 5
+                          5c.9 2 2.9 3.4 5 3.9V19H9v2h6v-2h-3v-3.1c2.1-.5
+                          4.1-1.9 5-3.9a5 5 0 0 0 5-5V3h-5zm-2
+                          8H9c-1.66 0-3-1.34-3-3V5h12v3c0 1.66-1.34
+                          3-3 3z`;
+              }
+
+              if (description.includes('training')) {
+                  return `M12 2C6.5 2 2 6.5 2 12s4.5
+                          10 10 10 10-4.5 10-10S17.5 2
+                          12 2zm0 18c-4.4 0-8-3.6-8-8s3.6-8
+                          8-8 8 3.6 8 8-3.6 8-8 8zm0-14c-3.3 0-6 2.7-6 6s2.7
+                          6 6 6 6-2.7 6-6-2.7-6-6-6z`;
+              }
+
+
+              if (description.includes('affiliation')) {
+                  return `M12 2L2 7v2h20V7L12
+                          2zm0 4.5l6 3V11H6V9.5l6-3zM4
+                          13h16v2H4v-2zm0 4h10v2H4v-2z`;
+              }
+
+              if (description.includes('social')) {
+                  return `M16 11c1.66 0 2.99-1.34
+                          2.99-3S17.66 5 16 5s-3 1.34-3
+                          3 1.34 3 3 3zm-8 0c1.66 0
+                          2.99-1.34 2.99-3S9.66 5 8
+                          5 5 6.34 5 8s1.34 3 3
+                          3zm0 2c-2.33 0-7 1.17-7
+                          3.5V19h14v-2.5C15 14.17
+                          10.33 13 8 13zm8 0c-.29
+                          0-.62.02-.97.05 1.16.84
+                          1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z`;
+              }
+
+
+              if (description.includes('declaration')) {
+                  return `M6 2c-1.1 0-2 .9-2
+                          2v16c0 1.1.9 2 2 2h12c1.1 0
+                          2-.9 2-2V8l-6-6H6zm7
+                          7V3.5L18.5 9H13zM8 14h8v2H8v-2zm0-4h5v2H8V10z`;
+              }
+
+              // Default icon (star)
+              return "M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z";
+          }
+
+
+          // Auto-adjust menu text based on available space
+          function adjustMenuText() {
+              const $menu = $('#sideMenu');
+              const $items = $menu.find('.menu-item');
+
+              $items.each(function () {
+                  const $item = $(this);
+                  const $label = $item.find('.label');
+                  const $container = $item.closest('.menu-container');
+
+                  // Check if text overflows
+                  if ($label[0].scrollWidth > $label[0].clientWidth) {
+                      // Add tooltip for truncated text
+                      $item.attr('title', $label.text());
+
+                      // Optionally shorten text
+                      const text = $label.text();
+                      if (text.length > 20) {
+                          $label.text(text.substring(0, 17) + '...');
+                      }
+                  }
+              });
+          }
+
+          // Bind menu events
+          function bindMenuEvents() {
+              $('.menu-item').off('click').on('click', function (e) {
+                  const $this = $(this);
+                  const target = $this.data('id');
+
+                  // Remove active class from all items
+                  $('.menu-item').removeClass('active');
+
+                  // Add active class to clicked item
+                  $this.addClass('active');
+
+                  // Auto-scroll to clicked item using enhanced method
+                  scrollToActiveItemEnhanced($this);
+
+                  // Auto-close on mobile
+                  if (isMobile()) {
+                      setTimeout(function () {
+                          $('#app').addClass('sidebar-closed');
+                          $('#menuToggle').attr('aria-expanded', 'false');
+                      }, 100);
+                  }
+
+                  // Optional: Track menu clicks
+                  trackMenuClick(target, $this.attr('href'));
+              });
+          }
+
+          // Track menu clicks (optional analytics)
+          function trackMenuClick(menuId, url) {
+              console.log('Menu clicked:', { id: menuId, url: url });
+
+              // You can add analytics tracking here
+              // Example: Google Analytics, custom tracking, etc.
+              if (typeof gtag !== 'undefined') {
+                  gtag('event', 'menu_click', {
+                      'menu_id': menuId,
+                      'menu_url': url
+                  });
+              }
+          }
+
+          // Refresh menu (can be called externally)
+          window.refreshMenu = function () {
+              $('#menuLoading').show();
+              loadMenu();
+          };
+
+          // Toggle sidebar behavior based on screen size
+          $('#menuToggle').on('click', function () {
+              const $app = $('#app');
+
+              if (isMobile()) {
+                  // Mobile: toggle offcanvas sidebar
+                  $app.toggleClass('sidebar-closed');
+                  $(this).attr('aria-expanded', !$app.hasClass('sidebar-closed') ? 'true' : 'false');
+              } else {
+                  // Desktop/Tablet: toggle rail mode
+                  const open = $app.hasClass('collapsed-rail');
+                  $app.toggleClass('collapsed-rail', !open);
+                  $(this).attr('aria-expanded', open ? 'true' : 'false');
+              }
+
+              // Re-adjust menu text after toggle
+              setTimeout(adjustMenuText, 300);
+          });
+
+          // Close sidebar when clicking overlay (mobile only)
+          $('#sidebarOverlay').on('click', function () {
+              if (isMobile()) {
+                  $('#app').addClass('sidebar-closed');
+                  $('#menuToggle').attr('aria-expanded', 'false');
+              }
+          });
+
+          // Close sidebar when clicking menu items (mobile only)
+          $('#sideMenu a').on('click', function () {
+              if (isMobile()) {
+                  setTimeout(function () {
+                      $('#app').addClass('sidebar-closed');
+                      $('#menuToggle').attr('aria-expanded', 'false');
+                  }, 100);
+              }
+          });
+
+          // Handle window resize with debouncing for better performance
+          let resizeTimeout;
+          $(window).on('resize', function () {
+              clearTimeout(resizeTimeout);
+              resizeTimeout = setTimeout(function () {
+                  const $app = $('#app');
+
+                  if (isTablet()) {
+                      // Tablet: force rail mode
+                      $app.addClass('collapsed-rail').removeClass('sidebar-closed');
+                      $('#menuToggle').attr('aria-expanded', 'false');
+                  } else if (!isMobile()) {
+                      // Desktop: reset mobile classes
+                      $app.removeClass('sidebar-closed');
+                  } else {
+                      // Mobile: reset desktop classes and show menu
+                      $app.removeClass('collapsed-rail sidebar-closed');
+                      $('#menuToggle').attr('aria-expanded', 'true');
+                  }
+
+                  // Re-adjust menu text after resize
+                  setTimeout(adjustMenuText, 50);
+              }, 100);
+          });
+
+          // Initialize based on screen size
+          function initializeLayout() {
+              const $app = $('#app');
+
+              if (isTablet()) {
+                  // Tablet starts in rail mode
+                  $app.addClass('collapsed-rail').removeClass('sidebar-closed');
+                  $('#menuToggle').attr('aria-expanded', 'false');
+              } else if (isMobile()) {
+                  // Mobile starts with sidebar visible
+                  $app.removeClass('collapsed-rail sidebar-closed');
+                  $('#menuToggle').attr('aria-expanded', 'true');
+              } else {
+                  // Desktop starts with full sidebar
+                  $app.removeClass('collapsed-rail sidebar-closed');
+                  $('#menuToggle').attr('aria-expanded', 'true');
+              }
+          }
+
+          // Mark current menu item active by URL
+          function markActive() {
+              var path = location.pathname.toLowerCase();
+              $('#sideMenu a').each(function () {
+                  var href = this.pathname.toLowerCase();
+                  if (path.endsWith(href)) $(this).addClass('active');
+              });
+          }
+
+          // Mobile-specific optimizations
+          if (isMobile()) {
+              // Prevent zoom on double tap for iOS
+              let lastTouchEnd = 0;
+              document.addEventListener('touchend', function (event) {
+                  const now = (new Date()).getTime();
+                  if (now - lastTouchEnd <= 300) {
+                      event.preventDefault();
+                  }
+                  lastTouchEnd = now;
+              }, false);
+
+              // Add touch feedback for menu items
+              $('.menu .btn').on('touchstart', function () {
+                  $(this).addClass('touch-active');
+              }).on('touchend touchcancel', function () {
+                  $(this).removeClass('touch-active');
+              });
+          }
+
+          // Add CSS for touch feedback
+          $('<style>')
+              .prop('type', 'text/css')
+              .html(`
+                  .touch-active {
+                      transform: scale(0.98);
+                      transition: transform 0.1s ease;
+                  }
+                  .menu .btn {
+                      transition: all 0.2s ease;
+                  }
+              `)
+              .appendTo('head');
+
+          // Helper function to convert DataTable-like data to array
+          function convertToArray(data) {
+              if (Array.isArray(data)) {
+                  return data;
+              }
+
+              // If it's an object with a d property (ASP.NET WebMethod response)
+              if (data && data.d) {
+                  if (Array.isArray(data.d)) {
+                      return data.d;
+                  }
+                  // If d is a string (JSON), parse it
+                  if (typeof data.d === 'string') {
+                      try {
+                          return JSON.parse(data.d);
+                      } catch (e) {
+                          console.error('Error parsing JSON data:', e);
+                          return [];
+                      }
+                  }
+              }
+
+              // If it's an object with menuItems property
+              if (data && data.menuItems && Array.isArray(data.menuItems)) {
+                  return data.menuItems;
+              }
+
+              // If it's a single object, wrap it in an array
+              if (data && typeof data === 'object' && !Array.isArray(data)) {
+                  return [data];
+              }
+
+              console.error('Unable to convert data to array:', data);
+              return [];
+          }
+
+          // Debug mobile detection
+          if (isMobile()) {
+              console.log('Mobile detected - showing menu');
+              // Force show mobile menu
+              $('#app').removeClass('sidebar-closed');
+              $('aside').show().css({
+                  'display': 'block',
+                  'visibility': 'visible',
+                  'opacity': '1',
+                  'transform': 'translateX(0)'
+              });
+          }
+
+          // Load candidate name
+          function loadCandidateName() {
+              // Try to get candidate name from various sources
+              let candidateName = 'Guest User';
+              
+              $('#candidateName').text($('#hdnusername').val());
+          }
+
+          // Set candidate name programmatically
+          window.setCandidateName = function (name) {
+              $('#candidateName').text($('#hdnusername').val());
+              sessionStorage.setItem('candidateName', $('#hdnusername').val());
+          };
+
+          // Get candidate name from server (if needed)
+          function fetchCandidateName() {
+              // Try to get user ID from various sources
+              let userId = getCurrentUserId();
+
+              if (userId) {
+                  $.ajax({
+                      url: 'PersonalDetails.master/GetCandidateName',
+                      method: 'POST',
+                      contentType: 'application/json; charset=utf-8',
+                      data: JSON.stringify({ userid: userId }),
+                      dataType: 'json',
+                      success: function (response) {
+                          if (response && response.d) {
+                              setCandidateName(response.d);
+                          }
+                      },
+                      error: function () {
+                          console.log('Could not fetch candidate name from server');
+                          // Fallback to other methods
+                          loadCandidateName();
+                      }
+                  });
+              } else {
+                  // Fallback to other methods
+                  loadCandidateName();
+              }
+          }
+
+          // Get current user ID from various sources
+          function getCurrentUserId() {
+              // Check session storage
+              if (sessionStorage.getItem('userId')) {
+                  return sessionStorage.getItem('userId');
+              }
+
+              // Check hidden field
+              if ($('#userIdField').length) {
+                  return $('#userIdField').val();
+              }
+
+              // Check global variable
+              if (typeof window.userId !== 'undefined') {
+                  return window.userId;
+              }
+
+              // Check meta tag
+              if ($('meta[name="user-id"]').length) {
+                  return $('meta[name="user-id"]').attr('content');
+              }
+
+              // Default fallback
+              return '1'; // You can change this to get from login session
+          }
+
+          // Mark active item and auto-scroll to it
+          function markActive() {
+              const currentPath = window.location.pathname;
+              const currentPage = currentPath.split('/').pop();
+
+              $('.menu-item').removeClass('active');
+
+              $('.menu-item').each(function () {
+                  const $this = $(this);
+                  const href = $this.attr('href');
+
+                  if (href && (href.includes(currentPage) || currentPath.includes(href))) {
+                      $this.addClass('active');
+                      // Auto-scroll to active item using enhanced method
+                      scrollToActiveItemEnhanced($this);
+                      return false; // Break the loop
+                  }
+              });
+          }
+
+          // Auto-scroll to active menu item
+          function scrollToActiveItem($activeItem) {
+              if ($activeItem.length === 0) return;
+
+              const $menuContainer = $('.menu-container');
+              const $menu = $('#sideMenu');
+
+              if ($menuContainer.length === 0 || $menu.length === 0) return;
+
+              // Get container dimensions
+              const containerHeight = $menuContainer.height();
+              const containerScrollTop = $menuContainer.scrollTop();
+
+              // Get item position relative to the menu container
+              const itemOffset = $activeItem.offset();
+              const containerOffset = $menuContainer.offset();
+
+              // Calculate item position relative to container
+              const itemTop = itemOffset.top - containerOffset.top + containerScrollTop;
+              const itemHeight = $activeItem.outerHeight();
+
+              // Calculate if item is visible
+              const itemBottom = itemTop + itemHeight;
+              const visibleTop = containerScrollTop;
+              const visibleBottom = containerScrollTop + containerHeight;
+
+              // Check if item is fully visible
+              const isFullyVisible = (itemTop >= visibleTop) && (itemBottom <= visibleBottom);
+
+              if (!isFullyVisible) {
+                  // Calculate optimal scroll position to center the item
+                  let targetScrollTop;
+
+                  if (itemTop < visibleTop) {
+                      // Item is above visible area - scroll up
+                      targetScrollTop = itemTop - 20; // Add some padding
+                  } else {
+                      // Item is below visible area - scroll down
+                      targetScrollTop = itemBottom - containerHeight + 20; // Add some padding
+                  }
+
+                  // Ensure we don't scroll beyond bounds
+                  const maxScroll = $menu[0].scrollHeight - containerHeight;
+                  targetScrollTop = Math.max(0, Math.min(targetScrollTop, maxScroll));
+
+                  // Smooth scroll to the calculated position
+                  $menuContainer.animate({
+                      scrollTop: targetScrollTop
+                  }, 600, 'easeInOutQuad', function () {
+                      // Add a subtle highlight effect after scrolling
+                      $activeItem.addClass('scroll-highlight');
+                      setTimeout(function () {
+                          $activeItem.removeClass('scroll-highlight');
+                      }, 1000);
+                  });
+              } else {
+                  // Item is already visible, just add highlight
+                  $activeItem.addClass('scroll-highlight');
+                  setTimeout(function () {
+                      $activeItem.removeClass('scroll-highlight');
+                  }, 1000);
+              }
+          }
+
+          // Auto-scroll to active item on menu load
+          function scrollToActiveOnLoad() {
+              setTimeout(function () {
+                  const $activeItem = $('.menu-item.active');
+                  if ($activeItem.length > 0) {
+                      scrollToActiveItemEnhanced($activeItem);
+                  }
+              }, 300); // Wait for menu to be fully rendered
+          }
+
+          // Alternative scroll method using scrollIntoView
+          function scrollToActiveItemNative($activeItem) {
+              if ($activeItem.length === 0) return;
+
+              try {
+                  // Use native scrollIntoView for better browser support
+                  $activeItem[0].scrollIntoView({
+                      behavior: 'smooth',
+                      block: 'center',
+                      inline: 'nearest'
+                  });
+
+                  // Add highlight effect
+                  setTimeout(function () {
+                      $activeItem.addClass('scroll-highlight');
+                      setTimeout(function () {
+                          $activeItem.removeClass('scroll-highlight');
+                      }, 1000);
+                  }, 300);
+              } catch (e) {
+                  console.log('Native scrollIntoView not supported, using fallback');
+                  scrollToActiveItem($activeItem);
+              }
+          }
+
+          // Enhanced scroll function with multiple fallbacks 
+          function scrollToActiveItemEnhanced($activeItem) {
+              if ($activeItem.length === 0) return;
+
+              const $menuContainer = $('.menu-container');
+
+              // Debug information
+              console.log('Scrolling to active item:', $activeItem.text());
+              console.log('Menu container height:', $menuContainer.height());
+              console.log('Menu container scroll top:', $menuContainer.scrollTop());
+
+              // Try native scrollIntoView first
+              if (typeof $activeItem[0].scrollIntoView === 'function') {
+                  try {
+                      console.log('Using native scrollIntoView');
+                      $activeItem[0].scrollIntoView({
+                          behavior: 'smooth',
+                          block: 'center',
+                          inline: 'nearest'
+                      });
+
+                      // Add highlight effect
+                      setTimeout(function () {
+                          $activeItem.addClass('scroll-highlight');
+                          setTimeout(function () {
+                              $activeItem.removeClass('scroll-highlight');
+                          }, 1000);
+                      }, 300);
+                      return;
+                  } catch (e) {
+                      console.log('Native scrollIntoView failed, using jQuery fallback:', e);
+                  }
+              }
+
+              // Fallback to jQuery animation
+              console.log('Using jQuery fallback scroll');
+              scrollToActiveItem($activeItem);
+          }
+
+          // Debug function to check scroll state
+          window.debugMenuScroll = function () {
+              const $activeItem = $('.menu-item.active');
+              const $menuContainer = $('.menu-container');
+
+              console.log('=== Menu Scroll Debug ===');
+              console.log('Active item:', $activeItem.length > 0 ? $activeItem.text() : 'None');
+              console.log('Menu container height:', $menuContainer.height());
+              console.log('Menu container scroll top:', $menuContainer.scrollTop());
+              console.log('Menu scroll height:', $menuContainer[0].scrollHeight);
+
+              if ($activeItem.length > 0) {
+                  const itemOffset = $activeItem.offset();
+                  const containerOffset = $menuContainer.offset();
+                  console.log('Item offset:', itemOffset);
+                  console.log('Container offset:', containerOffset);
+                  console.log('Item position relative to container:', {
+                      top: itemOffset.top - containerOffset.top,
+                      bottom: (itemOffset.top - containerOffset.top) + $activeItem.outerHeight()
+                  });
+              }
+          };
+
+        
+          window.navigateToNextMenu = function () {
+              console.log('Getting next menu URL via AJAX...');
+
+              // Get current page information
+              const currentPath = window.location.pathname;
+              const currentPage = currentPath.split('/').pop();
+
+              // Show loading indicator
+              const nextButton = event.target;
+              const originalText = nextButton.innerHTML;
+              nextButton.innerHTML = '<span class="spinner-border spinner-border-sm me-2" role="status"></span>Loading...';
+              nextButton.disabled = true;
+
+              // Make AJAX call to get next page URL
+              $.ajax({
+                  type: "POST",
+                  contentType: "application/json; charset=utf-8",
+                  url: "../../WebService.asmx/GetMenuSequence",
+
+                  data: "{ currentPage: '" + currentPage + "' }",
+                  dataType: "json",
+                  success: function (response) {
+                      console.log('AJAX response:', response);
+
+                      // Reset button state
+                      nextButton.innerHTML = originalText;
+                      nextButton.disabled = false;
+
+                      // Extract URL from response
+                      let nextUrl = null;
+
+                      if (response && response.d) {
+                          var menunext = JSON.parse(response.d)
+                          // Handle different response formats
+                          $.each(menunext, function (index, item) {
+                              if (item.PositionStatus == 'Next') {
+
+                                  nextUrl = item.page_name;
+                              }
+
+                          });
+                      }
+
+                      if (nextUrl && nextUrl !== '') {
+                          console.log('Navigating to next URL:', nextUrl);
+                          window.location.href = nextUrl;
+                      } else {
+                          console.warn('No next URL received from server');
+                          alert('No next page available');
+                      }
+                  },
+                  error: function (xhr, status, error) {
+                      console.error('AJAX error:', error);
+
+                      // Reset button state
+                      nextButton.innerHTML = originalText;
+                      nextButton.disabled = false;
+
+                      // Fallback navigation
+                      //console.warn('AJAX failed, using fallback navigation');
+                      //window.location.href = '~/Admin/Master/EducationDetails.aspx';
+                  }
+              });
+          };
+
+          window.navigateToPreviousMenu = function () {
+              console.log('Getting next menu URL via AJAX...');
+
+              // Get current page information
+              const currentPath = window.location.pathname;
+              const currentPage = currentPath.split('/').pop();
+
+              // Show loading indicator
+              const nextButton = event.target;
+              const originalText = nextButton.innerHTML;
+              nextButton.innerHTML = '<span class="spinner-border spinner-border-sm me-2" role="status"></span>Loading...';
+              nextButton.disabled = true;
+
+              // Make AJAX call to get next page URL
+              $.ajax({
+                  type: "POST",
+                  contentType: "application/json; charset=utf-8",
+                  url: "../../WebService.asmx/GetMenuSequence",
+
+                  data: "{ currentPage: '" + currentPage + "' }",
+                  dataType: "json",
+                  success: function (response) {
+                      console.log('AJAX response:', response);
+
+                      // Reset button state
+                      nextButton.innerHTML = originalText;
+                      nextButton.disabled = false;
+
+                      // Extract URL from response
+                      let nextUrl = null;
+
+                      if (response && response.d) {
+                          var menunext = JSON.parse(response.d)
+                          // Handle different response formats
+                          $.each(menunext, function (index, item) {
+                              if (item.PositionStatus == 'Previous') {
+
+                                  nextUrl = item.page_name;
+                              }
+
+                          });
+                      }
+
+                      if (nextUrl && nextUrl !== '') {
+                          console.log('Navigating to next URL:', nextUrl);
+                          window.location.href = nextUrl;
+                      } else {
+                          console.warn('No next URL received from server');
+                          alert('No next page available');
+                      }
+                  },
+                  error: function (xhr, status, error) {
+                      console.error('AJAX error:', error);
+
+                      // Reset button state
+                      nextButton.innerHTML = originalText;
+                      nextButton.disabled = false;
+
+                      // Fallback navigation
+                      //console.warn('AJAX failed, using fallback navigation');
+                      //window.location.href = '~/Admin/Master/EducationDetails.aspx';
+                  }
+              });
+          };
+
+
+
+          // Initialize
+          initializeLayout();
+          loadMenu(); // Load dynamic menu
+          loadCandidateName();
+          //fetchCandidateName(); // Load candidate name from server
+          markActive();
+
+          // Auto-adjust menu text on load
+          setTimeout(adjustMenuText, 100);
+      });
+
+
+
+
+
+
+      function showTopRightMessage(message) {
+          // Remove existing messages
+          $('.top-right-message').remove();
+
+          // Create and show success message
+          var successHtml = `
+                <div class="alert alert-success alert-dismissible fade show top-right-message" role="alert" style="position: fixed; top: 20px; right: 20px; z-index: 9999; min-width: 300px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
+                    <i class="fas fa-check-circle me-2"></i>
+                    <strong>Success:</strong> ${message}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            `;
+          $('body').append(successHtml);
+
+          // Auto-remove after 4 seconds
+          setTimeout(function () {
+              $('.top-right-message').fadeOut(500, function () {
+                  $(this).remove();
+              });
+          }, 4000);
+      }
+
+      function showErrorMessage(message) {
+          // Create and show error message
+          var errorHtml = `
+                <div class="alert alert-danger alert-dismissible fade show top-right-message" role="alert" style="position: fixed; top: 20px; right: 20px; z-index: 9999; min-width: 300px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
+                    <i class="fas fa-exclamation-triangle me-2"></i>
+                    <strong>Error:</strong> ${message}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            `;
+          $('body').append(errorHtml);
+
+          // Auto-remove after 5 seconds
+          setTimeout(function () {
+              $('.top-right-message').fadeOut(500, function () {
+                  $(this).remove();
+              });
+          }, 5000);
+      }
+  </script>
+</body>
+    
+</html>

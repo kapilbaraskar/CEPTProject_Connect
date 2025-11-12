@@ -1,0 +1,1842 @@
+﻿<%@ Page Title="Instructor Details" Language="C#" MasterPageFile="~/AdminCEPT.master" AutoEventWireup="true"
+    CodeFile="Add_instructor_personal_details_new.aspx.cs" Inherits="Admin_Master_Add_instructor_personal_details_new" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
+    <script src="../../DesignJS/ckeditor2/ckeditor.js" type="text/javascript"></script>
+    <script src="../../DesignJS/AjaxFileupload.js" type="text/javascript"></script>
+
+    <script src="../../Js/csvfilejs/dataTables.min.js"></script>
+    <script src="../../Js/csvfilejs/printcsv.js"></script>
+    <script src="../../Js/csvfilejs/buttons.html5.min.js"></script>
+    <script src="../../Js/csvfilejs/buttons.print.min.js"></script>
+    <link href="../../Style/csvstyle.css" rel="stylesheet" />
+    <style>
+        .img-thumbnail
+        {
+            display: inline-block;
+            max-width: 100%;
+            height: auto;
+            padding: 4px;
+            line-height: 1.42857143;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            -webkit-transition: all .2s ease-in-out;
+            transition: all .2s ease-in-out;
+        }
+        .file-upload input
+        {
+            position: absolute;
+            top: 0;
+            left: 0;
+            margin: 0;
+            font-size: 10pt;
+            opacity: 0;
+        }
+        .wysiwyg_viewer_skins_button_BasicButtonb1-link
+        {
+            border-radius: 0px;
+            position: absolute;
+            top: 0px;
+            bottom: 0px;
+            left: 0px;
+            right: 0px;
+            background-color: rgb(102, 102, 102);
+            transition: border-color 0.4s ease 0s, background-color 0.4s ease 0s;
+            -webkit-transition: border-color 0.4s ease 0s, background-color 0.4s ease 0s;
+            box-shadow: rgba(0, 0, 0, 0.6) 0px 1px 4px 0px;
+        }
+        .wysiwyg_viewer_skins_button_BasicButtonb1-label
+        {
+            font: normal normal normal 13px/1.3em arial, 'ｍｓ ｐゴシック' , 'ms pgothic' , 돋움, dotum, helvetica, sans-serif;
+            transition: color 0.4s ease 0s;
+            -webkit-transition: color 0.4s ease 0s;
+            color: rgb(255, 255, 255);
+            white-space: nowrap;
+            margin: 0px;
+            display: inline-block;
+            position: relative;
+        }
+        .required
+        {
+            color: Red;
+        }
+    </style>
+     
+    <script type="text/javascript">
+        var oTable;
+        var asInitVals = new Array();
+
+        var str = "<tr><td><input style='width: 202px;' type='text' class='degree'/></td> ";
+        str += "<td><input style='width: 202px;' type='text' class='Institution'/></td> ";
+        str += "<td><input style='width: 202px;' type='text' class='Field'/></td> ";
+        str += "<td><input style='width: 50px;' type='text' maxlength='4' class='year_of_completion' onkeypress='return isNumber(event);'/></td> ";
+        //        str += "<td><input style='width: 200px; ' type='text' class='description'/></td> ";
+        str += "<td><center><i class='icon-trash icon-2x text-blue 'style='cursor:pointer;'></i></center></td></tr>";
+
+        $(document).ready(function () {
+            bindfaculty_dtl();
+            bindinstructor();
+
+            $('#txt_joining_date').datepicker({
+                format: "dd/mm/yyyy",
+                autoclose: true,
+                endDate: new Date
+            });
+          
+
+            $('#txt_confirmation_date').datepicker({
+                format: "dd/mm/yyyy",
+                autoclose: true,
+                endDate: new Date
+            });
+            $('#txt_year_teaching').datepicker({
+                format: "dd-mm-yyyy",
+                autoclose: true,
+                endDate: new Date
+            });
+
+            if ($('#hdn_instructor').val() != "") {
+                get_profile_details();
+            }
+
+            $('#btnreterive').on('click', function () {
+                 window.location.href = "Add_instructor_personal_details_new.aspx?i=" + $('#drpinstructor').val();
+                //window.open("Add_instructor_personal_details_new.aspx?i=" + $('#drpinstructor').val(), '_blank');
+                return false;
+            });
+            $('#btnView').on('click', function () {
+                if ($('#drpinstructor').val() == '') {
+                    bootbox.alert("Please Select Instructor");
+                    return false;
+                }
+                window.location.href = "frm_personal_details.aspx?code=" + $('#drpinstructor').val();
+                return false;
+            });
+
+            $('#btn_education').on('click', function () {
+                $('#tbleducation tbody').append(str);
+                return false;
+            });
+
+            $('#tbleducation tbody tr td i.icon-trash').live('click', function (e) {
+
+                var r = confirm("Are u sure you want to remove this?");
+                if (r == true) {
+
+                    var datalist = [];
+                    var flag = 'Y';
+                    var ob = {};
+                    var thisdata = $(this).closest("tr");
+                    $(this).closest("tr").remove();
+                    var totalsum = 0;
+                }
+            });
+
+            $('#btn_course_taught').on('click', function () {
+
+                var str_course_taught = "<tr><td><input style='width: 400px;' type='text' class='course_taught'/></td> ";
+                str_course_taught += "<td><input style='width: 100px; ' type='text' class='semester_year'/></td> ";
+
+                str_course_taught += "<td><input   checked='checked' name='new_" + $('#tblcoursetaught tbody tr').length + "' style='width: 100px; ' type='radio' class='rb_course_taught_area'/></td> ";
+                str_course_taught += "<td><input   name='new_" + $('#tblcoursetaught tbody tr').length + "' style='width: 100px; ' type='radio' class='rb_course_taught_other'/></td> ";
+                str_course_taught += "<td><center><i class='icon-trash icon-2x text-blue 'style='cursor:pointer;'></i></center></td></tr>";
+
+                $('#tblcoursetaught tbody').append(str_course_taught);
+                return false;
+            });
+
+
+            $('#tblcoursetaught tbody tr td i.icon-trash').live('click', function (e) {
+
+                var r = confirm("Are u sure you want to remove this?");
+                if (r == true) {
+
+                    var datalist = [];
+                    var flag = 'Y';
+                    var ob = {};
+                    var thisdata = $(this).closest("tr");
+                    $(this).closest("tr").remove();
+                    var totalsum = 0;
+                }
+            });
+
+            $('#btn_area_of_expertise').on('click', function () {
+
+                var str_area_of_expertise = "<tr><td><input style='width: 95%;' type='text' class='cls_area_of_expertise'/></td> ";
+                str_area_of_expertise += "<td><center><i class='icon-trash icon-2x text-blue 'style='cursor:pointer;'></i></center></td></tr>";
+
+                $('#tblareaofexpertise tbody').append(str_area_of_expertise);
+                return false;
+            });
+
+            $('#tblareaofexpertise tbody tr td i.icon-trash').live('click', function (e) {
+
+                var r = confirm("Are u sure you want to remove this?");
+                if (r == true) {
+
+                    var datalist = [];
+                    var flag = 'Y';
+                    var ob = {};
+                    var thisdata = $(this).closest("tr");
+                    $(this).closest("tr").remove();
+                    var totalsum = 0;
+                }
+            });
+
+            $('#btn_professional_affiliations').on('click', function () {
+
+                var str_area_of_expertise = "<tr><td><input style='width: 95%;' type='text' class='cls_professional_affiliations'/></td> ";
+                str_area_of_expertise += "<td><center><i class='icon-trash icon-2x text-blue 'style='cursor:pointer;'></i></center></td></tr>";
+
+                $('#tblProfessionalAffiliations tbody').append(str_area_of_expertise);
+                return false;
+            });
+
+
+            $('#tblProfessionalAffiliations tbody tr td i.icon-trash').live('click', function (e) {
+
+                var r = confirm("Are u sure you want to remove this?");
+                if (r == true) {
+
+                    var datalist = [];
+                    var flag = 'Y';
+                    var ob = {};
+                    var thisdata = $(this).closest("tr");
+                    $(this).closest("tr").remove();
+                    var totalsum = 0;
+                }
+            });
+
+            $('#drpinstructor').on('change', function () {
+
+                $('#div_pdetails,.copyright').css('display', 'none');
+
+                $('#txt_qualification').val('');
+                $('#txt_public_service').val('');
+                $('#drp_type').val('');
+                $('#txt_contact').val('');
+                $('#txt_office_location').val('');
+
+                $("#img_photo").attr("src", "");
+                $('#lbl_image_name').text('');
+
+            });
+
+            $('#btnsave').on('click', function () {
+                
+                var data = { user_id: '', image_path: '', supervisor_name: '', qualification: '', public_service: '', designation: '', department: '', area_of_interest: '', projects: '', capstone_project: '', contact: '', email: '', Background: '', office_location: '', research_articles_papers: '', presented_papers_and_invited_lectures: '', professional_honors: '', professional_affiliations: '', education_description: '', upload_cv_path: '', publish_flag: 'N' };
+
+                if ($('#lbl_image_name').text().trim() != "") {
+                    data.image_path = $('#lbl_image_name').text();
+                }
+                else {
+                    //  bootbox.alert('Please Upload Photo');
+                    //  return false;
+                }
+
+                data.user_id = $('#drpinstructor').val();
+                data.qualification = $('#txt_qualification').val();
+                data.public_service = $('#txt_public_service').val();
+
+                if ($('#chk_publish')[0].checked) data.publish_flag = 'Y';
+
+                if ($('#drp_type').val() != '') {
+                    data.designation = $('#drp_type').val();
+                }
+                else {
+                    // bootbox.alert('Please select designation');
+                    // return false;
+                }
+                if ($('#txt_name').val().trim() == "") {
+                    bootbox.alert('Please enter name');
+                    return false;
+                }
+                else {
+                    data.supervisor_name = $('#txt_name').val();
+                }
+
+                if ($('#drp_department').val().trim() == "") {
+                    bootbox.alert('Please select department');
+                    return false;
+                }
+                else {
+                    data.department = $('#drp_department').val();
+                }
+
+
+                data.capstone_project = $('#txt_capstone_project').val().trim();
+                data.contact = $('#txt_contact').val().trim();
+
+                var testEmail = /^[A-Z0-9._%+-]+@([A-Z0-9-]+\.)+[A-Z]{2,4}$/i;
+                if (testEmail.test($('#txt_mail').val())) {
+                    data.email = $('#txt_mail').val().trim();
+                }
+                else {
+                    bootbox.alert("Please Enter Valid Email");
+                    $('#txt_mail').focus();
+                    return false;
+                }
+
+                data.upload_cv_path = $('#hdn_cv_upload').val();
+
+                var education_data_list = [];
+
+                $("#tbleducation tbody tr").each(function (j) {
+                    var education_data = { 'degree': '', 'institution': '', 'field': '', 'year_of_completion': '', 'description': '' };
+
+                    education_data.degree = $(this).find(".degree").val();
+                    education_data.institution = $(this).find(".Institution").val();
+
+                    education_data.field = $(this).find(".Field").val();
+                    education_data.year_of_completion = $(this).find(".year_of_completion").val();
+                    //   education_data.description = $(this).find(".description").val();
+                    education_data.description = "";
+
+                    education_data_list.push(education_data);
+                });
+
+                var course_taught_data_list = [];
+
+                $("#tblcoursetaught tbody tr").each(function (j) {
+                    var course_taught_data = { 'course_name': '', 'semester_year': '', 'section': '' };
+
+                    course_taught_data.course_name = $(this).find(".course_taught").val();
+                    course_taught_data.semester_year = $(this).find(".semester_year").val();
+
+                    course_taught_data.section = '';
+                    if ($(this).find('.rb_course_taught_area:checked').val()) {
+
+                        course_taught_data.section = "A";
+                    }
+
+                    if ($(this).find('.rb_course_taught_other:checked').val()) {
+
+                        course_taught_data.section = "O";
+                    }
+
+                    course_taught_data_list.push(course_taught_data);
+
+                });
+
+                //                if (CKEDITOR.instances.txt_education_description.getData() == "") {
+                //                }
+                //                else {
+                //                    data.education_description = CKEDITOR.instances.txt_education_description.getData();
+                //                }
+
+                data.education_description = $('#txt_education_description').val().trim();
+
+
+                //                if (CKEDITOR.instances.txt_area.getData() == "") {
+                //                }
+                //                else {
+                //  data.area_of_interest = CKEDITOR.instances.txt_area.getData();
+                //}
+
+
+                $("#tblareaofexpertise tbody tr").each(function (j) {
+
+                    if (j != 0) {
+                        data.area_of_interest += '~';
+                    }
+                    data.area_of_interest += $(this).find('.cls_area_of_expertise').val();
+                });
+
+                if (CKEDITOR.instances.txt_projects.getData() == "") {
+                }
+                else {
+                    data.projects = CKEDITOR.instances.txt_projects.getData();
+                }
+
+                if (CKEDITOR.instances.txt_Background.getData() == "") {
+                    //                    bootbox.alert('Please enter capstone background');
+                    //                    return false;
+                }
+                else {
+
+                    data.Background = CKEDITOR.instances.txt_Background.getData();
+                }
+
+                //  data.Background = "";
+
+                data.office_location = $('#txt_office_location').val().trim();
+
+                if (CKEDITOR.instances.txt_articles_papers.getData() == "") {
+                }
+                else {
+                    data.research_articles_papers = CKEDITOR.instances.txt_articles_papers.getData();
+                }
+
+                if (CKEDITOR.instances.txt_presented_papers_and_invited_lectures.getData() == "") {
+                }
+                else {
+                    data.presented_papers_and_invited_lectures = CKEDITOR.instances.txt_presented_papers_and_invited_lectures.getData();
+                }
+
+                if (CKEDITOR.instances.txt_prof_honors.getData() == "") {
+                }
+                else {
+                    data.professional_honors = CKEDITOR.instances.txt_prof_honors.getData();
+                }
+
+                //                if (CKEDITOR.instances.txt_prof_affiliations.getData() == "") {
+
+                //                }
+                //                else {
+                //                    data.professional_affiliations = CKEDITOR.instances.txt_prof_affiliations.getData();
+                //                }
+
+
+                $("#tblProfessionalAffiliations tbody tr").each(function (j) {
+
+                    if (j != 0) {
+                        data.professional_affiliations += '~';
+                    }
+                    data.professional_affiliations += $(this).find('.cls_professional_affiliations').val();
+                });
+
+                if (data.contact.search(/\\/) != -1) { data.contact = data.contact.replace(/\\/g, '\\\\'); }
+                if (data.contact.search("\"") != -1) { data.contact = data.contact.replace(/"/g, '\\\"'); }
+                
+                if (data.education_description.search(/\\/) != -1) { data.education_description = data.education_description.replace(/\\/g, '\\\\'); }
+                if (data.education_description.search("\"") != -1) { data.education_description = data.education_description.replace(/"/g, '\\\"'); }
+
+                if (data.area_of_interest.search(/\\/) != -1) { data.area_of_interest = data.area_of_interest.replace(/\\/g, '\\\\'); }
+                if (data.area_of_interest.search("\"") != -1) { data.area_of_interest = data.area_of_interest.replace(/"/g, '\\\"'); }
+
+                if (data.projects.search(/\\/) != -1) { data.projects = data.projects.replace(/\\/g, '\\\\'); }
+                if (data.projects.search("\"") != -1) { data.projects = data.projects.replace(/"/g, '\\\"'); }
+
+                if (data.Background.search(/\\/) != -1) { data.Background = data.Background.replace(/\\/g, '\\\\'); }
+                if (data.Background.search("\"") != -1) { data.Background = data.Background.replace(/"/g, '\\\"'); }
+
+                if (data.research_articles_papers.search(/\\/) != -1) { data.research_articles_papers = data.research_articles_papers.replace(/\\/g, '\\\\'); }
+                if (data.research_articles_papers.search("\"") != -1) { data.research_articles_papers = data.research_articles_papers.replace(/"/g, '\\\"'); }
+
+                if (data.presented_papers_and_invited_lectures.search(/\\/) != -1) { data.presented_papers_and_invited_lectures = data.presented_papers_and_invited_lectures.replace(/\\/g, '\\\\'); }
+                if (data.presented_papers_and_invited_lectures.search("\"") != -1) { data.presented_papers_and_invited_lectures = data.presented_papers_and_invited_lectures.replace(/"/g, '\\\"'); }
+
+                if (data.professional_honors.search(/\\/) != -1) { data.professional_honors = data.professional_honors.replace(/\\/g, '\\\\'); }
+                if (data.professional_honors.search("\"") != -1) { data.professional_honors = data.professional_honors.replace(/"/g, '\\\"'); }
+
+                if (data.professional_affiliations.search(/\\/) != -1) { data.professional_affiliations = data.professional_affiliations.replace(/\\/g, '\\\\'); }
+                if (data.professional_affiliations.search("\"") != -1) { data.professional_affiliations = data.professional_affiliations.replace(/"/g, '\\\"'); }
+
+                var prof_details = [data, education_data_list, course_taught_data_list];
+
+                var json_data = JSON.stringify(prof_details).replace(/\'/g, '\\\'\\\'');
+
+                $.ajax({
+                    type: "POST",
+                    contentType: "application/json; charset=utf-8",
+                    url: "../../WebService.asmx/save_profile_data_by_admin",
+                    data: "{'profile_detail' : '" + json_data + "'}",
+                    dataType: "json",
+                    success: function (data) {
+                        // bind_grid();
+                        if (data.d != '') {
+
+                            if (data.d == "Email") {
+                                bootbox.alert("your Email Id is not match with your Login Email id.");
+                            }
+                            else {
+                                bootbox.alert(data.d);
+                            }
+                        }
+                        return false;
+                    },
+                    error: function (data) {
+                        alert(data.d);
+                        return false;
+                    }
+                });
+            });
+
+            $('#btnsaveinst').on('click', function () {
+
+                var data = { instructor_code: '', confirmation_date: '', join_date: '', total_experiance_months: '', date_of_join_cept: '', teaching_year: '', previous_year_experience: '', total_year_experience: '', teaching_year:'' };
+                
+                data.instructor_code = $('#drpinstructor').val();
+                data.total_year_experience = $('#txt_year_experience').val();
+                data.total_experiance_months = $('#txt_total_experiance_months').val();
+                data.teaching_year = $('#txt_year_teaching').val();
+                data.previous_year_experience = $('#txt_teaching_experience').val();
+                var str_join_date = $('#txt_joining_date').val().split('/');
+                data.date_of_join_cept = str_join_date[1] + '/' + str_join_date[0] + '/' + str_join_date[2];
+                data.confirmation_date = $('#txt_confirmation_date').val();
+
+                var prof_details = [data];
+                var json_data = JSON.stringify(prof_details).replace(/\'/g, '\\\'\\\'');
+
+                $.ajax({
+                    type: "POST",
+                    contentType: "application/json; charset=utf-8",
+                    url: "../../WebService.asmx/save_profile_data_by_uso",
+                    data: "{'profile_detail' : '" + json_data + "','inst_code' : '" + $('#drpinstructor').val() +"'}",
+                    dataType: "json",
+                    success: function (data) {
+                        // bind_grid();
+                        if (data.d != '') {
+
+                            if (data.d == "Email") {
+                                bootbox.alert("your Email Id is not match with your Login Email id.");
+                            }
+                            else {
+                                bootbox.alert(data.d);
+                            }
+                        }
+                        return false;
+                    },
+                    error: function (data) {
+                        alert(data.d);
+                        return false;
+                    }
+                });
+            });
+
+
+        });
+
+        function bindfaculty_dtl() {
+            $.ajax({
+                type: "POST",
+                contentType: "application/json; charset=utf-8",
+                url: "../../WebService.asmx/Get_department_data",
+
+                data: "{}",
+                dataType: "json",
+                async: true,
+                success: function (data) {
+                    if (data.d != "") {
+                        var sem_data = JSON.parse(data.d)
+
+                        $('#drp_department').empty().append($("<option></option>").val("").html("-- Please Select Department --"));
+
+                        for (var i = 0; i < sem_data.length; i++) {
+                            $('#drp_department').append($("<option></option>").val(sem_data[i]["dept_name"]).html(sem_data[i]["dept_name"]));
+                        }
+                        if ($('#hdn_dep').val() != null && $('#hdn_dep') != '') {
+                            $('#drp_department').val($('#hdn_dep').val());
+                        }
+                        $('#drp_department').chosen();
+                    }
+                },
+                error: function (result) {
+                    alert(result);
+                }
+            });
+        }
+
+        function bindinstructor() {
+
+            $.ajax({
+                type: "POST",
+                contentType: "application/json; charset=utf-8",
+                url: "../../WebService.asmx/get_instructor_available_personal_details",
+                async: false,
+                //  headers:{"Authorization": "Basic YWRtaW46YWRtaW5AMTIz"},
+                data: "{}",
+                datatype: "json",
+                success: function (data, status, abc) {
+                    if (data.d != "")
+                    {
+                       
+                        display_instructor_dtl(data.d);
+                        var instructor_data = JSON.parse(data.d);
+                        var url_dtl = getUrlVars();
+                      
+                      
+                      
+
+                        if (url_dtl["i"] != null && url_dtl["i"] != undefined && url_dtl["i"] != "")
+                        {
+                            $('#DataList1').css('display', 'none');
+                            $('#instructor_dtl').css('display', 'block');
+                            $('#instructor_dtl_personal').css('display', 'block');
+                        }
+                        $('#drpinstructor').empty().append($("<option></option>").val("").html("-- Please Select Year --"));
+                        for (var i = 0; i < instructor_data.length; i++) {
+                            $('#drpinstructor').append($("<option></option>").val(instructor_data[i]["user_id"]).html(instructor_data[i]["instructor_name"]));
+                        }
+                        if ($('#hdn_instructor').val() != "")
+                        {
+                            $('#drpinstructor').val($('#hdn_instructor').val());
+                        }
+
+                        $('#drpinstructor').chosen();
+                    }
+
+                },
+                error: function (result) {
+                    alert(result);
+                }
+            });
+
+        }
+
+
+
+        //kapil
+        function getUrlVars() {
+            var vars = [], hash;
+            var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+            for (var i = 0; i < hashes.length; i++) {
+                hash = hashes[i].split('=');
+                vars.push(hash[0]);
+                vars[hash[0]] = hash[1];
+            }
+            return vars;
+        }
+        function rowClick(row, objtable)
+        {
+            var rowId = objtable.fnGetData($(row).closest('tr')[0])['user_id'];   
+            window.open("Add_instructor_personal_details_new.aspx?i=" + rowId, '_blank');
+            //window.location.href = "Add_instructor_personal_details_new.aspx?i=" + rowId;
+        }
+
+
+        function display_instructor_dtl(data)
+        {
+            if (oTable != null)
+            {
+                oTable.fnDestroy();
+                $("#DataList1").html(' <table cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered table-hover" id="example"><thead></thead><tbody> </tbody></table>');
+            }
+
+            oTable = $("#example").dataTable({
+                "bPaginate": true,
+                "bStateSave": false,
+                "bSort": false,
+                "iDisplayLength": 60,
+                
+                "sDom": "<'row-fluid'<'span6'B><'span6'f>r>t<'row-fluid'<'span6'i><'span6'p>>",
+                "oLanguage": {
+                    "sSearch": "Search all columns with Space:"
+                },
+               
+                "aaData": JSON.parse(data),
+                "aoColumns": [
+                    
+                    { "sTitle": "Faculty", "mData": "department", "bSortable": false },
+                    { "sTitle": "Name", "mData": "instructor_name", "bSortable": false },
+                    { "sTitle": "Email", "mData": "mail", "bSortable": false },
+                    { "sTitle": "Designation", "mData": "designation", "bSortable": false },
+                    { "sTitle": "Institutional Role", "mData": "public_service", "bSortable": false },
+                    { "sTitle": "User Type", "mData": "user_type", "bSortable": false },
+                    { "sTitle": "Publish Status", "mData": "publish_flag", "bSortable": false },
+                    { "sTitle": "User Id", "mData": "user_id", "bSortable": false, "bVisible": false },
+                    {
+                        "sTitle": "Edit", "mData": null, "bSortable": false, "mRender": function (data)
+                        {
+                       return '<center><button type="button" onclick="rowClick(this,oTable)">Edit</button></center>';
+                        }
+                    }
+                    
+                ]
+            });
+
+            var thead = $('<tr class="dt"></tr>');
+            $('#example thead th').each(function (i, r) {
+                var nm = $('#example thead th').eq($(this).index()).text();
+                thead.append('<th></th>');
+            });
+            $('#example thead').append(thead);
+            
+            //adding input box in thead second row 
+            //$("#example tr:nth-child(2) th").length (Remove because of Download)
+            for (var i = 0; i < $("#example tr:nth-child(2) th").length - 1; i++) {
+                var title = $('#example thead th').eq(i).text();
+                $('#example thead tr:nth-child(n+2) th').eq(i).html("<input type='text' id='" + i + "'class='search_init' style='width: 56px;'>");
+            };
+
+            $("thead input").keyup(function () {
+                /* Filter on the column (the index) of this element */
+                oTable.fnFilter(this.value, $("thead input").index(this));
+            });
+
+            $("thead input").each(function (i) {
+                
+                asInitVals[i] = this.value;
+            });
+
+            $("thead input").focus(function () {
+                if (this.className == "search_init") {
+                    this.className = "";
+                    this.value = "";
+                }
+            });
+
+            $("thead input").blur(function (i) {
+                if (this.value == "") {
+                    this.className = "search_init";
+                    this.value = asInitVals[$("thead input").index(this)];
+                }
+            });
+
+            //$('#example_wrapper').css('overflow', 'auto');
+
+
+
+
+
+
+            
+            $('#DataList1').css('display', 'block');
+            $('.dt-button.buttons-csv.buttons-html5')[0].innerText = 'Excel';
+        }
+
+        function get_profile_details() {
+           
+
+            $('#tblareaofexpertise tbody').html('');
+            $('#tbleducation tbody').html('');
+            $('#tblcoursetaught tbody').html('');
+            $('#tblProfessionalAffiliations tbody').html('');
+
+            $('#lbl_cv_upload').text('');
+            $('#txt_qualification').val('');
+            $('#txt_public_service').val('');
+            $('#drp_type').val('');
+            $('#txt_contact').val('');
+            $('#txt_office_location').val('');
+            $('#drp_department').val('');
+            $('#txt_capstone_project').val('');
+            $('#txt_name').val('');
+            $('#txt_mail').val('');
+
+            $("#img_photo").attr("src", "");
+            $('#lbl_image_name').text('');
+
+            //CKEDITOR.instances.txt_projects.setData('');
+            //CKEDITOR.instances["txt_articles_papers"].setData('');
+            //CKEDITOR.instances["txt_presented_papers_and_invited_lectures"].setData('');
+            //CKEDITOR.instances["txt_prof_honors"].setData('');
+
+            $('#div_pdetails,.copyright').css('display', 'none');
+
+            var instructor_code = $('#drpinstructor').val();
+
+            if (instructor_code == "") {
+
+                bootbox.alert('Please select instructor');
+                $('#drpinstructor').focus();
+                return false;
+            }
+
+            $.ajax({
+                type: "POST",
+                url: "../../WebService.asmx/get_personal_details",
+                data: "{instructor_code :'" + instructor_code + "'}",
+                contentType: "application/json; charset=utf-8",
+                datatype: "json",
+                async: false,
+                success: function (data) {
+                    
+                    if (data.d[0] != null) {
+                        $('#div_pdetails,.copyright').css('display', 'block');
+                        var p_details = JSON.parse(data.d[0]);
+
+                       
+                        $('#txt_qualification').val(p_details[0]["qualification"]);
+                        $('#txt_public_service').val(p_details[0]["public_service"]);
+                        $('#drp_type').val(p_details[0]["designation"]);
+                        $('#txt_designation').text(p_details[0]["designation"]);
+                        //$('#drp_department').val(p_details[0]["department"]);
+                        $('#hdn_dep').val(p_details[0]["department"]);
+                        $('#txt_faculty').text(p_details[0]["department"]);
+                        $('#txt_education_description').val(p_details[0]["education_description"]);
+
+
+                        //$('#txt_joining_date').val(get_comments_details[0]["date_of_join"]);
+                        //$('#txt_confirmation_date').val(get_comments_details[0]["confirmationdate"]);
+                        //$('#txt_total_experiance_months').val(get_comments_details[0]["totalexperiancemonths"]);
+
+
+
+                        if (p_details[0]["supervisor_name"] != '') {
+                            $('#txt_name').val(p_details[0]["supervisor_name"]);
+                            $('#txt_name_text').text(p_details[0]["supervisor_name"]);
+                        }
+                        else {
+                            $('#txt_name').val($('#drpinstructor option:selected').text());
+                            $('#txt_name_text').text($('#drpinstructor option:selected').text());
+                        }
+                        //kapil
+                        if (p_details[0]["publish_flag"] != '')
+                        {
+                            if (p_details[0]["publish_flag"] == 'Y')
+                            {
+                                $("#chk_publish").prop("checked", true);
+                            }
+                        }
+
+                        $('#txt_mail').val(p_details[0]["email"]);
+
+
+                        if (p_details[0]["area_of_interest"] != '') {
+
+                            var a = p_details[0]["area_of_interest"].split('~');
+                            for (var i = 0; i < a.length; i++) {
+                                var str_area_of_expertise = "<tr><td><input style='width: 95%;' type='text' class='cls_area_of_expertise'/></td> ";
+                                str_area_of_expertise += "<td><center><i class='icon-trash icon-2x text-blue 'style='cursor:pointer;'></i></center></td></tr>";
+
+                                $('#tblareaofexpertise tbody').append(str_area_of_expertise);
+
+                            }
+
+                            $("#tblareaofexpertise tbody tr").each(function (j) {
+                                for (var i = 0; i < a.length; i++) {
+
+                                    if (j == i) {
+                                        $(this).find(".cls_area_of_expertise").val(a[i]);
+
+                                    }
+                                }
+                            });
+                        }
+
+                        $('#txt_contact').val(p_details[0]["contact"]);
+                        $('#txt_projects').val(p_details[0]["projects"]);
+                        $('#txt_articles_papers').val(p_details[0]["research_articles_papers"]);
+                        $('#txt_presented_papers_and_invited_lectures').val(p_details[0]["presented_papers_and_invited_lectures"]);
+                        $('#txt_prof_honors').val(p_details[0]["Background"]);
+
+                        $('#txt_office_location').val(p_details[0]["office_location"]);
+                        $('#txt_prof_honors').val(p_details[0]["professional_honors"]);
+                        //   $('#txt_prof_affiliations').val(p_details[0]["professional_affiliations"]);
+
+                        if (p_details[0]["professional_affiliations"] != '') {
+
+                            var a = p_details[0]["professional_affiliations"].split('~');
+                            for (var i = 0; i < a.length; i++) {
+                                var str_professional_affiliations = "<tr><td><input style='width: 95%;' type='text' class='cls_professional_affiliations'/></td> ";
+                                str_professional_affiliations += "<td><center><i class='icon-trash icon-2x text-blue 'style='cursor:pointer;'></i></center></td></tr>";
+
+                                $('#tblProfessionalAffiliations tbody').append(str_professional_affiliations);
+                            }
+
+                            $("#tblProfessionalAffiliations tbody tr").each(function (j) {
+                                for (var i = 0; i < a.length; i++) {
+
+                                    if (j == i) {
+                                        $(this).find(".cls_professional_affiliations").val(a[i]);
+
+                                    }
+                                }
+                            });
+
+                        }
+
+                        $('#txt_capstone_project').val(p_details[0]["capstone_project"])
+
+                        if (p_details[0]["cv_path"] != '') {
+                            $('#lbl_cv_upload').text('file uploaded');
+                            $('#hdn_cv_upload').val(p_details[0]["cv_path"]);
+                        }
+
+                        if (p_details[0]["image_path"] != "") {
+
+                            $("#img_photo").attr("src", "../../UserPersonalPhoto/" + p_details[0]["image_path"]);
+                            $('#lbl_image_name').text(p_details[0]["image_path"]);
+
+                        }
+                        document.getElementById("imageUpload").disabled = false;
+                    }
+                    else {
+                        if (data.d[3] != null) {
+                            $('#txt_mail').val(data.d[3]);
+                        }
+
+                        $('#txt_name').val($('#drpinstructor option:selected').text());
+                        $('#div_pdetails,.copyright').css('display', 'block');
+                    }
+                    if (data.d[1] != null) {
+                        var E_details = JSON.parse(data.d[1]);
+                        $("#tbleducation tbody").html('');
+
+                        for (var i = 0; i < E_details.length; i++) {
+                            $('#tbleducation tbody').append(str);
+                        }
+
+                        $("#tbleducation tbody tr").each(function (j) {
+                            for (var i = 0; i < E_details.length; i++) {
+
+                                if (j == i) {
+                                    $(this).find(".degree").val(E_details[i]["degree"]);
+                                    $(this).find(".Institution").val(E_details[i]["institution"]);
+                                    $(this).find(".Field").val(E_details[i]["field"]);
+                                    $(this).find(".year_of_completion").val(E_details[i]["year_of_completion"]);
+                                    //    $(this).find(".description").val(E_details[i]["description"]);
+                                }
+                            }
+                        });
+                    }
+                    if (data.d[2] != null) {
+
+                        var CT_details = JSON.parse(data.d[2]);
+                        $("#tblcoursetaught tbody").html('');
+
+                        for (var i = 0; i < CT_details.length; i++) {
+
+                            var str_course_taught = "<tr><td><input style='width: 400px;' type='text' class='course_taught'/></td> ";
+                            str_course_taught += "<td><input style='width: 100px; ' type='text' class='semester_year'/></td> ";
+
+                            str_course_taught += "<td><input   checked='checked' name='" + CT_details[i]["semester_year"] + '_' + i + "' style='width: 100px; ' type='radio' class='rb_course_taught_area'/></td> ";
+                            str_course_taught += "<td><input   name='" + CT_details[i]["semester_year"] + '_' + i + "' style='width: 100px; ' type='radio' class='rb_course_taught_other'/></td> ";
+                            str_course_taught += "<td><center><i class='icon-trash icon-2x text-blue 'style='cursor:pointer;'></i></center></td></tr>";
+
+                            $('#tblcoursetaught tbody').append(str_course_taught);
+                        }
+
+                        $("#tblcoursetaught tbody tr").each(function (j) {
+
+                            for (var i = 0; i < CT_details.length; i++) {
+                               
+                                if (j == i) {
+                                    $(this).find(".course_taught").val(CT_details[i]["course_name"]);
+                                    $(this).find(".semester_year").val(CT_details[i]["semester_year"]);
+
+                                    if (CT_details[i]["section"] == 'A') {
+
+                                        $(this).find(".rb_course_taught_area").attr('checked', 'checked');
+                                    }
+                                    else if (CT_details[i]["section"] == 'O') {
+                                        $(this).find(".rb_course_taught_other").attr('checked', 'checked');
+                                    }
+                                    else {
+                                        $(this).find(".rb_course_taught_area").attr('checked', 'checked');
+                                    }
+                                }
+
+                            }
+                        });
+                    }
+
+                    if (data.d[4] != null) {
+                        var get_comments_details = JSON.parse(data.d[4]);
+
+                        $('#txt_joining_date').val(get_comments_details[0]["date_of_join"]);
+                        $('#txt_confirmation_date').val(get_comments_details[0]["confirmationdate"]);
+                        $('#txt_total_experiance_months').val(get_comments_details[0]["totalexperiancemonths"]);
+                        $('#txt_year_experience').val(get_comments_details[0]["total_experiance"]);
+                        $('#txt_teaching_experience').val(get_comments_details[0]["total_teaching_experiance"]);
+                        $('#txt_year_teaching').val(get_comments_details[0]["teaching_year"]);
+                    }
+                },
+                error: function (msg) { alert(msg.d); }
+            });
+        }
+
+        //        function retrieve_Data() {
+        //            $('#div_pdetails,.copyright').css('display', 'none');
+
+        //            $('#txt_qualification').val('');
+        //            $('#txt_public_service').val('');
+        //            $('#drp_type').val('');
+        //            $('#txt_contact').val('');
+        //            $('#txt_office_location').val('');
+
+        //            $("#img_photo").attr("src", "");
+        //            $('#lbl_image_name').text('');
+
+
+        //            var instructor_code = $('#drpinstructor').val();
+
+        //            if (instructor_code == "") {
+
+        //                bootbox.alert('Please select instructor');
+        //                $('#drpinstructor').focus();
+        //                return false;
+        //            }
+
+        //            $.ajax(
+        //            {
+        //                type: "POST",
+        //                contentType: "application/json; charset=utf-8",
+        //                url: "../../WebService.asmx/get_instructor_personal_details",
+        //                data: "{instructor_code:'" + instructor_code + "'}",
+        //                dataType: "json",
+        //                success: function (data) {
+        //                    if (data.d != null) {
+
+        //                        if (data.d[0] != null) {
+        //                            debugger;
+        //                            var p_details = JSON.parse(data.d[0]);
+
+        //                            $('#txt_qualification').val(p_details[0]["qualification"]);
+        //                            $('#txt_public_service').val(p_details[0]["public_service"]);
+        //                            $('#drp_type').val(p_details[0]["designation"]);
+        //                            // $('#drp_department').val(p_details[0]["department"]);
+        //                            $('#txt_contact').val(p_details[0]["contact"]);
+        //                            $('#txt_office_location').val(p_details[0]["office_location"]);
+        //                            // $('#txt_capstone_project').val(p_details[0]["capstone_project"])
+
+        //                            if (p_details["image_path"] != "") {
+
+        //                                $("#img_photo").attr("src", "../../UserPersonalPhoto/" + p_details[0]["image_path"]);
+        //                                $('#lbl_image_name').text(p_details[0]["image_path"]);
+        //                            }
+        //                            if (p_details[0]["supervisor_name"] != '') {
+        //                                $('#txt_name').val(p_details[0]["supervisor_name"]);
+        //                            }
+        //                            else {
+        //                                $('#txt_name').val($('#drpinstructor option:selected').text());
+        //                            }
+
+        //                            $('#txt_mail').val(p_details[0]["mail"]);
+
+        //                            $('#div_pdetails,.copyright').css('display', 'block');
+        //                        }
+        //                        else {
+        //                            $('#txt_name').val($('#drpinstructor option:selected').text());
+        //                            $('#txt_mail').val(data.d[1]);
+        //                            $('#div_pdetails,.copyright').css('display', 'block');
+
+        //                        }
+        //                    }
+        //                    else {
+        //                        bootbox.alert('No data found');
+        //                    }
+
+        //                },
+        //                error: function (result) {
+        //                    alert(result);
+        //                }
+        //            });
+        //            return false;
+        //        }
+
+        function isNumber(evt) {
+            evt = (evt) ? evt : window.event;
+            var charCode = (evt.which) ? evt.which : evt.keyCode;
+            if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+                return false;
+            }
+            return true;
+        }
+
+        function UploadProfilePhoto() {
+            
+            try {
+
+                var fileToUpload = GetFileNameFromPath($('#imageUpload').val());
+
+                var filename = fileToUpload.substr(0, (fileToUpload.lastIndexOf('.')));
+
+                if (CheckUserPhotoExtension(fileToUpload)) {
+
+                    var flag = true;
+
+                    if (filename != "" && filename != null) {
+
+                        if (flag == true) {
+                            $("#UploadingProgress").fadeIn(200);
+                            $.ajaxFileUpload({
+                                url: '../../Handler/Instructor_photo_upload.ashx',
+                                secureuri: false,
+                                fileElementId: 'imageUpload',
+                                dataType: 'json',
+                                data: { name: name },
+                                success: function (data, status) {
+                                    if (typeof (data.error) != 'undefined') {
+                                        if (data.error != '') {
+                                            alert(data.error);
+                                        }
+                                        else {
+                                            $('#imageUpload').val("");
+
+                                            FileName = data.upfile;
+                                            $("#img_photo").attr("src", "../../UserPersonalPhoto/" + FileName);
+                                            //  $("#img_photo").attr("alt", FileName);
+                                            //  $('#lbl_image_name').text("UserProfilePhoto/" + FileName);
+                                            $('#lbl_image_name').text(FileName);
+                                        }
+                                    }
+                                    $("#UploadingProgress").fadeOut(200);
+                                },
+                                error: function (data, status, e) {
+                                    $("#UploadingProgress").fadeOut(200);
+                                    alert(e);
+                                }
+                            });
+                        }
+                    }
+                }
+                else {
+                    alert('Invalid File Type. Please upload .jpeg file');
+                }
+                return false;
+            }
+            catch (e) {
+                alert("Exception : " + e.message);
+            }
+        }
+
+        //Check User Photo Extension
+        function CheckUserPhotoExtension(file) {
+            try {
+                var flag = true;
+                var extension = file.substr((file.lastIndexOf('.') + 1));
+
+                switch (extension) {
+                    case 'jpg':
+                    case 'jpeg':
+                    case 'JPG':
+                    case 'JPEG':
+                        flag = true;
+                        break;
+                    default:
+                        flag = false;
+                }
+
+                return flag;
+            }
+            catch (e) {
+                alert("Exception : " + e.message);
+            }
+        }
+
+        function UploadCV() {
+
+            try {
+
+                var fileToUpload = GetFileNameFromPath($('#CVUpload').val());
+
+                var filename = fileToUpload.substr(0, (fileToUpload.lastIndexOf('.')));
+
+                if (CheckUserCVExtension(fileToUpload)) {
+
+                    var flag = true;
+
+                    if (filename != "" && filename != null) {
+
+                        if (flag == true) {
+                            $("#UploadingProgress").fadeIn(200);
+                            $.ajaxFileUpload({
+                                url: '../../Handler/FacultyProfile_CV_Upload.ashx',
+                                secureuri: false,
+                                fileElementId: 'CVUpload',
+                                dataType: 'json',
+                                data: { name: name },
+                                success: function (data, status) {
+                                    if (typeof (data.error) != 'undefined') {
+                                        if (data.error != '') {
+                                            alert(data.error);
+                                        }
+                                        else {
+                                            $('#CVUpload').val("");
+
+                                            //   FileName = data.upfile;
+                                            $('#hdn_cv_upload').val(data.upfile);
+                                            $('#lbl_cv_upload').text('file uploaded');
+                                        }
+                                    }
+                                    $("#UploadingProgress").fadeOut(200);
+                                },
+                                error: function (data, status, e) {
+                                    $("#UploadingProgress").fadeOut(200);
+                                    alert(e);
+                                }
+                            });
+                        }
+                    }
+                }
+                else {
+                    alert('Invalid File Type. Please upload .pdf file');
+                }
+                return false;
+            }
+            catch (e) {
+                alert("Exception : " + e.message);
+            }
+        }
+
+        //Check User Photo Extension
+        function CheckUserCVExtension(file) {
+            try {
+                var flag = true;
+                var extension = file.substr((file.lastIndexOf('.') + 1));
+
+                switch (extension) {
+                    case 'pdf':
+                    case 'PDF':
+                    case 'Pdf':
+                        flag = true;
+                        break;
+                    default:
+                        flag = false;
+                }
+
+                return flag;
+            }
+            catch (e) {
+                alert("Exception : " + e.message);
+            }
+        }
+
+        //Get File Name From Path
+        function GetFileNameFromPath(strFilepath) {
+
+            var objRE = new RegExp(/([^\/\\]+)$/);
+            var strName = objRE.exec(strFilepath);
+
+            if (strName == null) {
+                return null;
+            }
+            else {
+                return strName[0];
+            }
+        }
+
+        function fnWordCount() { }
+
+        function isNumber(evt) {
+            evt = (evt) ? evt : window.event;
+            var charCode = (evt.which) ? evt.which : evt.keyCode;
+            if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+                return false;
+            }
+            return true;
+        }
+      
+    </script>
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
+   
+     
+    <div class="row-fluid">
+
+
+
+        <div class="well" style="background-color: White;">
+            <div class="panel panel-default ">
+                <div class="panel-heading">
+                    <strong>Instructor Details</strong>
+                </div>
+                <div>
+                    <%--class="panel-body"--%>
+                    <div>
+                        <div>
+                            <table id="instructor_dtl" border="0" cellpadding="10" cellspacing="5" style="display:none">
+                                <tr>
+                                    <td>
+                                        Instructor :
+                                    </td>
+                                    <td>
+                                        <select class="chosen-select" id="drpinstructor">
+                                        </select>
+                                    </td>
+                                    <td>
+                                        <button class="btn btn-primary" type="submit" id="btnreterive">
+                                            Retrieve
+                                        </button>
+                                    </td>
+                                    <%--<td>
+                                        <button class="btn btn-primary" type="submit" id="btnView">
+                                            View Profile
+                                        </button>
+                                    </td>--%>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="DataList1" style="display: none">
+                <table cellpadding="0" cellspacing="0" border="0" id="example" class="display table table-striped table-bordered table-hover"
+                    width="100%">
+                    <thead>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+
+            </div>
+        </div>
+
+        <div class="row-fluid" id="instructor_dtl_personal" style="display:none">
+          <div class="well" style="background-color: White;">
+    <div class="panel panel-default ">
+            <div class="panel-heading">
+                <b>Personal Details</b>
+            </div>
+            <div style="padding: 10px; overflow: visible;" id="div_personal_detail" class="panel-collapse collapse in">
+                
+
+                <table style="width: 100%;" cellpadding="10" cellspacing="20">
+                    
+                   <tr>
+                       <td class="pad-top">Name : </td>
+                        <td>
+                            <label id="txt_name_text" ng-model="data.supervisor_name"> </label>
+                        </td>
+                       <td class="pad-top">Designation : </td>
+                        <td>
+                            <label id="txt_designation" class="marg-btm"> </label>
+                        </td>
+                      
+
+                   </tr>
+                    <tr>
+                         <td class="pad-top">Faculty : </td>
+                        <td>
+                            <label id="txt_faculty" class="marg-btm"> </label>
+                        </td>
+                        <td class="pad-top">Date of Joining CEPT <span style="color:red;">*</span> : </td>
+                        <td>
+                            <input type="text" id="txt_joining_date" class="marg-btm" placeholder="DD/MM/YYYY"/>
+                        </td>
+                        
+
+                        
+                    </tr>
+
+                    <tr>
+                        <td class="pad-top">Total Years of Experience <span style="color:red;">*</span> : </td>
+                        <td>
+                              <input type="text" id="txt_year_experience" class="marg-btm" onkeypress='return IsNumeric(event);' maxlength="2" style="width:15%" />
+                            <select id="txt_total_experiance_months" class="marg-btm" style="width:35%">
+                                <option value="">--Select Months--</option>
+                                <option value="0">0</option>
+                                <option value='1'>1</option>
+                                <option value='2'>2</option>
+                                <option value='3'>3</option>
+                                <option value='4'>4</option>
+                                <option value='5'>5</option>
+                                <option value='6'>6</option>
+                                <option value='7'>7</option>
+                                <option value='8'>8</option>
+                                <option value='9'>9</option>
+                                <option value='10'>10</option>
+                                <option value='11'>11</option>
+                                <option value='12'>12</option>
+                            </select>
+                           
+                        </td>
+                        <td class="pad-top">Teaching in the </br> current position since (Years) <span style="color:red;">*</span> : </td>
+                        <td>
+                           
+                             <%-- <select id="txt_year_teaching" class="marg-btm"></select>--%>
+                            <input type="text" id="txt_year_teaching" class="marg-btm" placeholder="DD-MM-YYYY"/>
+                        </td>
+                        
+                    </tr>
+                    <tr>
+                        <td class="pad-top"> Total Teaching Experience <span style="color:red;">*</span> : </td>
+                        <td>
+                            <input type="text" id="txt_teaching_experience" class="marg-btm" onkeypress='return IsNumeric(event);' maxlength="2" />
+                            
+                        </td>
+                        <td class="pad-top">Confirmation Date : </td>
+                        <td>
+                             <input type="text" id="txt_confirmation_date" class="marg-btm" placeholder="DD-MM-YYYY" />
+                        </td>
+                    </tr>
+                    <tr>
+                           <td colspan="4" align="center">
+                <button id="btnsaveinst" type="button" class="btn btn-lg btn-primary"> <i class="icon-save bigger-160"></i>Save </button>
+                            </td>
+
+                       
+                    </tr>
+
+                </table>
+            </div>
+
+        </div>
+    </div>
+          </div>
+
+
+        <div style="display: none;" id="div_pdetails" class="row-fluid">
+            <div class="panel panel-default " id="my_print_outline" style="padding-top:15px;">
+                <div class="tabbable">
+                    <%-- <ul class="nav nav-tabs">
+                        <li class="active"><a style="border-top: 2px solid rgb(159,155,27);" href="#InsertEditRace"
+                            data-toggle="tab"><b>Profile</b></a> </b> </li>
+                    </ul>--%>
+                    <div class="row" style="padding-bottom: 5px; padding-left: 75px;">
+                        <div class="col-md-3">
+                            <img id="img_photo" ng-model="data.image" src="UserProfilePhoto/Default_Avtar.png"
+                                alt="" style="max-width: 125px; min-width: 125px; min-height: 125px; max-height: 125px;"
+                                class="img-thumbnail">
+                            <label id="lbl_img" class="btn btn-primary file-upload " style="vertical-align: bottom;">
+                                <span><strong>Upload Photo</strong></span>
+                                <input type="file" name="imageUpload" id="imageUpload" onchange="javascript:return UploadProfilePhoto();" /></label><br />
+                            <%--  <span style="font-size: 11px;" class="msg_gray">(Please upload a photo taken in full
+                                        face view facing the camera with both eyes open. Maximum 200 KB. <span class="required">
+                                            *</span> )</span>--%>
+                            <label id="lbl_image_name" style="display: none" ng-model="data.image_name">
+                            </label>
+                            <input type="hidden" id="hdn_doc" ng-model="data.doc_no" />
+                        </div>
+                    </div>
+                    <div id="Div2" class="tab-pane active" style="padding-left: 75px;">
+
+                        <div class="controls" style="margin-top:15px;margin-left:10px;">
+                            <input type="checkbox" id="chk_publish" />&nbsp;<span style="vertical-align:bottom;">Publish</span>
+                        </div>
+
+                        <table width="100%" cellpadding="10" cellspacing="50">
+                            <tr>
+                                <td>
+                                    <div class="control-group">
+                                        <label class="control-label" for="txtfullname">
+                                            Name<span class="required"> *</span>
+                                        </label>
+                                        <div class="controls">
+                                            <input type="text" id="txt_name" ng-model="data.supervisor_name" placeholder="" />
+                                            <span style="color: red" ng-show="name.$dirty && name.$invalid">
+                                        </div>
+                                    </div>
+                                </td>
+                                <td style="display: none;">
+                                    <div class="control-group">
+                                        <label class="control-label" for="txtfullname">
+                                            Qualification<span class="required"> *</span>
+                                        </label>
+                                        <div class="controls">
+                                            <input type="text" id="txt_qualification" ng-model="data.qualification" placeholder="Qualification" />
+                                        </div>
+                                        <%-- <label>{{ name +' '+ qualification }}</label>--%>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="control-group">
+                                        <label class="control-label" for="txtfullname">
+                                            Designation<span class="required"> *</span>
+                                        </label>
+                                        <div class="controls">
+                                            <select id="drp_type" ng-model="data.designation">
+                                                <option value="Adjunct Professor">Adjunct Professor</option>
+                                                <option value="Adjunct Assistant Professor">Adjunct Assistant Professor</option>
+                                                <option value="Adjunct Associate Professor">Adjunct Associate Professor</option>
+                                                <option value="Assistant Professor">Assistant Professor</option>
+                                                <option value="Associate Professor">Associate Professor</option>
+                                                <%--<option value="Dean">Dean</option>--%>
+                                                <option value="Coordinator">Coordinator</option>
+                                                <option value="Director">Director</option>
+                                                <option value="President">President</option>
+                                                <option value="Professor">Professor</option>
+                                                <option value="Visiting Faculty">Visiting Faculty</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="control-group">
+                                        <label class="control-label" for="drpcountry">
+                                            Link to personal web page
+                                        </label>
+                                        <div class="controls">
+                                            <input type="text" id="txt_capstone_project" ng-model="data.capstone_project" placeholder="Link to personal web page" />
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="control-group">
+                                        <label class="control-label" for="txtdob">
+                                            Faculty/Organisation<span class="required"> *</span>
+                                        </label>
+                                        <div class="controls">
+                                            <select id="drp_department" class="chosen-select"><%--ng-model="data.department"--%>
+                                               <%-- <option value=''>-- Please Select Depatment --</option>
+                                                <%-- <option ng-repeat="x in department" ng-bind="x.dept_name">{{x.dept_code}} </option>
+                                                <option value="Architecture">Architecture</option>
+                                                <option value="Design">Design</option>
+                                                <option value="Management">Management</option>
+                                                <option value="Planning">Planning</option>
+                                                <option value="Technology">Technology</option>
+                                                <option value="University">University</option>
+                                                <option value="Others">Others</option>--%>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="control-group">
+                                        <label class="control-label" for="txtfullname">
+                                            Phone number
+                                        </label>
+                                        <div class="controls">
+                                            <%-- <input maxlength="10" type="text" id="txt_contact" ng-model="data.contact" placeholder="Phone number"
+                                                onkeypress="return isNumber(event)" />--%>
+                                            <input type="text" id="txt_contact" ng-model="data.contact" placeholder="Phone number" />
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="control-group">
+                                        <label class="control-label" for="txtfullname">
+                                            Email<span class="required"> *</span>
+                                        </label>
+                                        <div class="controls">
+                                            <input type="text" id="txt_mail" ng-model="data.email" placeholder="email" disabled />
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="control-group">
+                                        <label class="control-label" for="drpcountry">
+                                            Office Location
+                                        </label>
+                                        <div class="controls">
+                                            <input type="text" id="txt_office_location" ng-model="data.office_location" placeholder="" />
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="control-group">
+                                        <label class="control-label">
+                                            Institutional Roles
+                                        </label>
+                                        <div class="controls">
+                                            <input type="text" id="txt_public_service" placeholder="" />
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan='2'>
+                                    <div class="control-group">
+                                        <label class="control-label" for="drpcountry">
+                                            Upload CV
+                                        </label>
+                                        <label id="Label1" class="btn btn-primary file-upload " style="vertical-align: bottom;
+                                            float: left;">
+                                            <span><strong>Upload CV</strong></span>
+                                            <input type="file" name="CVUpload" id="CVUpload" onchange="javascript:return UploadCV();" /></label>
+                                        <label style="float: left;" id="lbl_cv_upload">
+                                        </label>
+                                        <input style="clear: both;" type="hidden" id="hdn_cv_upload" />
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+                        <div class="panel panel-default" style="width: 92%;">
+                            <div class="panel-heading">
+                                <strong><span class="panel-headingfont">Education</span></strong></div>
+                            <div class="row-fluid" id="dataList_instructor" style="margin-top: 15px; margin-bottom: 15px;
+                                margin-left: 10px; width: 97%; display: block;">
+                                <div class="box-content box-no-padding">
+                                    <button class="btn  btn-primary" type="button" id="btn_education">
+                                        <i class="icon-plus"></i>&nbsp;Add Education
+                                    </button>
+                                </div>
+                                <table class="data-table table table-bordered table-striped" border="0" id="tbleducation">
+                                    <thead>
+                                        <tr>
+                                            <th>
+                                                Degree
+                                            </th>
+                                            <th>
+                                                Institution
+                                            </th>
+                                            <th>
+                                                Field
+                                            </th>
+                                            <th>
+                                                Year of Completion
+                                            </th>
+                                            <th>
+                                                Delete
+                                            </th>
+                                            <%--  <th>
+                                                Brief description of education work
+                                            </th>--%>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="panel panel-default" style="width: 92%;">
+                            <div class="panel-heading">
+                                <strong><span class="panel-headingfont">Courses Taught in the Areas of Expertise</span></strong></div>
+                            <div class="row-fluid" id="Div1" style="margin-top: 15px; margin-bottom: 15px; margin-left: 10px;
+                                width: 97%; display: block;">
+                                <div class="box-content box-no-padding">
+                                    <button class="btn  btn-primary" type="button" id="btn_course_taught">
+                                        <i class="icon-plus"></i>&nbsp;Add Course Taught
+                                    </button>
+                                </div>
+                                <table class="data-table table table-bordered table-striped" border="0" id="tblcoursetaught">
+                                    <thead>
+                                        <tr>
+                                            <th>
+                                                Course Name
+                                            </th>
+                                            <th>
+                                                Semester
+                                            </th>
+                                            <th>
+                                                Courses Taught in Area of Expertise
+                                            </th>
+                                            <th>
+                                                Other Course Taught
+                                            </th>
+                                            <th>
+                                                Delete
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <table cellpadding="0" cellspacing="0" width="100%">
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        Brief Description (Education & Work Profile)<%--<span class="required"> *</span>--%>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="control-group">
+                                            <div>
+                                                <textarea id="txt_education_description" ng-model="data.education_description" style="width: 91%;
+                                                    height: 110px" rows="3" cols="50" name="address"></textarea>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <%--  <table cellpadding="0" cellspacing="0" width="100%">
+                        <tbody>
+                            <tr>
+                                <td>
+                                    Areas of Expertise
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="control-group">
+                                        <div>
+                                            <textarea class="ckeditor" id="txt_area" ng-model="data.area_of_interest" style="width: 98%;
+                                                height: 110px" rows="3" cols="50" name="address"></textarea>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>--%>
+                        <div class="panel panel-default" style="width: 92%;">
+                            <div class="panel-heading">
+                                <strong><span class="panel-headingfont">Areas of Expertise</span></strong></div>
+                            <div class="row-fluid" id="Div3" style="margin-top: 15px; margin-bottom: 15px; margin-left: 10px;
+                                width: 97%; display: block;">
+                                <div class="box-content box-no-padding">
+                                    <button class="btn  btn-primary" type="button" id="btn_area_of_expertise">
+                                        <i class="icon-plus"></i>&nbsp;Add Areas of Expertise
+                                    </button>
+                                </div>
+                                <table class="data-table table table-bordered table-striped" border="0" id="tblareaofexpertise">
+                                    <thead>
+                                        <tr>
+                                            <th>
+                                                Areas of Expertise
+                                            </th>
+                                            <th>
+                                                Delete
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <table cellpadding="0" cellspacing="0" width="100%">
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <%--Research/Design Projects (completed/ongoing) (From Latest)<span class="required"> *</span>--%>
+                                        Research/ Design Projects in Areas of Expertise (From Latest last 5 year)
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="control-group">
+                                            <div>
+                                                <textarea class="ckeditor" id="txt_projects" ng-model="data.projects" style="width: 98%;
+                                                    height: 110px" rows="3" cols="50" name="address"></textarea>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table style="display: none;" cellpadding="0" cellspacing="0" width="100%">
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        Background (Brief Resume 100 word max)<%--<span class="required"> *</span>--%>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="control-group">
+                                            <div>
+                                                <textarea class="ckeditor" id="txt_Background" ng-model="data.Background" style="width: 98%;
+                                                    height: 110px" rows="3" cols="50" name="address"></textarea>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table cellpadding="0" cellspacing="0" width="100%">
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <%--Research Articles, Presented Papers, Invited Lectures, etc.(Please use APA 6th edition format only) (From Latest)<span class="required"> *</span>--%>
+                                        Research Articles and Book Chapters in Areas of Expertise(Please use APA 6th edition
+                                        format only) (From Latest)
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="control-group">
+                                            <div>
+                                                <textarea class="ckeditor" id="txt_articles_papers" ng-model="data.articles_papers"
+                                                    style="width: 98%; height: 110px" rows="3" cols="50" name="address"></textarea>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table cellpadding="0" cellspacing="0" width="100%">
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        Presented Papers and Invited Lectures in Areas of Expertise (last 5 year)
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="control-group">
+                                            <div>
+                                                <textarea class="ckeditor" id="txt_presented_papers_and_invited_lectures" style="width: 98%;
+                                                    height: 110px" rows="3" cols="50" name="address"></textarea>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table cellpadding="0" cellspacing="0" width="100%">
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        Professional Honors, Prizes , Fellowships (From Latest)<%--<span class="required"> *</span>--%>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="control-group">
+                                            <div>
+                                                <textarea class="ckeditor" id="txt_prof_honors" ng-model="data.prof_honors" style="width: 98%;
+                                                    height: 110px" rows="3" cols="50" name="address"></textarea>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <%-- <table cellpadding="0" cellspacing="0" width="100%">
+                        <tbody>
+                            <tr>
+                                <td>
+                                    Professional Affiliations
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="control-group">
+                                        <div>
+                                            <textarea class="ckeditor" id="txt_prof_affiliations" ng-model="data.prof_affiliations"
+                                                style="width: 98%; height: 110px" rows="3" cols="50" name="address"></textarea>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span class="required">* Feilds are mandatory</span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>--%>
+                        <div class="panel panel-default" style="width: 92%;">
+                            <div class="panel-heading">
+                                <strong><span class="panel-headingfont">Professional Affiliations</span></strong></div>
+                            <div class="row-fluid" id="Div4" style="margin-top: 15px; margin-bottom: 15px; margin-left: 10px;
+                                width: 97%; display: block;">
+                                <div class="box-content box-no-padding">
+                                    <button class="btn  btn-primary" type="button" id="btn_professional_affiliations">
+                                        <i class="icon-plus"></i>&nbsp;Add Professional Affiliations
+                                    </button>
+                                </div>
+                                <table class="data-table table table-bordered table-striped" border="0" id="tblProfessionalAffiliations">
+                                    <thead>
+                                        <tr>
+                                            <th>
+                                                Professional Affiliations
+                                            </th>
+                                            <th>
+                                                Delete
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <%--</div>--%>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <input type="hidden" id="hdn_instructor" runat="server" clientidmode="Static" />
+    </div>
+
+
+
+    <br />
+    <br />
+
+
+    <div class="copyright" style="box-shadow: 5px 0 6px 1px black; width: 1057px; height: 40px;
+        display: none;">
+        <div class="container">
+            <div class="row-fluid">
+                <div id="submitBtnDiv" class="controls" style="text-align: center">
+                    <table style="width: 1057px;">
+                        <tr>
+                            <td align="center">
+                                <button id="btnsave" type="button" class="btn btn-lg btn-primary">
+                                    <i class="icon-save bigger-160"></i>Save
+                                </button>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <!--/row-fluid-->
+        </div>
+        <!--/container-->
+    </div>
+     <input type="hidden" id="hdn_dep" />
+</asp:Content>

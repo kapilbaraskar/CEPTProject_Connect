@@ -1,0 +1,468 @@
+═══════════════════════════════════════════════════════════════════════════
+           OTHER RESEARCH ACTIVITIES EXCEL IMPORT/EXPORT - QUICK GUIDE
+═══════════════════════════════════════════════════════════════════════════
+
+✅ EXCEL FEATURE NOW AVAILABLE FOR OTHER RESEARCH ACTIVITIES!
+
+═══════════════════════════════════════════════════════════════════════════
+📥 STEP 1: DOWNLOAD TEMPLATE
+═══════════════════════════════════════════════════════════════════════════
+
+1. Open OtherResearchActivities.aspx page
+2. Look for "Excel Import/Export" section (blue header)
+3. Click [Download Excel Template] button (green)
+4. File downloads: Other_Research_Activities_Template_YYYYMMDD.xlsx
+
+
+═══════════════════════════════════════════════════════════════════════════
+📋 EXCEL COLUMNS (6 Columns Total)
+═══════════════════════════════════════════════════════════════════════════
+
+| Column | Required | Valid Values / Format |
+|--------|----------|-----------------------|
+| Title | YES ✓ | Any text (max 200 chars) |
+| Type | YES ✓ | Research activity types from your database |
+| Description | YES ✓ | Any text (max 1000 chars) |
+| Total Hours | YES ✓ | Number between 1-9999 |
+| Date | YES ✓ | YYYY-MM-DD format (e.g., 2024-01-15) |
+| Year | YES ✓ | Year values from your database |
+
+
+═══════════════════════════════════════════════════════════════════════════
+📝 STEP 2: FILL EXCEL
+═══════════════════════════════════════════════════════════════════════════
+
+EXAMPLE DATA:
+┌──────────────────────────────┬──────────────┬─────────────────────────────┐
+│ Title                        │ Type         │ Description                 │
+├──────────────────────────────┼──────────────┼─────────────────────────────┤
+│ AI Research Consultation     │ Consultation │ Expert consultation on AI   │
+│ Technical Paper Review       │ Review       │ Thorough review of ML paper │
+└──────────────────────────────┴──────────────┴─────────────────────────────┘
+
+IMPORTANT RULES:
+❗ Delete sample data rows before uploading
+❗ Delete instruction rows before uploading
+❗ Start filling from Row 2 (after headers)
+❗ Use EXACT Research Activity Type names from your database
+❗ Date format must be YYYY-MM-DD (e.g., 2024-01-15)
+❗ Total Hours must be number between 1-9999
+❗ All 6 fields are required
+❗ Description max 1000 characters
+❗ Title max 200 characters
+
+
+═══════════════════════════════════════════════════════════════════════════
+📤 STEP 3: UPLOAD FILE
+═══════════════════════════════════════════════════════════════════════════
+
+1. Save your filled Excel file
+2. Return to OtherResearchActivities.aspx
+3. Find "Step 2: Upload Filled Template" (orange section)
+4. Click [Choose File]
+5. Select your Excel file
+6. Click [Upload & Import]
+
+WHAT HAPPENS:
+⏳ File uploads
+⏳ Data validated
+⏳ Research Activity Types mapped to database codes
+⏳ Years mapped to database codes
+⏳ Preview table appears
+
+
+═══════════════════════════════════════════════════════════════════════════
+👁️ STEP 4: PREVIEW DATA
+═══════════════════════════════════════════════════════════════════════════
+
+You'll see:
+• Blue info box with instructions
+• Table showing all your research activities
+• Count: "Confirm Import (X activities)"
+
+REVIEW CHECKLIST:
+☑ All rows appear?
+☑ No missing data?
+☑ Correct Research Activity Types?
+☑ Correct Years?
+☑ Dates in correct format?
+☑ Total Hours valid numbers?
+☑ All required fields filled?
+
+
+═══════════════════════════════════════════════════════════════════════════
+✅ STEP 5: CONFIRM OR CANCEL
+═══════════════════════════════════════════════════════════════════════════
+
+OPTION A - CONFIRM:
+1. Click [✓ Confirm Import (X activities)]
+2. All research activities added to main table
+3. Data automatically saved to database
+4. Success message appears
+5. ✓ DONE!
+
+OPTION B - CANCEL:
+1. Click [✗ Cancel]
+2. Preview closes
+3. No data imported
+4. Start over if needed
+
+
+═══════════════════════════════════════════════════════════════════════════
+🔄 HOW RESEARCH ACTIVITY TYPE MAPPING WORKS
+═══════════════════════════════════════════════════════════════════════════
+
+DATABASE:
+┌──────────┬──────────────────────┐
+│ TypeCode │ TypeName             │
+├──────────┼──────────────────────┤
+│    1     │ Consultation         │
+│    2     │ Review               │
+│    3     │ Evaluation           │
+│    4     │ Assessment           │
+└──────────┴──────────────────────┘
+
+EXCEL FILE (What you type):
+Type: "Consultation"
+
+SYSTEM AUTOMATICALLY MAPS:
+"Consultation" → TypeCode "1"
+
+DATABASE RECEIVES:
+TypeCode = "1" ✓ (Correct!)
+
+
+═══════════════════════════════════════════════════════════════════════════
+🔄 HOW YEAR MAPPING WORKS
+═══════════════════════════════════════════════════════════════════════════
+
+DATABASE:
+┌──────────┬──────────────────────┐
+│ YearCode │ YearName             │
+├──────────┼──────────────────────┤
+│ 2024-25  │ 2024-2025           │
+│ 2023-24  │ 2023-2024           │
+└──────────┴──────────────────────┘
+
+EXCEL FILE (What you type):
+Year: "2024-2025"
+
+SYSTEM AUTOMATICALLY MAPS:
+"2024-2025" → YearCode "2024-25"
+
+DATABASE RECEIVES:
+YearCode = "2024-25" ✓ (Correct!)
+
+
+═══════════════════════════════════════════════════════════════════════════
+✅ VALIDATION EXAMPLES
+═══════════════════════════════════════════════════════════════════════════
+
+VALID (Will Import):
+────────────────────────────────────────────────────────────────────────────
+"Consultation" → ✓ Maps to database code
+"2024-01-15" → ✓ Valid date format
+"50" → ✓ Valid hours (1-9999)
+"2024-2025" → ✓ Valid year
+"consultation" → ✓ Case-insensitive match
+
+
+INVALID (Will Skip):
+────────────────────────────────────────────────────────────────────────────
+"Medical Research" → ✗ Not in database
+"Jan 15, 2024" → ✗ Wrong date format (use 2024-01-15)
+"0" → ✗ Invalid hours (must be 1-9999)
+"2024-13-15" → ✗ Invalid date
+Missing required fields → ✗ Row skipped
+
+
+═══════════════════════════════════════════════════════════════════════════
+⚠️ COMMON ERRORS & FIXES
+═══════════════════════════════════════════════════════════════════════════
+
+ERROR: "Please select an Excel file first!"
+FIX: Click "Choose File" before "Upload & Import"
+
+ERROR: "Excel file is empty or has no data rows!"
+FIX: Add data starting from Row 2
+
+ERROR: "No valid data found in Excel file!"
+FIX: 
+  • Check all required fields are filled (6 required columns)
+  • Verify Research Activity Type spelling
+  • Check date format (YYYY-MM-DD)
+  • Verify Total Hours is valid number
+  • Check Year is valid
+
+ERROR: "Skipping row X: Invalid Research Type"
+FIX:
+  • Download fresh template (has correct types)
+  • Copy Research Activity Type exactly from sample data
+  • Check spelling
+
+ERROR: "Skipping row X: Invalid Year"
+FIX:
+  • Download fresh template (has correct years)
+  • Copy Year exactly from sample data
+  • Check year format
+
+ERROR: "Skipping row X: Invalid Total Hours"
+FIX:
+  • Total Hours must be number between 1-9999
+  • Examples: 10, 50, 100, 500
+  • Not: 0, -5, "ten", 10000
+
+ERROR: "Skipping row X: Missing required fields"
+FIX: Fill all 6 required columns:
+     - Title
+     - Type
+     - Description
+     - Total Hours
+     - Date
+     - Year
+
+ERROR: Some rows missing after import
+FIX: Those rows had validation errors - check console (F12)
+
+
+═══════════════════════════════════════════════════════════════════════════
+💡 PRO TIPS
+═══════════════════════════════════════════════════════════════════════════
+
+TIP 1: Copy from Sample Data
+→ Sample rows have exact Research Activity Type spellings
+→ Sample rows have exact Year values
+→ Copy-paste to avoid typos
+
+TIP 2: Download Fresh Template
+→ Template always shows current valid types from database
+→ Template always shows current valid years from database
+→ If admin adds new type/year, download new template
+
+TIP 3: Date Format is Critical
+→ Must be YYYY-MM-DD format
+→ Examples: 2024-01-15, 2024-12-31, 2023-06-10
+→ Invalid: Jan 15 2024, 15-01-2024, 2024/01/15
+
+TIP 4: Total Hours Validation
+→ Must be whole number
+→ Range: 1 to 9999
+→ Examples: 1, 10, 50, 100, 500, 1000
+→ Invalid: 0, -5, 0.5, "fifty", 10000
+
+TIP 5: All Fields Required
+→ No optional fields in this form
+→ All 6 columns must have values
+→ Empty cells cause row to be skipped
+
+TIP 6: Check Browser Console
+→ Press F12 to see debugging info
+→ Shows which Research Activity Types are available
+→ Shows which Years are available
+→ Shows which rows are skipped and why
+
+TIP 7: Multiple Activities at Once
+→ Add as many rows as you need
+→ All imported together in one operation
+
+
+═══════════════════════════════════════════════════════════════════════════
+🎨 UI GUIDE
+═══════════════════════════════════════════════════════════════════════════
+
+COLORS:
+• 🔵 Blue header = Excel Import/Export section
+• 🟢 Green box = Step 1 (Download)
+• 🟠 Orange box = Step 2 (Upload)
+• 🔵 Light blue = Preview section
+
+BUTTONS:
+[Download Excel Template] - Green button
+[Choose File] - Standard file picker
+[Upload & Import] - Blue button
+[Confirm Import] - Green with checkmark
+[Cancel] - Gray button
+
+
+═══════════════════════════════════════════════════════════════════════════
+🔍 DEBUGGING
+═══════════════════════════════════════════════════════════════════════════
+
+TO VIEW AVAILABLE RESEARCH ACTIVITY TYPES:
+1. Open OtherResearchActivities.aspx
+2. Press F12 (Developer Tools)
+3. Click Console tab
+4. Type: otherResearchTypesMapping
+5. Press Enter
+
+Shows:
+{
+  "Consultation": "1",
+  "Review": "2",
+  "Evaluation": "3",
+  ...
+}
+
+TO SEE IMPORT PROCESS:
+1. Upload Excel file
+2. Look in Console tab
+3. See: "Available Other Research Types Mapping: {...}"
+4. See: "Skipping row X: ..." (if any errors)
+
+
+═══════════════════════════════════════════════════════════════════════════
+📊 EXAMPLE WORKFLOW
+═══════════════════════════════════════════════════════════════════════════
+
+1. Download Template
+   ↓
+2. Fill Excel with 3 research activities
+   ↓
+3. Upload file
+   ↓
+4. See preview of 3 activities
+   ↓
+5. Click "Confirm Import"
+   ↓
+6. All 3 activities added to table
+   ↓
+7. Data auto-saved to database
+   ↓
+8. Success message: "Successfully imported 3 research activities!"
+
+
+═══════════════════════════════════════════════════════════════════════════
+✨ FEATURES
+═══════════════════════════════════════════════════════════════════════════
+
+✓ Bulk import multiple research activities
+✓ Automatic Research Activity Type mapping
+✓ Automatic Year mapping
+✓ Preview before importing
+✓ Auto-validation of data
+✓ Auto-save to database
+✓ Case-insensitive type matching
+✓ Clear error messages
+✓ Skips invalid rows automatically
+✓ Works with any Research Activity Types in database
+✓ Works with any Years in database
+✓ User-friendly interface
+✓ Responsive design
+
+
+═══════════════════════════════════════════════════════════════════════════
+📝 FIELD DETAILS
+═══════════════════════════════════════════════════════════════════════════
+
+TITLE:
+• Max 200 characters
+• Brief activity name
+• Required field
+• Example: "AI Research Consultation"
+
+TYPE:
+• Must match database Research Activity Type EXACTLY
+• Case-insensitive ("Consultation" = "consultation")
+• Check template instructions for available types
+• Required field
+
+DESCRIPTION:
+• Max 1000 characters
+• Detailed activity description
+• Required field
+• Explain what was done, outcomes, etc.
+
+TOTAL HOURS:
+• Number between 1-9999
+• Must be whole number
+• Required field
+• Example: 10, 50, 100, 500
+
+DATE:
+• Format: YYYY-MM-DD
+• When activity occurred
+• Required field
+• Example: 2024-01-15
+
+YEAR:
+• Must match database Year EXACTLY
+• Check template instructions for available years
+• Required field
+• Example: 2024-2025
+
+
+═══════════════════════════════════════════════════════════════════════════
+📞 SUPPORT
+═══════════════════════════════════════════════════════════════════════════
+
+If you encounter issues:
+1. Check this guide
+2. Press F12 to see console errors
+3. Verify Excel format matches template
+4. Try with a fresh downloaded template
+5. Contact system administrator
+
+Browser Console:
+• Press F12
+• Click "Console" tab
+• Look for red error messages
+• Look for yellow warning messages
+
+
+═══════════════════════════════════════════════════════════════════════════
+📄 FILE SPECIFICATIONS
+═══════════════════════════════════════════════════════════════════════════
+
+SUPPORTED FORMATS:
+✓ .xlsx (Excel 2007+)
+✓ .xls (Excel 97-2003)
+
+FILE SIZE:
+✓ Limited by browser (typically 10-50 MB)
+✓ Recommended: Keep under 5 MB
+
+NUMBER OF ROWS:
+✓ No hard limit
+✓ Recommended: 1-200 research activities per file
+
+TEMPLATE FILENAME:
+✓ Other_Research_Activities_Template_YYYYMMDD.xlsx
+  Example: Other_Research_Activities_Template_20251015.xlsx
+
+
+═══════════════════════════════════════════════════════════════════════════
+🚀 READY TO USE!
+═══════════════════════════════════════════════════════════════════════════
+
+The Excel feature is fully implemented and ready!
+
+Try it now:
+1. Open OtherResearchActivities.aspx
+2. Look for "Excel Import/Export" section
+3. Download template
+4. Fill your data
+5. Upload and import!
+
+Enjoy bulk importing your research activities! 🎉
+
+
+═══════════════════════════════════════════════════════════════════════════
+🎯 COMPLETE COLUMN REFERENCE
+═══════════════════════════════════════════════════════════════════════════
+
+Row 1 (Headers):
+Title | Type | Description | Total Hours | Date | Year
+
+Row 2 (Sample):
+Research Consultation for AI Project | Consultation | Provided expert consultation on AI implementation | 40 | 2024-01-15 | 2024-2025
+
+Row 3 (Sample):
+Technical Review of Machine Learning Paper | Review | Conducted thorough review of ML research paper | 25 | 2024-02-20 | 2023-2024
+
+Row 4 (Your data):
+Software Development Consultation | Development | Provided consultation on software architecture | 60 | 2024-03-10 | 2024-2025
+
+
+═══════════════════════════════════════════════════════════════════════════
+                            END OF GUIDE
+═══════════════════════════════════════════════════════════════════════════

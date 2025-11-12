@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="Student_mandatory_course" targetNamespace="http://tempuri.org/Student_mandatory_course.xsd" xmlns:mstns="http://tempuri.org/Student_mandatory_course.xsd" xmlns="http://tempuri.org/Student_mandatory_course.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="Student_mandatory_course" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="Student_mandatory_course" msprop:Generator_UserDSName="Student_mandatory_course">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="student_mandatory_course" msprop:Generator_TableClassName="student_mandatory_courseDataTable" msprop:Generator_TableVarName="tablestudent_mandatory_course" msprop:Generator_TablePropName="student_mandatory_course" msprop:Generator_RowDeletingName="student_mandatory_courseRowDeleting" msprop:Generator_UserTableName="student_mandatory_course" msprop:Generator_RowChangingName="student_mandatory_courseRowChanging" msprop:Generator_RowEvHandlerName="student_mandatory_courseRowChangeEventHandler" msprop:Generator_RowDeletedName="student_mandatory_courseRowDeleted" msprop:Generator_RowEvArgName="student_mandatory_courseRowChangeEvent" msprop:Generator_RowChangedName="student_mandatory_courseRowChanged" msprop:Generator_RowClassName="student_mandatory_courseRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="course_code" msprop:Generator_ColumnVarNameInTable="columncourse_code" msprop:Generator_ColumnPropNameInRow="course_code" msprop:Generator_ColumnPropNameInTable="course_codeColumn" msprop:Generator_UserColumnName="course_code" type="xs:string" minOccurs="0" />
+              <xs:element name="corse_name" msprop:Generator_ColumnVarNameInTable="columncorse_name" msprop:Generator_ColumnPropNameInRow="corse_name" msprop:Generator_ColumnPropNameInTable="corse_nameColumn" msprop:Generator_UserColumnName="corse_name" type="xs:string" minOccurs="0" />
+              <xs:element name="semester" msprop:Generator_ColumnVarNameInTable="columnsemester" msprop:Generator_ColumnPropNameInRow="semester" msprop:Generator_ColumnPropNameInTable="semesterColumn" msprop:Generator_UserColumnName="semester" type="xs:string" minOccurs="0" />
+              <xs:element name="credits" msprop:Generator_ColumnVarNameInTable="columncredits" msprop:Generator_ColumnPropNameInRow="credits" msprop:Generator_ColumnPropNameInTable="creditsColumn" msprop:Generator_UserColumnName="credits" type="xs:string" minOccurs="0" />
+              <xs:element name="instructor" msprop:Generator_ColumnVarNameInTable="columninstructor" msprop:Generator_ColumnPropNameInRow="instructor" msprop:Generator_ColumnPropNameInTable="instructorColumn" msprop:Generator_UserColumnName="instructor" type="xs:string" minOccurs="0" />
+              <xs:element name="time" msprop:Generator_ColumnVarNameInTable="columntime" msprop:Generator_ColumnPropNameInRow="time" msprop:Generator_ColumnPropNameInTable="timeColumn" msprop:Generator_UserColumnName="time" type="xs:string" minOccurs="0" />
+              <xs:element name="days" msprop:Generator_ColumnVarNameInTable="columndays" msprop:Generator_ColumnPropNameInRow="days" msprop:Generator_ColumnPropNameInTable="daysColumn" msprop:Generator_UserColumnName="days" type="xs:string" minOccurs="0" />
+              <xs:element name="area" msprop:Generator_ColumnVarNameInTable="columnarea" msprop:Generator_ColumnPropNameInRow="area" msprop:Generator_ColumnPropNameInTable="areaColumn" msprop:Generator_UserColumnName="area" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

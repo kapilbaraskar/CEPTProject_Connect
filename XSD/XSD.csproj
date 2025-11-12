@@ -1,0 +1,911 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{04DA66DF-69FC-492E-A030-C8C558287104}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>XSD</RootNamespace>
+    <AssemblyName>XSD</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MySql.Data, Version=6.4.4.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Configuration.Install" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Class1.cs" />
+    <Compile Include="Masters\DSC_allocated_credits.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSC_allocated_credits.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Masters\DSC_Alumini_Registration.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSC_Alumini_Registration.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Masters\DSC_BTG_Registration.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSC_BTG_Registration.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Masters\DSC_Course_Group.cs">
+      <DependentUpon>DSC_Course_Group.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Masters\DSC_Course_Group.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSC_Course_Group.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Masters\DSC_Course_Log.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSC_Course_Log.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Masters\DSC_Course_Master.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSC_Course_Master.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Masters\DSC_CreditsDetail.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSC_CreditsDetail.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Masters\DSC_Deleted_Course.cs">
+      <DependentUpon>DSC_Deleted_Course.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Masters\DSC_Deleted_Course.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSC_Deleted_Course.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DS_Payment.cs" />
+    <Compile Include="General\DS_Parameter_mst.Designer.cs" />
+    <Compile Include="Masters\DataSet1.Designer.cs">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Masters\DSC_DRP.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSC_DRP.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Masters\DSC_FeesBankDetail.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSC_FeesBankDetail.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Masters\DSC_Fees_Installment.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSC_Fees_Installment.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Masters\DSC_fees_status.cs">
+      <DependentUpon>DSC_fees_status.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Masters\DSC_fees_status.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSC_fees_status.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Masters\DSC_GradingMaster.cs">
+      <DependentUpon>DSC_GradingMaster.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Masters\DSC_GradingMaster1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSC_GradingMaster.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Masters\DSC_HostelFeesPayment.cs">
+      <DependentUpon>DSC_HostelFeesPayment.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Masters\DSC_HostelFeesPayment.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSC_HostelFeesPayment.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Masters\DSC_LA25_Registration.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSC_LA25_Registration.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Masters\DSC_Parameter.cs">
+      <DependentUpon>DSC_Parameter.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Masters\DSC_Parameter.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSC_Parameter.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Masters\DSC_SID_Registration.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSC_SID_Registration.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Masters\DSC_StudentFoundationDtl.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSC_StudentFoundationDtl.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Masters\DSC_Transcript_Detail.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSC_Transcript_Detail.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Masters\DSC_Upload_Fee_Collection1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSC_Upload_Fee_Collection.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Masters\DSC_userdataupload.cs">
+      <DependentUpon>DSC_userdataupload.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Masters\DSC_userdataupload.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSC_userdataupload.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Masters\DSC_Vertical_Studio_Selection_dtl.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSC_Vertical_Studio_Selection_dtl.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Masters\DSC_VF_Mgmt.cs">
+      <DependentUpon>DSC_VF_Mgmt.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Masters\DSC_VF_Mgmt.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSC_VF_Mgmt.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Masters\DSC_ws_course_master.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSC_ws_course_master.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Masters\DSC_WS_GradingMaster.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSC_WS_GradingMaster.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Masters\DS_abc.Designer.cs">
+      <DependentUpon>DS_abc.xsd</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Masters\DS_Attendance.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_Attendance.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Masters\DS_Feedback_calculation.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_Feedback_calculation.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Masters\DS_Feedback_Save.cs">
+      <DependentUpon>DS_Feedback_Save.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Masters\DS_Feedback_Save.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_Feedback_Save.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Masters\Ds_group_master1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Ds_group_master.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Masters\Ds_group_rights1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Ds_group_rights.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Masters\DS_Masters1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_Masters.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Masters\DS_MyCalendar.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_MyCalendar.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Masters\DS_Payment.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_Payment.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Masters\DS_Personal_Details.cs">
+      <DependentUpon>DS_Personal_Details.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Masters\DS_Personal_Details.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_Personal_Details.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Masters\Ds_Project_Training.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Ds_Project_Training.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Masters\Ds_Student_course.cs">
+      <DependentUpon>Ds_Student_course.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Masters\Ds_Student_course.Designer.cs">
+      <DependentUpon>Ds_Student_course.xsd</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Masters\Ds_Student_Course_detail.cs">
+      <DependentUpon>Ds_Student_Course_detail.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Masters\Ds_Student_Course_detail.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Ds_Student_Course_detail.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Masters\DS_UserFeesReminder.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_UserFeesReminder.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Masters\temp_student_wise_course.cs">
+      <DependentUpon>temp_student_wise_course.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Masters\temp_student_wise_course.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>temp_student_wise_course.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Masters_WS\DSC_fees_status_WS.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSC_fees_status_WS.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Masters_WS\DSC_userdataupload_WS.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSC_userdataupload_WS.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Masters_WS\Ds_Bill_Entry_Save.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Ds_Bill_Entry_Save.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Masters_WS\Ds_company_master.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Ds_company_master.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Masters_WS\DS_Feedback_calculation_WS.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_Feedback_calculation_WS.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Masters_WS\DS_Feedback_Save_WS.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_Feedback_Save_WS.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Masters_WS\DS_Payment_WS.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_Payment_WS.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Masters_WS\Ds_Student_Course_detail_WS.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Ds_Student_Course_detail_WS.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\Debug\XSD.dll" />
+    <Content Include="bin\Debug\XSD.pdb" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="bin\Debug\XSD.dll.config" />
+    <None Include="Masters\DSC_allocated_credits.xsc">
+      <DependentUpon>DSC_allocated_credits.xsd</DependentUpon>
+    </None>
+    <None Include="Masters\DSC_allocated_credits.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSC_allocated_credits.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Masters\DSC_allocated_credits.xss">
+      <DependentUpon>DSC_allocated_credits.xsd</DependentUpon>
+    </None>
+    <None Include="Masters\DSC_Alumini_Registration.xsc">
+      <DependentUpon>DSC_Alumini_Registration.xsd</DependentUpon>
+    </None>
+    <None Include="Masters\DSC_Alumini_Registration.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSC_Alumini_Registration.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Masters\DSC_Alumini_Registration.xss">
+      <DependentUpon>DSC_Alumini_Registration.xsd</DependentUpon>
+    </None>
+    <None Include="Masters\DSC_BTG_Registration.xsc">
+      <DependentUpon>DSC_BTG_Registration.xsd</DependentUpon>
+    </None>
+    <None Include="Masters\DSC_BTG_Registration.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSC_BTG_Registration.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Masters\DSC_BTG_Registration.xss">
+      <DependentUpon>DSC_BTG_Registration.xsd</DependentUpon>
+    </None>
+    <None Include="Masters\DSC_Course_Group.xsc">
+      <DependentUpon>DSC_Course_Group.xsd</DependentUpon>
+    </None>
+    <None Include="Masters\DSC_Course_Group.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSC_Course_Group.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Masters\DSC_Course_Group.xss">
+      <DependentUpon>DSC_Course_Group.xsd</DependentUpon>
+    </None>
+    <None Include="Masters\DSC_Course_Log.xsc">
+      <DependentUpon>DSC_Course_Log.xsd</DependentUpon>
+    </None>
+    <None Include="Masters\DSC_Course_Log.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSC_Course_Log.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Masters\DSC_Course_Log.xss">
+      <DependentUpon>DSC_Course_Log.xsd</DependentUpon>
+    </None>
+    <None Include="Masters\DSC_Course_Master.xsc">
+      <DependentUpon>DSC_Course_Master.xsd</DependentUpon>
+    </None>
+    <None Include="Masters\DSC_Course_Master.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSC_Course_Master.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Masters\DSC_Course_Master.xss">
+      <DependentUpon>DSC_Course_Master.xsd</DependentUpon>
+    </None>
+    <None Include="Masters\DSC_CreditsDetail.xsc">
+      <DependentUpon>DSC_CreditsDetail.xsd</DependentUpon>
+    </None>
+    <None Include="Masters\DSC_CreditsDetail.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSC_CreditsDetail.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Masters\DSC_CreditsDetail.xss">
+      <DependentUpon>DSC_CreditsDetail.xsd</DependentUpon>
+    </None>
+    <None Include="Masters\DSC_Deleted_Course.xsc">
+      <DependentUpon>DSC_Deleted_Course.xsd</DependentUpon>
+    </None>
+    <None Include="Masters\DSC_Deleted_Course.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSC_Deleted_Course.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Masters\DSC_Deleted_Course.xss">
+      <DependentUpon>DSC_Deleted_Course.xsd</DependentUpon>
+    </None>
+    <None Include="General\DS_Parameter_mst.xsc">
+      <DependentUpon>DS_Parameter_mst.xsd</DependentUpon>
+    </None>
+    <None Include="General\DS_Parameter_mst.xsd" />
+    <None Include="General\DS_Parameter_mst.xss">
+      <DependentUpon>DS_Parameter_mst.xsd</DependentUpon>
+    </None>
+    <None Include="Masters\DataSet1.xsc">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="Masters\DataSet1.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet1.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Masters\DataSet1.xss">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="Masters\DSC_DRP.xsc">
+      <DependentUpon>DSC_DRP.xsd</DependentUpon>
+    </None>
+    <None Include="Masters\DSC_DRP.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSC_DRP.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Masters\DSC_DRP.xss">
+      <DependentUpon>DSC_DRP.xsd</DependentUpon>
+    </None>
+    <None Include="Masters\DSC_FeesBankDetail.xsc">
+      <DependentUpon>DSC_FeesBankDetail.xsd</DependentUpon>
+    </None>
+    <None Include="Masters\DSC_FeesBankDetail.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSC_FeesBankDetail.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Masters\DSC_FeesBankDetail.xss">
+      <DependentUpon>DSC_FeesBankDetail.xsd</DependentUpon>
+    </None>
+    <None Include="Masters\DSC_Fees_Installment.xsc">
+      <DependentUpon>DSC_Fees_Installment.xsd</DependentUpon>
+    </None>
+    <None Include="Masters\DSC_Fees_Installment.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSC_Fees_Installment.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Masters\DSC_Fees_Installment.xss">
+      <DependentUpon>DSC_Fees_Installment.xsd</DependentUpon>
+    </None>
+    <None Include="Masters\DSC_fees_status.xsc">
+      <DependentUpon>DSC_fees_status.xsd</DependentUpon>
+    </None>
+    <None Include="Masters\DSC_fees_status.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSC_fees_status.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Masters\DSC_fees_status.xss">
+      <DependentUpon>DSC_fees_status.xsd</DependentUpon>
+    </None>
+    <None Include="Masters\DSC_GradingMaster.xsc">
+      <DependentUpon>DSC_GradingMaster.xsd</DependentUpon>
+    </None>
+    <None Include="Masters\DSC_GradingMaster.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSC_GradingMaster1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Masters\DSC_GradingMaster.xss">
+      <DependentUpon>DSC_GradingMaster.xsd</DependentUpon>
+    </None>
+    <None Include="Masters\DSC_HostelFeesPayment.xsc">
+      <DependentUpon>DSC_HostelFeesPayment.xsd</DependentUpon>
+    </None>
+    <None Include="Masters\DSC_HostelFeesPayment.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSC_HostelFeesPayment.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Masters\DSC_HostelFeesPayment.xss">
+      <DependentUpon>DSC_HostelFeesPayment.xsd</DependentUpon>
+    </None>
+    <None Include="Masters\DSC_LA25_Registration.xsc">
+      <DependentUpon>DSC_LA25_Registration.xsd</DependentUpon>
+    </None>
+    <None Include="Masters\DSC_LA25_Registration.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSC_LA25_Registration.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Masters\DSC_LA25_Registration.xss">
+      <DependentUpon>DSC_LA25_Registration.xsd</DependentUpon>
+    </None>
+    <None Include="Masters\DSC_Parameter.xsc">
+      <DependentUpon>DSC_Parameter.xsd</DependentUpon>
+    </None>
+    <None Include="Masters\DSC_Parameter.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSC_Parameter.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Masters\DSC_Parameter.xss">
+      <DependentUpon>DSC_Parameter.xsd</DependentUpon>
+    </None>
+    <None Include="Masters\DSC_SID_Registration.xsc">
+      <DependentUpon>DSC_SID_Registration.xsd</DependentUpon>
+    </None>
+    <None Include="Masters\DSC_SID_Registration.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSC_SID_Registration.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Masters\DSC_SID_Registration.xss">
+      <DependentUpon>DSC_SID_Registration.xsd</DependentUpon>
+    </None>
+    <None Include="Masters\DSC_StudentFoundationDtl.xsc">
+      <DependentUpon>DSC_StudentFoundationDtl.xsd</DependentUpon>
+    </None>
+    <None Include="Masters\DSC_StudentFoundationDtl.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSC_StudentFoundationDtl.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Masters\DSC_StudentFoundationDtl.xss">
+      <DependentUpon>DSC_StudentFoundationDtl.xsd</DependentUpon>
+    </None>
+    <None Include="Masters\DSC_Transcript_Detail.xsc">
+      <DependentUpon>DSC_Transcript_Detail.xsd</DependentUpon>
+    </None>
+    <None Include="Masters\DSC_Transcript_Detail.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSC_Transcript_Detail.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Masters\DSC_Transcript_Detail.xss">
+      <DependentUpon>DSC_Transcript_Detail.xsd</DependentUpon>
+    </None>
+    <None Include="Masters\DSC_Upload_Fee_Collection.xsc">
+      <DependentUpon>DSC_Upload_Fee_Collection.xsd</DependentUpon>
+    </None>
+    <None Include="Masters\DSC_Upload_Fee_Collection.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSC_Upload_Fee_Collection1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Masters\DSC_Upload_Fee_Collection.xss">
+      <DependentUpon>DSC_Upload_Fee_Collection.xsd</DependentUpon>
+    </None>
+    <None Include="Masters\DSC_userdataupload.xsc">
+      <DependentUpon>DSC_userdataupload.xsd</DependentUpon>
+    </None>
+    <None Include="Masters\DSC_userdataupload.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSC_userdataupload.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Masters\DSC_userdataupload.xss">
+      <DependentUpon>DSC_userdataupload.xsd</DependentUpon>
+    </None>
+    <None Include="Masters\DSC_Vertical_Studio_Selection_dtl.xsc">
+      <DependentUpon>DSC_Vertical_Studio_Selection_dtl.xsd</DependentUpon>
+    </None>
+    <None Include="Masters\DSC_Vertical_Studio_Selection_dtl.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSC_Vertical_Studio_Selection_dtl.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Masters\DSC_Vertical_Studio_Selection_dtl.xss">
+      <DependentUpon>DSC_Vertical_Studio_Selection_dtl.xsd</DependentUpon>
+    </None>
+    <None Include="Masters\DSC_VF_Mgmt.xsc">
+      <DependentUpon>DSC_VF_Mgmt.xsd</DependentUpon>
+    </None>
+    <None Include="Masters\DSC_VF_Mgmt.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSC_VF_Mgmt.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Masters\DSC_VF_Mgmt.xss">
+      <DependentUpon>DSC_VF_Mgmt.xsd</DependentUpon>
+    </None>
+    <None Include="Masters\DSC_ws_course_master.xsc">
+      <DependentUpon>DSC_ws_course_master.xsd</DependentUpon>
+    </None>
+    <None Include="Masters\DSC_ws_course_master.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSC_ws_course_master.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Masters\DSC_ws_course_master.xss">
+      <DependentUpon>DSC_ws_course_master.xsd</DependentUpon>
+    </None>
+    <None Include="Masters\DSC_WS_GradingMaster.xsc">
+      <DependentUpon>DSC_WS_GradingMaster.xsd</DependentUpon>
+    </None>
+    <None Include="Masters\DSC_WS_GradingMaster.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSC_WS_GradingMaster.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Masters\DSC_WS_GradingMaster.xss">
+      <DependentUpon>DSC_WS_GradingMaster.xsd</DependentUpon>
+    </None>
+    <None Include="Masters\DS_abc.xsc">
+      <DependentUpon>DS_abc.xsd</DependentUpon>
+    </None>
+    <None Include="Masters\DS_abc.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_abc.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Masters\DS_abc.xss">
+      <DependentUpon>DS_abc.xsd</DependentUpon>
+    </None>
+    <None Include="Masters\DS_Attendance.xsc">
+      <DependentUpon>DS_Attendance.xsd</DependentUpon>
+    </None>
+    <None Include="Masters\DS_Attendance.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_Attendance.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Masters\DS_Attendance.xss">
+      <DependentUpon>DS_Attendance.xsd</DependentUpon>
+    </None>
+    <None Include="Masters\DS_Feedback_calculation.xsc">
+      <DependentUpon>DS_Feedback_calculation.xsd</DependentUpon>
+    </None>
+    <None Include="Masters\DS_Feedback_calculation.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_Feedback_calculation.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Masters\DS_Feedback_calculation.xss">
+      <DependentUpon>DS_Feedback_calculation.xsd</DependentUpon>
+    </None>
+    <None Include="Masters\DS_Feedback_Save.xsc">
+      <DependentUpon>DS_Feedback_Save.xsd</DependentUpon>
+    </None>
+    <None Include="Masters\DS_Feedback_Save.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_Feedback_Save.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Masters\DS_Feedback_Save.xss">
+      <DependentUpon>DS_Feedback_Save.xsd</DependentUpon>
+    </None>
+    <None Include="Masters\Ds_group_master.xsc">
+      <DependentUpon>Ds_group_master.xsd</DependentUpon>
+    </None>
+    <None Include="Masters\Ds_group_master.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Ds_group_master1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Masters\Ds_group_master.xss">
+      <DependentUpon>Ds_group_master.xsd</DependentUpon>
+    </None>
+    <None Include="Masters\Ds_group_rights.xsc">
+      <DependentUpon>Ds_group_rights.xsd</DependentUpon>
+    </None>
+    <None Include="Masters\Ds_group_rights.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Ds_group_rights1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Masters\Ds_group_rights.xss">
+      <DependentUpon>Ds_group_rights.xsd</DependentUpon>
+    </None>
+    <None Include="Masters\DS_Masters.xsc">
+      <DependentUpon>DS_Masters.xsd</DependentUpon>
+    </None>
+    <None Include="Masters\DS_Masters.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_Masters1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Masters\DS_Masters.xss">
+      <DependentUpon>DS_Masters.xsd</DependentUpon>
+    </None>
+    <None Include="Masters\DS_MyCalendar.xsc">
+      <DependentUpon>DS_MyCalendar.xsd</DependentUpon>
+    </None>
+    <None Include="Masters\DS_MyCalendar.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_MyCalendar.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Masters\DS_MyCalendar.xss">
+      <DependentUpon>DS_MyCalendar.xsd</DependentUpon>
+    </None>
+    <None Include="Masters\DS_Payment.xsc">
+      <DependentUpon>DS_Payment.xsd</DependentUpon>
+    </None>
+    <None Include="Masters\DS_Payment.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_Payment.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Masters\DS_Payment.xss">
+      <DependentUpon>DS_Payment.xsd</DependentUpon>
+    </None>
+    <None Include="Masters\DS_Personal_Details.xsc">
+      <DependentUpon>DS_Personal_Details.xsd</DependentUpon>
+    </None>
+    <None Include="Masters\DS_Personal_Details.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_Personal_Details.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Masters\DS_Personal_Details.xss">
+      <DependentUpon>DS_Personal_Details.xsd</DependentUpon>
+    </None>
+    <None Include="Masters\Ds_Project_Training.xsc">
+      <DependentUpon>Ds_Project_Training.xsd</DependentUpon>
+    </None>
+    <None Include="Masters\Ds_Project_Training.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Ds_Project_Training.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Masters\Ds_Project_Training.xss">
+      <DependentUpon>Ds_Project_Training.xsd</DependentUpon>
+    </None>
+    <None Include="Masters\Ds_Student_course.xsc">
+      <DependentUpon>Ds_Student_course.xsd</DependentUpon>
+    </None>
+    <None Include="Masters\Ds_Student_course.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Ds_Student_course.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Masters\Ds_Student_course.xss">
+      <DependentUpon>Ds_Student_course.xsd</DependentUpon>
+    </None>
+    <None Include="Masters\Ds_Student_Course_detail.xsc">
+      <DependentUpon>Ds_Student_Course_detail.xsd</DependentUpon>
+    </None>
+    <None Include="Masters\Ds_Student_Course_detail.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Ds_Student_Course_detail.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Masters\Ds_Student_Course_detail.xss">
+      <DependentUpon>Ds_Student_Course_detail.xsd</DependentUpon>
+    </None>
+    <None Include="Masters\DS_UserFeesReminder.xsc">
+      <DependentUpon>DS_UserFeesReminder.xsd</DependentUpon>
+    </None>
+    <None Include="Masters\DS_UserFeesReminder.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_UserFeesReminder.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Masters\DS_UserFeesReminder.xss">
+      <DependentUpon>DS_UserFeesReminder.xsd</DependentUpon>
+    </None>
+    <None Include="Masters\temp_student_wise_course.xsc">
+      <DependentUpon>temp_student_wise_course.xsd</DependentUpon>
+    </None>
+    <None Include="Masters\temp_student_wise_course.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>temp_student_wise_course.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Masters\temp_student_wise_course.xss">
+      <DependentUpon>temp_student_wise_course.xsd</DependentUpon>
+    </None>
+    <None Include="Masters_WS\DSC_fees_status_WS.xsc">
+      <DependentUpon>DSC_fees_status_WS.xsd</DependentUpon>
+    </None>
+    <None Include="Masters_WS\DSC_fees_status_WS.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSC_fees_status_WS.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Masters_WS\DSC_fees_status_WS.xss">
+      <DependentUpon>DSC_fees_status_WS.xsd</DependentUpon>
+    </None>
+    <None Include="Masters_WS\DSC_userdataupload_WS.xsc">
+      <DependentUpon>DSC_userdataupload_WS.xsd</DependentUpon>
+    </None>
+    <None Include="Masters_WS\DSC_userdataupload_WS.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSC_userdataupload_WS.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Masters_WS\DSC_userdataupload_WS.xss">
+      <DependentUpon>DSC_userdataupload_WS.xsd</DependentUpon>
+    </None>
+    <None Include="Masters_WS\Ds_Bill_Entry_Save.xsc">
+      <DependentUpon>Ds_Bill_Entry_Save.xsd</DependentUpon>
+    </None>
+    <None Include="Masters_WS\Ds_Bill_Entry_Save.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Ds_Bill_Entry_Save.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Masters_WS\Ds_Bill_Entry_Save.xss">
+      <DependentUpon>Ds_Bill_Entry_Save.xsd</DependentUpon>
+    </None>
+    <None Include="Masters_WS\Ds_company_master.xsc">
+      <DependentUpon>Ds_company_master.xsd</DependentUpon>
+    </None>
+    <None Include="Masters_WS\Ds_company_master.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Ds_company_master.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Masters_WS\Ds_company_master.xss">
+      <DependentUpon>Ds_company_master.xsd</DependentUpon>
+    </None>
+    <None Include="Masters_WS\DS_Feedback_calculation_WS.xsc">
+      <DependentUpon>DS_Feedback_calculation_WS.xsd</DependentUpon>
+    </None>
+    <None Include="Masters_WS\DS_Feedback_calculation_WS.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_Feedback_calculation_WS.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Masters_WS\DS_Feedback_calculation_WS.xss">
+      <DependentUpon>DS_Feedback_calculation_WS.xsd</DependentUpon>
+    </None>
+    <None Include="Masters_WS\DS_Feedback_Save_WS.xsc">
+      <DependentUpon>DS_Feedback_Save_WS.xsd</DependentUpon>
+    </None>
+    <None Include="Masters_WS\DS_Feedback_Save_WS.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_Feedback_Save_WS.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Masters_WS\DS_Feedback_Save_WS.xss">
+      <DependentUpon>DS_Feedback_Save_WS.xsd</DependentUpon>
+    </None>
+    <None Include="Masters_WS\DS_Payment_WS.xsc">
+      <DependentUpon>DS_Payment_WS.xsd</DependentUpon>
+    </None>
+    <None Include="Masters_WS\DS_Payment_WS.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_Payment_WS.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Masters_WS\DS_Payment_WS.xss">
+      <DependentUpon>DS_Payment_WS.xsd</DependentUpon>
+    </None>
+    <None Include="Masters_WS\Ds_Student_Course_detail_WS.xsc">
+      <DependentUpon>Ds_Student_Course_detail_WS.xsd</DependentUpon>
+    </None>
+    <None Include="Masters_WS\Ds_Student_Course_detail_WS.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Ds_Student_Course_detail_WS.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Masters_WS\Ds_Student_Course_detail_WS.xss">
+      <DependentUpon>Ds_Student_Course_detail_WS.xsd</DependentUpon>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="bin\Release\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

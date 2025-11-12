@@ -1,0 +1,20 @@
+G:\NAS Backup\CEPT_REG\XSD\bin\Debug\XSD.dll.config
+G:\NAS Backup\CEPT_REG\XSD\bin\Debug\XSD.dll
+G:\NAS Backup\CEPT_REG\XSD\bin\Debug\XSD.pdb
+G:\NAS Backup\CEPT_REG\XSD\obj\Debug\XSD.csproj.AssemblyReference.cache
+G:\NAS Backup\CEPT_REG\XSD\obj\Debug\XSD.csproj.CoreCompileInputs.cache
+G:\NAS Backup\CEPT_REG\XSD\obj\Debug\XSD.dll
+G:\NAS Backup\CEPT_REG\XSD\obj\Debug\XSD.pdb
+C:\CEPT_REG\XSD\bin\Debug\XSD.dll.config
+C:\CEPT_REG\XSD\bin\Debug\XSD.dll
+C:\CEPT_REG\XSD\bin\Debug\XSD.pdb
+C:\CEPT_REG\XSD\obj\Debug\XSD.csproj.AssemblyReference.cache
+C:\CEPT_REG\XSD\obj\Debug\XSD.csproj.CoreCompileInputs.cache
+C:\CEPT_REG\XSD\obj\Debug\XSD.dll
+C:\CEPT_REG\XSD\obj\Debug\XSD.pdb
+C:\CEPTPROJECT\CEPT_REG\XSD\bin\Debug\XSD.dll.config
+C:\CEPTPROJECT\CEPT_REG\XSD\bin\Debug\XSD.dll
+C:\CEPTPROJECT\CEPT_REG\XSD\bin\Debug\XSD.pdb
+C:\CEPTPROJECT\CEPT_REG\XSD\obj\Debug\XSD.csproj.CoreCompileInputs.cache
+C:\CEPTPROJECT\CEPT_REG\XSD\obj\Debug\XSD.dll
+C:\CEPTPROJECT\CEPT_REG\XSD\obj\Debug\XSD.pdb

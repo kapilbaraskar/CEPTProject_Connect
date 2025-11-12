@@ -1,0 +1,225 @@
+﻿<script type="text/html" id="paymentSuccess">
+    <div class="card">
+        <div style="border-radius:200px; height:200px; width:200px; background: #F8FAF5; margin:0 auto;">
+            <i class="checkmark">✓</i>
+        </div>
+        <h1>Success</h1>
+        <div class="panel-body">
+            <p>Thanks <b data-bind="text:title">title</b> <b data-bind="text:first_name">name</b> for applying in <b data-bind="text:program_course_desc">course</b> at CEPT University </p>
+            <br />
+            <table class="table table-striped" style="margin: auto; border: 1px solid;">
+                <thead>
+                    <tr>
+                        <th colspan="2" style="border-bottom: 1px solid;background: #a9d664;">Transaction Details</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><b>Merchant(CEPT) Order number :</b></td>
+                        <td><span data-bind="text:transaction_id">transactionid</span></td>
+                    </tr>
+                    <tr>
+                        <td><b>Transaction Reference Number :</b></td>
+                        <td><span data-bind="text:pg_transaction_id">pgTxnId</span></td>
+                    </tr>
+                    <tr>
+                        <td><b>Amount :</b></td>
+                        <td><span data-bind="text:payment_mode">Amount</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="panel-footer">
+            <br /><br />
+            <p style="">
+                In case of any issues contact us at <b data-bind="text:contact_email_id"></b>
+                , <b>Phone No : 0091-79-26302470 / 26302740</b>
+            </p>
+        </div>
+        <!--<a href="https://connect.cept.ac.in/Student/Dashboard.aspx" class="btn btn-primary" style="margin-top: 20px;">Go to Dashboard</a>-->
+    </div>
+    <!--<div class="panel panel-success">
+        <div class="panel-heading">
+            <h3 class="panel-title">Payment Success !!</h3>
+        </div>
+        <div class="panel-body">
+            <p>Thanks <b data-bind="text:title">title</b> <b data-bind="text:first_name">name</b> for applying in <b data-bind="text:program_course_desc">course</b> at CEPT University </p>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th colspan="2">Transaction Details</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><b>Merchant(CEPT) Order number :</b></td>
+                        <td><span data-bind="text:transaction_id">transactionid</span></td>
+                    </tr>
+                    <tr>
+                        <td><b>Transaction Reference Number :</b></td>
+                        <td><span data-bind="text:pg_transaction_id">pgTxnId</span></td>
+                    </tr>
+                    <tr>
+                        <td><b>Amount :</b></td>
+                        <td><span data-bind="text:payment_mode">Amount</span></td>
+                    </tr>
+                </tbody>
+            </table>
+
+
+        </div>
+        <div class="panel-footer">
+            <p>
+                In case of any issues contact us at <b data-bind="text:contact_email_id"></b>
+                , <b>Phone No : 0091-79-26302470 / 26302740</b>
+            </p>
+        </div>
+
+    </div>-->
+</script>
+<script type="text/html" id="paymentAwaited">
+    <div class="panel panel-success">
+        <div class="panel-heading">
+            <h3 class="panel-title">Payment Awaited !!</h3>
+        </div>
+        <div class="panel-body">
+            <!--<p>Thanks <b data-bind="text:title">title</b> <b data-bind="text:first_name">name</b> for applying in <b data-bind="text:program_course_desc">course</b> at CEPT University </p>-->
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th colspan="2">Transaction Details</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><b>Merchant(CEPT) Order number :</b></td>
+                        <td><span data-bind="text:transaction_id">transactionid</span></td>
+                    </tr>
+                    <tr>
+                        <td><b>Transaction Reference Number :</b></td>
+                        <td><span data-bind="text:pg_transaction_id">pgTxnId</span></td>
+                    </tr>
+                    <tr>
+                        <td><b>Amount :</b></td>
+                        <td><span data-bind="text:payment_mode">Amount</span></td>
+                    </tr>
+                </tbody>
+            </table>
+
+
+        </div>
+        <div class="panel-footer">
+            <p>
+                In case of any issues contact us at <b data-bind="text:contact_email_id"></b>
+                , <b>Phone No : 0091-79-26302470 / 26302740</b>
+            </p>
+        </div>
+
+    </div>
+
+</script>
+<script type="text/html" id="paymentFail">
+    <div class="panel panel-danger">
+        <div class="panel-heading">
+            <h3 class="panel-title">Fail</h3>
+        </div>
+        <div class="panel-body">
+            <p>Sorry !! Your payment is not done successfully. Error : <span data-bind='text:message'></span></p>
+        </div>
+        <div class="panel-footer">
+            <p>
+                In case of any issues contact us at <b data-bind="text:contact_email_id"></b>
+                , <b>Phone No : 0091-79-26302470 / 26302740</b>
+            </p>
+        </div>
+    </div>
+</script>
+<script type="text/html" id="paymentSuccessApplicationFail">
+    <div class="panel panel-danger">
+        <div class="panel-heading">
+            <h3 class="panel-title">Your Transaction Status</h3>
+        </div>
+        <div class="panel-body">
+            <p><span data-bind="text:title">title</span> <span data-bind="text:first_name">name</span>,</p>
+            <p>Your payment for application of  <span data-bind="text:program_course_desc">course</span> at CEPT University  received successfull</p>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th colspan="2">Transaction Details</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><b>Merchant(CEPT) Order number :</b></td>
+                        <td><span data-bind="text:transaction_id">transactionid</span></td>
+                    </tr>
+                    <tr>
+                        <td><b>Transaction Reference Number :</b></td>
+                        <td><span data-bind="text:pg_transaction_id">pgTxnId</span></td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+        <div class="panel-footer">
+            <p>
+                In case of any issues contact us at <b data-bind="text:contact_email_id"></b>
+                , <b>Phone No : 0091-79-26302470 / 26302740</b>
+            </p>
+        </div>
+    </div>
+
+
+</script>
+
+<script type="text/html" id="paymentAlreadySuccess">
+    <div class="panel panel-danger">
+        <div class="panel-heading">
+            <h3 class="panel-title">Fail</h3>
+        </div>
+        <div class="panel-body">
+            <p>Your payment is done successfully.</p>
+        </div>
+        <div class="panel-footer">
+            <p>
+                In case of any issues contact us at <b data-bind="text:contact_email_id"></b>
+                , <b>Phone No : 0091-79-26302470 / 26302740</b>
+            </p>
+        </div>
+    </div>
+</script>
+
+<script type="text/html" id="paymentFailedError">
+    <div class="panel panel-danger">
+        <div class="panel-heading">
+            <h3 class="panel-title">Fail</h3>
+        </div>
+        <div class="panel-body">
+            <p>Sorry !! Your payment is not done successfully. Error : <span data-bind='text:message'></span></p>
+        </div>
+        <div class="panel-footer">
+            <p>
+                In case of any issues contact us at <b data-bind="text:contact_email_id"></b>
+                , <b>Phone No : 0091-79-26302470 / 26302740</b>
+            </p>
+        </div>
+    </div>
+</script>
+
+<script type="text/html" id="paymentNotFound">
+    <div class="panel panel-danger">
+        <div class="panel-heading">
+            <h3 class="panel-title">Fail</h3>
+        </div>
+        <div class="panel-body">
+            <p>Sorry !! Your payment is not done successfully.
+        </div>
+        <br />
+        <div class="panel-footer">
+            <p>
+                In case of any issues contact us at <b data-bind="text:contact_email_id"></b>
+                , <b>Phone No : 0091-79-26302470 / 26302740</b>
+            </p>
+        </div>
+    </div>
+</script>

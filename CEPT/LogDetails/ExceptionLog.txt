@@ -1,0 +1,201 @@
+10-Nov-2015 12:45:32:9903947 PM  Object reference not set to an instance of an object.
+10-Nov-2015 12:47:25:6758400 PM  Object reference not set to an instance of an object.
+21-Apr-2016 10:10:40:0760182 AM  Object reference not set to an instance of an object.
+31-Aug-2016 04:06:11:0125158 PM  Object reference not set to an instance of an object.
+31-Aug-2016 05:55:32:7219840 PM  Object reference not set to an instance of an object.
+02-Sep-2016 01:49:20:0961580 PM  Object reference not set to an instance of an object.
+02-Sep-2016 01:53:00:2842232 PM  Object reference not set to an instance of an object.
+02-Sep-2016 01:53:10:9941891 PM  Object reference not set to an instance of an object.
+02-Sep-2016 02:20:39:9972003 PM  Object reference not set to an instance of an object.
+02-Sep-2016 02:27:57:9622504 PM  Object reference not set to an instance of an object.
+06-Sep-2016 05:07:04:0285283 PM  Object reference not set to an instance of an object.
+06-Sep-2016 05:07:04:0715308 PM  Object reference not set to an instance of an object.
+06-Sep-2016 05:07:04:0765310 PM  Object reference not set to an instance of an object.
+==========================================================================================
+--- Grade Report Final ---
+PageFile :: http://localhost:3855/CEPT/Admin/Report/GradeReportPDF_Final.aspx?uid=EXUA8416&sem=M&year=2016
+obReportPrinter.FileContent.Length :: 19070
+==========================================================================================
+==========================================================================================
+--- Grade Report ---
+PageFile :: https://localhost:3855/CEPT/Admin/Report/GradeReportPDF2.aspx?uid=PA100116&sem=M&year=2016
+obReportPrinter.FileContent.Length :: 1345
+==========================================================================================
+==========================================================================================
+--- Grade Report Final PDF ---
+==========================================================================================
+==========================================================================================
+--- Grade Report Final ---
+PageFile :: http://localhost:3855/CEPT/Admin/Report/GradeReportPDF_Final.aspx?uid=EXUA8416&sem=M&year=2016
+obReportPrinter.FileContent.Length :: 19070
+==========================================================================================
+==========================================================================================
+--- Grade Report ---
+PageFile :: https://localhost:3855/CEPT/Admin/Report/GradeReportPDF2.aspx?uid=PA100116&sem=M&year=2016
+obReportPrinter.FileContent.Length :: 1345
+==========================================================================================
+==========================================================================================
+--- Grade Report ---
+PageFile :: https://localhost:3855/CEPT/Admin/Report/GradeReportPDF2.aspx?uid=PA100116&sem=M&year=2016
+obReportPrinter.FileContent.Length :: 1296
+==========================================================================================
+==========================================================================================
+--- Grade Report ---
+PageFile :: https://localhost:3855/CEPT/Admin/Report/GradeReportPDF2.aspx?uid=PA100116&sem=M&year=2016
+obReportPrinter.FileContent.Length :: 1296
+==========================================================================================
+==========================================================================================
+--- Grade Report PDF ---
+==========================================================================================
+==========================================================================================
+--- Grade Report ---
+PageFile :: https://localhost:3855/CEPT/Admin/Report/GradeReportPDF2.aspx?uid=PA100116&sem=M&year=2016
+obReportPrinter.FileContent.Length :: 1296
+==========================================================================================
+==========================================================================================
+--- Grade Report ---
+PageFile :: https://connect.cept.ac.in/Admin/Report/GradeReportPDF2.aspx?uid=PA100116&sem=M&year=2016
+obReportPrinter.FileContent.Length :: 1296
+==========================================================================================
+==========================================================================================
+--- Grade Report ---
+PageFile :: https://connect.cept.ac.in/Admin/Report/GradeReportPDF2.aspx?uid=PA100116&sem=M&year=2016
+obReportPrinter.FileContent.Length :: 1296
+==========================================================================================
+--- Grade Report ---
+PageFile :: https://connect.cept.ac.in/Admin/Report/GradeReportPDF2.aspx?uid=PA100116&sem=M&year=2016
+obReportPrinter.FileContent.Length :: 1296
+==========================================================================================
+==========================================================================================
+--- Grade Report PDF ---
+==========================================================================================
+==========================================================================================
+--- Grade Report ---
+PageFile :: http://connect.cept.ac.in/Admin/Report/GradeReportPDF2.aspx?uid=PA100116&sem=M&year=2016
+obReportPrinter.FileContent.Length :: 1296
+==========================================================================================
+04-Jan-2018 03:40:54:5060995 PM  Object reference not set to an instance of an object.
+04-Jan-2018 03:43:49:8381279 PM  Object reference not set to an instance of an object.
+05-Jan-2018 10:53:46:5939365 AM  Object reference not set to an instance of an object.
+16-Mar-2018 11:07:02:6857873 AM  Object reference not set to an instance of an object.
+16-Mar-2018 11:10:40:6437007 AM  Object reference not set to an instance of an object.
+16-Mar-2018 11:10:52:8273975 AM  Object reference not set to an instance of an object.
+16-Mar-2018 11:13:12:4208110 AM  Object reference not set to an instance of an object.
+18-Jun-2019 04:31:55:9512383 PM  The given key was not present in the dictionary.
+18-Jun-2019 04:36:50:2470710 PM  The given key was not present in the dictionary.
+18-Jun-2019 04:40:20:3380875 PM  The given key was not present in the dictionary.
+18-Jun-2019 04:57:39:2885121 PM  Object reference not set to an instance of an object.
+19-Jun-2019 11:24:36:8543796 AM  Object reference not set to an instance of an object.
+30-Jun-2020 03:49:14:2027752 PM  Object reference not set to an instance of an object.
+30-Jun-2020 03:49:24:4259264 PM  Object reference not set to an instance of an object.
+30-Jun-2020 03:49:35:1897680 PM  Object reference not set to an instance of an object.
+30-Jun-2020 03:50:04:3471116 PM  Object reference not set to an instance of an object.
+27-Aug-2020 03:25:52:8373796 PM  Email Sent Successfully. mpanchal2707@gmail.com
+
+27-Aug-2020 04:15:31:8580835 PM  Email Sent Successfully. mpanchal2707@gmail.com
+
+27-Aug-2020 06:49:56:8573206 PM  Email Sent Successfully. mpanchal2707@gmail.com
+
+02-Sep-2020 12:53:20:5478111 PM  Email Sent Successfully. mayurpanchal2707@gmail.com
+
+14-Oct-2020 04:24:34:3541671 PM  Email Sent Successfully. mpanchal2707@gmail.com
+
+15-Oct-2020 07:23:17:2376695 PM  Object reference not set to an instance of an object.
+12-Feb-2021 05:51:43:1256363 PM  Email Sent Successfully. mpanchal2707@gmail.com
+
+06-Apr-2021 12:03:59:0833273 PM  Email Sent Successfully. mpanchal2707@gmail.com
+
+28-May-2021 02:57:44:2761243 PM  Email Sent Successfully. kbarskar735@gmail.com
+
+28-May-2021 03:03:51:9281953 PM  Email Sent Successfully. kbarskar735@gmail.com
+
+28-May-2021 03:09:36:0541005 PM  Email Sent Successfully. kbaraskar735@gmail.com
+
+28-May-2021 03:10:53:0677526 PM  Email Sent Successfully. kbaraskar735@gmail.com
+
+28-May-2021 03:12:36:3406569 PM  Email Sent Successfully. kbaraskar735@gmail.com
+
+28-May-2021 03:13:34:3085978 PM  Email Sent Successfully. kbaraskar735@gmail.com
+
+28-May-2021 03:36:53:1213040 PM  Email Sent Successfully. kbaraskar735@gmail.com
+
+03-Jun-2021 06:49:59:2411821 PM  The parameter 'addresses' cannot be an empty string.
+Parameter name: addresses
+   at System.Net.Mail.MailAddressCollection.Add(String addresses)
+   at BLL.Master.Mail.SendCertificateMail(String EmailId, String status, String type) in C:\CEPT_REG\BLL\Master\Mail.cs:line 3034
+16-Mar-2022 03:51:20:5209658 PM  Email Sent Successfully. mayurpanchal2707@gmail.com
+
+16-Mar-2022 03:54:05:7925875 PM  Email Sent Successfully. mayurpanchal2707@gmail.com
+
+16-Mar-2022 04:05:19:1366444 PM  Email Sent Successfully. mayurpanchal2707@gmail.com
+
+19-Mar-2022 02:57:23:0095803 PM  Email Sent Successfully. mpanchal2707@gmail.com
+
+21-Mar-2022 12:23:33:1625346 PM  Email Sent Successfully. mpanchal2707@gmail.com
+
+07-Jun-2022 10:09:01:2957663 AM  Email Sent Successfully. kbaraskar735@gmail.com
+
+07-Jun-2022 10:14:12:0150659 AM  Email Sent Successfully. kbaraskar735@gmail.com
+
+07-Jun-2022 10:16:22:2785211 AM  Email Sent Successfully. kapil.baraskar@flexiwaresolutions.com
+
+15-Jul-2022 04:54:00:5366831 PM  The parameter 'addresses' cannot be an empty string.
+Parameter name: addresses
+   at System.Net.Mail.MailAddressCollection.Add(String addresses)
+   at BLL.Master.Mail.SendCertificateMail(String EmailId, String status, String type) in C:\CEPT_REG\BLL\Master\Mail.cs:line 3047
+26-Aug-2022 06:29:36:0881874 PM  Email Sent Successfully. kbaraskar735@gmail.com
+
+26-Aug-2022 06:52:16:4886792 PM  Email Sent Successfully. kbaraskar735@gmail.com
+
+26-Jun-2025 08:36:13:6940388 PM  Data Not Save In Table SendMailDetails : shreya.kaul@cept.ac.in donotreply@cept.ac.in dsfsd Studio Proposal not Shortlisted <p>Dear Shreya Kaul,</p>
+
+<p dir="ltr" style="line-height:1.2;margin-top:0pt;margin-bottom:8pt;">Thank you for submitting your studio proposal for the Monsoon-25 semester.</p>
+
+<p dir="ltr" style="line-height:1.2;margin-top:0pt;margin-bottom:8pt;"><br />
+We regret to inform you that your studio has not been approved for the upcoming semester.<br />
+You may apply again next semester with a fresh or revised studio proposal.</p>
+
+<p>hjhkjh</p>
+
+<p><span class="im" style="color: rgb(80, 0, 80); font-family: Arial, Helvetica, sans-serif; font-size: small;">You may write to your faculty admin for any queries. </span></p>
+
+<p>&nbsp;</p>
+  
+26-Jun-2025 08:36:13:6950389 PM  SMTP Exception: The SMTP server requires a secure connection or the client was not authenticated. The server response was: 5.7.0 Authentication Required. For more information, go to
+26-Jun-2025 08:36:13:7142580 PM  SMTP StackTrace:    at System.Net.Mail.MailCommand.CheckResponse(SmtpStatusCode statusCode, String response)
+   at System.Net.Mail.MailCommand.Send(SmtpConnection conn, Byte[] command, MailAddress from, Boolean allowUnicode)
+   at System.Net.Mail.SmtpTransport.SendMail(MailAddress sender, MailAddressCollection recipients, String deliveryNotify, Boolean allowUnicode, SmtpFailedRecipientException& exception)
+   at System.Net.Mail.SmtpClient.Send(MailMessage message)
+   at BLL.Master.Mail.StudioproposalAuthorized(String inst_code, DataTable pc_dtl, DataTable dean_dtl, DataTable faculty_admin, DataTable mail_from_id_password, DataTable AckDetails, DataTable user_dtl, String remark) in C:\CEPTPROJECT\CEPT_REG\BLL\Master\Mail.cs:line 3811
+26-Jun-2025 08:36:13:7165192 PM  SMTP StatusCode: MustIssueStartTlsFirst
+26-Jun-2025 08:40:40:1792077 PM  Data Save In Table SendMailDetails : True
+26-Jun-2025 08:40:43:4117003 PM  SMTP Exception: The SMTP server requires a secure connection or the client was not authenticated. The server response was: 5.7.0 Authentication Required. For more information, go to
+26-Jun-2025 08:40:43:9279288 PM  SMTP StackTrace:    at System.Net.Mail.MailCommand.CheckResponse(SmtpStatusCode statusCode, String response)
+   at System.Net.Mail.MailCommand.Send(SmtpConnection conn, Byte[] command, MailAddress from, Boolean allowUnicode)
+   at System.Net.Mail.SmtpTransport.SendMail(MailAddress sender, MailAddressCollection recipients, String deliveryNotify, Boolean allowUnicode, SmtpFailedRecipientException& exception)
+   at System.Net.Mail.SmtpClient.Send(MailMessage message)
+   at BLL.Master.Mail.StudioproposalAuthorized(String inst_code, DataTable pc_dtl, DataTable dean_dtl, DataTable faculty_admin, DataTable mail_from_id_password, DataTable AckDetails, DataTable user_dtl, String remark) in C:\CEPTPROJECT\CEPT_REG\BLL\Master\Mail.cs:line 3811
+26-Jun-2025 08:40:46:0343712 PM  SMTP StatusCode: MustIssueStartTlsFirst
+26-Jun-2025 08:54:21:2458456 PM  Email Reject EmailID. donotreply@cept.ac.in Email Body. <p>Dear Rajan Jagmohan Bhatt,</p>
+
+<p dir="ltr" style="line-height:1.2;margin-top:0pt;margin-bottom:8pt;">Thank you for submitting your studio proposal for the Monsoon-25 semester.</p>
+
+<p dir="ltr" style="line-height:1.2;margin-top:0pt;margin-bottom:8pt;"><br />
+We regret to inform you that your studio has not been approved for the upcoming semester.<br />
+You may apply again next semester with a fresh or revised studio proposal.</p>
+
+<p>adsfdsaf</p>
+
+<p><span class="im" style="color: rgb(80, 0, 80); font-family: Arial, Helvetica, sans-serif; font-size: small;">You may write to your faculty admin for any queries. </span></p>
+
+<p>&nbsp;</p>
+
+
+26-Jun-2025 08:55:40:4430423 PM  Data Save In Table SendMailDetails : True
+26-Jun-2025 08:55:42:0122417 PM  SMTP Exception: The SMTP server requires a secure connection or the client was not authenticated. The server response was: 5.7.0 Authentication Required. For more information, go to
+26-Jun-2025 08:55:42:3425341 PM  SMTP StackTrace:    at System.Net.Mail.MailCommand.CheckResponse(SmtpStatusCode statusCode, String response)
+   at System.Net.Mail.MailCommand.Send(SmtpConnection conn, Byte[] command, MailAddress from, Boolean allowUnicode)
+   at System.Net.Mail.SmtpTransport.SendMail(MailAddress sender, MailAddressCollection recipients, String deliveryNotify, Boolean allowUnicode, SmtpFailedRecipientException& exception)
+   at System.Net.Mail.SmtpClient.Send(MailMessage message)
+   at BLL.Master.Mail.StudioproposalAuthorized(String inst_code, DataTable pc_dtl, DataTable dean_dtl, DataTable faculty_admin, DataTable mail_from_id_password, DataTable AckDetails, DataTable user_dtl, String remark) in C:\CEPTPROJECT\CEPT_REG\BLL\Master\Mail.cs:line 3811
+26-Jun-2025 08:55:42:6432136 PM  SMTP StatusCode: MustIssueStartTlsFirst

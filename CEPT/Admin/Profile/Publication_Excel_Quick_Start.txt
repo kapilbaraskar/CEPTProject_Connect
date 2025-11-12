@@ -1,0 +1,324 @@
+═══════════════════════════════════════════════════════════════════════════
+    PUBLICATION.ASPX - EXCEL IMPORT/EXPORT QUICK START GUIDE
+═══════════════════════════════════════════════════════════════════════════
+
+📥 STEP 1: DOWNLOAD EXCEL TEMPLATE
+═══════════════════════════════════════════════════════════════════════════
+
+1. Open Publication.aspx page
+2. Look for "Excel Import/Export" section
+3. Click [Download Excel Template] button
+4. Excel file will download: Publications_Template_YYYYMMDD.xlsx
+
+TEMPLATE INCLUDES:
+✓ All 12 required columns with headers
+✓ 2 sample data rows (for reference)
+✓ Detailed instructions
+✓ Pre-formatted columns
+
+
+═══════════════════════════════════════════════════════════════════════════
+📝 STEP 2: FILL THE EXCEL TEMPLATE
+═══════════════════════════════════════════════════════════════════════════
+
+COLUMN GUIDE:
+┌─────────────────────────────┬──────────┬─────────────────────────────────┐
+│ Column Name                 │ Required │ Valid Values                    │
+├─────────────────────────────┼──────────┼─────────────────────────────────┤
+│ Publication Type            │ YES ✓    │ Journal Article                 │
+│                             │          │ Conference Paper                │
+│                             │          │ Book Chapter                    │
+│                             │          │ Book, Patent, Technical Report  │
+├─────────────────────────────┼──────────┼─────────────────────────────────┤
+│ Journal/Conference Name     │ YES ✓    │ Any text                        │
+├─────────────────────────────┼──────────┼─────────────────────────────────┤
+│ Title of Research           │ YES ✓    │ Any text (max 500 chars)        │
+├─────────────────────────────┼──────────┼─────────────────────────────────┤
+│ Scope                       │ YES ✓    │ National or International       │
+├─────────────────────────────┼──────────┼─────────────────────────────────┤
+│ Impact Factor               │ No       │ Number or N/A                   │
+├─────────────────────────────┼──────────┼─────────────────────────────────┤
+│ Authorship                  │ YES ✓    │ First Author                    │
+│                             │          │ Co-Author                       │
+│                             │          │ Corresponding Author            │
+├─────────────────────────────┼──────────┼─────────────────────────────────┤
+│ Author Details              │ No       │ John Doe, Jane Smith            │
+├─────────────────────────────┼──────────┼─────────────────────────────────┤
+│ Month of Publication        │ No       │ January to December             │
+├─────────────────────────────┼──────────┼─────────────────────────────────┤
+│ Year of Publication         │ No       │ 2024                            │
+├─────────────────────────────┼──────────┼─────────────────────────────────┤
+│ Submitted to University     │ No       │ Yes or No                       │
+├─────────────────────────────┼──────────┼─────────────────────────────────┤
+│ Publication Status          │ No       │ Published, Accepted             │
+│                             │          │ Under Review, Submitted         │
+├─────────────────────────────┼──────────┼─────────────────────────────────┤
+│ Total Hours                 │ No       │ Number (0 if blank)             │
+└─────────────────────────────┴──────────┴─────────────────────────────────┘
+
+EXAMPLE ROW:
+Journal Article | IEEE Transactions on SE | AI-Based Testing | International | 4.5 | First Author | John Doe, Jane Smith | March | 2024 | Yes | Published | 120
+
+
+IMPORTANT RULES:
+❗ Do NOT change column headers
+❗ Delete sample data rows before uploading
+❗ Delete instruction rows before uploading
+❗ Start your data from Row 2
+❗ Fill ALL required fields (marked with ✓)
+❗ Empty rows will be automatically skipped
+
+
+═══════════════════════════════════════════════════════════════════════════
+📤 STEP 3: UPLOAD FILLED EXCEL FILE
+═══════════════════════════════════════════════════════════════════════════
+
+1. Save your Excel file
+2. Return to Publication.aspx page
+3. Look for "Step 2: Upload Filled Template" section
+4. Click [Choose File] button
+5. Select your filled Excel file
+6. Click [Upload & Import] button
+
+WHAT HAPPENS:
+⏳ File is uploaded
+⏳ Data is parsed and validated
+⏳ Invalid rows are filtered out
+✓ Preview table is displayed
+
+
+═══════════════════════════════════════════════════════════════════════════
+👁️ STEP 4: PREVIEW DATA
+═══════════════════════════════════════════════════════════════════════════
+
+PREVIEW SECTION SHOWS:
+┌──────────────────────────────────────────────────────────────────────┐
+│ Excel Data Preview                                                   │
+├──────────────────────────────────────────────────────────────────────┤
+│ Table displaying all imported publications                           │
+│ - All 12 columns visible                                             │
+│ - Long text truncated (hover to see full)                            │
+│ - Scrollable if many records                                         │
+├──────────────────────────────────────────────────────────────────────┤
+│ Message: "Found X publication(s) in Excel file!"                     │
+└──────────────────────────────────────────────────────────────────────┘
+
+REVIEW CHECKLIST:
+☐ All rows appear correct?
+☐ No missing data?
+☐ Correct number of publications?
+☐ Values match your Excel file?
+
+
+═══════════════════════════════════════════════════════════════════════════
+✅ STEP 5: CONFIRM OR CANCEL IMPORT
+═══════════════════════════════════════════════════════════════════════════
+
+OPTION A - CONFIRM IMPORT:
+1. Click [✓ Confirm Import] button
+2. All publications added to main table
+3. Data automatically saved to database
+4. Success message appears
+5. Preview section closes
+6. File input is cleared
+
+OPTION B - CANCEL IMPORT:
+1. Click [✗ Cancel] button
+2. Preview section closes
+3. No data is imported
+4. File input is cleared
+5. Start over if needed
+
+
+═══════════════════════════════════════════════════════════════════════════
+🎯 WORKFLOW DIAGRAM
+═══════════════════════════════════════════════════════════════════════════
+
+  [1. Download Template]
+          ↓
+  [2. Fill Excel File]
+          ↓
+  [3. Upload File] ──→ Parsing ──→ Validation
+          ↓
+  [4. Preview Data] ──→ Review
+          ↓
+          ├─→ [Cancel] ──→ Clear & Start Over
+          │
+          └─→ [Confirm] ──→ Import ──→ Display ──→ Auto-Save
+                                           ↓
+                                  ✓ Success Message
+
+
+═══════════════════════════════════════════════════════════════════════════
+💡 PRO TIPS
+═══════════════════════════════════════════════════════════════════════════
+
+TIP #1: Use Template Values
+  ✓ Copy dropdown values exactly from sample data
+  ✓ Avoid typos - they cause validation errors
+
+TIP #2: Bulk Entry
+  ✓ Add multiple publications in one upload
+  ✓ No limit on number of rows (within Excel limits)
+
+TIP #3: Reuse Template
+  ✓ Save filled template for future updates
+  ✓ Download fresh template for new data
+
+TIP #4: Check Preview Carefully
+  ✓ Truncated text has tooltips - hover to see full
+  ✓ Verify all required fields are filled
+
+TIP #5: Auto-Save Feature
+  ✓ Data saves automatically after import
+  ✓ No need to click "Save All" button
+
+
+═══════════════════════════════════════════════════════════════════════════
+⚠️ COMMON ERRORS & SOLUTIONS
+═══════════════════════════════════════════════════════════════════════════
+
+ERROR: "Please select an Excel file first!"
+SOLUTION: Click "Choose File" before "Upload & Import"
+
+ERROR: "Excel file is empty or has no data rows!"
+SOLUTION: 
+  - Add data starting from Row 2
+  - Make sure you saved the file
+
+ERROR: "No valid data found in Excel file!"
+SOLUTION:
+  - Check all required fields are filled
+  - Remove instruction rows
+  - Verify column headers match template
+
+ERROR: "Error parsing Excel file"
+SOLUTION:
+  - Use .xlsx or .xls format only
+  - Re-save file in Excel
+  - Try downloading fresh template
+
+ERROR: Some rows missing after import
+SOLUTION:
+  - Those rows had missing required fields
+  - Check Publication Type, Journal Name, and Title
+  - Re-upload with complete data
+
+
+═══════════════════════════════════════════════════════════════════════════
+📊 EXAMPLE DATA
+═══════════════════════════════════════════════════════════════════════════
+
+ROW 1 (Headers):
+Publication Type | Journal/Conference Name | Title of Research | ...
+
+ROW 2 (Sample):
+Journal Article | IEEE Transactions on Software Engineering | Machine Learning in Software Testing | International | 4.5 | First Author | John Doe, Jane Smith | January | 2024 | Yes | Published | 100
+
+ROW 3 (Sample):
+Conference Paper | ACM SIGSOFT Conference | Automated Bug Detection | National | 2.3 | Co-Author | Alice Brown | March | 2024 | No | Accepted | 80
+
+ROW 4 (Your data):
+Book Chapter | Advances in AI | Deep Learning Applications | International | N/A | First Author | Your Name | June | 2024 | Yes | Published | 150
+
+
+═══════════════════════════════════════════════════════════════════════════
+🔍 VALIDATION RULES
+═══════════════════════════════════════════════════════════════════════════
+
+AUTOMATIC VALIDATIONS:
+✓ Empty rows are skipped
+✓ Instruction rows are filtered out
+✓ Required fields must have values
+✓ Invalid rows are excluded
+
+WHAT GETS IMPORTED:
+✓ Rows with all 3 required fields:
+  1. Publication Type
+  2. Journal/Conference Name
+  3. Title of Research
+
+WHAT GETS SKIPPED:
+✗ Completely empty rows
+✗ Rows with "Instructions" text
+✗ Rows missing required fields
+✗ Header row
+
+
+═══════════════════════════════════════════════════════════════════════════
+📁 FILE SPECIFICATIONS
+═══════════════════════════════════════════════════════════════════════════
+
+SUPPORTED FORMATS:
+✓ .xlsx (Excel 2007+)
+✓ .xls (Excel 97-2003)
+
+FILE SIZE:
+✓ Limited by browser (typically 10-50 MB)
+✓ Recommended: Keep under 5 MB
+
+NUMBER OF ROWS:
+✓ No hard limit
+✓ Recommended: 1-1000 publications per file
+
+TEMPLATE FILENAME:
+✓ Publications_Template_YYYYMMDD.xlsx
+  Example: Publications_Template_20251014.xlsx
+
+
+═══════════════════════════════════════════════════════════════════════════
+🎨 UI ELEMENTS
+═══════════════════════════════════════════════════════════════════════════
+
+SECTION COLORS:
+┌─────────────────────────┬─────────────────────────────────────┐
+│ Light Blue Background   │ Download section                    │
+│ Light Orange Background │ Upload section                      │
+│ Light Blue Preview      │ Preview table section               │
+└─────────────────────────┴─────────────────────────────────────┘
+
+BUTTONS:
+[Download Excel Template]  - Green button
+[Choose File]              - Standard file input
+[Upload & Import]          - Blue button
+[Confirm Import]           - Green button with checkmark
+[Cancel]                   - Gray button with X
+
+NOTIFICATIONS:
+✓ Success (Green): Top-right corner, auto-dismiss
+✗ Error (Red): Top-right corner, manual dismiss
+
+
+═══════════════════════════════════════════════════════════════════════════
+🚀 KEYBOARD SHORTCUTS
+═══════════════════════════════════════════════════════════════════════════
+
+(Currently not implemented, but buttons are keyboard accessible)
+
+TAB       - Navigate between buttons
+ENTER     - Activate focused button
+ESC       - Dismiss notification (if focused)
+
+
+═══════════════════════════════════════════════════════════════════════════
+📞 SUPPORT & HELP
+═══════════════════════════════════════════════════════════════════════════
+
+If you encounter issues:
+
+1. Check browser console (Press F12)
+2. Look for red error messages
+3. Verify Excel file format
+4. Try with a fresh template
+5. Contact system administrator
+
+Developer Console:
+- Press F12 in browser
+- Click "Console" tab
+- Look for errors in red
+
+
+═══════════════════════════════════════════════════════════════════════════
+                            END OF QUICK START GUIDE
+═══════════════════════════════════════════════════════════════════════════
+
